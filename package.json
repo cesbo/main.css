@@ -1,0 +1,20 @@
+{
+    "name": "@cesbo/main.css",
+    "version": "0.0.1",
+    "description": "Minimalistic CSS for Cesbo UI",
+    "author": "Cesbo Dev Team",
+    "main": "css/main.css",
+    "homepage": "https://github.com/cesbo/main.css",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cesbo/main.css"
+    },
+    "scripts": {
+        "build": "sass src/main.scss css/main.css",
+        "watch": "sass --watch src/main.scss css/main.css"
+    },
+    "devDependencies": {
+        "sass": "^1.55.0"
+    }
+}

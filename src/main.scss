@@ -1,0 +1,102 @@
+:root {
+    --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-size: 18px;
+    --font-weight: 400;
+
+    --spacing: 1rem;
+
+    --line-height: 1.5rem;
+
+    --grid-column-gap: var(--spacing);
+    --grid-row-gap: var(--spacing);
+    --grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
+
+    --form-gap: .4rem;
+    --form-label-width: 30%;
+
+    --input-padding-vertical: .4rem;
+    --input-padding-horizontal: .8rem;
+
+    --modal-margin: 2rem auto;
+    --modal-width: 50%;
+    --modal-min-height: auto;
+    --modal-min-width: 600px;
+
+    --transition: 0.2s ease-in-out;
+    --gap: .4rem;
+
+    /* default colors */
+
+    --shadow: 0 0 .5rem rgba(0, 0, 0, 0.6);
+
+    --background-color: hsl(210, 20%, 20%);
+    --modal-color: hsl(210, 20%, 22%);
+    --text-color: hsl(210, 20%, 100%);
+
+    --primary: hsl(210, 70%, 50%);
+    --secondary: hsl(210, 20%, 30%);
+    --invalid: hsl(0, 70%, 50%);
+    --inverse: hsl(0, 0%, 100%);
+
+    --border: 1px solid;
+    --border-radius: 2px;
+    --border-color: var(--secondary);
+
+    /* icons */
+
+    --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
+}
+
+@media only screen and (max-width: 768px) {
+    :root {
+        --spacing: .4rem;
+
+        --modal-margin: 0;
+        --modal-width: 100%;
+        --modal-min-height: 100%;
+        --modal-min-width: auto;
+
+        --grid-column-gap: .4rem;
+        --grid-row-gap: .4rem;
+        --grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::after, ::before {
+        transition: none !important;
+    }
+}
+
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    line-height: var(--line-height);
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+@import "layout";
+@import "grid";
+@import "form";
+@import "typography";
