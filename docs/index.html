@@ -5,6 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+	<link rel="stylesheet" type="text/css" href="stackoverflow-dark.min.css" />
 	<style>
 main {
 	max-width: 1130px;
@@ -38,14 +39,6 @@ main {
 
 <main>
 <h1>Minimalistic CSS for Cesbo UI</h1>
-
-<h2 id="installation">Installation</h2>
-
-From CDN:
-
-<pre class="box">
-&lt;link rel="stylesheet" type="text/css" href="https://cdn.cesbo.com/css/main.css" /&gt;
-</pre>
 
 <h2 id="buttons">Buttons</h2>
 
@@ -238,6 +231,7 @@ From CDN:
 </div>
 </main>
 
+<script src="highlight.min.js"></script>
 <script>
 function toggleCode(event) {
 	const pre = event.target.querySelector('pre');
@@ -259,8 +253,8 @@ function toggleCode(event) {
 		}
 		lines[i] = line.substr(indent).replaceAll('\t', '  ')
 	}
-
-	pre.textContent = lines.join('\n')
+	const html = lines.join('\n')
+	pre.innerHTML = hljs.highlightAuto(html).value
 }
 </script>
 
