@@ -55,7 +55,6 @@ function initSourcePreview() {
 function init() {
     if(location.hash === '') {
         location.hash = '#/quick-start'
-        return
     }
 
     initSourcePreview()
