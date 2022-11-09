@@ -19,7 +19,7 @@ input:is([type="button"],[type="submit"],[type="reset"]),
             filter: brightness(1.1);
         }
 
-        &:active {
+        &:is(.active, :active) {
             filter: brightness(1.3);
         }
     }

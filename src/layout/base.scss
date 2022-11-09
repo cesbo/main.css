@@ -1,8 +1,22 @@
-body>main {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    padding: var(--spacing);
+body {
+    &>header {
+        position: sticky;
+        top: 0;
+        border-bottom: var(--border) var(--border-color);
+        z-index: 1;
+    }
+
+    &>main {
+        width: 100%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: var(--spacing);
+    }
+
+    &>footer {
+        border-top: var(--border) var(--border-color);
+        padding: var(--spacing);
+    }
 }
 
 @import "grid";

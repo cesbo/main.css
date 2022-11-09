@@ -19,7 +19,7 @@ form {
         margin-bottom: var(--form-gap);
         color: var(--text-color);
 
-        & > :first-child {
+        &>:first-child {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -29,7 +29,7 @@ form {
             min-width: var(--form-label-width);
         }
 
-        & > :last-child:not(input[type="checkbox"], input[type="radio"]) {
+        &>:last-child:not(input[type="checkbox"], input[type="radio"]) {
             flex-grow: 1;
         }
     }

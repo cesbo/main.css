@@ -75,6 +75,38 @@ body {
   padding: 0;
 }
 
+[role=listbox] {
+  padding: var(--input-padding-vertical) 0;
+}
+[role=listbox] > div {
+  position: relative;
+  --input-padding-vertical: 0;
+  --border-radius: 0;
+}
+[role=listbox] > div button {
+  position: absolute;
+  z-index: 1;
+  top: 1px;
+  bottom: 1px;
+  border: 0;
+}
+[role=listbox] > div button:not(:hover, :focus) {
+  background-color: transparent;
+}
+[role=listbox] > div button:first-child {
+  cursor: grab;
+  left: 1px;
+}
+[role=listbox] > div button:last-child {
+  right: 1px;
+}
+[role=listbox] > div input {
+  padding: 0 2.5rem;
+}
+[role=listbox] > div input:not(:invalid) {
+  border-color: transparent;
+}
+
 input,
 select,
 textarea,
@@ -136,9 +168,9 @@ input:is([type=button], [type=submit], [type=reset]):not(:disabled):focus,
 [role=button]:not(:disabled):focus {
   filter: brightness(1.1);
 }
-button:not(:disabled):active,
-input:is([type=button], [type=submit], [type=reset]):not(:disabled):active,
-[role=button]:not(:disabled):active {
+button:not(:disabled):is(.active, :active),
+input:is([type=button], [type=submit], [type=reset]):not(:disabled):is(.active, :active),
+[role=button]:not(:disabled):is(.active, :active) {
   filter: brightness(1.3);
 }
 
@@ -233,38 +265,6 @@ details[role=group][open] summary[role=button]::before {
   transform: rotate(0);
 }
 
-[role=listbox] {
-  padding: var(--input-padding-vertical) 0;
-}
-[role=listbox] > div {
-  position: relative;
-  --input-padding-vertical: 0;
-  --border-radius: 0;
-}
-[role=listbox] > div button {
-  position: absolute;
-  z-index: 1;
-  top: 1px;
-  bottom: 1px;
-  border: 0;
-}
-[role=listbox] > div button:not(:hover, :focus) {
-  background-color: transparent;
-}
-[role=listbox] > div button:first-child {
-  cursor: grab;
-  left: 1px;
-}
-[role=listbox] > div button:last-child {
-  right: 1px;
-}
-[role=listbox] > div input {
-  padding: 0 2.5rem;
-}
-[role=listbox] > div input:not(:invalid) {
-  border-color: transparent;
-}
-
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -275,10 +275,20 @@ select {
   background-size: 0.6rem;
 }
 
+body > header {
+  position: sticky;
+  top: 0;
+  border-bottom: var(--border) var(--border-color);
+  z-index: 1;
+}
 body > main {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  padding: var(--spacing);
+}
+body > footer {
+  border-top: var(--border) var(--border-color);
   padding: var(--spacing);
 }
 
@@ -287,6 +297,32 @@ body > main {
   grid-column-gap: var(--grid-column-gap);
   grid-row-gap: var(--grid-row-gap);
   grid-template-columns: var(--grid-template-columns);
+}
+
+nav {
+  display: block;
+  width: 100%;
+  background-color: var(--background-color);
+}
+nav > ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+nav button,
+nav input:is([type=button], [type=submit], [type=reset]),
+nav [role=button] {
+  display: block;
+  background-color: var(--background-color);
+  border: 0;
+  border-radius: 0;
+  padding: var(--input-padding-vertical) var(--spacing);
+}
+nav button:not(:disabled):hover,
+nav input:is([type=button], [type=submit], [type=reset]):not(:disabled):hover,
+nav [role=button]:not(:disabled):hover {
+  filter: brightness(1.3);
 }
 
 h1 {

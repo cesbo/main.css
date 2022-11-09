@@ -1,0 +1,26 @@
+nav {
+    display: block;
+    width: 100%;
+    background-color: var(--background-color);
+
+    &>ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    button,
+    input:is([type=button], [type=submit], [type=reset]),
+    [role=button] {
+        display: block;
+        background-color: var(--background-color);
+        border: 0;
+        border-radius: 0;
+        padding: var(--input-padding-vertical) var(--spacing);
+
+        &:not(:disabled):hover {
+            filter: brightness(1.3);
+        }
+    }
+}
