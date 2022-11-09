@@ -1,3 +1,6 @@
+(function() {
+'use strict';
+
 function toggleSource(event) {
     const pre = event.target.querySelector('pre');
     if(!event.target.open) {
@@ -35,13 +38,31 @@ function onHashChange() {
     }
 }
 
+function initSourcePreview() {
+    document.querySelectorAll('.docs-box').forEach(el => {
+        const pre = document.createElement('pre')
+        const details = document.createElement('details')
+        const summary = document.createElement('summary')
+        summary.textContent = 'Source'
+        details.appendChild(summary)
+        details.appendChild(pre)
+        details.addEventListener('toggle', toggleSource)
+        el.appendChild(details)
+    })
+}
+
 function init() {
-    window.addEventListener('hashchange', onHashChange)
     if(location.hash === '') {
         location.hash = '#/quick-start'
-    } else {
-        onHashChange()
+        return
     }
+
+    initSourcePreview()
+
+    window.addEventListener('hashchange', onHashChange)
+    onHashChange()
 }
 
 window.addEventListener('load', init, {once: true})
+
+})();
