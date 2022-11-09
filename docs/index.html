@@ -43,139 +43,129 @@
 
 <h2>Button</h2>
 
-<div class="docs-box">
-	<div style="display:flex; gap:var(--space-xs);">
-		<input type="button" value="Button" />
-		<input type="button" value="Disabled" disabled />
-		<input type="submit" value="Submit" />
-		<input type="submit" value="Disabled" disabled />
-	</div>
+<div class="docs-box" style="display:flex; gap:var(--space-xs);">
+	<input type="button" value="Button" />
+	<input type="button" value="Disabled" disabled />
+	<input type="submit" value="Submit" />
+	<input type="submit" value="Disabled" disabled />
 </div><!-- Button -->
 
 <h2>Form</h2>
 
 <div class="docs-box">
-	<div>
-		<form>
-			<fieldset>
-				<label>
-					<span>Email</span>
-					<input type="text" />
-				</label>
+	<form>
+		<fieldset>
+			<label>
+				<span>Email</span>
+				<input type="text" />
+			</label>
 
-				<label>
-					<span>Password</span>
-					<input type="password" />
-				</label>
+			<label>
+				<span>Password</span>
+				<input type="password" />
+			</label>
 
-				<label>
-					<span>Remember</span>
-					<input type="checkbox" />
-				</label>
+			<label>
+				<span>Remember</span>
+				<input type="checkbox" />
+			</label>
 
-				<footer>
-					<input type="submit" value="Submit" />
-				</footer>
-			</fieldset>
-		</form>
-	</div>
+			<footer>
+				<input type="submit" value="Submit" />
+			</footer>
+		</fieldset>
+	</form>
 </div><!-- Form -->
 
 <h2>Input</h2>
 
 <div class="docs-box">
-	<div>
-		<form>
-			<fieldset>
-				<label>
-					<span>Required</span>
-					<input type="text" placeholder="Invalid field until empty" required />
-				</label>
+	<form>
+		<fieldset>
+			<label>
+				<span>Required</span>
+				<input type="text" placeholder="Invalid field until empty" required />
+			</label>
 
-				<label>
-					<span>Disabled</span>
-					<input type="text" placeholder="Disabled" disabled />
-				</label>
+			<label>
+				<span>Disabled</span>
+				<input type="text" placeholder="Disabled" disabled />
+			</label>
 
-				<label>
-					<span>Readonly</span>
-					<input type="text" placeholder="Readonly" readonly />
-				</label>
-			</fieldset>
-		</form>
-	</div>
+			<label>
+				<span>Readonly</span>
+				<input type="text" placeholder="Readonly" readonly />
+			</label>
+		</fieldset>
+	</form>
 </div><!-- Input -->
 
 <h2>Select, Checkbox, Radio</h2>
 
 <div class="docs-box">
-	<div>
-		<form>
-			<fieldset>
-				<label>
-					<span>Select</span>
-					<select>
-						<option>Water</option>
-						<optgroup label="Tea">
-							<option>Black</option>
-							<option>Green</option>
-						</optgroup>
-						<optgroup label="Coffee">
-							<option>Espresso</option>
-							<option>Capuchino</option>
-						</optgroup>
-					</select>
-				</label>
+	<form>
+		<fieldset>
+			<label>
+				<span>Select</span>
+				<select>
+					<option>Water</option>
+					<optgroup label="Tea">
+						<option>Black</option>
+						<option>Green</option>
+					</optgroup>
+					<optgroup label="Coffee">
+						<option>Espresso</option>
+						<option>Capuchino</option>
+					</optgroup>
+				</select>
+			</label>
 
-				<label>
-					<span>Checkbox</span>
-					<input type="checkbox" />
-				</label>
+			<label>
+				<span>Checkbox</span>
+				<input type="checkbox" />
+			</label>
 
-				<label>
-					<span>Disabled checkbox</span>
-					<input type="checkbox" disabled />
-				</label>
-			</fieldset>
-		</form>
-	</div>
+			<label>
+				<span>Disabled checkbox</span>
+				<input type="checkbox" disabled />
+			</label>
+		</fieldset>
+	</form>
 </div><!-- Select, Checkbox, Radio -->
 
 <h2>Group</h2>
 
 <div class="docs-box">
-	<div>
-		<form>
-			<fieldset>
-				<details role="group">
-					<summary role="button">Billing Address</summary>
-					<label>
-						<span>Street</span>
-						<input type="text" />
-					</label>
-					<label>
-						<span>City</span>
-						<input type="text" />
-					</label>
-				</details>
+	<form>
+		<fieldset>
+			<details role="group">
+				<summary role="button">Billing Address</summary>
+				<label>
+					<span>Street</span>
+					<input type="text" />
+				</label>
+				<label>
+					<span>City</span>
+					<input type="text" />
+				</label>
+			</details>
 
-				<details role="group">
-					<summary class="optional" role="button">
-						<span>Delivery Address</span>
-						<input type="checkbox" />
-					</summary>
-					<label>
-						<span>Street</span>
-						<input type="text" />
-					</label>
-					<label>
-						<span>City</span>
-						<input type="text" />
-					</label>
-				</details>
-			</fieldset>
-		</form>
-	</div>
+			<details role="group">
+				<summary class="optional" role="button">
+					<span>Delivery Address</span>
+					<input type="checkbox" />
+				</summary>
+				<label>
+					<span>Street</span>
+					<input type="text" />
+				</label>
+				<label>
+					<span>City</span>
+					<input type="text" />
+				</label>
+			</details>
+		</fieldset>
+	</form>
 </div><!-- Group -->
 
 </div><!-- controls -->
@@ -186,56 +176,54 @@
 
 <h2>Dropdown</h2>
 
-<div class="docs-box">
-	<div style="display:flex; gap:var(--space-xs);">
-		<details role="menu">
-			<summary role="button">bottom-left</summary>
-			<nav class="bottom-left">
-				<ul>
-					<li><a href="#" role="button">Menu item</a></li>
-					<li><a href="#" role="button" disabled>Disabled item</a></li>
-					<li><hr /></li>
-					<li><a href="#" role="button">Under the line</a></li>
-				</ul>
-			</nav>
-		</details>
+<div class="docs-box" style="display:flex; gap:var(--space-xs);">
+	<details role="menu">
+		<summary role="button">bottom-left</summary>
+		<nav class="bottom-left">
+			<ul>
+				<li><a href="#" role="button">Menu item</a></li>
+				<li><a href="#" role="button" disabled>Disabled item</a></li>
+				<li><hr /></li>
+				<li><a href="#" role="button">Under the line</a></li>
+			</ul>
+		</nav>
+	</details>
 
-		<details role="menu">
-			<summary role="button">bottom-right</summary>
-			<nav class="bottom-right">
-				<ul>
-					<li><a href="#" role="button">Menu item</a></li>
-					<li><a href="#" role="button" disabled>Disabled item</a></li>
-					<li><hr /></li>
-					<li><a href="#" role="button">Under the line</a></li>
-				</ul>
-			</nav>
-		</details>
+	<details role="menu">
+		<summary role="button">bottom-right</summary>
+		<nav class="bottom-right">
+			<ul>
+				<li><a href="#" role="button">Menu item</a></li>
+				<li><a href="#" role="button" disabled>Disabled item</a></li>
+				<li><hr /></li>
+				<li><a href="#" role="button">Under the line</a></li>
+			</ul>
+		</nav>
+	</details>
 
-		<details role="menu">
-			<summary role="button">top-left</summary>
-			<nav class="top-left">
-				<ul>
-					<li><a href="#" role="button">Menu item</a></li>
-					<li><a href="#" role="button" disabled>Disabled item</a></li>
-					<li><hr /></li>
-					<li><a href="#" role="button">Under the line</a></li>
-				</ul>
-			</nav>
-		</details>
+	<details role="menu">
+		<summary role="button">top-left</summary>
+		<nav class="top-left">
+			<ul>
+				<li><a href="#" role="button">Menu item</a></li>
+				<li><a href="#" role="button" disabled>Disabled item</a></li>
+				<li><hr /></li>
+				<li><a href="#" role="button">Under the line</a></li>
+			</ul>
+		</nav>
+	</details>
 
-		<details role="menu">
-			<summary role="button">top-right</summary>
-			<nav class="top-right">
-				<ul>
-					<li><a href="#" role="button">Menu item</a></li>
-					<li><a href="#" role="button" disabled>Disabled item</a></li>
-					<li><hr /></li>
-					<li><a href="#" role="button">Under the line</a></li>
-				</ul>
-			</nav>
-		</details>
-	</div>
+	<details role="menu">
+		<summary role="button">top-right</summary>
+		<nav class="top-right">
+			<ul>
+				<li><a href="#" role="button">Menu item</a></li>
+				<li><a href="#" role="button" disabled>Disabled item</a></li>
+				<li><hr /></li>
+				<li><a href="#" role="button">Under the line</a></li>
+			</ul>
+		</nav>
+	</details>
 </div>
 
 <h2>Modal</h2>
@@ -243,31 +231,29 @@
 <h2>Listbox</h2>
 
 <div class="docs-box">
-	<div>
-		<div role="listbox">
-			<div>
-				<button tabindex="-1"></button>
-				<input type="text" value="allow 127.0.0.1" required />
-				<button></button>
-			</div>
+	<div role="listbox">
+		<div>
+			<button tabindex="-1"></button>
+			<input type="text" value="allow 127.0.0.1" required />
+			<button></button>
+		</div>
 
-			<div>
-				<button tabindex="-1"></button>
-				<input type="text" value="deny 192.168.0.0/24" required />
-				<button></button>
-			</div>
+		<div>
+			<button tabindex="-1"></button>
+			<input type="text" value="deny 192.168.0.0/24" required />
+			<button></button>
+		</div>
 
-			<div>
-				<button tabindex="-1"></button>
-				<input type="text" value="pass any" required />
-				<button></button>
-			</div>
+		<div>
+			<button tabindex="-1"></button>
+			<input type="text" value="pass any" required />
+			<button></button>
+		</div>
 
-			<div>
-				<button tabindex="-1" disabled></button>
-				<input type="text" placeholder="new item" />
-				<button></button>
-			</div>
+		<div>
+			<button tabindex="-1" disabled></button>
+			<input type="text" placeholder="new item" />
+			<button></button>
 		</div>
 	</div>
 </div><!-- Listbox -->

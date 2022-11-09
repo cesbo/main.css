@@ -43,12 +43,13 @@ function initSourcePreview() {
     document.querySelectorAll('.docs-box').forEach(el => {
         const pre = document.createElement('pre')
         const details = document.createElement('details')
+        details.classList.add('docs-source')
         const summary = document.createElement('summary')
         summary.textContent = 'Source'
         details.appendChild(summary)
         details.appendChild(pre)
         details.addEventListener('toggle', toggleSource)
-        el.appendChild(details)
+        el.parentNode.insertBefore(details, el.nextSibling)
     })
 }
 

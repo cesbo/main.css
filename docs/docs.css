@@ -9,27 +9,29 @@ main {
 .docs-box {
 	border: var(--border) var(--border-color);
 	padding: var(--space-xs) var(--space-s);
+}
+
+.docs-source {
+	border: var(--border) var(--border-color);
+	border-top: 0;
+	padding: var(--space-xs) var(--space-s);
 	margin-bottom: var(--space);
 }
 
-.docs-box>details {
-	margin-top: var(--space);
-}
-
-.docs-box>details summary {
+.docs-source summary {
 	cursor: pointer;
 	color: var(--primary);
 }
 
-.docs-box>details summary:hover {
+.docs-source summary:hover {
 	filter: brightness(1.3);
 }
 
-.docs-box>details[open] summary {
+.docs-source[open] summary {
 	margin-bottom: var(--space);
 }
 
-.docs-box>details pre {
+.docs-source pre {
 	margin-bottom: 0;
 	padding: 0;
 	margin: 0;
