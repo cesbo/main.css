@@ -28,7 +28,7 @@ textarea {
     }
 
     &:invalid {
-        --border-color: var(--invalid);
+        border-color: var(--invalid);
     }
 
     &:focus {
