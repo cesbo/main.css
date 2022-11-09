@@ -28,7 +28,7 @@
   --secondary: hsl(210, 20%, 30%);
   --invalid: hsl(0, 70%, 50%);
   --inverse: hsl(0, 0%, 100%);
-  --brightness-level: 1.3;
+  --layer-brightness: 1.3;
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
 }
@@ -168,7 +168,7 @@ textarea:invalid {
 input:not([type=button], [type=submit], [type=reset]):focus,
 select:focus,
 textarea:focus {
-  filter: brightness(var(--brightness-level));
+  filter: brightness(var(--layer-brightness));
 }
 
 button,
@@ -197,7 +197,7 @@ input:is([type=button], [type=submit], [type=reset]):not(:disabled):focus,
 button:not(:disabled):is(.active, :active),
 input:is([type=button], [type=submit], [type=reset]):not(:disabled):is(.active, :active),
 [role=button]:not(:disabled):is(.active, :active) {
-  filter: brightness(var(--brightness-level));
+  filter: brightness(var(--layer-brightness));
 }
 
 :is(button, input, [role=button])[type=submit] {
@@ -358,7 +358,7 @@ details[role=menu][open] nav {
   z-index: 501;
   border: var(--border) var(--border-color);
   border-radius: var(--border-radius);
-  filter: brightness(var(--brightness-level));
+  filter: brightness(var(--layer-brightness));
   width: auto;
   box-shadow: var(--shadow);
 }
@@ -460,7 +460,7 @@ dialog[open] > article {
   border: var(--border) var(--border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
-  filter: brightness(var(--brightness-level));
+  filter: brightness(var(--layer-brightness));
 }
 
 nav {
@@ -486,7 +486,7 @@ nav [role=button] {
 nav button:not(:disabled):hover,
 nav input:is([type=button], [type=submit], [type=reset]):not(:disabled):hover,
 nav [role=button]:not(:disabled):hover {
-  filter: brightness(var(--brightness-level));
+  filter: brightness(var(--layer-brightness));
 }
 
 /*# sourceMappingURL=main.css.map */
