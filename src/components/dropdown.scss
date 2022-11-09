@@ -1,3 +1,13 @@
+@keyframes sweep-down {
+    0%    { opacity: 0; transform: translateY(-10px) }
+    100%  { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes sweep-up {
+    0%    { opacity: 0; transform: translateY(10px) }
+    100%  { opacity: 1; transform: translateY(0) }
+}
+
 details[role="menu"] {
     line-height: 0; /* WTF? height more than summary */
 }
@@ -36,23 +46,25 @@ details[role="menu"][open] {
         &.bottom-left {
             top: calc(100% + .2rem);
             left: 0;
+            animation: sweep-down .1s ease-out;
         }
 
         &.bottom-right {
             top: calc(100% + .2rem);
             right: 0;
-            text-align: right;
+            animation: sweep-down .1s ease-out;
         }
 
         &.top-left {
             bottom: calc(100% + .2rem);
             left: 0;
+            animation: sweep-up .1s ease-out;
         }
 
         &.top-right {
             bottom: calc(100% + .2rem);
             right: 0;
-            text-align: right;
+            animation: sweep-up .1s ease-out;
         }
 
         &>ul {

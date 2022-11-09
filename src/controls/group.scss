@@ -1,8 +1,12 @@
 details[role="group"] {
+    &[open] {
+        animation: expand .1s ease-out;
+    }
+
     summary[role="button"] {
         display: flex;
         align-items: center;
-        gap: .2rem;
+        gap: var(--space-xs);
         cursor: pointer;
         list-style-type: none;
         border-radius: 0;
@@ -18,7 +22,7 @@ details[role="group"] {
             height: .6rem;
             transform: rotate(-90deg);
             background-image: var(--icon-arrow);
-            transition: transform var(--transition);
+            transition: transform 0.1s ease-in-out;
         }
     }
 

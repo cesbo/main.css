@@ -25,8 +25,6 @@
     --modal-min-height: auto;
     --modal-min-width: 600px;
 
-    --transition: 0.2s ease-in-out;
-
     /* default colors */
 
     --shadow: 0 0 .5rem rgba(0, 0, 0, 0.6);
@@ -64,6 +62,7 @@
 @media (prefers-reduced-motion: reduce) {
     *, ::after, ::before {
         transition: none !important;
+        animation: none !important;
     }
 }
 
