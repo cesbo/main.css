@@ -7,6 +7,10 @@
 
     --line-height: 1.5rem;
 
+    --border: 1px solid;
+    --border-radius: 3px;
+    --border-color: var(--secondary);
+
     --grid-column-gap: var(--spacing);
     --grid-row-gap: var(--spacing);
     --grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
@@ -37,10 +41,6 @@
     --secondary: hsl(210, 20%, 30%);
     --invalid: hsl(0, 70%, 50%);
     --inverse: hsl(0, 0%, 100%);
-
-    --border: 1px solid;
-    --border-radius: 2px;
-    --border-color: var(--secondary);
 
     /* icons */
 

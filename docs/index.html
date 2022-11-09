@@ -50,8 +50,8 @@ main {
 		<input type="submit" value="Disabled" disabled />
 	</div>
 
-	<details onToggle="toggleCode(event)">
-		<summary>Code</summary>
+	<details onToggle="toggleSource(event)">
+		<summary>Source</summary>
 		<pre></pre>
 	</details>
 </div>
@@ -83,8 +83,8 @@ main {
 		</form>
 	</div>
 
-	<details onToggle="toggleCode(event)">
-		<summary>Code</summary>
+	<details onToggle="toggleSource(event)">
+		<summary>Source</summary>
 		<pre></pre>
 	</details>
 </div>
@@ -111,8 +111,8 @@ main {
 		</form>
 	</div>
 
-	<details onToggle="toggleCode(event)">
-		<summary>Code</summary>
+	<details onToggle="toggleSource(event)">
+		<summary>Source</summary>
 		<pre></pre>
 	</details>
 </div>
@@ -149,8 +149,8 @@ main {
 		</form>
 	</div>
 
-	<details onToggle="toggleCode(event)">
-		<summary>Code</summary>
+	<details onToggle="toggleSource(event)">
+		<summary>Source</summary>
 		<pre></pre>
 	</details>
 </div>
@@ -190,8 +190,8 @@ main {
 		</form>
 	</div>
 
-	<details onToggle="toggleCode(event)">
-		<summary>Code</summary>
+	<details onToggle="toggleSource(event)">
+		<summary>Source</summary>
 		<pre></pre>
 	</details>
 </div>
@@ -224,8 +224,8 @@ main {
 		</div>
 	</div>
 
-	<details onToggle="toggleCode(event)">
-		<summary>Code</summary>
+	<details onToggle="toggleSource(event)">
+		<summary>Source</summary>
 		<pre></pre>
 	</details>
 </div>
@@ -233,7 +233,7 @@ main {
 
 <script src="highlight.min.js"></script>
 <script>
-function toggleCode(event) {
+function toggleSource(event) {
 	const pre = event.target.querySelector('pre');
 	if(!event.target.open) {
 		pre.textContent = ''

@@ -12,7 +12,7 @@
     },
     "scripts": {
         "build": "sass src/main.scss css/main.css",
-        "watch": "sass --watch src/main.scss css/main.css"
+        "dev": "sass --watch src/main.scss css/main.css"
     },
     "devDependencies": {
         "sass": "^1.55.0"
