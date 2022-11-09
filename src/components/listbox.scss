@@ -3,36 +3,57 @@
 
     &>div {
         position: relative;
-
-        --space-xs: 0;
-        --border-radius: 0;
+        --border: 0;
 
         button {
             position: absolute;
             z-index: 1;
-            top: 1px;
-            bottom: 1px;
-            border: 0;
+            top: 0;
+            bottom: 0;
+            padding: 0;
+            width: 2rem;
 
             &:not(:hover, :focus) {
                 background-color: transparent;
             }
 
+            /* left button (move) */
             &:first-child {
                 cursor: grab;
-                left: 1px;
+                left: 0;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+
+                &::before {
+                    content: '\2261';
+                }
             }
 
+            /* right button (remove) */
             &:last-child {
-                right: 1px;
+                right: 0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+                &::before {
+                    content: '\00d7';
+                }
             }
         }
 
         input {
             padding: 0 2.5rem;
+            border-radius: 0;
 
             &:not(:invalid) {
                 border-color: transparent;
+            }
+        }
+
+        /* line for new item */
+        &:last-child{
+            button:last-child::before {
+                content: '+';
             }
         }
     }
