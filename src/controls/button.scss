@@ -26,5 +26,6 @@ input:is([type="button"],[type="submit"],[type="reset"]),
 }
 
 :is(button,input,[role="button"])[type="submit"] {
-    --secondary: var(--primary);
+    background-color: var(--primary);
+    border-color: var(--primary);
 }

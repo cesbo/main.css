@@ -3,23 +3,22 @@
     --font-size: 18px;
     --font-weight: 400;
 
-    --spacing: 1rem;
+    --space: 1rem;
+    --space-xs: .4rem;
+    --space-s: .8rem;
+    --space-l: 1.2rem;
+    --space-xl: 1.8rem;
 
     --line-height: 1.5rem;
 
     --border: 1px solid;
     --border-radius: 3px;
-    --border-color: var(--secondary);
 
-    --grid-column-gap: var(--spacing);
-    --grid-row-gap: var(--spacing);
+    --grid-column-gap: var(--space);
+    --grid-row-gap: var(--space);
     --grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
 
-    --form-gap: .4rem;
     --form-label-width: 30%;
-
-    --input-padding-vertical: .4rem;
-    --input-padding-horizontal: .8rem;
 
     --modal-margin: 2rem auto;
     --modal-width: 50%;
@@ -27,7 +26,6 @@
     --modal-min-width: 600px;
 
     --transition: 0.2s ease-in-out;
-    --gap: .4rem;
 
     /* default colors */
 
@@ -36,6 +34,7 @@
     --background-color: hsl(210, 20%, 20%);
     --modal-color: hsl(210, 20%, 22%);
     --text-color: hsl(210, 20%, 100%);
+    --border-color: var(--secondary);
 
     --primary: hsl(210, 70%, 50%);
     --secondary: hsl(210, 20%, 30%);
@@ -49,7 +48,7 @@
 
 @media only screen and (max-width: 768px) {
     :root {
-        --spacing: .4rem;
+        --space: .4rem;
 
         --modal-margin: 0;
         --modal-width: 100%;

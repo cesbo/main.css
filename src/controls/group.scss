@@ -6,7 +6,7 @@ details[role="group"] {
         cursor: pointer;
         list-style-type: none;
         border-radius: 0;
-        padding: var(--input-padding-vertical) var(--spacing);
+        padding: var(--space-xs) var(--space-s);
 
         &::-webkit-details-marker  {
             display: none;
@@ -23,7 +23,7 @@ details[role="group"] {
     }
 
     &[open] summary[role="button"]{
-        margin-bottom: var(--form-gap);
+        margin-bottom: var(--space-xs);
 
         &::before {
             transform: rotate(0);

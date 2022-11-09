@@ -17,7 +17,7 @@ nav {
         background-color: var(--background-color);
         border: 0;
         border-radius: 0;
-        padding: var(--input-padding-vertical) var(--spacing);
+        padding: var(--space-xs) var(--space);
 
         &:not(:disabled):hover {
             filter: brightness(1.3);

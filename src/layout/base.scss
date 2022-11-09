@@ -10,12 +10,12 @@ body {
         width: 100%;
         margin-right: auto;
         margin-left: auto;
-        padding: var(--spacing);
+        padding: var(--space);
     }
 
     &>footer {
         border-top: var(--border) var(--border-color);
-        padding: var(--spacing);
+        padding: var(--space);
     }
 }
 

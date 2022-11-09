@@ -1,10 +1,10 @@
 [role="listbox"] {
-    padding: var(--input-padding-vertical) 0;
+    padding: var(--space-xs) 0;
 
     &>div {
         position: relative;
 
-        --input-padding-vertical: 0;
+        --space-xs: 0;
         --border-radius: 0;
 
         button {

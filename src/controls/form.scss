@@ -8,16 +8,28 @@ form {
     }
 
     details[role="group"] {
-        margin-bottom: var(--form-gap);
+        margin-top: var(--space-xs);
+
+        &+details[role="group"] {
+            margin-top: 0;
+        }
     }
 
     label {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        gap: var(--form-gap);
-        margin-bottom: var(--form-gap);
+        gap: var(--space-xs);
+        margin-top: var(--space-xs);
         color: var(--text-color);
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: var(--space-xs);
+        }
 
         &>:first-child {
             white-space: nowrap;
@@ -41,7 +53,7 @@ form {
         flex-direction: row;
         justify-content: flex-end;
 
-        padding: var(--spacing) 0;
+        padding: var(--space) 0;
         margin-top: auto;
     }
 }

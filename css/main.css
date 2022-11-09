@@ -2,29 +2,29 @@
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-size: 18px;
   --font-weight: 400;
-  --spacing: 1rem;
+  --space: 1rem;
+  --space-xs: .4rem;
+  --space-s: .8rem;
+  --space-l: 1.2rem;
+  --space-xl: 1.8rem;
   --line-height: 1.5rem;
   --border: 1px solid;
   --border-radius: 3px;
-  --border-color: var(--secondary);
-  --grid-column-gap: var(--spacing);
-  --grid-row-gap: var(--spacing);
+  --grid-column-gap: var(--space);
+  --grid-row-gap: var(--space);
   --grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
-  --form-gap: .4rem;
   --form-label-width: 30%;
-  --input-padding-vertical: .4rem;
-  --input-padding-horizontal: .8rem;
   --modal-margin: 2rem auto;
   --modal-width: 50%;
   --modal-min-height: auto;
   --modal-min-width: 600px;
   --transition: 0.2s ease-in-out;
-  --gap: .4rem;
   /* default colors */
   --shadow: 0 0 .5rem rgba(0, 0, 0, 0.6);
   --background-color: hsl(210, 20%, 20%);
   --modal-color: hsl(210, 20%, 22%);
   --text-color: hsl(210, 20%, 100%);
+  --border-color: var(--secondary);
   --primary: hsl(210, 70%, 50%);
   --secondary: hsl(210, 20%, 30%);
   --invalid: hsl(0, 70%, 50%);
@@ -35,7 +35,7 @@
 
 @media only screen and (max-width: 768px) {
   :root {
-    --spacing: .4rem;
+    --space: .4rem;
     --modal-margin: 0;
     --modal-width: 100%;
     --modal-min-height: 100%;
@@ -76,11 +76,11 @@ body {
 }
 
 [role=listbox] {
-  padding: var(--input-padding-vertical) 0;
+  padding: var(--space-xs) 0;
 }
 [role=listbox] > div {
   position: relative;
-  --input-padding-vertical: 0;
+  --space-xs: 0;
   --border-radius: 0;
 }
 [role=listbox] > div button {
@@ -116,7 +116,7 @@ button,
   display: block;
   width: 100%;
   margin: 0;
-  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  padding: var(--space-xs) var(--space-s);
   line-height: var(--line-height);
   background-color: var(--background-color);
   color: var(--text-color);
@@ -175,7 +175,8 @@ input:is([type=button], [type=submit], [type=reset]):not(:disabled):is(.active, 
 }
 
 :is(button, input, [role=button])[type=submit] {
-  --secondary: var(--primary);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 input:is([type=checkbox], [type=radio]) {
@@ -206,15 +207,24 @@ form fieldset {
   margin: 0;
 }
 form details[role=group] {
-  margin-bottom: var(--form-gap);
+  margin-top: var(--space-xs);
+}
+form details[role=group] + details[role=group] {
+  margin-top: 0;
 }
 form label {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--form-gap);
-  margin-bottom: var(--form-gap);
+  gap: var(--space-xs);
+  margin-top: var(--space-xs);
   color: var(--text-color);
+}
+form label:first-child {
+  margin-top: 0;
+}
+form label:last-child {
+  margin-bottom: var(--space-xs);
 }
 form label > :first-child {
   white-space: nowrap;
@@ -234,7 +244,7 @@ form footer {
   align-items: center;
   flex-direction: row;
   justify-content: flex-end;
-  padding: var(--spacing) 0;
+  padding: var(--space) 0;
   margin-top: auto;
 }
 
@@ -245,7 +255,7 @@ details[role=group] summary[role=button] {
   cursor: pointer;
   list-style-type: none;
   border-radius: 0;
-  padding: var(--input-padding-vertical) var(--spacing);
+  padding: var(--space-xs) var(--space-s);
 }
 details[role=group] summary[role=button]::-webkit-details-marker {
   display: none;
@@ -259,7 +269,7 @@ details[role=group] summary[role=button]::before {
   transition: transform var(--transition);
 }
 details[role=group][open] summary[role=button] {
-  margin-bottom: var(--form-gap);
+  margin-bottom: var(--space-xs);
 }
 details[role=group][open] summary[role=button]::before {
   transform: rotate(0);
@@ -270,7 +280,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   background-repeat: no-repeat;
-  background-position: center right var(--input-padding-horizontal);
+  background-position: center right var(--space-s);
   background-image: var(--icon-arrow);
   background-size: 0.6rem;
 }
@@ -285,11 +295,11 @@ body > main {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding: var(--spacing);
+  padding: var(--space);
 }
 body > footer {
   border-top: var(--border) var(--border-color);
-  padding: var(--spacing);
+  padding: var(--space);
 }
 
 .grid {
@@ -317,7 +327,7 @@ nav [role=button] {
   background-color: var(--background-color);
   border: 0;
   border-radius: 0;
-  padding: var(--input-padding-vertical) var(--spacing);
+  padding: var(--space-xs) var(--space);
 }
 nav button:not(:disabled):hover,
 nav input:is([type=button], [type=submit], [type=reset]):not(:disabled):hover,
@@ -350,7 +360,7 @@ h3 {
 
 pre {
   margin: 1rem 0;
-  padding: var(--input-padding-vertical) var(--input-padding-horizontal);
+  padding: var(--space-xs) var(--space-s);
 }
 
 /*# sourceMappingURL=main.css.map */
