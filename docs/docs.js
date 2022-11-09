@@ -10,6 +10,7 @@ function toggleSource(event) {
 
     const lines = event.target.previousElementSibling
         .innerHTML
+        .replaceAll('=""', '')
         .split('\n')
         .filter(line => line.trim() !== '')
 

@@ -25,7 +25,7 @@
                 border-bottom-left-radius: 0;
 
                 &::before {
-                    content: '\2261';
+                    content: "=";
                 }
             }
 
@@ -36,7 +36,7 @@
                 border-bottom-right-radius: 0;
 
                 &::before {
-                    content: '\00d7';
+                    content: "\00d7";
                 }
             }
         }
@@ -53,7 +53,7 @@
         /* line for new item */
         &:last-child{
             button:last-child::before {
-                content: '+';
+                content: "+";
             }
         }
     }

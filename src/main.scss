@@ -95,6 +95,11 @@ body {
     padding: 0;
 }
 
+hr {
+    border: 0;
+    border-top: var(--border) var(--border-color);
+}
+
 @import "typography";
 @import "layout/base";
 @import "controls/base";

@@ -76,6 +76,11 @@ body {
   padding: 0;
 }
 
+hr {
+  border: 0;
+  border-top: var(--border) var(--border-color);
+}
+
 h1 {
   font-size: 2rem;
   line-height: 2rem;
@@ -176,11 +181,11 @@ input:is([type=button], [type=submit], [type=reset]),
   color: var(--inverse);
   text-decoration: none;
 }
-button:disabled,
-input:is([type=button], [type=submit], [type=reset]):disabled,
-[role=button]:disabled {
+button:is(:disabled, [disabled]),
+input:is([type=button], [type=submit], [type=reset]):is(:disabled, [disabled]),
+[role=button]:is(:disabled, [disabled]) {
   opacity: 0.5;
-  cursor: not-allowed;
+  pointer-events: none;
 }
 button:not(:disabled):hover, button:not(:disabled):focus,
 input:is([type=button], [type=submit], [type=reset]):not(:disabled):hover,
@@ -306,6 +311,62 @@ select {
   background-size: 0.6rem;
 }
 
+details[role=menu] {
+  line-height: 0; /* WTF? height more than summary */
+}
+
+details[role=menu][open] {
+  position: relative;
+}
+details[role=menu][open] summary:focus {
+  filter: none;
+}
+details[role=menu][open] summary::before {
+  content: " ";
+  position: fixed;
+  z-index: 500;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  cursor: default;
+  background: transparent;
+}
+details[role=menu][open] nav {
+  position: absolute;
+  z-index: 501;
+  border: var(--border) var(--border-color);
+  border-radius: var(--border-radius);
+  filter: brightness(1.3);
+  width: auto;
+  box-shadow: var(--shadow);
+}
+details[role=menu][open] nav.bottom-left {
+  top: calc(100% + 0.2rem);
+  left: 0;
+}
+details[role=menu][open] nav.bottom-right {
+  top: calc(100% + 0.2rem);
+  right: 0;
+  text-align: right;
+}
+details[role=menu][open] nav.top-left {
+  bottom: calc(100% + 0.2rem);
+  left: 0;
+}
+details[role=menu][open] nav.top-right {
+  bottom: calc(100% + 0.2rem);
+  right: 0;
+  text-align: right;
+}
+details[role=menu][open] nav > ul {
+  flex-direction: column;
+}
+details[role=menu][open] nav a {
+  white-space: nowrap;
+}
+
 [role=listbox] {
   padding: var(--space-xs) 0;
 }
@@ -334,7 +395,7 @@ select {
   border-bottom-left-radius: 0;
 }
 [role=listbox] > div button:first-child::before {
-  content: "≡";
+  content: "=";
 }
 [role=listbox] > div button:last-child {
   right: 0;

@@ -1,5 +1,5 @@
 button,
-input:is([type="button"],[type="submit"],[type="reset"]),
+input:is([type="button"], [type="submit"], [type="reset"]),
 [role="button"] {
     display: inline-block;
     width: auto;
@@ -8,9 +8,9 @@ input:is([type="button"],[type="submit"],[type="reset"]),
     color: var(--inverse);
     text-decoration: none;
 
-    &:disabled {
+    &:is(:disabled, [disabled]) {
         opacity: .5;
-        cursor: not-allowed;
+        pointer-events: none;
     }
 
     &:not(:disabled) {
@@ -25,7 +25,7 @@ input:is([type="button"],[type="submit"],[type="reset"]),
     }
 }
 
-:is(button,input,[role="button"])[type="submit"] {
+:is(button, input, [role="button"])[type="submit"] {
     background-color: var(--primary);
     border-color: var(--primary);
 }

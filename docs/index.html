@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Minimalistic CSS for Cesbo UI</title>
+	<title>Minimalistic CSS</title>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="../css/main.css" />
@@ -21,7 +21,7 @@
 </header>
 
 <main>
-<h1>Minimalistic CSS for Cesbo UI</h1>
+<h1>Minimalistic CSS</h1>
 
 <div class="docs-section" id="quick-start">
 
@@ -62,14 +62,17 @@
 					<span>Email</span>
 					<input type="text" />
 				</label>
+
 				<label>
 					<span>Password</span>
 					<input type="password" />
 				</label>
+
 				<label>
 					<span>Remember</span>
 					<input type="checkbox" />
 				</label>
+
 				<footer>
 					<input type="submit" value="Submit" />
 				</footer>
@@ -88,10 +91,12 @@
 					<span>Required</span>
 					<input type="text" placeholder="Invalid field until empty" required />
 				</label>
+
 				<label>
 					<span>Disabled</span>
 					<input type="text" placeholder="Disabled" disabled />
 				</label>
+
 				<label>
 					<span>Readonly</span>
 					<input type="text" placeholder="Readonly" readonly />
@@ -121,10 +126,12 @@
 						</optgroup>
 					</select>
 				</label>
+
 				<label>
 					<span>Checkbox</span>
 					<input type="checkbox" />
 				</label>
+
 				<label>
 					<span>Disabled checkbox</span>
 					<input type="checkbox" disabled />
@@ -151,6 +158,7 @@
 						<input type="text" />
 					</label>
 				</details>
+
 				<details role="group">
 					<summary class="optional" role="button">
 						<span>Delivery Address</span>
@@ -179,14 +187,51 @@
 <h2>Dropdown</h2>
 
 <div class="docs-box">
-	<div>
+	<div style="display:flex; gap:var(--space-xs);">
 		<details role="menu">
-			<summary role="button">Dropdown</summary>
-			<nav>
+			<summary role="button">bottom-left</summary>
+			<nav class="bottom-left">
 				<ul>
-					<li><a href="#">Item 1</a></li>
-					<li><a href="#">Item 2</a></li>
-					<li><a href="#">Item 3</a></li>
+					<li><a href="#" role="button">Menu item</a></li>
+					<li><a href="#" role="button" disabled>Disabled item</a></li>
+					<li><hr /></li>
+					<li><a href="#" role="button">Under the line</a></li>
+				</ul>
+			</nav>
+		</details>
+
+		<details role="menu">
+			<summary role="button">bottom-right</summary>
+			<nav class="bottom-right">
+				<ul>
+					<li><a href="#" role="button">Menu item</a></li>
+					<li><a href="#" role="button" disabled>Disabled item</a></li>
+					<li><hr /></li>
+					<li><a href="#" role="button">Under the line</a></li>
+				</ul>
+			</nav>
+		</details>
+
+		<details role="menu">
+			<summary role="button">top-left</summary>
+			<nav class="top-left">
+				<ul>
+					<li><a href="#" role="button">Menu item</a></li>
+					<li><a href="#" role="button" disabled>Disabled item</a></li>
+					<li><hr /></li>
+					<li><a href="#" role="button">Under the line</a></li>
+				</ul>
+			</nav>
+		</details>
+
+		<details role="menu">
+			<summary role="button">top-right</summary>
+			<nav class="top-right">
+				<ul>
+					<li><a href="#" role="button">Menu item</a></li>
+					<li><a href="#" role="button" disabled>Disabled item</a></li>
+					<li><hr /></li>
+					<li><a href="#" role="button">Under the line</a></li>
 				</ul>
 			</nav>
 		</details>
@@ -205,16 +250,19 @@
 				<input type="text" value="allow 127.0.0.1" required />
 				<button></button>
 			</div>
+
 			<div>
 				<button tabindex="-1"></button>
 				<input type="text" value="deny 192.168.0.0/24" required />
 				<button></button>
 			</div>
+
 			<div>
 				<button tabindex="-1"></button>
 				<input type="text" value="pass any" required />
 				<button></button>
 			</div>
+
 			<div>
 				<button tabindex="-1" disabled></button>
 				<input type="text" placeholder="new item" />
