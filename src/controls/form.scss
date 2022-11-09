@@ -1,0 +1,47 @@
+form {
+    overflow: hidden;
+
+    fieldset {
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    details[role="group"] {
+        margin-bottom: var(--form-gap);
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: var(--form-gap);
+        margin-bottom: var(--form-gap);
+        color: var(--text-color);
+
+        & > :first-child {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: right;
+            text-transform: capitalize;
+            width: var(--form-label-width);
+            min-width: var(--form-label-width);
+        }
+
+        & > :last-child:not(input[type="checkbox"], input[type="radio"]) {
+            flex-grow: 1;
+        }
+    }
+
+    footer {
+        display: flex;
+        gap: .5rem;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+
+        padding: var(--spacing) 0;
+        margin-top: auto;
+    }
+}

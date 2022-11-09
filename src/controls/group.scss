@@ -1,0 +1,32 @@
+details[role="group"] {
+    summary[role="button"] {
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+        cursor: pointer;
+        list-style-type: none;
+        border-radius: 0;
+        padding: var(--input-padding-vertical) var(--spacing);
+
+        &::-webkit-details-marker  {
+            display: none;
+        }
+
+        &::before {
+            content: " ";
+            width: .6rem;
+            height: .6rem;
+            transform: rotate(-90deg);
+            background-image: var(--icon-arrow);
+            transition: transform var(--transition);
+        }
+    }
+
+    &[open] summary[role="button"]{
+        margin-bottom: var(--form-gap);
+
+        &::before {
+            transform: rotate(0);
+        }
+    }
+}

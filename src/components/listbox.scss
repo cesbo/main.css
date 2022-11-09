@@ -1,0 +1,39 @@
+[role="listbox"] {
+    padding: var(--input-padding-vertical) 0;
+
+    &>div {
+        position: relative;
+
+        --input-padding-vertical: 0;
+        --border-radius: 0;
+
+        button {
+            position: absolute;
+            z-index: 1;
+            top: 1px;
+            bottom: 1px;
+            border: 0;
+
+            &:not(:hover, :focus) {
+                background-color: transparent;
+            }
+
+            &:first-child {
+                cursor: grab;
+                left: 1px;
+            }
+
+            &:last-child {
+                right: 1px;
+            }
+        }
+
+        input {
+            padding: 0 2.5rem;
+
+            &:not(:invalid) {
+                border-color: transparent;
+            }
+        }
+    }
+}

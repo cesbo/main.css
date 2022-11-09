@@ -1,0 +1,9 @@
+select {
+    -webkit-appearance: none;
+    -moz-appearance : none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: center right var(--input-padding-horizontal);
+    background-image: var(--icon-arrow);
+    background-size: .6rem;
+}

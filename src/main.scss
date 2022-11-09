@@ -96,7 +96,8 @@ body {
     padding: 0;
 }
 
-@import "layout";
-@import "grid";
-@import "form";
+@import "components/base";
+@import "controls/base";
+@import "layout/base";
+@import "nav/base";
 @import "typography";
