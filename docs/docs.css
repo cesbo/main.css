@@ -24,7 +24,7 @@ main {
 }
 
 .docs-source summary:hover {
-	filter: brightness(1.3);
+	filter: brightness(var(--layer-brightness));
 }
 
 .docs-source[open] summary {

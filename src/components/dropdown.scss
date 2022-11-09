@@ -39,7 +39,7 @@ details[role="menu"][open] {
         z-index: 501;
         border: var(--border) var(--border-color);
         border-radius: var(--border-radius);
-        filter: brightness(1.3);
+        filter: brightness(var(--layer-brightness));
         width: auto;
         box-shadow: var(--shadow);
 

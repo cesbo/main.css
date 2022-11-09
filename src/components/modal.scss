@@ -19,6 +19,6 @@ dialog[open] {
         border: var(--border) var(--border-color);
         border-radius: var(--border-radius);
         box-shadow: var(--shadow);
-        filter: brightness(1.3);
+        filter: brightness(var(--layer-brightness));
     }
 }
