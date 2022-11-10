@@ -338,17 +338,17 @@ select {
     transform: translateY(0);
   }
 }
-details[role=menu] {
+details.menu {
   line-height: 0; /* WTF? height more than summary */
 }
 
-details[role=menu][open] {
+details.menu[open] {
   position: relative;
 }
-details[role=menu][open] summary:focus {
+details.menu[open] summary:focus {
   filter: none;
 }
-details[role=menu][open] summary::before {
+details.menu[open] summary::before {
   content: " ";
   position: fixed;
   z-index: 500;
@@ -360,7 +360,7 @@ details[role=menu][open] summary::before {
   cursor: default;
   background: transparent;
 }
-details[role=menu][open] nav {
+details.menu[open] nav {
   position: absolute;
   z-index: 501;
   border: var(--border);
@@ -368,33 +368,39 @@ details[role=menu][open] nav {
   border-radius: var(--border-radius);
   filter: brightness(var(--layer-brightness));
   width: auto;
-  box-shadow: var(--shadow);
-}
-details[role=menu][open] nav.bottom-left {
+  /* default bottom-left */
   top: calc(100% + 0.2rem);
+  bottom: auto;
   left: 0;
+  right: auto;
   animation: sweep-down 0.1s ease-out;
 }
-details[role=menu][open] nav.bottom-right {
-  top: calc(100% + 0.2rem);
-  right: 0;
-  animation: sweep-down 0.1s ease-out;
-}
-details[role=menu][open] nav.top-left {
-  bottom: calc(100% + 0.2rem);
-  left: 0;
-  animation: sweep-up 0.1s ease-out;
-}
-details[role=menu][open] nav.top-right {
-  bottom: calc(100% + 0.2rem);
-  right: 0;
-  animation: sweep-up 0.1s ease-out;
-}
-details[role=menu][open] nav > ul {
+details.menu[open] nav > ul {
   flex-direction: column;
 }
-details[role=menu][open] nav a {
+details.menu[open] nav a {
   white-space: nowrap;
+}
+details.menu[open].bottom-right nav {
+  top: calc(100% + 0.2rem);
+  bottom: auto;
+  left: auto;
+  right: 0;
+  animation: sweep-down 0.1s ease-out;
+}
+details.menu[open].top-left nav {
+  top: auto;
+  bottom: calc(100% + 0.2rem);
+  left: 0;
+  right: auto;
+  animation: sweep-up 0.1s ease-out;
+}
+details.menu[open].top-right nav {
+  top: auto;
+  bottom: calc(100% + 0.2rem);
+  left: auto;
+  right: 0;
+  animation: sweep-up 0.1s ease-out;
 }
 
 [role=listbox] {

@@ -8,11 +8,11 @@
     100%  { opacity: 1; transform: translateY(0) }
 }
 
-details[role="menu"] {
+details.menu {
     line-height: 0; /* WTF? height more than summary */
 }
 
-details[role="menu"][open] {
+details.menu[open] {
     position: relative;
 
     summary {
@@ -42,31 +42,13 @@ details[role="menu"][open] {
         border-radius: var(--border-radius);
         filter: brightness(var(--layer-brightness));
         width: auto;
-        box-shadow: var(--shadow);
 
-        &.bottom-left {
-            top: calc(100% + .2rem);
-            left: 0;
-            animation: sweep-down .1s ease-out;
-        }
-
-        &.bottom-right {
-            top: calc(100% + .2rem);
-            right: 0;
-            animation: sweep-down .1s ease-out;
-        }
-
-        &.top-left {
-            bottom: calc(100% + .2rem);
-            left: 0;
-            animation: sweep-up .1s ease-out;
-        }
-
-        &.top-right {
-            bottom: calc(100% + .2rem);
-            right: 0;
-            animation: sweep-up .1s ease-out;
-        }
+        /* default bottom-left */
+        top: calc(100% + .2rem);
+        bottom: auto;
+        left: 0;
+        right: auto;
+        animation: sweep-down .1s ease-out;
 
         &>ul {
             flex-direction: column;
@@ -75,5 +57,29 @@ details[role="menu"][open] {
         a {
             white-space: nowrap;
         }
+    }
+
+    &.bottom-right nav {
+        top: calc(100% + .2rem);
+        bottom: auto;
+        left: auto;
+        right: 0;
+        animation: sweep-down .1s ease-out;
+    }
+
+    &.top-left nav {
+        top: auto;
+        bottom: calc(100% + .2rem);
+        left: 0;
+        right: auto;
+        animation: sweep-up .1s ease-out;
+    }
+
+    &.top-right nav {
+        top: auto;
+        bottom: calc(100% + .2rem);
+        left: auto;
+        right: 0;
+        animation: sweep-up .1s ease-out;
     }
 }
