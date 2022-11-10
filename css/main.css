@@ -139,8 +139,8 @@ input,
 select,
 textarea,
 button,
-[role=button],
-[role=listbox] {
+.button,
+.listbox {
   display: block;
   width: 100%;
   margin: 0;
@@ -176,7 +176,7 @@ textarea:focus {
 
 button,
 input:is([type=button], [type=submit], [type=reset]),
-[role=button] {
+.button {
   display: inline-block;
   width: auto;
   cursor: pointer;
@@ -186,22 +186,22 @@ input:is([type=button], [type=submit], [type=reset]),
 }
 button:is(:disabled, [disabled]),
 input:is([type=button], [type=submit], [type=reset]):is(:disabled, [disabled]),
-[role=button]:is(:disabled, [disabled]) {
+.button:is(:disabled, [disabled]) {
   opacity: 0.5;
   pointer-events: none;
 }
 button:not(:disabled):is(:hover, :focus, .active),
 input:is([type=button], [type=submit], [type=reset]):not(:disabled):is(:hover, :focus, .active),
-[role=button]:not(:disabled):is(:hover, :focus, .active) {
+.button:not(:disabled):is(:hover, :focus, .active) {
   filter: brightness(var(--layer-brightness));
 }
 button:not(:disabled):active,
 input:is([type=button], [type=submit], [type=reset]):not(:disabled):active,
-[role=button]:not(:disabled):active {
+.button:not(:disabled):active {
   background: radial-gradient(var(--secondary), var(--inverse) 500%) no-repeat;
 }
 
-:is(button, input, [role=button])[type=submit] {
+:is(button, input, .button)[type=submit] {
   --secondary: var(--primary);
 }
 
@@ -236,10 +236,10 @@ form fieldset {
   padding: 0;
   margin: 0;
 }
-form details[role=group] {
+form details.group {
   margin-top: var(--space-xs);
 }
-form details[role=group] + details[role=group] {
+form details.group + details.group {
   margin-top: 0;
 }
 form label {
@@ -278,10 +278,10 @@ form footer {
   margin-top: auto;
 }
 
-details[role=group][open] {
+details.group[open] {
   animation: expand 0.1s ease-out;
 }
-details[role=group] summary[role=button] {
+details.group summary.button {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
@@ -290,10 +290,10 @@ details[role=group] summary[role=button] {
   border-radius: 0;
   padding: var(--space-xs) var(--space-s);
 }
-details[role=group] summary[role=button]::-webkit-details-marker {
+details.group summary.button::-webkit-details-marker {
   display: none;
 }
-details[role=group] summary[role=button]::before {
+details.group summary.button::before {
   content: " ";
   width: 0.6rem;
   height: 0.6rem;
@@ -301,10 +301,10 @@ details[role=group] summary[role=button]::before {
   background-image: var(--icon-arrow);
   transition: transform 0.1s ease-out;
 }
-details[role=group][open] summary[role=button] {
+details.group[open] summary.button {
   margin-bottom: var(--space-xs);
 }
-details[role=group][open] summary[role=button]::before {
+details.group[open] summary.button::before {
   transform: rotate(0);
 }
 
@@ -403,14 +403,14 @@ details.menu[open].top-right nav {
   animation: sweep-up 0.1s ease-out;
 }
 
-[role=listbox] {
+div.listbox {
   padding: var(--space-xs) 0;
 }
-[role=listbox] > div {
+div.listbox > div {
   position: relative;
   /* line for new item */
 }
-[role=listbox] > div button {
+div.listbox > div button {
   position: absolute;
   z-index: 1;
   top: 0;
@@ -421,35 +421,35 @@ details.menu[open].top-right nav {
   /* left button (move) */
   /* right button (remove) */
 }
-[role=listbox] > div button:not(:hover, :focus) {
+div.listbox > div button:not(:hover, :focus) {
   background: transparent;
 }
-[role=listbox] > div button:first-child {
+div.listbox > div button:first-child {
   cursor: grab;
   left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-[role=listbox] > div button:first-child::before {
+div.listbox > div button:first-child::before {
   content: "=";
 }
-[role=listbox] > div button:last-child {
+div.listbox > div button:last-child {
   right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-[role=listbox] > div button:last-child::before {
+div.listbox > div button:last-child::before {
   content: "×";
 }
-[role=listbox] > div input {
+div.listbox > div input {
   padding: 0 2.5rem;
   border: 0;
   border-radius: 0;
 }
-[role=listbox] > div input:not(:invalid) {
+div.listbox > div input:not(:invalid) {
   border-color: transparent;
 }
-[role=listbox] > div:last-child button:last-child::before {
+div.listbox > div:last-child button:last-child::before {
   content: "+";
 }
 
@@ -491,7 +491,7 @@ nav > ul {
 }
 nav button,
 nav input:is([type=button], [type=submit], [type=reset]),
-nav [role=button] {
+nav .button {
   display: block;
   background: var(--background);
   border: 0;
@@ -500,7 +500,7 @@ nav [role=button] {
 }
 nav button:not(:disabled):hover,
 nav input:is([type=button], [type=submit], [type=reset]):not(:disabled):hover,
-nav [role=button]:not(:disabled):hover {
+nav .button:not(:disabled):hover {
   filter: brightness(var(--layer-brightness));
 }
 
