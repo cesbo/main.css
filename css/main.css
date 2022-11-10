@@ -335,6 +335,19 @@ select {
 details.menu {
   line-height: 0; /* WTF? height more than summary */
 }
+details.menu summary.button::after {
+  display: block;
+  content: "...";
+  text-align: center;
+}
+details.menu summary.button:not(:empty)::after {
+  display: inline-block;
+  content: " ";
+  margin-left: var(--space-s);
+  background: var(--icon-arrow);
+  width: 0.6rem;
+  height: 0.6rem;
+}
 
 details.menu[open] {
   position: relative;

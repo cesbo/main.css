@@ -10,6 +10,23 @@
 
 details.menu {
     line-height: 0; /* WTF? height more than summary */
+
+    summary.button {
+        &::after {
+            display: block;
+            content: "...";
+            text-align: center;
+        }
+
+        &:not(:empty)::after {
+            display: inline-block;
+            content: " ";
+            margin-left: var(--space-s);
+            background: var(--icon-arrow);
+            width: .6rem;
+            height: .6rem;
+        }
+    }
 }
 
 details.menu[open] {
