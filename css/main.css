@@ -337,15 +337,15 @@ select {
     transform: translateY(0);
   }
 }
-details.menu {
-  line-height: 0; /* WTF? height more than summary */
+.menu {
+  position: relative;
 }
-details.menu summary.button::after {
+.menu > button::after {
   display: block;
   content: "...";
   text-align: center;
 }
-details.menu summary.button:not(:empty)::after {
+.menu > button:not(:empty)::after {
   display: inline-block;
   content: " ";
   margin-left: var(--space-s);
@@ -353,28 +353,14 @@ details.menu summary.button:not(:empty)::after {
   width: 0.6rem;
   height: 0.6rem;
 }
+.menu nav {
+  display: none;
+}
 
-details.menu[open] {
-  position: relative;
-}
-details.menu[open] summary:focus {
-  filter: none;
-}
-details.menu[open] summary::before {
-  content: " ";
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  cursor: default;
-  background-color: transparent;
-}
-details.menu[open] nav {
+.menu.open nav {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
+  display: block;
   border: var(--border);
   border-radius: var(--border-radius);
   width: auto;
@@ -385,27 +371,31 @@ details.menu[open] nav {
   right: auto;
   animation: sweep-down 0.1s ease-out;
 }
-details.menu[open] nav > ul {
+.menu.open nav ul {
   flex-direction: column;
 }
-details.menu[open] nav a {
+.menu.open nav button,
+.menu.open nav input:is([type=button], [type=submit], [type=reset]),
+.menu.open nav .button {
+  width: 100%;
   white-space: nowrap;
+  text-align: left;
 }
-details.menu[open].bottom-right nav {
+.menu.open.bottom-right nav {
   top: calc(100% + 0.2rem);
   bottom: auto;
   left: auto;
   right: 0;
   animation: sweep-down 0.1s ease-out;
 }
-details.menu[open].top-left nav {
+.menu.open.top-left nav {
   top: auto;
   bottom: calc(100% + 0.2rem);
   left: 0;
   right: auto;
   animation: sweep-up 0.1s ease-out;
 }
-details.menu[open].top-right nav {
+.menu.open.top-right nav {
   top: auto;
   bottom: calc(100% + 0.2rem);
   left: auto;

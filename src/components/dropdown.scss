@@ -8,10 +8,10 @@
     100%  { opacity: 1; transform: translateY(0) }
 }
 
-details.menu {
-    line-height: 0; /* WTF? height more than summary */
+.menu {
+    position: relative;
 
-    summary.button {
+    &>button {
         &::after {
             display: block;
             content: "...";
@@ -27,33 +27,17 @@ details.menu {
             height: .6rem;
         }
     }
-}
-
-details.menu[open] {
-    position: relative;
-
-    summary {
-        &:focus {
-            filter: none;
-        }
-
-        &::before {
-            content: " ";
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            display: block;
-            cursor: default;
-            background-color: transparent;
-        }
-    }
 
     nav {
+        display: none;
+    }
+}
+
+.menu.open {
+    nav {
         position: absolute;
-        z-index: 2;
+        z-index: 1;
+        display: block;
         border: var(--border);
         border-radius: var(--border-radius);
         width: auto;
@@ -65,12 +49,16 @@ details.menu[open] {
         right: auto;
         animation: sweep-down .1s ease-out;
 
-        &>ul {
+        ul {
             flex-direction: column;
         }
 
-        a {
+        button,
+        input:is([type=button], [type=submit], [type=reset]),
+        .button {
+            width: 100%;
             white-space: nowrap;
+            text-align: left;
         }
     }
 

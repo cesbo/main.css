@@ -201,8 +201,8 @@
 <h2>Dropdown</h2>
 
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
-	<details class="menu">
-		<summary class="button">bottom-left</summary>
+	<div class="menu">
+		<button onClick="OpenDropdown(event)">bottom-left</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -211,10 +211,10 @@
 				<li><a href="#" class="button">Under the line</a></li>
 			</ul>
 		</nav>
-	</details>
+	</div>
 
-	<details class="menu bottom-right">
-		<summary class="button">bottom-right</summary>
+	<div class="menu bottom-right">
+		<button onClick="OpenDropdown(event)">bottom-right</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -223,10 +223,10 @@
 				<li><a href="#" class="button">Under the line</a></li>
 			</ul>
 		</nav>
-	</details>
+	</div>
 
-	<details class="menu top-left">
-		<summary class="button">top-left</summary>
+	<div class="menu top-left">
+		<button onClick="OpenDropdown(event)">top-left</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -235,10 +235,10 @@
 				<li><a href="#" class="button">Under the line</a></li>
 			</ul>
 		</nav>
-	</details>
+	</div>
 
-	<details class="menu top-right">
-		<summary class="button">top-right</summary>
+	<div class="menu top-right">
+		<button onClick="OpenDropdown(event)">top-right</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -247,14 +247,14 @@
 				<li><a href="#" class="button">Under the line</a></li>
 			</ul>
 		</nav>
-	</details>
+	</div>
 </div>
 
 <p>Dropdown without text in the button will be with three dots:</p>
 
 <div class="docs-box">
-	<details class="menu">
-		<summary class="button"></summary>
+	<div class="menu">
+		<button onClick="OpenDropdown(event)"></button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -263,7 +263,7 @@
 				<li><a href="#" class="button">Under the line</a></li>
 			</ul>
 		</nav>
-	</details>
+	</div>
 </div>
 
 <h2>Modal</h2>

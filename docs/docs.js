@@ -58,6 +58,15 @@ window.CloseModal = function(id) {
     document.getElementById(id).classList.remove('open')
 }
 
+window.OpenDropdown = function(event) {
+    const btn = event.target
+    const el = btn.parentNode
+
+    el.classList.toggle('open')
+
+    // TODO
+}
+
 function init() {
     if(location.hash === '') {
         location.hash = '#quick-start'
