@@ -29,12 +29,12 @@ function toggleSource(event) {
 function onHashChange() {
     const nav = document.querySelector('nav.docs-navbar')
     document.querySelectorAll('.docs-section').forEach(el => el.style.display = 'none')
-    nav.querySelectorAll('a.active').forEach(el => el.classList.remove('active'))
+    nav.querySelectorAll('a.focus').forEach(el => el.classList.remove('focus'))
 
     const hash = location.hash.substring(2).split('/')
     const element = document.getElementById(hash)
     if(element) {
-        nav.querySelectorAll(`a[href="#/${hash}"]`).forEach(el => el.classList.add('active'))
+        nav.querySelectorAll(`a[href="#/${hash}"]`).forEach(el => el.classList.add('focus'))
         element.style.display = 'block'
     }
 }
