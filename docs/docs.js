@@ -26,16 +26,6 @@ function toggleSource(event) {
     pre.innerHTML = hljs.highlightAuto(html).value
 }
 
-function onHashChange() {
-    document.querySelectorAll('.docs-navbar a.focus').forEach(el => {
-        el.classList.remove('focus')
-    })
-
-    document.querySelectorAll('.docs-navbar a[href="' + location.hash + '"]').forEach(el => {
-        el.classList.add('focus')
-    })
-}
-
 function initSourcePreview() {
     document.querySelectorAll('.docs-box').forEach(el => {
         const pre = document.createElement('pre')
@@ -48,6 +38,24 @@ function initSourcePreview() {
         details.addEventListener('toggle', toggleSource)
         el.parentNode.insertBefore(details, el.nextSibling)
     })
+}
+
+function onHashChange() {
+    document.querySelectorAll('.docs-navbar a.focus').forEach(el => {
+        el.classList.remove('focus')
+    })
+
+    document.querySelectorAll('.docs-navbar a[href="' + location.hash + '"]').forEach(el => {
+        el.classList.add('focus')
+    })
+}
+
+window.OpenModal = function(id) {
+    document.getElementById(id).classList.add('open')
+}
+
+window.CloseModal = function(id) {
+    document.getElementById(id).classList.remove('open')
 }
 
 function init() {

@@ -473,6 +473,9 @@ div.listbox > div:last-child button:last-child::before {
   overflow: auto;
   z-index: 1;
 }
+.modal.open {
+  display: block;
+}
 .modal::before {
   position: absolute;
   z-index: -1;

@@ -269,10 +269,12 @@
 <h2>Modal</h2>
 
 <div class="docs-box">
-	<div class="modal" style="display: none;">
+	<button onClick="OpenModal('docs-modal-1')">Open modal</button>
+	<div class="modal" id="docs-modal-1">
 		<div class="dialog">
 			<header>
-				Form in modal<button>&times;</button>
+				Form in modal
+				<button onClick="CloseModal('docs-modal-1')">&times;</button>
 			</header>
 			<form class="container">
 				<fieldset>
@@ -291,10 +293,7 @@
 					<summary class="button"></summary>
 					<nav>
 						<ul>
-							<li><a href="#" class="button">Menu item</a></li>
-							<li><a href="#" class="button" disabled>Disabled item</a></li>
-							<li><hr /></li>
-							<li><a href="#" class="button">Under the line</a></li>
+							<li><button onClick="CloseModal('docs-modal-1')">Close</button></li>
 						</ul>
 					</nav>
 				</details>
