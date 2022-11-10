@@ -26,8 +26,8 @@
   --color-secondary: hsl(210, 20%, 30%);
   --color-invalid: hsl(0, 70%, 50%);
   --color-inverse: hsl(0, 0%, 100%);
-  --filter-focus: brightness(1.3);
-  --filter-active: opacity(.5);
+  --filter-focus: brightness(1.2);
+  --filter-active: brightness(1.4);
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
 }
@@ -186,20 +186,20 @@ input:is([type=button], [type=submit], [type=reset]),
   text-decoration: none;
   border: 0;
 }
-button:is(:disabled, [disabled]),
-input:is([type=button], [type=submit], [type=reset]):is(:disabled, [disabled]),
-.button:is(:disabled, [disabled]) {
+button:is(:disabled, .disabled),
+input:is([type=button], [type=submit], [type=reset]):is(:disabled, .disabled),
+.button:is(:disabled, .disabled) {
   opacity: 0.5;
   pointer-events: none;
 }
-button:not(:disabled):is(:hover, :focus, .active),
-input:is([type=button], [type=submit], [type=reset]):not(:disabled):is(:hover, :focus, .active),
-.button:not(:disabled):is(:hover, :focus, .active) {
+button:is(:hover, :focus, .focus),
+input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus, .focus),
+.button:is(:hover, :focus, .focus) {
   filter: var(--filter-focus);
 }
-button:not(:disabled):active,
-input:is([type=button], [type=submit], [type=reset]):not(:disabled):active,
-.button:not(:disabled):active {
+button:active,
+input:is([type=button], [type=submit], [type=reset]):active,
+.button:active {
   filter: var(--filter-active);
 }
 
@@ -464,6 +464,7 @@ div.listbox > div:last-child button:last-child::before {
 }
 
 .modal {
+  display: none;
   position: fixed;
   top: 0;
   bottom: 0;

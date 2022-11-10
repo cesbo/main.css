@@ -9,19 +9,17 @@ input:is([type="button"], [type="submit"], [type="reset"]),
     text-decoration: none;
     border: 0;
 
-    &:is(:disabled, [disabled]) {
+    &:is(:disabled, .disabled) {
         opacity: .5;
         pointer-events: none;
     }
 
-    &:not(:disabled) {
-        &:is(:hover, :focus, .focus) {
-            filter: var(--filter-focus);
-        }
+    &:is(:hover, :focus, .focus) {
+        filter: var(--filter-focus);
+    }
 
-        &:active {
-            filter: var(--filter-active);
-        }
+    &:active {
+        filter: var(--filter-active);
     }
 }
 

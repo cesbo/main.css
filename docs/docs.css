@@ -6,6 +6,10 @@ main {
 	display: none;
 }
 
+.docs-section:target {
+	display: block;
+}
+
 .docs-box {
 	border: var(--border);
 	padding: var(--space-xs) var(--space-s);
