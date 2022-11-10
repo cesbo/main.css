@@ -7,10 +7,10 @@ form {
         margin: 0;
     }
 
-    details[role="group"] {
+    details.group {
         margin-top: var(--space-xs);
 
-        &+details[role="group"] {
+        &+details.group {
             margin-top: 0;
         }
     }
