@@ -12,7 +12,7 @@ nav {
 
     button,
     input:is([type=button], [type=submit], [type=reset]),
-    [role=button] {
+    .button {
         display: block;
         background: var(--background);
         border: 0;

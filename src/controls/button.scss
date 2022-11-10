@@ -1,6 +1,6 @@
 button,
 input:is([type="button"], [type="submit"], [type="reset"]),
-[role="button"] {
+.button {
     display: inline-block;
     width: auto;
     cursor: pointer;
@@ -24,6 +24,6 @@ input:is([type="button"], [type="submit"], [type="reset"]),
     }
 }
 
-:is(button, input, [role="button"])[type="submit"] {
+:is(button, input, .button)[type="submit"] {
     --secondary: var(--primary);
 }

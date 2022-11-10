@@ -3,7 +3,7 @@ details[role="group"] {
         animation: expand .1s ease-out;
     }
 
-    summary[role="button"] {
+    summary.button {
         display: flex;
         align-items: center;
         gap: var(--space-xs);
@@ -26,7 +26,7 @@ details[role="group"] {
         }
     }
 
-    &[open] summary[role="button"]{
+    &[open] summary.button{
         margin-bottom: var(--space-xs);
 
         &::before {
