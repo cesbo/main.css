@@ -21,7 +21,7 @@
   --modal-min-width: 600px;
   /* default colors */
   --shadow: 0 0 .5rem rgba(0, 0, 0, 0.6);
-  --background-color: hsl(210, 20%, 20%);
+  --background: hsl(210, 20%, 20%);
   --text-color: hsl(210, 20%, 100%);
   --primary: hsl(210, 70%, 50%);
   --secondary: hsl(210, 20%, 30%);
@@ -60,7 +60,7 @@ html {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  background-color: var(--background-color);
+  background: var(--background);
   color: var(--text-color);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
@@ -146,7 +146,7 @@ button,
   margin: 0;
   padding: var(--space-xs) var(--space-s);
   line-height: var(--line-height);
-  background-color: var(--background-color);
+  background: var(--background);
   color: var(--text-color);
   border: var(--border);
   border-color: var(--secondary);
@@ -216,9 +216,9 @@ input:is([type=checkbox], [type=radio]) {
   appearance: none;
 }
 input:is([type=checkbox], [type=radio]):checked {
-  background-color: var(--primary);
+  background: var(--primary);
   background-clip: content-box;
-  box-shadow: inset 0 0 0 0.2rem var(--background-color);
+  box-shadow: inset 0 0 0 0.2rem var(--background);
 }
 
 form {
@@ -409,7 +409,7 @@ details[role=menu][open] nav a {
   /* right button (remove) */
 }
 [role=listbox] > div button:not(:hover, :focus) {
-  background-color: transparent;
+  background: transparent;
 }
 [role=listbox] > div button:first-child {
   cursor: grab;
@@ -446,7 +446,7 @@ dialog[open] {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background: transparent;
   cursor: default;
   border: 0;
   padding: 0;
@@ -457,7 +457,7 @@ dialog[open] > article {
   min-width: var(--modal-min-width);
   min-height: var(--modal-min-height);
   margin: var(--modal-margin);
-  background-color: var(--background-color);
+  background: var(--background);
   border: var(--border);
   border-color: var(--secondary);
   border-radius: var(--border-radius);
@@ -468,7 +468,7 @@ dialog[open] > article {
 nav {
   display: block;
   width: 100%;
-  background-color: var(--background-color);
+  background: var(--background);
 }
 nav > ul {
   display: flex;
@@ -480,7 +480,7 @@ nav button,
 nav input:is([type=button], [type=submit], [type=reset]),
 nav [role=button] {
   display: block;
-  background-color: var(--background-color);
+  background: var(--background);
   border: 0;
   border-radius: 0;
   padding: var(--space-xs) var(--space);

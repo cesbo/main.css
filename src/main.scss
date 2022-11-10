@@ -29,7 +29,7 @@
 
     --shadow: 0 0 .5rem rgba(0, 0, 0, 0.6);
 
-    --background-color: hsl(210, 20%, 20%);
+    --background: hsl(210, 20%, 20%);
     --text-color: hsl(210, 20%, 100%);
 
     --primary: hsl(210, 70%, 50%);
@@ -78,7 +78,7 @@ html {
     font-weight: var(--font-weight);
     line-height: var(--line-height);
 
-    background-color: var(--background-color);
+    background: var(--background);
     color: var(--text-color);
 
     -webkit-tap-highlight-color: transparent;

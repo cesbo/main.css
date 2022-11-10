@@ -9,8 +9,8 @@ input:is([type="checkbox"],[type="radio"]) {
     appearance: none;
 
     &:checked {
-        background-color: var(--primary);
+        background: var(--primary);
         background-clip: content-box;
-        box-shadow: inset 0 0 0 .2rem var(--background-color);
+        box-shadow: inset 0 0 0 .2rem var(--background);
     }
 }
