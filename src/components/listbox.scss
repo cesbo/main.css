@@ -14,7 +14,7 @@ div.listbox {
             width: 2rem;
 
             &:not(:hover, :focus) {
-                background: transparent;
+                background-color: transparent;
             }
 
             /* left button (move) */

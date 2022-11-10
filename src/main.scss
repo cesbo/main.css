@@ -11,7 +11,7 @@
 
     --line-height: 1.5rem;
 
-    --border: 1px solid;
+    --border: 1px solid var(--secondary);
     --border-radius: 3px;
 
     --grid-column-gap: var(--space);
@@ -78,7 +78,7 @@ html {
     font-weight: var(--font-weight);
     line-height: var(--line-height);
 
-    background: var(--background);
+    background-color: var(--background);
     color: var(--text-color);
 
     -webkit-tap-highlight-color: transparent;
@@ -97,7 +97,6 @@ body {
 hr {
     border: 0;
     border-top: var(--border);
-    border-color: var(--secondary);
 }
 
 @import "typography";

@@ -30,7 +30,7 @@ details.menu[open] {
             right: 0;
             display: block;
             cursor: default;
-            background: transparent;
+            background-color: transparent;
         }
     }
 
@@ -38,7 +38,6 @@ details.menu[open] {
         position: absolute;
         z-index: 501;
         border: var(--border);
-        border-color: var(--secondary);
         border-radius: var(--border-radius);
         filter: brightness(var(--layer-brightness));
         width: auto;

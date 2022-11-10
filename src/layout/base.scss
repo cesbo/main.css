@@ -3,7 +3,6 @@ body {
         position: sticky;
         top: 0;
         border-bottom: var(--border);
-        border-color: var(--secondary);
         z-index: 1;
     }
 
@@ -16,7 +15,6 @@ body {
 
     &>footer {
         border-top: var(--border);
-        border-color: var(--secondary);
         padding: var(--space);
     }
 }

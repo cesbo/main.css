@@ -1,7 +1,4 @@
 input:is([type="checkbox"],[type="radio"]) {
-    display: grid; /* for ::before mark */
-    place-content: center;
-
     padding: 0;
     height: 1.2rem;
     width: 1.2rem;
@@ -10,16 +7,16 @@ input:is([type="checkbox"],[type="radio"]) {
     -moz-appearance: none;
     appearance: none;
 
-    &::before {
-        content: "";
-        width: .6rem;
-        height: .6rem;
-        transform: scale(0);
-        transition: .1s transform ease-out;
-        background-color: var(--primary);
-    }
+    background-color: transparent;
+    background-clip: padding-box;
+    transition: .1s background-color ease-out;
 
-    &:checked::before {
-        transform: scale(1);
+    &:checked {
+        background-color: var(--primary);
+        box-shadow: inset 0 0 0 3px var(--background);
     }
+}
+
+input[type="radio"] {
+    border-radius: 50%;
 }

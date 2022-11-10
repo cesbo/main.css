@@ -1,7 +1,7 @@
 nav {
     display: block;
     width: 100%;
-    background: var(--background);
+    background-color: var(--background);
 
     &>ul {
         display: flex;
@@ -14,7 +14,7 @@ nav {
     input:is([type=button], [type=submit], [type=reset]),
     .button {
         display: block;
-        background: var(--background);
+        background-color: var(--background);
         border: 0;
         border-radius: 0;
         padding: var(--space-xs) var(--space);

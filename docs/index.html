@@ -29,7 +29,7 @@
 
 <h2>Installation</h2>
 
-<div style="border:var(--border) var(--border-color);">
+<div style="border:var(--border);">
 	<pre>
 &lt;link rel="stylesheet" type="text/css" href="https://cdn.cesbo.com/main.css" /&gt;
 	</pre>
@@ -120,14 +120,38 @@
 				</select>
 			</label>
 
+			<hr />
+
 			<label>
 				<span>Checkbox</span>
 				<input type="checkbox" />
 			</label>
 
 			<label>
-				<span>Disabled checkbox</span>
+				<span>Checked</span>
+				<input type="checkbox" checked />
+			</label>
+
+			<label>
+				<span>Disabled</span>
 				<input type="checkbox" disabled />
+			</label>
+
+			<hr />
+
+			<label>
+				<span>JavaScript</span>
+				<input type="radio" name="language" value="JavaScript" />
+			</label>
+
+			<label>
+				<span>Go</span>
+				<input type="radio" name="language" value="Go" />
+			</label>
+
+			<label>
+				<span>Rust</span>
+				<input type="radio" name="language" value="Rust" />
 			</label>
 		</fieldset>
 	</form>

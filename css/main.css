@@ -9,7 +9,10 @@
   --space-l: 1.2rem;
   --space-xl: 1.8rem;
   --line-height: 1.5rem;
-  --border: 1px solid;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-color: var(--secondary);
+  --border: var(--border-width) var(--border-style) var(--border-color);
   --border-radius: 3px;
   --grid-column-gap: var(--space);
   --grid-row-gap: var(--space);
@@ -60,7 +63,7 @@ html {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  background: var(--background);
+  background-color: var(--background);
   color: var(--text-color);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
@@ -78,7 +81,6 @@ body {
 hr {
   border: 0;
   border-top: var(--border);
-  border-color: var(--secondary);
 }
 
 h1 {
@@ -113,7 +115,6 @@ body > header {
   position: sticky;
   top: 0;
   border-bottom: var(--border);
-  border-color: var(--secondary);
   z-index: 1;
 }
 body > main {
@@ -124,7 +125,6 @@ body > main {
 }
 body > footer {
   border-top: var(--border);
-  border-color: var(--secondary);
   padding: var(--space);
 }
 
@@ -146,10 +146,9 @@ button,
   margin: 0;
   padding: var(--space-xs) var(--space-s);
   line-height: var(--line-height);
-  background: var(--background);
+  background-color: var(--background);
   color: var(--text-color);
   border: var(--border);
-  border-color: var(--secondary);
   border-radius: var(--border-radius);
   overflow: hidden;
   outline: none;
@@ -180,9 +179,18 @@ input:is([type=button], [type=submit], [type=reset]),
   display: inline-block;
   width: auto;
   cursor: pointer;
-  background: var(--secondary);
+  background-color: var(--secondary);
   color: var(--inverse);
   text-decoration: none;
+  border: 0;
+}
+button.outline,
+input:is([type=button], [type=submit], [type=reset]).outline,
+.button.outline {
+  background-color: transparent;
+  color: var(--text-color);
+  border: var(--border);
+  border-color: var(--secondary);
 }
 button:is(:disabled, [disabled]),
 input:is([type=button], [type=submit], [type=reset]):is(:disabled, [disabled]),
@@ -206,26 +214,24 @@ input:is([type=button], [type=submit], [type=reset]):not(:disabled):active,
 }
 
 input:is([type=checkbox], [type=radio]) {
-  display: grid; /* for ::before mark */
-  place-content: center;
   padding: 0;
-  height: 1.2rem;
-  width: 1.2rem;
+  height: 1rem;
+  width: 1rem;
   cursor: pointer;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-color: transparent;
+  background-clip: padding-box;
+  transition: 0.1s background-color ease-out;
 }
-input:is([type=checkbox], [type=radio])::before {
-  content: "";
-  width: 0.6rem;
-  height: 0.6rem;
-  transform: scale(0);
-  transition: 0.1s transform ease-out;
+input:is([type=checkbox], [type=radio]):checked {
   background-color: var(--primary);
+  box-shadow: inset 0 0 0 3px var(--background);
 }
-input:is([type=checkbox], [type=radio]):checked::before {
-  transform: scale(1);
+
+input[type=radio] {
+  border-radius: 50%;
 }
 
 form {
@@ -358,13 +364,12 @@ details.menu[open] summary::before {
   right: 0;
   display: block;
   cursor: default;
-  background: transparent;
+  background-color: transparent;
 }
 details.menu[open] nav {
   position: absolute;
   z-index: 501;
   border: var(--border);
-  border-color: var(--secondary);
   border-radius: var(--border-radius);
   filter: brightness(var(--layer-brightness));
   width: auto;
@@ -422,7 +427,7 @@ div.listbox > div button {
   /* right button (remove) */
 }
 div.listbox > div button:not(:hover, :focus) {
-  background: transparent;
+  background-color: transparent;
 }
 div.listbox > div button:first-child {
   cursor: grab;
@@ -459,7 +464,7 @@ dialog[open] {
   top: 0;
   width: 100%;
   height: 100%;
-  background: transparent;
+  background-color: transparent;
   cursor: default;
   border: 0;
   padding: 0;
@@ -470,9 +475,8 @@ dialog[open] > article {
   min-width: var(--modal-min-width);
   min-height: var(--modal-min-height);
   margin: var(--modal-margin);
-  background: var(--background);
+  background-color: var(--background);
   border: var(--border);
-  border-color: var(--secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   filter: brightness(var(--layer-brightness));
@@ -481,7 +485,7 @@ dialog[open] > article {
 nav {
   display: block;
   width: 100%;
-  background: var(--background);
+  background-color: var(--background);
 }
 nav > ul {
   display: flex;
@@ -493,7 +497,7 @@ nav button,
 nav input:is([type=button], [type=submit], [type=reset]),
 nav .button {
   display: block;
-  background: var(--background);
+  background-color: var(--background);
   border: 0;
   border-radius: 0;
   padding: var(--space-xs) var(--space);

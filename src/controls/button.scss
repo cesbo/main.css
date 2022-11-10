@@ -4,9 +4,10 @@ input:is([type="button"], [type="submit"], [type="reset"]),
     display: inline-block;
     width: auto;
     cursor: pointer;
-    background: var(--secondary);
+    background-color: var(--secondary);
     color: var(--inverse);
     text-decoration: none;
+    border: 0;
 
     &:is(:disabled, [disabled]) {
         opacity: .5;
