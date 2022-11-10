@@ -14,13 +14,10 @@ nav {
     input:is([type=button], [type=submit], [type=reset]),
     .button {
         display: block;
-        background-color: var(--color-background);
-        border: 0;
         border-radius: 0;
         padding: var(--space-xs) var(--space);
 
-        &:not(:disabled):hover {
-            filter: brightness(var(--layer-brightness));
-        }
+        --color-secondary: var(--color-background);
+        --color-inverse: var(--color-text);
     }
 }

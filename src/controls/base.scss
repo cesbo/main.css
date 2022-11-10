@@ -32,7 +32,7 @@ textarea {
     }
 
     &:focus {
-        filter: brightness(var(--layer-brightness));
+        filter: brightness(1.3);
     }
 }
 

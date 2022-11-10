@@ -40,7 +40,7 @@ details.menu[open] {
         &::before {
             content: " ";
             position: fixed;
-            z-index: 500;
+            z-index: 1;
             top: 0;
             bottom: 0;
             left: 0;
@@ -53,10 +53,9 @@ details.menu[open] {
 
     nav {
         position: absolute;
-        z-index: 501;
+        z-index: 2;
         border: var(--border);
         border-radius: var(--border-radius);
-        filter: brightness(var(--layer-brightness));
         width: auto;
 
         /* default bottom-left */

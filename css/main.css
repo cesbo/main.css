@@ -20,14 +20,12 @@
   --modal-min-height: auto;
   --modal-min-width: 600px;
   /* default colors */
-  --shadow: 0 0 .5rem rgba(0, 0, 0, 0.6);
   --color-background: hsl(210, 20%, 20%);
   --color-text: hsl(210, 20%, 100%);
   --color-primary: hsl(210, 70%, 50%);
   --color-secondary: hsl(210, 20%, 30%);
   --color-invalid: hsl(0, 70%, 50%);
   --color-inverse: hsl(0, 0%, 100%);
-  --layer-brightness: 1.3;
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
 }
@@ -125,6 +123,11 @@ body > footer {
   padding: var(--space);
 }
 
+.container {
+  margin: 0 auto;
+  padding: var(--space);
+}
+
 .grid {
   display: grid;
   grid-column-gap: var(--grid-column-gap);
@@ -167,7 +170,7 @@ textarea:invalid {
 input:not([type=button], [type=submit], [type=reset]):focus,
 select:focus,
 textarea:focus {
-  filter: brightness(var(--layer-brightness));
+  filter: brightness(1.3);
 }
 
 button,
@@ -190,12 +193,12 @@ input:is([type=button], [type=submit], [type=reset]):is(:disabled, [disabled]),
 button:not(:disabled):is(:hover, :focus, .active),
 input:is([type=button], [type=submit], [type=reset]):not(:disabled):is(:hover, :focus, .active),
 .button:not(:disabled):is(:hover, :focus, .active) {
-  filter: brightness(var(--layer-brightness));
+  filter: brightness(1.3);
 }
 button:not(:disabled):active,
 input:is([type=button], [type=submit], [type=reset]):not(:disabled):active,
 .button:not(:disabled):active {
-  background: radial-gradient(var(--color-secondary), var(--color-inverse) 500%) no-repeat;
+  filter: opacity(0.5);
 }
 
 :is(button, input, .button)[type=submit] {
@@ -358,7 +361,7 @@ details.menu[open] summary:focus {
 details.menu[open] summary::before {
   content: " ";
   position: fixed;
-  z-index: 500;
+  z-index: 1;
   top: 0;
   bottom: 0;
   left: 0;
@@ -369,10 +372,9 @@ details.menu[open] summary::before {
 }
 details.menu[open] nav {
   position: absolute;
-  z-index: 501;
+  z-index: 2;
   border: var(--border);
   border-radius: var(--border-radius);
-  filter: brightness(var(--layer-brightness));
   width: auto;
   /* default bottom-left */
   top: calc(100% + 0.2rem);
@@ -459,19 +461,29 @@ div.listbox > div:last-child button:last-child::before {
   content: "+";
 }
 
-dialog[open] {
+.modal {
   position: fixed;
-  z-index: 200;
   top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: auto;
+  z-index: 1;
+}
+.modal::before {
+  position: absolute;
+  z-index: -1;
+  content: "";
+  display: block;
   width: 100%;
   height: 100%;
-  background-color: transparent;
-  cursor: default;
-  border: 0;
-  padding: 0;
-  overflow: auto;
+  background-color: var(--color-background);
+  opacity: 0.5;
+  filter: grayscale(100%);
 }
-dialog[open] > article {
+.modal > .dialog {
+  position: relative;
+  z-index: 2;
   width: var(--modal-width);
   min-width: var(--modal-min-width);
   min-height: var(--modal-min-height);
@@ -479,8 +491,21 @@ dialog[open] > article {
   background-color: var(--color-background);
   border: var(--border);
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  filter: brightness(var(--layer-brightness));
+}
+.modal > .dialog > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: var(--border);
+  padding: var(--space);
+}
+.modal > .dialog > footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-xs);
+  border-top: var(--border);
+  padding: var(--space);
 }
 
 nav {
@@ -498,15 +523,10 @@ nav button,
 nav input:is([type=button], [type=submit], [type=reset]),
 nav .button {
   display: block;
-  background-color: var(--color-background);
-  border: 0;
   border-radius: 0;
   padding: var(--space-xs) var(--space);
-}
-nav button:not(:disabled):hover,
-nav input:is([type=button], [type=submit], [type=reset]):not(:disabled):hover,
-nav .button:not(:disabled):hover {
-  filter: brightness(var(--layer-brightness));
+  --color-secondary: var(--color-background);
+  --color-inverse: var(--color-text);
 }
 
 /*# sourceMappingURL=main.css.map */

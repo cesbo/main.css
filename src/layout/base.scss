@@ -19,4 +19,9 @@ body {
     }
 }
 
+.container {
+    margin: 0 auto;
+    padding: var(--space);
+}
+
 @import "grid";

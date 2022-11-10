@@ -16,11 +16,11 @@ input:is([type="button"], [type="submit"], [type="reset"]),
 
     &:not(:disabled) {
         &:is(:hover, :focus, .active) {
-            filter: brightness(var(--layer-brightness));
+            filter: brightness(1.3);
         }
 
         &:active {
-            background: radial-gradient(var(--color-secondary), var(--color-inverse) 500%) no-repeat;
+            filter: opacity(.5);
         }
     }
 }
