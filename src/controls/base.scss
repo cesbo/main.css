@@ -11,7 +11,8 @@ button,
     line-height: var(--line-height);
     background-color: var(--background-color);
     color: var(--text-color);
-    border: var(--border) var(--border-color);
+    border: var(--border);
+    border-color: var(--secondary);
     border-radius: var(--border-radius);
     overflow: hidden;
     outline: none;

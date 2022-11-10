@@ -37,7 +37,8 @@ details[role="menu"][open] {
     nav {
         position: absolute;
         z-index: 501;
-        border: var(--border) var(--border-color);
+        border: var(--border);
+        border-color: var(--secondary);
         border-radius: var(--border-radius);
         filter: brightness(var(--layer-brightness));
         width: auto;

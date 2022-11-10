@@ -7,12 +7,14 @@ main {
 }
 
 .docs-box {
-	border: var(--border) var(--border-color);
+	border: var(--border);
+	border-color: var(--secondary);
 	padding: var(--space-xs) var(--space-s);
 }
 
 .docs-source {
-	border: var(--border) var(--border-color);
+	border: var(--border);
+	border-color: var(--secondary);
 	border-top: 0;
 	padding: var(--space-xs) var(--space-s);
 	margin-bottom: var(--space);

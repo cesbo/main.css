@@ -4,7 +4,7 @@ input:is([type="button"], [type="submit"], [type="reset"]),
     display: inline-block;
     width: auto;
     cursor: pointer;
-    background-color: var(--secondary);
+    background: var(--secondary);
     color: var(--inverse);
     text-decoration: none;
 
@@ -14,18 +14,16 @@ input:is([type="button"], [type="submit"], [type="reset"]),
     }
 
     &:not(:disabled) {
-        &:hover,
-        &:focus {
-            filter: brightness(1.1);
+        &:is(:hover, :focus, .active) {
+            filter: brightness(var(--layer-brightness));
         }
 
-        &:is(.active, :active) {
-            filter: brightness(var(--layer-brightness));
+        &:active {
+            background: radial-gradient(var(--secondary), var(--inverse) 500%) no-repeat;
         }
     }
 }
 
 :is(button, input, [role="button"])[type="submit"] {
-    background-color: var(--primary);
-    border-color: var(--primary);
+    --secondary: var(--primary);
 }

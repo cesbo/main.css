@@ -31,7 +31,6 @@
 
     --background-color: hsl(210, 20%, 20%);
     --text-color: hsl(210, 20%, 100%);
-    --border-color: var(--secondary);
 
     --primary: hsl(210, 70%, 50%);
     --secondary: hsl(210, 20%, 30%);
@@ -97,7 +96,8 @@ body {
 
 hr {
     border: 0;
-    border-top: var(--border) var(--border-color);
+    border-top: var(--border);
+    border-color: var(--secondary);
 }
 
 @import "typography";

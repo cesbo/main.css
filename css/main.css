@@ -23,7 +23,6 @@
   --shadow: 0 0 .5rem rgba(0, 0, 0, 0.6);
   --background-color: hsl(210, 20%, 20%);
   --text-color: hsl(210, 20%, 100%);
-  --border-color: var(--secondary);
   --primary: hsl(210, 70%, 50%);
   --secondary: hsl(210, 20%, 30%);
   --invalid: hsl(0, 70%, 50%);
@@ -78,14 +77,15 @@ body {
 
 hr {
   border: 0;
-  border-top: var(--border) var(--border-color);
+  border-top: var(--border);
+  border-color: var(--secondary);
 }
 
 h1 {
   font-size: 2rem;
   line-height: 2rem;
   border-bottom: var(--border);
-  border-image: linear-gradient(to right, var(--border-color), transparent) 1;
+  border-image: linear-gradient(to right, var(--secondary), transparent) 1;
   padding: 1rem 0;
   margin: 1rem 0;
 }
@@ -112,7 +112,8 @@ pre {
 body > header {
   position: sticky;
   top: 0;
-  border-bottom: var(--border) var(--border-color);
+  border-bottom: var(--border);
+  border-color: var(--secondary);
   z-index: 1;
 }
 body > main {
@@ -122,7 +123,8 @@ body > main {
   padding: var(--space);
 }
 body > footer {
-  border-top: var(--border) var(--border-color);
+  border-top: var(--border);
+  border-color: var(--secondary);
   padding: var(--space);
 }
 
@@ -146,7 +148,8 @@ button,
   line-height: var(--line-height);
   background-color: var(--background-color);
   color: var(--text-color);
-  border: var(--border) var(--border-color);
+  border: var(--border);
+  border-color: var(--secondary);
   border-radius: var(--border-radius);
   overflow: hidden;
   outline: none;
@@ -177,7 +180,7 @@ input:is([type=button], [type=submit], [type=reset]),
   display: inline-block;
   width: auto;
   cursor: pointer;
-  background-color: var(--secondary);
+  background: var(--secondary);
   color: var(--inverse);
   text-decoration: none;
 }
@@ -187,22 +190,19 @@ input:is([type=button], [type=submit], [type=reset]):is(:disabled, [disabled]),
   opacity: 0.5;
   pointer-events: none;
 }
-button:not(:disabled):hover, button:not(:disabled):focus,
-input:is([type=button], [type=submit], [type=reset]):not(:disabled):hover,
-input:is([type=button], [type=submit], [type=reset]):not(:disabled):focus,
-[role=button]:not(:disabled):hover,
-[role=button]:not(:disabled):focus {
-  filter: brightness(1.1);
-}
-button:not(:disabled):is(.active, :active),
-input:is([type=button], [type=submit], [type=reset]):not(:disabled):is(.active, :active),
-[role=button]:not(:disabled):is(.active, :active) {
+button:not(:disabled):is(:hover, :focus, .active),
+input:is([type=button], [type=submit], [type=reset]):not(:disabled):is(:hover, :focus, .active),
+[role=button]:not(:disabled):is(:hover, :focus, .active) {
   filter: brightness(var(--layer-brightness));
+}
+button:not(:disabled):active,
+input:is([type=button], [type=submit], [type=reset]):not(:disabled):active,
+[role=button]:not(:disabled):active {
+  background: radial-gradient(var(--secondary), var(--inverse) 500%) no-repeat;
 }
 
 :is(button, input, [role=button])[type=submit] {
-  background-color: var(--primary);
-  border-color: var(--primary);
+  --secondary: var(--primary);
 }
 
 input:is([type=checkbox], [type=radio]) {
@@ -356,7 +356,8 @@ details[role=menu][open] summary::before {
 details[role=menu][open] nav {
   position: absolute;
   z-index: 501;
-  border: var(--border) var(--border-color);
+  border: var(--border);
+  border-color: var(--secondary);
   border-radius: var(--border-radius);
   filter: brightness(var(--layer-brightness));
   width: auto;
@@ -457,7 +458,8 @@ dialog[open] > article {
   min-height: var(--modal-min-height);
   margin: var(--modal-margin);
   background-color: var(--background-color);
-  border: var(--border) var(--border-color);
+  border: var(--border);
+  border-color: var(--secondary);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
   filter: brightness(var(--layer-brightness));

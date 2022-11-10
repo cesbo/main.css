@@ -2,7 +2,8 @@ body {
     &>header {
         position: sticky;
         top: 0;
-        border-bottom: var(--border) var(--border-color);
+        border-bottom: var(--border);
+        border-color: var(--secondary);
         z-index: 1;
     }
 
@@ -14,7 +15,8 @@ body {
     }
 
     &>footer {
-        border-top: var(--border) var(--border-color);
+        border-top: var(--border);
+        border-color: var(--secondary);
         padding: var(--space);
     }
 }

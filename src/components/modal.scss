@@ -16,7 +16,8 @@ dialog[open] {
         min-height: var(--modal-min-height);
         margin: var(--modal-margin);
         background-color: var(--background-color);
-        border: var(--border) var(--border-color);
+        border: var(--border);
+        border-color: var(--secondary);
         border-radius: var(--border-radius);
         box-shadow: var(--shadow);
         filter: brightness(var(--layer-brightness));
