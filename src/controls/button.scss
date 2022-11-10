@@ -4,8 +4,8 @@ input:is([type="button"], [type="submit"], [type="reset"]),
     display: inline-block;
     width: auto;
     cursor: pointer;
-    background-color: var(--secondary);
-    color: var(--inverse);
+    background-color: var(--color-secondary);
+    color: var(--color-inverse);
     text-decoration: none;
     border: 0;
 
@@ -20,11 +20,11 @@ input:is([type="button"], [type="submit"], [type="reset"]),
         }
 
         &:active {
-            background: radial-gradient(var(--secondary), var(--inverse) 500%) no-repeat;
+            background: radial-gradient(var(--color-secondary), var(--color-inverse) 500%) no-repeat;
         }
     }
 }
 
 :is(button, input, .button)[type="submit"] {
-    --secondary: var(--primary);
+    --color-secondary: var(--color-primary);
 }

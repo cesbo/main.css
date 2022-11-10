@@ -20,7 +20,7 @@ main {
 
 .docs-source summary {
 	cursor: pointer;
-	color: var(--primary);
+	color: var(--color-primary);
 }
 
 .docs-source summary:hover {
