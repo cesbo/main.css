@@ -206,7 +206,8 @@ input:is([type=button], [type=submit], [type=reset]):not(:disabled):active,
 }
 
 input:is([type=checkbox], [type=radio]) {
-  display: inline-block;
+  display: grid; /* for ::before mark */
+  place-content: center;
   padding: 0;
   height: 1.2rem;
   width: 1.2rem;
@@ -215,10 +216,16 @@ input:is([type=checkbox], [type=radio]) {
   -moz-appearance: none;
   appearance: none;
 }
-input:is([type=checkbox], [type=radio]):checked {
-  background: var(--primary);
-  background-clip: content-box;
-  box-shadow: inset 0 0 0 0.2rem var(--background);
+input:is([type=checkbox], [type=radio])::before {
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  transform: scale(0);
+  transition: 0.1s transform ease-out;
+  background-color: var(--primary);
+}
+input:is([type=checkbox], [type=radio]):checked::before {
+  transform: scale(1);
 }
 
 form {
@@ -292,7 +299,7 @@ details[role=group] summary[role=button]::before {
   height: 0.6rem;
   transform: rotate(-90deg);
   background-image: var(--icon-arrow);
-  transition: transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-out;
 }
 details[role=group][open] summary[role=button] {
   margin-bottom: var(--space-xs);
