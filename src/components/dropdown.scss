@@ -38,6 +38,7 @@
         border: var(--border);
         border-radius: var(--border-radius);
         width: auto;
+        box-shadow: var(--shadow);
 
         /* default bottom-left */
         top: calc(100% + .2rem);

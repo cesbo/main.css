@@ -12,7 +12,7 @@
     --line-height: 1.5rem;
 
     --border-size: 1px;
-    --border: var(--border-size) solid var(--color-secondary);
+    --border: var(--border-size) solid var(--color-default);
     --border-radius: 3px;
 
     --grid-column-gap: var(--space);
@@ -28,21 +28,29 @@
 
     /* default colors */
 
-    --color-text: hsl(210, 20%, 100%);
+    --color-text: hsl(0, 0%, 100%);
+    --color-inverse: hsl(0, 0%, 100%);
 
     --color-background: hsl(210, 20%, 15%);
     --color-background-danger: hsl(0, 20%, 15%);
     --color-background-success: hsl(140, 20%, 15%);
 
+    --color-default: hsl(210, 20%, 30%);
     --color-primary: hsl(210, 70%, 50%);
     --color-danger: hsl(0, 70%, 50%);
     --color-success: hsl(140, 70%, 50%);
 
-    --color-secondary: hsl(210, 20%, 30%);
-    --color-inverse: hsl(0, 0%, 100%);
+    --color-default-focus: hsl(210, 20%, 35%);
+    --color-primary-focus: hsl(210, 70%, 55%);
+    --color-danger-focus: hsl(0, 70%, 55%);
+    --color-success-focus: hsl(140, 70%, 55%);
 
-    --filter-focus: brightness(1.2);
-    --filter-active: brightness(1.4);
+    --color-default-active: hsl(210, 20%, 40%);
+    --color-primary-active: hsl(210, 70%, 60%);
+    --color-danger-active: hsl(0, 70%, 60%);
+    --color-success-active: hsl(140, 70%, 60%);
+
+    --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 
     /* icons */
 

@@ -57,7 +57,7 @@ input[type="checkbox"] {
             left: var(--border-size);
             right: auto;
             line-height: calc(var(--line-height) - (4 * var(--border-size)));
-            background-color: var(--color-secondary);
+            background-color: var(--color-default);
             text-align: center;
             transition: .1s background-color ease-out, .1s left ease-out;
         }

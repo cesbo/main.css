@@ -33,7 +33,7 @@ textarea {
     }
 
     &:focus {
-        filter: var(--filter-focus);
+        filter: brightness(1.2);
     }
 }
 

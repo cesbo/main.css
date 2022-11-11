@@ -10,7 +10,7 @@
   --space-xl: 1.8rem;
   --line-height: 1.5rem;
   --border-size: 1px;
-  --border: var(--border-size) solid var(--color-secondary);
+  --border: var(--border-size) solid var(--color-default);
   --border-radius: 3px;
   --grid-column-gap: var(--space);
   --grid-row-gap: var(--space);
@@ -21,17 +21,24 @@
   --modal-min-height: auto;
   --modal-min-width: 600px;
   /* default colors */
-  --color-text: hsl(210, 20%, 100%);
+  --color-text: hsl(0, 0%, 100%);
+  --color-inverse: hsl(0, 0%, 100%);
   --color-background: hsl(210, 20%, 15%);
   --color-background-danger: hsl(0, 20%, 15%);
   --color-background-success: hsl(140, 20%, 15%);
+  --color-default: hsl(210, 20%, 30%);
   --color-primary: hsl(210, 70%, 50%);
   --color-danger: hsl(0, 70%, 50%);
   --color-success: hsl(140, 70%, 50%);
-  --color-secondary: hsl(210, 20%, 30%);
-  --color-inverse: hsl(0, 0%, 100%);
-  --filter-focus: brightness(1.2);
-  --filter-active: brightness(1.4);
+  --color-default-focus: hsl(210, 20%, 35%);
+  --color-primary-focus: hsl(210, 70%, 55%);
+  --color-danger-focus: hsl(0, 70%, 55%);
+  --color-success-focus: hsl(140, 70%, 55%);
+  --color-default-active: hsl(210, 20%, 40%);
+  --color-primary-active: hsl(210, 70%, 60%);
+  --color-danger-active: hsl(0, 70%, 60%);
+  --color-success-active: hsl(140, 70%, 60%);
+  --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
 }
@@ -88,7 +95,7 @@ h1 {
   font-size: 2rem;
   line-height: 2rem;
   border-bottom: var(--border);
-  border-image: linear-gradient(to right, var(--color-secondary), transparent) 1;
+  border-image: linear-gradient(to right, var(--color-default), transparent) 1;
   padding: 1rem 0;
   margin: 1rem 0;
 }
@@ -189,7 +196,7 @@ textarea:invalid {
 input:not([type=button], [type=submit], [type=reset]):focus,
 select:focus,
 textarea:focus {
-  filter: var(--filter-focus);
+  filter: brightness(1.2);
 }
 
 button,
@@ -197,7 +204,7 @@ button,
 input:is([type=button], [type=submit], [type=reset]) {
   width: auto;
   cursor: pointer;
-  background-color: var(--color-secondary);
+  background-color: var(--color-default);
   color: var(--color-inverse);
   text-decoration: none;
   border: 0;
@@ -211,16 +218,22 @@ input:is([type=button], [type=submit], [type=reset]):is(:disabled, .disabled) {
 button:is(:hover, :focus, .focus),
 .button:is(:hover, :focus, .focus),
 input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus, .focus) {
-  filter: var(--filter-focus);
+  background-color: var(--color-default-focus);
 }
 button:active,
 .button:active,
 input:is([type=button], [type=submit], [type=reset]):active {
-  filter: var(--filter-active);
+  background-color: var(--color-default-active);
 }
 
 :is(button, input, .button)[type=submit] {
-  --color-secondary: var(--color-primary);
+  background-color: var(--color-primary);
+}
+:is(button, input, .button)[type=submit]:is(:hover, :focus, .focus) {
+  background-color: var(--color-primary-focus);
+}
+:is(button, input, .button)[type=submit]:active {
+  background-color: var(--color-primary-active);
 }
 
 input:is([type=checkbox], [type=radio]) {
@@ -276,7 +289,7 @@ input[type=checkbox].switch::before {
   left: var(--border-size);
   right: auto;
   line-height: calc(var(--line-height) - 4 * var(--border-size));
-  background-color: var(--color-secondary);
+  background-color: var(--color-default);
   text-align: center;
   transition: 0.1s background-color ease-out, 0.1s left ease-out;
 }
@@ -425,6 +438,7 @@ select {
   border: var(--border);
   border-radius: var(--border-radius);
   width: auto;
+  box-shadow: var(--shadow);
   /* default bottom-left */
   top: calc(100% + 0.2rem);
   bottom: auto;
@@ -547,6 +561,7 @@ div.listbox > div:last-child button:last-child::before {
   background-color: var(--color-background);
   border: var(--border);
   border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
 }
 .modal > .dialog > header {
   display: flex;
@@ -581,7 +596,7 @@ nav .button,
 nav input:is([type=button], [type=submit], [type=reset]) {
   border-radius: 0;
   padding: var(--space-xs) var(--space);
-  --color-secondary: var(--color-background);
+  --color-default: var(--color-background);
   --color-inverse: var(--color-text);
 }
 

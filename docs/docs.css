@@ -25,7 +25,7 @@ section:not(:target) {
 }
 
 .docs-source summary:hover {
-	filter: var(--filter-focus);
+	color: var(--color-primary-focus);
 }
 
 .docs-source[open] summary {
