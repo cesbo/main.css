@@ -44,10 +44,6 @@ input[type="checkbox"] {
         height: var(--line-height);
         overflow: initial;
 
-        details.group > summary > & {
-            margin: -0.25em 0;
-        }
-
         &::before {
             content: "OFF";
             font-size: .8rem;
