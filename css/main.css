@@ -21,14 +21,15 @@
   --modal-min-height: auto;
   --modal-min-width: 600px;
   /* default colors */
-  --color-background: hsl(210, 20%, 20%);
   --color-text: hsl(210, 20%, 100%);
+  --color-background: hsl(210, 20%, 15%);
+  --color-background-danger: hsl(0, 20%, 15%);
+  --color-background-success: hsl(140, 20%, 15%);
   --color-primary: hsl(210, 70%, 50%);
-  --color-secondary: hsl(210, 20%, 30%);
-  --color-invalid: hsl(0, 70%, 50%);
-  --color-inverse: hsl(0, 0%, 100%);
   --color-danger: hsl(0, 70%, 50%);
-  --color-success: hsl(138, 70%, 40%);
+  --color-success: hsl(140, 70%, 50%);
+  --color-secondary: hsl(210, 20%, 30%);
+  --color-inverse: hsl(0, 0%, 100%);
   --filter-focus: brightness(1.2);
   --filter-active: brightness(1.4);
   /* icons */
@@ -182,7 +183,8 @@ textarea:disabled {
 input:not([type=button], [type=submit], [type=reset]):invalid,
 select:invalid,
 textarea:invalid {
-  border-color: var(--color-invalid);
+  border-color: var(--color-danger);
+  background-color: var(--color-background-danger);
 }
 input:not([type=button], [type=submit], [type=reset]):focus,
 select:focus,
