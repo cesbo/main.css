@@ -1,6 +1,6 @@
 button,
-input:is([type="button"], [type="submit"], [type="reset"]),
-.button {
+.button,
+input:is([type="button"], [type="submit"], [type="reset"]) {
     display: inline-block;
     width: auto;
     cursor: pointer;

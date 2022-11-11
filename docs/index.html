@@ -201,7 +201,7 @@
 <h2>Dropdown</h2>
 
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
-	<div class="menu">
+	<div class="dropdown">
 		<button onClick="OpenDropdown(event)">bottom-left</button>
 		<nav>
 			<ul>
@@ -213,7 +213,7 @@
 		</nav>
 	</div>
 
-	<div class="menu bottom-right">
+	<div class="dropdown bottom-right">
 		<button onClick="OpenDropdown(event)">bottom-right</button>
 		<nav>
 			<ul>
@@ -225,7 +225,7 @@
 		</nav>
 	</div>
 
-	<div class="menu top-left">
+	<div class="dropdown top-left">
 		<button onClick="OpenDropdown(event)">top-left</button>
 		<nav>
 			<ul>
@@ -237,7 +237,7 @@
 		</nav>
 	</div>
 
-	<div class="menu top-right">
+	<div class="dropdown top-right">
 		<button onClick="OpenDropdown(event)">top-right</button>
 		<nav>
 			<ul>
@@ -253,7 +253,7 @@
 <p>Dropdown without text in the button will be with three dots:</p>
 
 <div class="docs-box">
-	<div class="menu">
+	<div class="dropdown">
 		<button onClick="OpenDropdown(event)"></button>
 		<nav>
 			<ul>
@@ -289,14 +289,14 @@
 				</fieldset>
 			</form>
 			<footer>
-				<details class="menu top-right">
-					<summary class="button"></summary>
+				<div class="dropdown top-right">
+					<button onClick="OpenDropdown(event)"></button>
 					<nav>
 						<ul>
 							<li><button onClick="CloseModal('docs-modal-1')">Close</button></li>
 						</ul>
 					</nav>
-				</details>
+				</div>
 				<button type="submit">Submit</button>
 			</footer>
 		</div>

@@ -8,10 +8,10 @@
     100%  { opacity: 1; transform: translateY(0) }
 }
 
-.menu {
+.dropdown {
     position: relative;
 
-    &>button {
+    &>:first-child {
         &::after {
             display: block;
             content: "...";
@@ -28,16 +28,14 @@
         }
     }
 
-    nav {
-        display: none;
+    &.open>nav {
+        display: block;
     }
-}
 
-.menu.open {
-    nav {
+    &>nav {
+        display: none;
         position: absolute;
         z-index: 1;
-        display: block;
         border: var(--border);
         border-radius: var(--border-radius);
         width: auto;
@@ -49,13 +47,13 @@
         right: auto;
         animation: sweep-down .1s ease-out;
 
-        ul {
+        &>ul {
             flex-direction: column;
         }
 
         button,
-        input:is([type=button], [type=submit], [type=reset]),
-        .button {
+        .button,
+        input:is([type=button], [type=submit], [type=reset]) {
             width: 100%;
             white-space: nowrap;
             text-align: left;

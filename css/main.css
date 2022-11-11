@@ -176,8 +176,8 @@ textarea:focus {
 }
 
 button,
-input:is([type=button], [type=submit], [type=reset]),
-.button {
+.button,
+input:is([type=button], [type=submit], [type=reset]) {
   display: inline-block;
   width: auto;
   cursor: pointer;
@@ -187,19 +187,19 @@ input:is([type=button], [type=submit], [type=reset]),
   border: 0;
 }
 button:is(:disabled, .disabled),
-input:is([type=button], [type=submit], [type=reset]):is(:disabled, .disabled),
-.button:is(:disabled, .disabled) {
+.button:is(:disabled, .disabled),
+input:is([type=button], [type=submit], [type=reset]):is(:disabled, .disabled) {
   opacity: 0.5;
   pointer-events: none;
 }
 button:is(:hover, :focus, .focus),
-input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus, .focus),
-.button:is(:hover, :focus, .focus) {
+.button:is(:hover, :focus, .focus),
+input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus, .focus) {
   filter: var(--filter-focus);
 }
 button:active,
-input:is([type=button], [type=submit], [type=reset]):active,
-.button:active {
+.button:active,
+input:is([type=button], [type=submit], [type=reset]):active {
   filter: var(--filter-active);
 }
 
@@ -337,15 +337,15 @@ select {
     transform: translateY(0);
   }
 }
-.menu {
+.dropdown {
   position: relative;
 }
-.menu > button::after {
+.dropdown > :first-child::after {
   display: block;
   content: "...";
   text-align: center;
 }
-.menu > button:not(:empty)::after {
+.dropdown > :first-child:not(:empty)::after {
   display: inline-block;
   content: " ";
   margin-left: var(--space-s);
@@ -353,14 +353,13 @@ select {
   width: 0.6rem;
   height: 0.6rem;
 }
-.menu nav {
-  display: none;
+.dropdown.open > nav {
+  display: block;
 }
-
-.menu.open nav {
+.dropdown > nav {
+  display: none;
   position: absolute;
   z-index: 1;
-  display: block;
   border: var(--border);
   border-radius: var(--border-radius);
   width: auto;
@@ -371,31 +370,31 @@ select {
   right: auto;
   animation: sweep-down 0.1s ease-out;
 }
-.menu.open nav ul {
+.dropdown > nav > ul {
   flex-direction: column;
 }
-.menu.open nav button,
-.menu.open nav input:is([type=button], [type=submit], [type=reset]),
-.menu.open nav .button {
+.dropdown > nav button,
+.dropdown > nav .button,
+.dropdown > nav input:is([type=button], [type=submit], [type=reset]) {
   width: 100%;
   white-space: nowrap;
   text-align: left;
 }
-.menu.open.bottom-right nav {
+.dropdown.bottom-right nav {
   top: calc(100% + 0.2rem);
   bottom: auto;
   left: auto;
   right: 0;
   animation: sweep-down 0.1s ease-out;
 }
-.menu.open.top-left nav {
+.dropdown.top-left nav {
   top: auto;
   bottom: calc(100% + 0.2rem);
   left: 0;
   right: auto;
   animation: sweep-up 0.1s ease-out;
 }
-.menu.open.top-right nav {
+.dropdown.top-right nav {
   top: auto;
   bottom: calc(100% + 0.2rem);
   left: auto;
@@ -516,8 +515,8 @@ nav > ul {
   margin: 0;
 }
 nav button,
-nav input:is([type=button], [type=submit], [type=reset]),
-nav .button {
+nav .button,
+nav input:is([type=button], [type=submit], [type=reset]) {
   display: block;
   border-radius: 0;
   padding: var(--space-xs) var(--space);
