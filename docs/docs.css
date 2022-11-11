@@ -8,19 +8,20 @@ section:not(:target) {
 
 .docs-box {
 	border: var(--border);
-	padding: var(--space-xs) var(--space-s);
+	padding: var(--space-xs) var(--space);
 }
 
 .docs-source {
 	border: var(--border);
 	border-top: 0;
-	padding: var(--space-xs) var(--space-s);
+	padding: var(--space-xs) var(--space);
 	margin-bottom: var(--space);
 }
 
 .docs-source summary {
 	cursor: pointer;
 	color: var(--color-primary);
+	user-select: none;
 }
 
 .docs-source summary:hover {

@@ -11,6 +11,7 @@ details.group {
         list-style-type: none;
         border-radius: 0;
         padding: var(--space-xs) var(--space-s);
+        user-select: none;
 
         &::-webkit-details-marker  {
             display: none;
