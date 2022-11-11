@@ -501,7 +501,7 @@ div.listbox > div button:last-child::before {
   content: "×";
 }
 div.listbox > div input {
-  padding: 0 2.5rem;
+  padding: 0.2rem 2.5rem;
   border: 0;
   border-radius: 0;
 }
