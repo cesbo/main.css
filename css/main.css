@@ -277,9 +277,6 @@ input[type=checkbox].switch {
   height: var(--line-height);
   overflow: initial;
 }
-details.group > summary > input[type=checkbox].switch {
-  margin: -0.25em 0;
-}
 input[type=checkbox].switch::before {
   content: "OFF";
   font-size: 0.8rem;
