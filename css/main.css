@@ -11,7 +11,7 @@
   --line-height: 1.5rem;
   --border-size: 1px;
   --border: var(--border-size) solid var(--color-default);
-  --border-radius: 3px;
+  --border-radius: .25rem;
   --grid-column-gap: var(--space);
   --grid-row-gap: var(--space);
   --grid-template-columns: repeat(auto-fit, minmax(0%, 1fr));
@@ -270,7 +270,7 @@ input[type=radio]::before {
 }
 
 input[type=checkbox]::before {
-  border-radius: 10%;
+  border-radius: calc(var(--border-radius) - 0.1rem);
 }
 input[type=checkbox].switch {
   width: 4rem;
