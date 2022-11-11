@@ -193,7 +193,6 @@ textarea:focus {
 button,
 .button,
 input:is([type=button], [type=submit], [type=reset]) {
-  display: inline-block;
   width: auto;
   cursor: pointer;
   background-color: var(--color-secondary);
@@ -414,11 +413,10 @@ select {
   width: 0.6rem;
   height: 0.6rem;
 }
-.dropdown.open > nav {
-  display: block;
+.dropdown:not(.open) > nav {
+  display: none;
 }
 .dropdown > nav {
-  display: none;
   position: absolute;
   z-index: 1;
   border: var(--border);
@@ -514,7 +512,6 @@ div.listbox > div:last-child button:last-child::before {
 }
 
 .modal {
-  display: none;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -523,8 +520,8 @@ div.listbox > div:last-child button:last-child::before {
   overflow: auto;
   z-index: 1;
 }
-.modal.open {
-  display: block;
+.modal:not(.open) {
+  display: none;
 }
 .modal::before {
   position: absolute;
@@ -579,7 +576,6 @@ nav > ul {
 nav button,
 nav .button,
 nav input:is([type=button], [type=submit], [type=reset]) {
-  display: block;
   border-radius: 0;
   padding: var(--space-xs) var(--space);
   --color-secondary: var(--color-background);

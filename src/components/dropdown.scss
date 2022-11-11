@@ -28,12 +28,11 @@
         }
     }
 
-    &.open>nav {
-        display: block;
+    &:not(.open)>nav {
+        display: none;
     }
 
     &>nav {
-        display: none;
         position: absolute;
         z-index: 1;
         border: var(--border);
