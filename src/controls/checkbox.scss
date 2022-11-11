@@ -38,7 +38,7 @@ input[type="checkbox"] {
         &:before {
             position: relative;
             display: block;
-            content: 'off';
+            content: "off";
             width: 60%;
             height: 100%;
             text-transform: uppercase;
@@ -61,7 +61,7 @@ input[type="checkbox"] {
         &:checked {
             &:after {
                 background: var(--color-success);
-                content: 'on';
+                content: "on";
                 left: 40%;
             }
         }
