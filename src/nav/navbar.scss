@@ -2,6 +2,7 @@ nav {
     display: block;
     width: 100%;
     background-color: var(--color-background);
+    user-select: none;
 
     &>ul {
         display: flex;

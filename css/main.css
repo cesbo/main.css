@@ -568,6 +568,7 @@ nav {
   display: block;
   width: 100%;
   background-color: var(--color-background);
+  user-select: none;
 }
 nav > ul {
   display: flex;
