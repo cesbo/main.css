@@ -19,3 +19,51 @@ input:is([type="checkbox"],[type="radio"]) {
 input[type="radio"] {
     border-radius: 50%;
 }
+
+input[type="checkbox"] {
+    &.switch {
+        width: 4em;
+        height: 2em;
+        padding: 2px;
+        cursor: pointer;
+        background: var(--color-background);
+        border-radius: var(--border-radius);
+        padding: 2px;
+
+        details.group > summary > & {
+            margin: -0.25em 0;
+        }
+
+        &:after,
+        &:before {
+            position: relative;
+            display: block;
+            content: 'off';
+            width: 60%;
+            height: 100%;
+            text-transform: uppercase;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+            text-align: center;
+            line-height: 1.7em;
+        }
+
+        &:after {
+            left: 0;
+            background: var(--color-secondary);
+            border-radius: var(--border-radius);
+            transition: all 0.2s ease;
+        }
+
+        &:before {
+            display: none;
+        }
+
+        &:checked {
+            &:after {
+                background: var(--color-success);
+                content: 'on';
+                left: 40%;
+            }
+        }
+    }
+}

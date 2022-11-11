@@ -24,6 +24,10 @@ details.group {
             background-image: var(--icon-arrow);
             transition: transform .1s ease-out;
         }
+
+        & :first-child {
+            flex: 1;
+        }
     }
 
     &[open] summary.button{

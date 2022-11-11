@@ -25,3 +25,11 @@ pre {
     margin: 1rem 0;
     padding: var(--space-xs) var(--space-s);
 }
+
+.danger {
+    color: var(--color-danger);
+}
+
+.success {
+    color: var(--color-success);
+}

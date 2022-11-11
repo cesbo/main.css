@@ -26,6 +26,8 @@
   --color-secondary: hsl(210, 20%, 30%);
   --color-invalid: hsl(0, 70%, 50%);
   --color-inverse: hsl(0, 0%, 100%);
+  --color-danger: hsl(0, 70%, 50%);
+  --color-success: hsl(138, 70%, 40%);
   --filter-focus: brightness(1.2);
   --filter-active: brightness(1.4);
   /* icons */
@@ -106,6 +108,14 @@ h3 {
 pre {
   margin: 1rem 0;
   padding: var(--space-xs) var(--space-s);
+}
+
+.danger {
+  color: var(--color-danger);
+}
+
+.success {
+  color: var(--color-success);
 }
 
 body > header {
@@ -227,6 +237,44 @@ input[type=radio] {
   border-radius: 50%;
 }
 
+input[type=checkbox].switch {
+  width: 4em;
+  height: 2em;
+  padding: 2px;
+  cursor: pointer;
+  background: var(--color-background);
+  border-radius: var(--border-radius);
+  padding: 2px;
+}
+details.group > summary > input[type=checkbox].switch {
+  margin: -0.25em 0;
+}
+input[type=checkbox].switch:after, input[type=checkbox].switch:before {
+  position: relative;
+  display: block;
+  content: "off";
+  width: 60%;
+  height: 100%;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  text-align: center;
+  line-height: 1.7em;
+}
+input[type=checkbox].switch:after {
+  left: 0;
+  background: var(--color-secondary);
+  border-radius: var(--border-radius);
+  transition: all 0.2s ease;
+}
+input[type=checkbox].switch:before {
+  display: none;
+}
+input[type=checkbox].switch:checked:after {
+  background: var(--color-success);
+  content: "on";
+  left: 40%;
+}
+
 form {
   overflow: hidden;
 }
@@ -299,6 +347,9 @@ details.group summary.button::before {
   transform: rotate(-90deg);
   background-image: var(--icon-arrow);
   transition: transform 0.1s ease-out;
+}
+details.group summary.button :first-child {
+  flex: 1;
 }
 details.group[open] summary.button {
   margin-bottom: var(--space-xs);
