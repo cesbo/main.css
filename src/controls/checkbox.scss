@@ -1,4 +1,4 @@
-input:is([type="checkbox"],[type="radio"]) {
+input:is([type="checkbox"], [type="radio"]) {
     position: relative;
     padding: 0;
     height: 1.2rem;
@@ -7,6 +7,7 @@ input:is([type="checkbox"],[type="radio"]) {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    background-color: var(--color-background);
 
     &::before {
         position: absolute;
@@ -17,7 +18,6 @@ input:is([type="checkbox"],[type="radio"]) {
         left: .2rem;
         right: .2rem;
         background-color: transparent;
-        border-radius: .1rem;
         transition: .1s background-color ease-out;
     }
 
@@ -35,49 +35,37 @@ input[type="radio"] {
 }
 
 input[type="checkbox"] {
+    &::before {
+        border-radius: 10%;
+    }
+
     &.switch {
-        width: 4em;
-        height: 2em;
-        padding: 2px;
-        cursor: pointer;
-        background: var(--color-background);
-        border-radius: var(--border-radius);
-        padding: 2px;
+        width: 4rem;
+        height: var(--line-height);
+        overflow: initial;
 
         details.group > summary > & {
             margin: -0.25em 0;
         }
 
-        &:after,
-        &:before {
-            position: relative;
-            display: block;
-            content: "off";
-            width: 60%;
-            height: 100%;
-            text-transform: uppercase;
-            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+        &::before {
+            content: "OFF";
+            font-size: .8rem;
+            width: 2rem;
+            top: var(--border-size);
+            bottom: var(--border-size);
+            left: var(--border-size);
+            right: auto;
+            line-height: calc(var(--line-height) - (4 * var(--border-size)));
+            background-color: var(--color-secondary);
             text-align: center;
-            line-height: 1.7em;
+            transition: .1s background-color ease-out, .1s left ease-out;
         }
 
-        &:after {
-            left: 0;
-            background: var(--color-secondary);
-            border-radius: var(--border-radius);
-            transition: all 0.2s ease;
-        }
-
-        &:before {
-            display: none;
-        }
-
-        &:checked {
-            &:after {
-                background: var(--color-success);
-                content: "on";
-                left: 40%;
-            }
+        &:checked::before {
+            background: var(--color-success);
+            content: "ON";
+            left: calc(4rem - 2rem - (3 * var(--border-size)));
         }
     }
 }

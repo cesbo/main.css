@@ -9,7 +9,8 @@
   --space-l: 1.2rem;
   --space-xl: 1.8rem;
   --line-height: 1.5rem;
-  --border: 1px solid var(--color-secondary);
+  --border-size: 1px;
+  --border: var(--border-size) solid var(--color-secondary);
   --border-radius: 3px;
   --grid-column-gap: var(--space);
   --grid-row-gap: var(--space);
@@ -230,6 +231,7 @@ input:is([type=checkbox], [type=radio]) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  background-color: var(--color-background);
 }
 input:is([type=checkbox], [type=radio])::before {
   position: absolute;
@@ -240,7 +242,6 @@ input:is([type=checkbox], [type=radio])::before {
   left: 0.2rem;
   right: 0.2rem;
   background-color: transparent;
-  border-radius: 0.1rem;
   transition: 0.1s background-color ease-out;
 }
 input:is([type=checkbox], [type=radio]):checked::before {
@@ -254,42 +255,34 @@ input[type=radio]::before {
   border-radius: 50%;
 }
 
+input[type=checkbox]::before {
+  border-radius: 10%;
+}
 input[type=checkbox].switch {
-  width: 4em;
-  height: 2em;
-  padding: 2px;
-  cursor: pointer;
-  background: var(--color-background);
-  border-radius: var(--border-radius);
-  padding: 2px;
+  width: 4rem;
+  height: var(--line-height);
+  overflow: initial;
 }
 details.group > summary > input[type=checkbox].switch {
   margin: -0.25em 0;
 }
-input[type=checkbox].switch:after, input[type=checkbox].switch:before {
-  position: relative;
-  display: block;
-  content: "off";
-  width: 60%;
-  height: 100%;
-  text-transform: uppercase;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+input[type=checkbox].switch::before {
+  content: "OFF";
+  font-size: 0.8rem;
+  width: 2rem;
+  top: var(--border-size);
+  bottom: var(--border-size);
+  left: var(--border-size);
+  right: auto;
+  line-height: calc(var(--line-height) - 4 * var(--border-size));
+  background-color: var(--color-secondary);
   text-align: center;
-  line-height: 1.7em;
+  transition: 0.1s background-color ease-out, 0.1s left ease-out;
 }
-input[type=checkbox].switch:after {
-  left: 0;
-  background: var(--color-secondary);
-  border-radius: var(--border-radius);
-  transition: all 0.2s ease;
-}
-input[type=checkbox].switch:before {
-  display: none;
-}
-input[type=checkbox].switch:checked:after {
+input[type=checkbox].switch:checked::before {
   background: var(--color-success);
-  content: "on";
-  left: 40%;
+  content: "ON";
+  left: calc(2rem - 3 * var(--border-size));
 }
 
 form {
