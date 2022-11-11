@@ -48,6 +48,8 @@ function onHashChange() {
     document.querySelectorAll('.docs-navbar a[href="' + location.hash + '"]').forEach(el => {
         el.classList.add('focus')
     })
+
+    window.scrollTo(0, 0)
 }
 
 window.OpenModal = function(id) {

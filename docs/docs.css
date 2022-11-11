@@ -2,12 +2,8 @@ main {
 	max-width: 1130px;
 }
 
-.docs-section {
+section:not(:target) {
 	display: none;
-}
-
-.docs-section:target {
-	display: block;
 }
 
 .docs-box {

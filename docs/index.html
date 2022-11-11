@@ -22,11 +22,11 @@
 </header>
 
 <main>
-<h1>Minimalistic CSS</h1>
 
-<div class="docs-section" id="quick-start">
+<section id="quick-start">
+<h1>Quick Start</h1>
 
-<p>About...</p>
+<p>main.css is a minimalistic css framework</p>
 
 <h2>Installation</h2>
 
@@ -35,30 +35,35 @@
 &lt;link rel="stylesheet" type="text/css" href="https://cdn.cesbo.com/main.css" /&gt;
 	</pre>
 </div>
+</section><!-- Quick Start -->
 
-</div>
+<section id="typography">
+<h1>Typography</h1>
 
-<div class="docs-section" id="typography">
-	<h2>Headings</h2>
-	<div class="docs-box">
-		<h1>h1. Heading 1</h1>
-		<h2>h2. Heading 2</h2>
-		<h3>h3. Heading 3</h3>
-	</div>
+<p>Text elements</p>
 
-	<h2>Contextual colors</h2>
-	<div class="docs-box">
-		<p class="success">Success text</p>
-		<p class="danger">Danger text</p>
-	</div>
-</div>
+<h2>Headings</h2>
+<p>Provided only 3 levels of headers. Other levels are hidden</p>
+<div class="docs-box">
+	<h1>h1. Heading 1</h1>
+	<h2>h2. Heading 2</h2>
+	<h3>h3. Heading 3</h3>
+</div><!-- Headings -->
 
-<div class="docs-section" id="controls">
+<h2>Contextual colors</h2>
+<div class="docs-box">
+	<p class="success">Success text</p>
+	<p class="danger">Danger text</p>
+</div><!-- Contextual colors -->
 
-<p>Controls is a base elements like inputs, buttons</p>
+</section><!-- Typography -->
+
+<section id="controls">
+<h1>Controls</h1>
+
+<p>Basic control elements</p>
 
 <h2>Button</h2>
-
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<input type="button" value="Button" />
 	<input type="button" value="Disabled" disabled />
@@ -67,7 +72,6 @@
 </div><!-- Button -->
 
 <h2>Form</h2>
-
 <div class="docs-box">
 	<form>
 		<fieldset>
@@ -94,7 +98,6 @@
 </div><!-- Form -->
 
 <h2>Input</h2>
-
 <div class="docs-box">
 	<form>
 		<fieldset>
@@ -116,8 +119,7 @@
 	</form>
 </div><!-- Input -->
 
-<h2>Select, Checkbox, Radio</h2>
-
+<h2>Select, Checkbox, Switch, Radio</h2>
 <div class="docs-box">
 	<form>
 		<fieldset>
@@ -176,10 +178,9 @@
 			</label>
 		</fieldset>
 	</form>
-</div><!-- Select, Checkbox, Radio -->
+</div><!-- Select, Checkbox, Switch, Radio -->
 
 <h2>Group</h2>
-
 <div class="docs-box">
 	<form>
 		<fieldset>
@@ -213,14 +214,14 @@
 	</form>
 </div><!-- Group -->
 
-</div><!-- controls -->
+</section><!-- Controls -->
 
-<div class="docs-section" id="components">
+<section id="components">
+<h1>Components</h1>
 
 <p>Components is a complex elements</p>
 
 <h2>Dropdown</h2>
-
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown">
 		<button onClick="OpenDropdown(event)">bottom-left</button>
@@ -285,10 +286,9 @@
 			</ul>
 		</nav>
 	</div>
-</div>
+</div><!-- Dropdown -->
 
 <h2>Modal</h2>
-
 <div class="docs-box">
 	<button onClick="OpenModal('docs-modal-1')">Open modal</button>
 	<div class="modal" id="docs-modal-1">
@@ -322,10 +322,9 @@
 			</footer>
 		</div>
 	</div>
-</div>
+</div><!-- Modal -->
 
 <h2>Listbox</h2>
-
 <div class="docs-box">
 	<div class="listbox">
 		<div>
@@ -354,7 +353,7 @@
 	</div>
 </div><!-- Listbox -->
 
-</div><!-- components -->
+</section><!-- Components -->
 
 </main>
 
