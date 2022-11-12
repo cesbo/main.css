@@ -118,6 +118,22 @@ h4, h5, h6 {
   display: none;
 }
 
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:is(:hover, :focus) {
+  color: var(--color-primary-focus);
+}
+a:active {
+  color: var(--color-primary-active);
+}
+a[target=_blank]::after {
+  content: "⧉";
+  margin-left: 0.2rem;
+  font-size: 0.8rem;
+}
+
 pre {
   margin: 1rem 0;
   padding: var(--space-xs) var(--space-s);

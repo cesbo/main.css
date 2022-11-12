@@ -25,6 +25,25 @@ h4, h5, h6 {
     display: none;
 }
 
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+
+    &:is(:hover, :focus) {
+        color: var(--color-primary-focus);
+    }
+
+    &:active {
+        color: var(--color-primary-active);
+    }
+
+    &[target="_blank"]::after {
+        content: '\29C9';
+        margin-left: .2rem;
+        font-size: .8rem;
+    }
+}
+
 pre {
     margin: 1rem 0;
     padding: var(--space-xs) var(--space-s);
