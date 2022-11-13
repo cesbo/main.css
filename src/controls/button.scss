@@ -15,10 +15,12 @@ input:is([type="button"], [type="submit"], [type="reset"]) {
 
     &:is(:hover, :focus, .focus) {
         background-color: var(--color-default-focus);
+        color: var(--color-inverse);
     }
 
     &:active {
         background-color: var(--color-default-active);
+        color: var(--color-inverse);
     }
 }
 

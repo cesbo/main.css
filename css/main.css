@@ -235,11 +235,13 @@ button:is(:hover, :focus, .focus),
 .button:is(:hover, :focus, .focus),
 input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus, .focus) {
   background-color: var(--color-default-focus);
+  color: var(--color-inverse);
 }
 button:active,
 .button:active,
 input:is([type=button], [type=submit], [type=reset]):active {
   background-color: var(--color-default-active);
+  color: var(--color-inverse);
 }
 
 :is(button, input, .button)[type=submit] {
