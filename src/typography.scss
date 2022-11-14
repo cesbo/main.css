@@ -38,9 +38,15 @@ a {
     }
 
     &[target="_blank"]::after {
-        content: '\29C9';
+        content: "";
+        width: .8rem;
+        height: .8rem;
         margin-left: .2rem;
-        font-size: .8rem;
+        mask-image: var(--icon-link);
+        mask-position: center;
+        mask-repeat: no-repeat;
+        display: inline-block;
+        background-color: currentColor;
     }
 }
 
