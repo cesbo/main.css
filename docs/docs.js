@@ -52,15 +52,15 @@ function onHashChange() {
     window.scrollTo(0, 0)
 }
 
-window.OpenModal = function(id) {
+window.ModalOpen = function(id) {
     document.getElementById(id).classList.add('open')
 }
 
-window.CloseModal = function(id) {
+window.ModalClose = function(id) {
     document.getElementById(id).classList.remove('open')
 }
 
-window.OpenDropdown = function(event) {
+window.DropdownOpen = function(event) {
     const btn = event.target
     const el = btn.parentNode
 

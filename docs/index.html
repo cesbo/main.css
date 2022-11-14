@@ -232,7 +232,7 @@
 <h2>Dropdown</h2>
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown">
-		<button onClick="OpenDropdown(event)">bottom-left</button>
+		<button onClick="DropdownOpen(event)">bottom-left</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -244,7 +244,7 @@
 	</div>
 
 	<div class="dropdown bottom-right">
-		<button onClick="OpenDropdown(event)">bottom-right</button>
+		<button onClick="DropdownOpen(event)">bottom-right</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -256,7 +256,7 @@
 	</div>
 
 	<div class="dropdown top-left">
-		<button onClick="OpenDropdown(event)">top-left</button>
+		<button onClick="DropdownOpen(event)">top-left</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -268,7 +268,7 @@
 	</div>
 
 	<div class="dropdown top-right">
-		<button onClick="OpenDropdown(event)">top-right</button>
+		<button onClick="DropdownOpen(event)">top-right</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -284,7 +284,7 @@
 
 <div class="docs-box">
 	<div class="dropdown">
-		<button onClick="OpenDropdown(event)"></button>
+		<button onClick="DropdownOpen(event)"></button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -298,12 +298,12 @@
 
 <h2>Modal</h2>
 <div class="docs-box">
-	<button onClick="OpenModal('docs-modal-1')">Open modal</button>
+	<button onClick="ModalOpen('docs-modal-1')">Open modal</button>
 	<div class="modal" id="docs-modal-1">
 		<div class="dialog">
 			<header>
 				Form in modal
-				<button onClick="CloseModal('docs-modal-1')">&times;</button>
+				<button onClick="ModalClose('docs-modal-1')">&times;</button>
 			</header>
 			<form class="container">
 				<fieldset>
@@ -319,10 +319,10 @@
 			</form>
 			<footer>
 				<div class="dropdown top-right">
-					<button onClick="OpenDropdown(event)"></button>
+					<button onClick="DropdownOpen(event)"></button>
 					<nav>
 						<ul>
-							<li><button onClick="CloseModal('docs-modal-1')">Close</button></li>
+							<li><button onClick="ModalClose('docs-modal-1')">Close</button></li>
 						</ul>
 					</nav>
 				</div>
@@ -338,25 +338,25 @@
 		<div>
 			<button tabindex="-1"></button>
 			<input type="text" value="allow 127.0.0.1" required />
-			<button></button>
+			<button tabindex="-1" onClick=""></button>
 		</div>
 
 		<div>
 			<button tabindex="-1"></button>
 			<input type="text" value="deny 192.168.0.0/24" required />
-			<button></button>
+			<button tabindex="-1"></button>
 		</div>
 
 		<div>
 			<button tabindex="-1"></button>
 			<input type="text" value="pass any" required />
-			<button></button>
+			<button tabindex="-1"></button>
 		</div>
 
 		<div>
 			<button tabindex="-1" disabled></button>
 			<input type="text" placeholder="new item" />
-			<button></button>
+			<button tabindex="-1"></button>
 		</div>
 	</div>
 </div><!-- Listbox -->
