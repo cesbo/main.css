@@ -62,3 +62,31 @@ pre {
 .success {
     color: var(--color-success);
 }
+
+.note {
+    padding: var(--space-xs) var(--space-s);
+    background-color: transparent;
+    border: var(--border);
+    border-color: var(--color-primary);
+    border-left-width: calc(var(--border-width) * 4);
+    border-radius: var(--border-radius);
+
+    &.danger {
+        --color-primary: var(--color-danger);
+    }
+
+    &>header {
+        padding-top: 0;
+        margin-top: 0;
+        border-bottom: var(--border);
+        border-color: var(--color-primary);
+    }
+
+    &>:first-child {
+        margin-top: 0;
+    }
+
+    &>:last-child {
+        margin-bottom: 0;
+    }
+}

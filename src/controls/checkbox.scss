@@ -48,11 +48,11 @@ input[type="checkbox"] {
             content: "OFF";
             font-size: .8rem;
             width: 2rem;
-            top: var(--border-size);
-            bottom: var(--border-size);
-            left: var(--border-size);
+            top: var(--border-width);
+            bottom: var(--border-width);
+            left: var(--border-width);
             right: auto;
-            line-height: calc(var(--line-height) - (4 * var(--border-size)));
+            line-height: calc(var(--line-height) - (4 * var(--border-width)));
             background-color: var(--color-default);
             text-align: center;
             transition: .1s background-color ease-out, .1s left ease-out;
@@ -61,7 +61,7 @@ input[type="checkbox"] {
         &:checked::before {
             background: var(--color-success);
             content: "ON";
-            left: calc(4rem - 2rem - (3 * var(--border-size)));
+            left: calc(4rem - 2rem - (3 * var(--border-width)));
         }
     }
 }

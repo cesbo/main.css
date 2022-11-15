@@ -9,8 +9,8 @@
   --space-l: 1.2rem;
   --space-xl: 1.8rem;
   --line-height: 1.5rem;
-  --border-size: 1px;
-  --border: var(--border-size) solid var(--color-default);
+  --border-width: 1px;
+  --border: var(--border-width) solid var(--color-default);
   --border-radius: .25rem;
   --grid-column-gap: var(--space);
   --grid-row-gap: var(--space);
@@ -152,6 +152,30 @@ pre {
 
 .success {
   color: var(--color-success);
+}
+
+.note {
+  padding: var(--space-xs) var(--space-s);
+  background-color: transparent;
+  border: var(--border);
+  border-color: var(--color-primary);
+  border-left-width: calc(var(--border-width) * 4);
+  border-radius: var(--border-radius);
+}
+.note.danger {
+  --color-primary: var(--color-danger);
+}
+.note > header {
+  padding-top: 0;
+  margin-top: 0;
+  border-bottom: var(--border);
+  border-color: var(--color-primary);
+}
+.note > :first-child {
+  margin-top: 0;
+}
+.note > :last-child {
+  margin-bottom: 0;
 }
 
 body > header {
@@ -306,11 +330,11 @@ input[type=checkbox].switch::before {
   content: "OFF";
   font-size: 0.8rem;
   width: 2rem;
-  top: var(--border-size);
-  bottom: var(--border-size);
-  left: var(--border-size);
+  top: var(--border-width);
+  bottom: var(--border-width);
+  left: var(--border-width);
   right: auto;
-  line-height: calc(var(--line-height) - 4 * var(--border-size));
+  line-height: calc(var(--line-height) - 4 * var(--border-width));
   background-color: var(--color-default);
   text-align: center;
   transition: 0.1s background-color ease-out, 0.1s left ease-out;
@@ -318,7 +342,7 @@ input[type=checkbox].switch::before {
 input[type=checkbox].switch:checked::before {
   background: var(--color-success);
   content: "ON";
-  left: calc(2rem - 3 * var(--border-size));
+  left: calc(2rem - 3 * var(--border-width));
 }
 
 form {
