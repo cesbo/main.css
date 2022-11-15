@@ -114,6 +114,10 @@ hr {
     border-top: var(--border);
 }
 
+.hide {
+    display: none !important;
+}
+
 @import "typography";
 @import "layout/base";
 @import "controls/base";
