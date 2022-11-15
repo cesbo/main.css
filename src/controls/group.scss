@@ -1,30 +1,10 @@
 details.group {
-    &[open] {
-        animation: expand .1s ease-out;
-    }
-
     summary.button {
         display: flex;
         align-items: center;
         gap: var(--space-xs);
-        cursor: pointer;
-        list-style-type: none;
         border-radius: 0;
         padding: var(--space-xs) var(--space-s);
-        user-select: none;
-
-        &::-webkit-details-marker  {
-            display: none;
-        }
-
-        &::before {
-            content: " ";
-            width: .6rem;
-            height: .6rem;
-            transform: rotate(-90deg);
-            background-image: var(--icon-arrow);
-            transition: transform .1s ease-out;
-        }
 
         & :first-child {
             flex: 1;
@@ -33,9 +13,5 @@ details.group {
 
     &[open] summary.button{
         margin-bottom: var(--space-xs);
-
-        &::before {
-            transform: rotate(0);
-        }
     }
 }

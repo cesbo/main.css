@@ -1,6 +1,7 @@
 @charset "UTF-8";
 :root {
   --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-monospace: "Consolas", monospace;
   --font-size: 18px;
   --font-weight: 400;
   --space: 1rem;
@@ -134,16 +135,64 @@ a[target=_blank]::after {
   width: 0.8rem;
   height: 0.8rem;
   margin-left: 0.2rem;
-  mask-image: var(--icon-link);
-  mask-position: center;
-  mask-repeat: no-repeat;
+  mask: var(--icon-link) center no-repeat;
+  -webkit-mask: var(--icon-link) center no-repeat;
   display: inline-block;
   background-color: currentColor;
 }
 
+code,
+kbd,
+samp {
+  font-family: var(--font-monospace);
+  font-size: 1rem;
+  line-height: var(--line-height);
+}
+
 pre {
+  display: block;
   margin: 1rem 0;
   padding: var(--space-xs) var(--space-s);
+  border: var(--border);
+  border-color: var(--color-default);
+  border-left-width: calc(var(--border-width) * 4);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  overflow-x: auto;
+  overflow-y: hidden;
+  font-size: 1rem;
+  line-height: var(--line-height);
+}
+pre code {
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+details > summary {
+  cursor: pointer;
+  list-style-type: none;
+  user-select: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary::before {
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: -0.1rem;
+  width: 0.6rem;
+  height: 0.6rem;
+  transform: rotate(-90deg);
+  mask: var(--icon-arrow) center no-repeat;
+  -webkit-mask: var(--icon-arrow) center no-repeat;
+  background-color: currentColor;
+  transition: transform 0.1s ease-out;
+  margin-right: var(--space-xs);
+}
+details[open] > summary::before {
+  transform: rotate(0);
 }
 
 .danger {
@@ -154,28 +203,68 @@ pre {
   color: var(--color-success);
 }
 
-.note {
+.note,
+.spoiler {
+  margin: 1rem 0;
   padding: var(--space-xs) var(--space-s);
-  background-color: transparent;
+  color: var(--color-text);
   border: var(--border);
   border-color: var(--color-primary);
   border-left-width: calc(var(--border-width) * 4);
-  border-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
-.note.danger {
-  --color-primary: var(--color-danger);
+.note.success,
+.spoiler.success {
+  color: var(--color-text);
+  border-color: var(--color-success);
 }
-.note > header {
-  padding-top: 0;
-  margin-top: 0;
+.note.success > header,
+.spoiler.success > header {
+  border-color: var(--color-success);
+  color: var(--color-success);
+}
+.note.danger,
+.spoiler.danger {
+  color: var(--color-text);
+  border-color: var(--color-danger);
+}
+.note.danger > header,
+.spoiler.danger > header {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+.note > header, .note > summary,
+.spoiler > header,
+.spoiler > summary {
+  font-weight: bold;
   border-bottom: var(--border);
   border-color: var(--color-primary);
+  color: var(--color-primary);
+  padding: 0 var(--space-s) var(--space-xs) var(--space-s);
+  margin: 0 calc(var(--space-s) * -1);
 }
-.note > :first-child {
+.note > header + *, .note > summary + *,
+.spoiler > header + *,
+.spoiler > summary + * {
+  margin-top: var(--space-xs);
+}
+.note > :first-child,
+.spoiler > :first-child {
   margin-top: 0;
 }
-.note > :last-child {
+.note > :last-child,
+.spoiler > :last-child {
   margin-bottom: 0;
+}
+
+.spoiler > summary {
+  cursor: pointer;
+  user-select: none;
+}
+.spoiler:not([open]) > summary {
+  border-bottom: 0;
+  padding-bottom: 0;
 }
 
 body > header {
@@ -395,38 +484,18 @@ form footer {
   margin-top: auto;
 }
 
-details.group[open] {
-  animation: expand 0.1s ease-out;
-}
 details.group summary.button {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
-  cursor: pointer;
-  list-style-type: none;
   border-radius: 0;
   padding: var(--space-xs) var(--space-s);
-  user-select: none;
-}
-details.group summary.button::-webkit-details-marker {
-  display: none;
-}
-details.group summary.button::before {
-  content: " ";
-  width: 0.6rem;
-  height: 0.6rem;
-  transform: rotate(-90deg);
-  background-image: var(--icon-arrow);
-  transition: transform 0.1s ease-out;
 }
 details.group summary.button :first-child {
   flex: 1;
 }
 details.group[open] summary.button {
   margin-bottom: var(--space-xs);
-}
-details.group[open] summary.button::before {
-  transform: rotate(0);
 }
 
 select {

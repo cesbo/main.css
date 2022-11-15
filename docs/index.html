@@ -28,13 +28,16 @@
 
 <p>main.css is a minimalistic css framework</p>
 
+<div class="note danger">
+In this documentation used <a href="https://alpinejs.dev" target="_blank">Alpine.js</a> for better experience.
+But CSS framework is not dependent on it. You can use it with any other framework or with vanilla JS.
+</div>
+
 <h2>Installation</h2>
 
-<div style="border:var(--border);">
-	<pre>
+<pre>
 &lt;link rel="stylesheet" type="text/css" href="https://cdn.cesbo.com/main.css" /&gt;
-	</pre>
-</div>
+</pre>
 </section><!-- Quick Start -->
 
 <section id="typography">
@@ -60,9 +63,42 @@
 
 <h2>Contextual colors</h2>
 <div class="docs-box">
-	<p class="success">Success text</p>
-	<p class="danger">Danger text</p>
+	<ul>
+		<li class="success">Success text</li>
+		<li class="danger">Danger text</li>
+	</ul>
 </div><!-- Contextual colors -->
+
+<h2>Note</h2>
+<div class="docs-box">
+	<div class="note">
+		<header>General block</header>
+		<p>Any additional information</p>
+	</div>
+
+	<div class="note success">
+		<header>Success block</header>
+		<p>Success note</p>
+	</div>
+
+	<div class="note danger">
+		<header>Danger block</header>
+		<p>Caution information</p>
+	</div>
+</div>
+
+<h2>Spoiler</h2>
+<div class="docs-box">
+	<details class="spoiler">
+		<summary>Click to show</summary>
+		<p>Hidden text</p>
+	</details>
+</div>
+
+<h2>Code</h2>
+<div class="docs-box">
+	<pre><code>Monotype blocks for code, logs, etc.</code></pre>
+</div>
 
 </section><!-- Typography -->
 
@@ -298,60 +334,52 @@
 
 <h2>Modal</h2>
 <div class="docs-box">
-	<button onClick="ModalOpen('docs-modal-1')">Open modal</button>
-	<div class="modal" id="docs-modal-1">
-		<div class="dialog">
-			<header>
-				Form in modal
-				<button onClick="ModalClose('docs-modal-1')">&times;</button>
-			</header>
-			<form class="container">
-				<fieldset>
-					<label>
-						<span>Login</span>
-						<input type="text" />
-					</label>
-					<label>
-						<span>Password</span>
-						<input type="password" />
-					</label>
-				</fieldset>
-			</form>
-			<footer>
-				<div class="dropdown top-right">
-					<button onClick="DropdownOpen(event)"></button>
-					<nav>
-						<ul>
-							<li><button onClick="ModalClose('docs-modal-1')">Close</button></li>
-						</ul>
-					</nav>
-				</div>
-				<button type="submit">Submit</button>
-			</footer>
+	<div x-data="{ open: false }">
+		<button @click="open = !open">Open modal</button>
+		<div class="modal" :class="open && 'open'">
+			<div class="dialog">
+				<header>
+					Form in modal
+					<button @click="open = !open">&times;</button>
+				</header>
+				<form class="container">
+					<fieldset>
+						<label>
+							<span>Login</span>
+							<input type="text" />
+						</label>
+						<label>
+							<span>Password</span>
+							<input type="password" />
+						</label>
+					</fieldset>
+				</form>
+				<footer>
+					<div class="dropdown top-right">
+						<button onClick="DropdownOpen(event)"></button>
+						<nav>
+							<ul>
+								<li><button @click="open = !open">Close Modal</button></li>
+							</ul>
+						</nav>
+					</div>
+					<button type="submit">Submit</button>
+				</footer>
+			</div>
 		</div>
 	</div>
 </div><!-- Modal -->
 
 <h2>Listbox</h2>
 <div class="docs-box">
-	<div class="listbox">
-		<div>
-			<button tabindex="-1"></button>
-			<input type="text" value="allow 127.0.0.1" required />
-			<button tabindex="-1" onClick=""></button>
-		</div>
-
-		<div>
-			<button tabindex="-1"></button>
-			<input type="text" value="deny 192.168.0.0/24" required />
-			<button tabindex="-1"></button>
-		</div>
-
-		<div>
-			<button tabindex="-1"></button>
-			<input type="text" value="pass any" required />
-			<button tabindex="-1"></button>
-		</div>
+	<div class="listbox" x-data="{ items: ['bread','tea','apple'] }">
+		<template x-for="(item, index) in items" :key="index">
+			<div>
+				<button tabindex="-1"></button>
+				<input type="text" x-model="item" required />
+				<button tabindex="-1"></button>
+			</div>
+		</template>
 
 		<div>
 			<button tabindex="-1" disabled></button>
@@ -365,8 +393,9 @@
 
 </main>
 
-<script src="highlight.min.js"></script>
 <script src="docs.js"></script>
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script src="https://unpkg.com/alpinejs"></script>
 
 </body>
 </html>

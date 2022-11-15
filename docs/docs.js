@@ -1,14 +1,8 @@
 (function() {
 'use strict';
 
-function toggleSource(event) {
-    const pre = event.target.querySelector('pre');
-    if(!event.target.open) {
-        pre.textContent = ''
-        return
-    }
-
-    const lines = event.target.previousElementSibling
+function renderSource(el) {
+    const lines = el
         .innerHTML
         .replaceAll('=""', '')
         .split('\n')
@@ -23,19 +17,22 @@ function toggleSource(event) {
         lines[i] = line.substr(indent).replaceAll('\t', '  ')
     }
     const html = lines.join('\n')
-    pre.innerHTML = hljs.highlightAuto(html).value
+    return hljs.highlightAuto(html).value
 }
 
 function initSourcePreview() {
     document.querySelectorAll('.docs-box').forEach(el => {
-        const pre = document.createElement('pre')
         const details = document.createElement('details')
         details.classList.add('docs-source')
+
         const summary = document.createElement('summary')
         summary.textContent = 'Source'
         details.appendChild(summary)
+
+        const pre = document.createElement('pre')
+        pre.innerHTML = renderSource(el)
         details.appendChild(pre)
-        details.addEventListener('toggle', toggleSource)
+
         el.parentNode.insertBefore(details, el.nextSibling)
     })
 }
@@ -50,14 +47,6 @@ function onHashChange() {
     })
 
     window.scrollTo(0, 0)
-}
-
-window.ModalOpen = function(id) {
-    document.getElementById(id).classList.add('open')
-}
-
-window.ModalClose = function(id) {
-    document.getElementById(id).classList.remove('open')
 }
 
 window.DropdownOpen = function(event) {
@@ -80,6 +69,6 @@ function init() {
     onHashChange()
 }
 
-window.addEventListener('load', init, {once: true})
+document.addEventListener('alpine:init', init)
 
 })();
