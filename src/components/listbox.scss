@@ -62,7 +62,7 @@ div.listbox {
         }
 
         /* line for new item */
-        &:last-child{
+        &:last-child {
             button:last-of-type::before {
                 content: "+";
             }

@@ -266,7 +266,6 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 
 <p>Components is a complex elements</p>
 
-<div class="hide">
 <h2>Dropdown</h2>
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown">
@@ -371,7 +370,6 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		</div>
 	</div>
 </div><!-- Modal -->
-</div>
 
 <h2>Listbox</h2>
 <div class="docs-box">
@@ -380,11 +378,8 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		x-data="{
 			items: ['bread','tea','apple'],
 			addItem() {
-				const value = $refs.newItem.value;
-				if(value.length > 0) {
-					this.items.push(value);
-					$refs.newItem.value = '';
-				}
+				this.items.push($refs.newItem.value);
+				$refs.newItem.value = '';
 				$refs.newItem.focus();
 			},
 			delItem(index) {
