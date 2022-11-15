@@ -266,6 +266,7 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 
 <p>Components is a complex elements</p>
 
+<div class="hide">
 <h2>Dropdown</h2>
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown">
@@ -370,22 +371,39 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		</div>
 	</div>
 </div><!-- Modal -->
+</div>
 
 <h2>Listbox</h2>
 <div class="docs-box">
-	<div class="listbox" x-data="{ items: ['bread','tea','apple'] }">
+	<div
+		class="listbox"
+		x-data="{
+			items: ['bread','tea','apple'],
+			addItem() {
+				const value = $refs.newItem.value;
+				if(value.length > 0) {
+					this.items.push(value);
+					$refs.newItem.value = '';
+				}
+				$refs.newItem.focus();
+			},
+			delItem(index) {
+				this.items.splice(index, 1);
+			},
+		}"
+	>
 		<template x-for="(item, index) in items" :key="index">
 			<div>
 				<button tabindex="-1"></button>
+				<button tabindex="-1" @click="delItem(index)"></button>
 				<input type="text" x-model="item" required />
-				<button tabindex="-1"></button>
 			</div>
 		</template>
 
 		<div>
 			<button tabindex="-1" disabled></button>
-			<input type="text" placeholder="new item" />
-			<button tabindex="-1"></button>
+			<button tabindex="-1" @click="addItem()"></button>
+			<input type="text" placeholder="new item" x-ref="newItem" @keydown.enter="addItem()" />
 		</div>
 	</div>
 </div><!-- Listbox -->

@@ -17,8 +17,12 @@ div.listbox {
                 background-color: transparent;
             }
 
+            &:is(:hover, :focus) ~ input {
+                background-color: var(--color-background-focus);
+            }
+
             /* left button (move) */
-            &:first-child {
+            &:first-of-type {
                 cursor: grab;
                 left: 0;
                 border-top-left-radius: 0;
@@ -30,7 +34,7 @@ div.listbox {
             }
 
             /* right button (remove) */
-            &:last-child {
+            &:last-of-type {
                 right: 0;
                 border-top-right-radius: 0;
                 border-bottom-right-radius: 0;
@@ -43,17 +47,23 @@ div.listbox {
 
         input {
             padding: .2rem 2.5rem;
-            border: 0;
+            border: var(--border);
+            border-color: transparent;
             border-radius: 0;
 
-            &:not(:invalid) {
-                border-color: transparent;
+            &:hover {
+                background-color: var(--color-background-focus);
+            }
+
+            &:invalid {
+                border-color: var(--color-danger);
+                background-color: var(--color-background-danger);
             }
         }
 
         /* line for new item */
         &:last-child{
-            button:last-child::before {
+            button:last-of-type::before {
                 content: "+";
             }
         }

@@ -25,6 +25,7 @@
   --color-text: hsl(0, 0%, 100%);
   --color-inverse: hsl(0, 0%, 100%);
   --color-background: hsl(210, 20%, 15%);
+  --color-background-focus: hsl(210, 20%, 20%);
   --color-background-danger: hsl(0, 20%, 15%);
   --color-background-success: hsl(140, 20%, 15%);
   --color-default: hsl(210, 20%, 30%);
@@ -91,6 +92,10 @@ body {
 hr {
   border: 0;
   border-top: var(--border);
+}
+
+.hide {
+  display: none !important;
 }
 
 h1 {
@@ -319,16 +324,16 @@ textarea:disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
+input:not([type=button], [type=submit], [type=reset]):focus,
+select:focus,
+textarea:focus {
+  background-color: var(--color-background-focus);
+}
 input:not([type=button], [type=submit], [type=reset]):invalid,
 select:invalid,
 textarea:invalid {
   border-color: var(--color-danger);
   background-color: var(--color-background-danger);
-}
-input:not([type=button], [type=submit], [type=reset]):focus,
-select:focus,
-textarea:focus {
-  filter: brightness(1.2);
 }
 
 button,
@@ -610,32 +615,40 @@ div.listbox > div button {
 div.listbox > div button:not(:hover, :focus) {
   background-color: transparent;
 }
-div.listbox > div button:first-child {
+div.listbox > div button:is(:hover, :focus) ~ input {
+  background-color: var(--color-background-focus);
+}
+div.listbox > div button:first-of-type {
   cursor: grab;
   left: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-div.listbox > div button:first-child::before {
+div.listbox > div button:first-of-type::before {
   content: "=";
 }
-div.listbox > div button:last-child {
+div.listbox > div button:last-of-type {
   right: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-div.listbox > div button:last-child::before {
+div.listbox > div button:last-of-type::before {
   content: "×";
 }
 div.listbox > div input {
   padding: 0.2rem 2.5rem;
-  border: 0;
+  border: var(--border);
+  border-color: transparent;
   border-radius: 0;
 }
-div.listbox > div input:not(:invalid) {
-  border-color: transparent;
+div.listbox > div input:hover {
+  background-color: var(--color-background-focus);
 }
-div.listbox > div:last-child button:last-child::before {
+div.listbox > div input:invalid {
+  border-color: var(--color-danger);
+  background-color: var(--color-background-danger);
+}
+div.listbox > div:last-child button:last-of-type::before {
   content: "+";
 }
 

@@ -27,13 +27,13 @@ textarea {
         cursor: not-allowed;
     }
 
+    &:focus {
+        background-color: var(--color-background-focus);
+    }
+
     &:invalid {
         border-color: var(--color-danger);
         background-color: var(--color-background-danger);
-    }
-
-    &:focus {
-        filter: brightness(1.2);
     }
 }
 
