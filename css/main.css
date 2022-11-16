@@ -297,6 +297,23 @@ body > footer {
   grid-template-columns: var(--grid-template-columns);
 }
 
+.table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.table > thead > tr > th, .table .cell.header {
+  font-weight: bolder;
+  border-bottom: var(--border);
+  text-transform: capitalize;
+}
+.table td, .table th, .table .cell {
+  padding: var(--space-xs) var(--space-s);
+}
+.table.hoverable > tbody > tr:hover {
+  background-color: var(--color-default-active);
+}
+
 input,
 select,
 textarea,

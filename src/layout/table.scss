@@ -1,0 +1,19 @@
+.table {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+
+    & > thead > tr > th, .cell.header {
+        font-weight: bolder;
+        border-bottom: var(--border);
+        text-transform: capitalize;
+    }
+
+    & td, & th, & .cell {
+        padding: var(--space-xs) var(--space-s);
+    }
+
+    &.hoverable > tbody > tr:hover {
+        background-color: var(--color-default-active);
+    }
+}
