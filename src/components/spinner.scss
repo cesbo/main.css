@@ -33,5 +33,6 @@
     background-size: var(--size) var(--size);
     animation: 2s linear 0s infinite spin;
 
-    mask: radial-gradient(circle at center, black 40%, transparent 80%) center no-repeat;
+    mask: radial-gradient(circle, black 40%, transparent 80%) center no-repeat;
+    -webkit-mask: -webkit-radial-gradient(circle, black 40%, transparent 80%) center no-repeat;
 }

@@ -30,7 +30,7 @@
 
 <div class="note">
 In this documentation used <a href="https://alpinejs.dev" target="_blank">Alpine.js</a> for better experience.
-But CSS framework is not dependent on it. You can use it with any other framework or without JS at all.
+But CSS framework is not dependent on it. You can use it with any other framework or with vanilla JS.
 </div>
 
 <h2>Installation</h2>
@@ -418,14 +418,7 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 					</fieldset>
 				</form>
 				<footer>
-					<div class="dropdown top-right">
-						<button onClick="DropdownOpen(event)"></button>
-						<nav>
-							<ul>
-								<li><button @click="open = !open">Close Modal</button></li>
-							</ul>
-						</nav>
-					</div>
+					<button @click="open = !open">Close</button>
 					<button type="submit">Submit</button>
 				</footer>
 			</div>
