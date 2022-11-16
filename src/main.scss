@@ -67,10 +67,10 @@
     --color-success-active: hsl(var(--hue-success), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step) * 2));
 
     /* background */
-    --color-background-focus:   hsl(var(--hue-background), var(--hue-background-saturation), calc(var(--hue-background-lightness) + var(--hue-lightness-step)));
-    --color-background:         hsl(var(--hue-background), var(--hue-background-saturation), var(--hue-background-lightness));
-    --color-background-danger:  hsl(var(--hue-danger), var(--hue-background-saturation), var(--hue-background-lightness));
-    --color-background-success: hsl(var(--hue-success), var(--hue-background-saturation), var(--hue-background-lightness));
+    --color-default-background: hsl(var(--hue-background), var(--hue-background-saturation), calc(var(--hue-background-lightness) + var(--hue-lightness-step)));
+    --color-primary-background: hsl(var(--hue-background), var(--hue-background-saturation), var(--hue-background-lightness));
+    --color-danger-background:  hsl(var(--hue-danger), var(--hue-background-saturation), var(--hue-background-lightness));
+    --color-success-background: hsl(var(--hue-success), var(--hue-background-saturation), var(--hue-background-lightness));
 
     /* icons */
     --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');

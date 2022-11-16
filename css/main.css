@@ -53,10 +53,10 @@
   --color-danger-active: hsl(var(--hue-danger), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step) * 2));
   --color-success-active: hsl(var(--hue-success), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step) * 2));
   /* background */
-  --color-background-focus: hsl(var(--hue-background), var(--hue-background-saturation), calc(var(--hue-background-lightness) + var(--hue-lightness-step)));
-  --color-background: hsl(var(--hue-background), var(--hue-background-saturation), var(--hue-background-lightness));
-  --color-background-danger: hsl(var(--hue-danger), var(--hue-background-saturation), var(--hue-background-lightness));
-  --color-background-success: hsl(var(--hue-success), var(--hue-background-saturation), var(--hue-background-lightness));
+  --color-default-background: hsl(var(--hue-background), var(--hue-background-saturation), calc(var(--hue-background-lightness) + var(--hue-lightness-step)));
+  --color-primary-background: hsl(var(--hue-background), var(--hue-background-saturation), var(--hue-background-lightness));
+  --color-danger-background: hsl(var(--hue-danger), var(--hue-background-saturation), var(--hue-background-lightness));
+  --color-success-background: hsl(var(--hue-success), var(--hue-background-saturation), var(--hue-background-lightness));
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
   --icon-link: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8.6 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.7a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.6a.5.5 0 0 0 .5-.5z M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.8L6 9a.5.5 0 1 0 .7.7L15 1.7V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
