@@ -21,26 +21,30 @@
   --modal-width: 50%;
   --modal-min-height: auto;
   --modal-min-width: 600px;
+  --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   /* default colors */
   --color-text: hsl(0, 0%, 100%);
   --color-inverse: hsl(0, 0%, 100%);
-  --color-background: hsl(210, 20%, 15%);
-  --color-background-focus: hsl(210, 20%, 20%);
-  --color-background-danger: hsl(0, 20%, 15%);
-  --color-background-success: hsl(140, 20%, 15%);
+  /* default */
   --color-default: hsl(210, 20%, 30%);
   --color-primary: hsl(210, 70%, 50%);
   --color-danger: hsl(0, 70%, 50%);
   --color-success: hsl(140, 70%, 50%);
+  /* focus, hover */
   --color-default-focus: hsl(210, 20%, 35%);
   --color-primary-focus: hsl(210, 70%, 55%);
   --color-danger-focus: hsl(0, 70%, 55%);
   --color-success-focus: hsl(140, 70%, 55%);
+  /* active */
   --color-default-active: hsl(210, 20%, 40%);
   --color-primary-active: hsl(210, 70%, 60%);
   --color-danger-active: hsl(0, 70%, 60%);
   --color-success-active: hsl(140, 70%, 60%);
-  --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  /* background */
+  --color-background: hsl(210, 20%, 15%);
+  --color-background-focus: hsl(210, 20%, 20%);
+  --color-background-danger: hsl(0, 20%, 15%);
+  --color-background-success: hsl(140, 20%, 15%);
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
   --icon-link: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8.6 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.7a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.6a.5.5 0 0 0 .5-.5z M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.8L6 9a.5.5 0 1 0 .7.7L15 1.7V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
