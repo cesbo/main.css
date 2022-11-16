@@ -1,12 +1,14 @@
+@use "sass:color";
+
 :root {
     $color-text: white;
     $color-inverse: white;
-    $color-background: hsl(205, 20%, 15%);
+    $color-background: hsl(200, 20%, 15%);
 
-    $color-primary: hsl(205, 70%, 50%);
-    $color-secondary: hsl(205, 20%, 30%);
-    $color-danger: hsl(0, 70%, 50%);
-    $color-success: hsl(115, 70%, 50%);
+    $color-primary: hsl(200, 60%, 50%);
+    $color-secondary: hsl(200, 20%, 30%);
+    $color-danger: hsl(0, 60%, 50%);
+    $color-success: hsl(100, 60%, 50%);
 
     /* css */
     --color-text: #{ $color-text };

@@ -83,27 +83,27 @@ hr {
   /* css */
   --color-text: white;
   --color-inverse: white;
-  --color-background: hsl(205deg, 20%, 15%);
+  --color-background: hsl(200deg, 20%, 15%);
   /* primary */
-  --color-primary: hsl(205deg, 70%, 50%);
-  --color-primary-focus: #3c9add;
-  --color-primary-active: #52a5e0;
-  --color-primary-background: #203c50;
+  --color-primary: hsl(200deg, 60%, 50%);
+  --color-primary-focus: #47a3d1;
+  --color-primary-active: #5cadd6;
+  --color-primary-background: #233f4e;
   /* secondary */
-  --color-secondary: hsl(205deg, 20%, 30%);
-  --color-secondary-focus: #475c6b;
-  --color-secondary-active: #52697a;
-  --color-secondary-background: #253037;
+  --color-secondary: hsl(200deg, 20%, 30%);
+  --color-secondary-focus: #475f6b;
+  --color-secondary-active: #526d7a;
+  --color-secondary-background: #253137;
   /* danger */
-  --color-danger: hsl(0deg, 70%, 50%);
-  --color-danger-focus: #dd3c3c;
-  --color-danger-active: #e05252;
-  --color-danger-background: #44282c;
+  --color-danger: hsl(0deg, 60%, 50%);
+  --color-danger-focus: #d14747;
+  --color-danger-active: #d65c5c;
+  --color-danger-background: #422b2f;
   /* success */
-  --color-success: hsl(115deg, 70%, 50%);
-  --color-success-focus: #49dd3c;
-  --color-success-active: #5ee052;
-  --color-success-background: #234b2c;
+  --color-success: hsl(100deg, 60%, 50%);
+  --color-success-focus: #75d147;
+  --color-success-active: #85d65c;
+  --color-success-background: #2d4a2f;
 }
 
 h1 {
