@@ -24,39 +24,39 @@
   --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   /* default colors */
   --hue-primary: 205;
+  --hue-secondary: 205;
   --hue-danger: 0;
   --hue-success: 115;
-  --hue-saturation: 70%;
-  --hue-lightness: 50%;
-  --hue-lightness-step: 5%;
-  --hue-default: 205;
-  --hue-default-saturation: 20%;
-  --hue-default-lightness: 30%;
   --hue-background: 205;
-  --hue-background-saturation: 20%;
-  --hue-background-lightness: 15%;
+  --lightness-step: 5%;
+  --lightness-normal: 50%;
+  --lightness-dimmed: 30%;
+  --lightness-background: 15%;
+  --saturation-normal: 70%;
+  --saturation-dimmed: 20%;
+  --saturation-background: 20%;
   --color-text: hsl(0, 0%, 100%);
   --color-inverse: hsl(0, 0%, 100%);
   /* default */
-  --color-default: hsl(var(--hue-default), var(--hue-default-saturation), var(--hue-default-lightness));
-  --color-primary: hsl(var(--hue-primary), var(--hue-saturation), var(--hue-lightness));
-  --color-danger: hsl(var(--hue-danger), var(--hue-saturation), var(--hue-lightness));
-  --color-success: hsl(var(--hue-success), var(--hue-saturation), var(--hue-lightness));
+  --color-default: hsl(var(--hue-secondary), var(--saturation-dimmed), var(--lightness-dimmed));
+  --color-primary: hsl(var(--hue-primary), var(--saturation-normal), var(--lightness-normal));
+  --color-danger: hsl(var(--hue-danger), var(--saturation-normal), var(--lightness-normal));
+  --color-success: hsl(var(--hue-success), var(--saturation-normal), var(--lightness-normal));
   /* focus, hover */
-  --color-default-focus: hsl(var(--hue-default), var(--hue-default-saturation), calc(var(--hue-default-lightness) + var(--hue-lightness-step)));
-  --color-primary-focus: hsl(var(--hue-primary), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step)));
-  --color-danger-focus: hsl(var(--hue-danger), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step)));
-  --color-success-focus: hsl(var(--hue-success), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step)));
+  --color-default-focus: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step)));
+  --color-primary-focus: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
+  --color-danger-focus: hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
+  --color-success-focus: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
   /* active */
-  --color-default-active: hsl(var(--hue-default), var(--hue-default-saturation), calc(var(--hue-default-lightness) + var(--hue-lightness-step) * 2));
-  --color-primary-active: hsl(var(--hue-primary), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step) * 2));
-  --color-danger-active: hsl(var(--hue-danger), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step) * 2));
-  --color-success-active: hsl(var(--hue-success), var(--hue-saturation), calc(var(--hue-lightness) + var(--hue-lightness-step) * 2));
+  --color-default-active: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step) * 2));
+  --color-primary-active: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
+  --color-danger-active: hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
+  --color-success-active: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
   /* background */
-  --color-default-background: hsl(var(--hue-background), var(--hue-background-saturation), calc(var(--hue-background-lightness) + var(--hue-lightness-step)));
-  --color-primary-background: hsl(var(--hue-background), var(--hue-background-saturation), var(--hue-background-lightness));
-  --color-danger-background: hsl(var(--hue-danger), var(--hue-background-saturation), var(--hue-background-lightness));
-  --color-success-background: hsl(var(--hue-success), var(--hue-background-saturation), var(--hue-background-lightness));
+  --color-default-background: hsl(var(--hue-background), var(--saturation-background), calc(var(--lightness-background) + var(--lightness-step)));
+  --color-primary-background: hsl(var(--hue-background), var(--saturation-background), var(--lightness-background));
+  --color-danger-background: hsl(var(--hue-danger), var(--saturation-background), var(--lightness-background));
+  --color-success-background: hsl(var(--hue-success), var(--saturation-background), var(--lightness-background));
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
   --icon-link: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8.6 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.7a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.6a.5.5 0 0 0 .5-.5z M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.8L6 9a.5.5 0 1 0 .7.7L15 1.7V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
