@@ -1,3 +1,5 @@
+@use "sass:color";
+
 :root {
     --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-monospace: "Consolas", monospace;
@@ -30,48 +32,43 @@
     --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 
     /* default colors */
+    $color-text: white;
+    $color-inverse: white;
+    $color-background: hsl(205, 20%, 15%);
 
-    --color-text: hsl(0, 0%, 100%);
-    --color-inverse: hsl(0, 0%, 100%);
-    --color-background: var(--color-primary-background);
+    $color-primary: hsl(205, 70%, 50%);
+    $color-secondary: hsl(205, 20%, 30%);
+    $color-danger: hsl(0, 70%, 50%);
+    $color-success: hsl(115, 70%, 50%);
 
-    --hue-primary: 205;
-    --hue-secondary: 205;
-    --hue-danger: 0;
-    --hue-success: 115;
+    /* css */
+    --color-text: #{ $color-text };
+    --color-inverse: #{ $color-inverse };
+    --color-background: #{ $color-background };
 
-    --lightness-step: 5%;
-    --lightness-normal: 50%;
-    --lightness-dimmed: 30%;
-    --lightness-background: 15%;
+    /* primary */
+    --color-primary: #{ $color-primary };
+    --color-primary-focus: #{ lighten($color-primary, 5) };
+    --color-primary-active: #{ lighten($color-primary, 10) };
+    --color-primary-background: #{ color.mix($color-background, $color-primary, 80%) };
 
-    --saturation-normal: 70%;
-    --saturation-dimmed: 20%;
-    --saturation-background: 20%;
+    /* secondary */
+    --color-secondary: #{ $color-secondary };
+    --color-secondary-focus: #{ lighten($color-secondary, 5) };
+    --color-secondary-active: #{ lighten($color-secondary, 10) };
+    --color-secondary-background: #{ color.mix($color-background, $color-secondary, 80%) };
 
-    /* default */
-    --color-primary: hsl(var(--hue-primary), var(--saturation-normal), var(--lightness-normal));
-    --color-secondary: hsl(var(--hue-secondary), var(--saturation-dimmed), var(--lightness-dimmed));
-    --color-danger:  hsl(var(--hue-danger), var(--saturation-normal), var(--lightness-normal));
-    --color-success: hsl(var(--hue-success), var(--saturation-normal), var(--lightness-normal));
+    /* danger */
+    --color-danger: #{ $color-danger };
+    --color-danger-focus: #{ lighten($color-danger, 5) };
+    --color-danger-active: #{ lighten($color-danger, 10) };
+    --color-danger-background:  #{ color.mix($color-background, $color-danger, 80%) };
 
-    /* focus, hover */
-    --color-primary-focus: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
-    --color-secondary-focus: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step)));
-    --color-danger-focus:  hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
-    --color-success-focus: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
-
-    /* active */
-    --color-primary-active: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
-    --color-secondary-active: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step) * 2));
-    --color-danger-active:  hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
-    --color-success-active: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
-
-    /* background */
-    --color-primary-background: hsl(var(--hue-primary), var(--saturation-background), var(--lightness-background));
-    --color-secondary-background: hsl(var(--hue-secondary), var(--saturation-background), calc(var(--lightness-background) + var(--lightness-step)));
-    --color-danger-background:  hsl(var(--hue-danger), var(--saturation-background), var(--lightness-background));
-    --color-success-background: hsl(var(--hue-success), var(--saturation-background), var(--lightness-background));
+    /* success */
+    --color-success: #{ $color-success };
+    --color-success-focus: #{ lighten($color-success, 5) };
+    --color-success-active: #{ lighten($color-success, 10) };
+    --color-success-background: #{ color.mix($color-background, $color-success, 80%) };
 
     /* icons */
     --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');

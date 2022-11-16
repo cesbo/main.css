@@ -23,40 +23,30 @@
   --modal-min-width: 600px;
   --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   /* default colors */
-  --color-text: hsl(0, 0%, 100%);
-  --color-inverse: hsl(0, 0%, 100%);
-  --color-background: var(--color-primary-background);
-  --hue-primary: 205;
-  --hue-secondary: 205;
-  --hue-danger: 0;
-  --hue-success: 115;
-  --lightness-step: 5%;
-  --lightness-normal: 50%;
-  --lightness-dimmed: 30%;
-  --lightness-background: 15%;
-  --saturation-normal: 70%;
-  --saturation-dimmed: 20%;
-  --saturation-background: 20%;
-  /* default */
-  --color-primary: hsl(var(--hue-primary), var(--saturation-normal), var(--lightness-normal));
-  --color-secondary: hsl(var(--hue-secondary), var(--saturation-dimmed), var(--lightness-dimmed));
-  --color-danger: hsl(var(--hue-danger), var(--saturation-normal), var(--lightness-normal));
-  --color-success: hsl(var(--hue-success), var(--saturation-normal), var(--lightness-normal));
-  /* focus, hover */
-  --color-primary-focus: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
-  --color-secondary-focus: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step)));
-  --color-danger-focus: hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
-  --color-success-focus: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
-  /* active */
-  --color-primary-active: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
-  --color-secondary-active: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step) * 2));
-  --color-danger-active: hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
-  --color-success-active: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
-  /* background */
-  --color-primary-background: hsl(var(--hue-primary), var(--saturation-background), var(--lightness-background));
-  --color-secondary-background: hsl(var(--hue-secondary), var(--saturation-background), calc(var(--lightness-background) + var(--lightness-step)));
-  --color-danger-background: hsl(var(--hue-danger), var(--saturation-background), var(--lightness-background));
-  --color-success-background: hsl(var(--hue-success), var(--saturation-background), var(--lightness-background));
+  /* css */
+  --color-text: white;
+  --color-inverse: white;
+  --color-background: hsl(205deg, 20%, 15%);
+  /* primary */
+  --color-primary: hsl(205deg, 70%, 50%);
+  --color-primary-focus: #3c9add;
+  --color-primary-active: #52a5e0;
+  --color-primary-background: #203c50;
+  /* secondary */
+  --color-secondary: hsl(205deg, 20%, 30%);
+  --color-secondary-focus: #475c6b;
+  --color-secondary-active: #52697a;
+  --color-secondary-background: #253037;
+  /* danger */
+  --color-danger: hsl(0deg, 70%, 50%);
+  --color-danger-focus: #dd3c3c;
+  --color-danger-active: #e05252;
+  --color-danger-background: #44282c;
+  /* success */
+  --color-success: hsl(115deg, 70%, 50%);
+  --color-success-focus: #49dd3c;
+  --color-success-active: #5ee052;
+  --color-success-background: #234b2c;
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
   --icon-link: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8.6 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.7a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.6a.5.5 0 0 0 .5-.5z M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.8L6 9a.5.5 0 1 0 .7.7L15 1.7V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
