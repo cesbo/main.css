@@ -1,0 +1,39 @@
+:root {
+    $color-text: white;
+    $color-inverse: white;
+    $color-background: hsl(205, 20%, 15%);
+
+    $color-primary: hsl(205, 70%, 50%);
+    $color-secondary: hsl(205, 20%, 30%);
+    $color-danger: hsl(0, 70%, 50%);
+    $color-success: hsl(115, 70%, 50%);
+
+    /* css */
+    --color-text: #{ $color-text };
+    --color-inverse: #{ $color-inverse };
+    --color-background: #{ $color-background };
+
+    /* primary */
+    --color-primary: #{ $color-primary };
+    --color-primary-focus: #{ lighten($color-primary, 5) };
+    --color-primary-active: #{ lighten($color-primary, 10) };
+    --color-primary-background: #{ color.mix($color-background, $color-primary, 80%) };
+
+    /* secondary */
+    --color-secondary: #{ $color-secondary };
+    --color-secondary-focus: #{ lighten($color-secondary, 5) };
+    --color-secondary-active: #{ lighten($color-secondary, 10) };
+    --color-secondary-background: #{ color.mix($color-background, $color-secondary, 80%) };
+
+    /* danger */
+    --color-danger: #{ $color-danger };
+    --color-danger-focus: #{ lighten($color-danger, 5) };
+    --color-danger-active: #{ lighten($color-danger, 10) };
+    --color-danger-background:  #{ color.mix($color-background, $color-danger, 80%) };
+
+    /* success */
+    --color-success: #{ $color-success };
+    --color-success-focus: #{ lighten($color-success, 5) };
+    --color-success-active: #{ lighten($color-success, 10) };
+    --color-success-background: #{ color.mix($color-background, $color-success, 80%) };
+}

@@ -31,45 +31,6 @@
 
     --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 
-    /* default colors */
-    $color-text: white;
-    $color-inverse: white;
-    $color-background: hsl(205, 20%, 15%);
-
-    $color-primary: hsl(205, 70%, 50%);
-    $color-secondary: hsl(205, 20%, 30%);
-    $color-danger: hsl(0, 70%, 50%);
-    $color-success: hsl(115, 70%, 50%);
-
-    /* css */
-    --color-text: #{ $color-text };
-    --color-inverse: #{ $color-inverse };
-    --color-background: #{ $color-background };
-
-    /* primary */
-    --color-primary: #{ $color-primary };
-    --color-primary-focus: #{ lighten($color-primary, 5) };
-    --color-primary-active: #{ lighten($color-primary, 10) };
-    --color-primary-background: #{ color.mix($color-background, $color-primary, 80%) };
-
-    /* secondary */
-    --color-secondary: #{ $color-secondary };
-    --color-secondary-focus: #{ lighten($color-secondary, 5) };
-    --color-secondary-active: #{ lighten($color-secondary, 10) };
-    --color-secondary-background: #{ color.mix($color-background, $color-secondary, 80%) };
-
-    /* danger */
-    --color-danger: #{ $color-danger };
-    --color-danger-focus: #{ lighten($color-danger, 5) };
-    --color-danger-active: #{ lighten($color-danger, 10) };
-    --color-danger-background:  #{ color.mix($color-background, $color-danger, 80%) };
-
-    /* success */
-    --color-success: #{ $color-success };
-    --color-success-focus: #{ lighten($color-success, 5) };
-    --color-success-active: #{ lighten($color-success, 10) };
-    --color-success-background: #{ color.mix($color-background, $color-success, 80%) };
-
     /* icons */
     --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
     --icon-link: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8.6 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.7a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.6a.5.5 0 0 0 .5-.5z M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.8L6 9a.5.5 0 1 0 .7.7L15 1.7V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
@@ -134,6 +95,7 @@ hr {
     display: none !important;
 }
 
+@import "theme";
 @import "typography";
 @import "layout/base";
 @import "controls/base";
