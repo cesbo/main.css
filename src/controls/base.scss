@@ -9,7 +9,7 @@ button,
     margin: 0;
     padding: var(--space-xs) var(--space-s);
     line-height: var(--line-height);
-    background-color: var(--color-background);
+    background-color: var(--color-primary-background);
     color: var(--color-text);
     border: var(--border);
     border-radius: var(--border-radius);
@@ -28,12 +28,12 @@ textarea {
     }
 
     &:focus {
-        background-color: var(--color-background-focus);
+        background-color: var(--color-default-background);
     }
 
     &:invalid {
         border-color: var(--color-danger);
-        background-color: var(--color-background-danger);
+        background-color: var(--color-danger-background);
     }
 }
 

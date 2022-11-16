@@ -1,7 +1,7 @@
 nav {
     display: block;
     width: 100%;
-    background-color: var(--color-background);
+    background-color: var(--color-primary-background);
     user-select: none;
 
     &>ul {
@@ -17,7 +17,7 @@ nav {
         border-radius: 0;
         padding: var(--space-xs) var(--space);
 
-        --color-default: var(--color-background);
+        --color-default: var(--color-primary-background);
         --color-inverse: var(--color-text);
     }
 }

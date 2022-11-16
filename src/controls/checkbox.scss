@@ -7,7 +7,7 @@ input:is([type="checkbox"], [type="radio"]) {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: var(--color-background);
+    background-color: var(--color-primary-background);
 
     &::before {
         position: absolute;

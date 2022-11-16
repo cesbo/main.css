@@ -28,23 +28,23 @@
   /* default */
   --color-default: hsl(210, 20%, 30%);
   --color-primary: hsl(210, 70%, 50%);
-  --color-danger: hsl(0, 70%, 50%);
+  --color-danger: hsl( 0, 70%, 50%);
   --color-success: hsl(140, 70%, 50%);
   /* focus, hover */
   --color-default-focus: hsl(210, 20%, 35%);
   --color-primary-focus: hsl(210, 70%, 55%);
-  --color-danger-focus: hsl(0, 70%, 55%);
+  --color-danger-focus: hsl( 0, 70%, 55%);
   --color-success-focus: hsl(140, 70%, 55%);
   /* active */
   --color-default-active: hsl(210, 20%, 40%);
   --color-primary-active: hsl(210, 70%, 60%);
-  --color-danger-active: hsl(0, 70%, 60%);
+  --color-danger-active: hsl( 0, 70%, 60%);
   --color-success-active: hsl(140, 70%, 60%);
   /* background */
-  --color-background: hsl(210, 20%, 15%);
-  --color-background-focus: hsl(210, 20%, 20%);
-  --color-background-danger: hsl(0, 20%, 15%);
-  --color-background-success: hsl(140, 20%, 15%);
+  --color-default-background: hsl(210, 20%, 20%);
+  --color-primary-background: hsl(210, 20%, 15%);
+  --color-danger-background: hsl( 0, 20%, 15%);
+  --color-success-background: hsl(140, 20%, 15%);
   /* icons */
   --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
   --icon-link: url('data:image/svg+xml;utf8,<svg viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M8.6 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.7a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.6a.5.5 0 0 0 .5-.5z M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.8L6 9a.5.5 0 1 0 .7.7L15 1.7V5.5a.5.5 0 0 0 1 0v-5z"/></svg>');
@@ -78,7 +78,7 @@ html {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   color: var(--color-text);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
@@ -176,7 +176,7 @@ blockquote,
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   color: var(--color-text);
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
 }
 
 pre {
@@ -336,7 +336,7 @@ button,
   margin: 0;
   padding: var(--space-xs) var(--space-s);
   line-height: var(--line-height);
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   color: var(--color-text);
   border: var(--border);
   border-radius: var(--border-radius);
@@ -355,13 +355,13 @@ textarea:disabled {
 input:not([type=button], [type=submit], [type=reset]):focus,
 select:focus,
 textarea:focus {
-  background-color: var(--color-background-focus);
+  background-color: var(--color-default-background);
 }
 input:not([type=button], [type=submit], [type=reset]):invalid,
 select:invalid,
 textarea:invalid {
   border-color: var(--color-danger);
-  background-color: var(--color-background-danger);
+  background-color: var(--color-danger-background);
 }
 
 button,
@@ -412,7 +412,7 @@ input:is([type=checkbox], [type=radio]) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
 }
 input:is([type=checkbox], [type=radio])::before {
   position: absolute;
@@ -644,7 +644,7 @@ div.listbox > div button:not(:hover, :focus) {
   background-color: transparent;
 }
 div.listbox > div button:is(:hover, :focus) ~ input {
-  background-color: var(--color-background-focus);
+  background-color: var(--color-default-background);
 }
 div.listbox > div button:first-of-type {
   cursor: grab;
@@ -670,11 +670,11 @@ div.listbox > div input {
   border-radius: 0;
 }
 div.listbox > div input:hover {
-  background-color: var(--color-background-focus);
+  background-color: var(--color-default-background);
 }
 div.listbox > div input:invalid {
   border-color: var(--color-danger);
-  background-color: var(--color-background-danger);
+  background-color: var(--color-danger-background);
 }
 div.listbox > div:last-child button:last-of-type::before {
   content: "+";
@@ -699,7 +699,7 @@ div.listbox > div:last-child button:last-of-type::before {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   opacity: 0.5;
   filter: grayscale(100%);
 }
@@ -710,7 +710,7 @@ div.listbox > div:last-child button:last-of-type::before {
   min-width: var(--modal-min-width);
   min-height: var(--modal-min-height);
   margin: var(--modal-margin);
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   border: var(--border);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -781,7 +781,7 @@ div.listbox > div:last-child button:last-of-type::before {
 nav {
   display: block;
   width: 100%;
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   user-select: none;
 }
 nav > ul {
@@ -795,7 +795,7 @@ nav .button,
 nav input:is([type=button], [type=submit], [type=reset]) {
   border-radius: 0;
   padding: var(--space-xs) var(--space);
-  --color-default: var(--color-background);
+  --color-default: var(--color-primary-background);
   --color-inverse: var(--color-text);
 }
 

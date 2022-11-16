@@ -52,10 +52,10 @@
     --color-success-active: hsl(140, 70%, 60%);
 
     /* background */
-    --color-background-focus:   hsl(210, 20%, 20%);
-    --color-background:         hsl(210, 20%, 15%);
-    --color-background-danger:  hsl(  0, 20%, 15%);
-    --color-background-success: hsl(140, 20%, 15%);
+    --color-default-background: hsl(210, 20%, 20%);
+    --color-primary-background: hsl(210, 20%, 15%);
+    --color-danger-background:  hsl(  0, 20%, 15%);
+    --color-success-background: hsl(140, 20%, 15%);
 
     /* icons */
     --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');
@@ -96,7 +96,7 @@ html {
     font-weight: var(--font-weight);
     line-height: var(--line-height);
 
-    background-color: var(--color-background);
+    background-color: var(--color-primary-background);
     color: var(--color-text);
 
     -webkit-tap-highlight-color: transparent;
