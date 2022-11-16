@@ -2,7 +2,6 @@ body {
     &>header {
         position: sticky;
         top: 0;
-        border-bottom: var(--border);
         z-index: 1;
     }
 
@@ -14,7 +13,6 @@ body {
     }
 
     &>footer {
-        border-top: var(--border);
         padding: var(--space);
     }
 }

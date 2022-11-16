@@ -3,6 +3,7 @@ nav {
     width: 100%;
     background-color: var(--color-background);
     user-select: none;
+    overflow: hidden;
 
     & ul {
         display: flex;
@@ -17,7 +18,15 @@ nav {
         border-radius: 0;
         padding: var(--space-xs) var(--space);
 
-        --color-secondary: var(--color-background);
-        --color-inverse: var(--color-text);
+        background-color: var(--color-background);
+        color: var(--color-text);
+
+        &:is(:hover, :focus) {
+            background-color: var(--color-secondary-focus);
+        }
+
+        &:is(:active, .active) {
+            background-color: var(--color-secondary-active);
+        }
     }
 }

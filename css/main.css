@@ -286,7 +286,6 @@ details[open] > summary::before {
 body > header {
   position: sticky;
   top: 0;
-  border-bottom: var(--border);
   z-index: 1;
 }
 body > main {
@@ -296,7 +295,6 @@ body > main {
   padding: var(--space);
 }
 body > footer {
-  border-top: var(--border);
   padding: var(--space);
 }
 
@@ -787,6 +785,7 @@ nav {
   width: 100%;
   background-color: var(--color-background);
   user-select: none;
+  overflow: hidden;
 }
 nav ul {
   display: flex;
@@ -799,8 +798,18 @@ nav .button,
 nav input:is([type=button], [type=submit], [type=reset]) {
   border-radius: 0;
   padding: var(--space-xs) var(--space);
-  --color-secondary: var(--color-background);
-  --color-inverse: var(--color-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+nav button:is(:hover, :focus),
+nav .button:is(:hover, :focus),
+nav input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus) {
+  background-color: var(--color-secondary-focus);
+}
+nav button:is(:active, .active),
+nav .button:is(:active, .active),
+nav input:is([type=button], [type=submit], [type=reset]):is(:active, .active) {
+  background-color: var(--color-secondary-active);
 }
 
 /*# sourceMappingURL=main.css.map */
