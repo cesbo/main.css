@@ -13,12 +13,12 @@ input:is([type="button"], [type="submit"], [type="reset"]) {
         pointer-events: none;
     }
 
-    &:is(:hover, :focus, .focus) {
+    &:is(:hover, :focus) {
         background-color: var(--color-secondary-focus);
         color: var(--color-inverse);
     }
 
-    &:active {
+    &:is(:active, .active) {
         background-color: var(--color-secondary-active);
         color: var(--color-inverse);
     }

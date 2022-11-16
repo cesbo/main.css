@@ -38,12 +38,12 @@ function initSourcePreview() {
 }
 
 function onHashChange() {
-    document.querySelectorAll('.docs-navbar a.focus').forEach(el => {
-        el.classList.remove('focus')
+    document.querySelectorAll('.docs-navbar a.active').forEach(el => {
+        el.classList.remove('active')
     })
 
     document.querySelectorAll('.docs-navbar a[href="' + location.hash + '"]').forEach(el => {
-        el.classList.add('focus')
+        el.classList.add('active')
     })
 
     window.scrollTo(0, 0)
