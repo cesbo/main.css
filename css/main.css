@@ -146,6 +146,10 @@ a[target=_blank]::after {
   background-color: currentColor;
 }
 
+ol, ul {
+  padding-left: var(--space);
+}
+
 code,
 kbd,
 samp {
@@ -195,7 +199,7 @@ details > summary::before {
   content: " ";
   display: inline-block;
   position: relative;
-  top: -0.1rem;
+  top: -0.05rem;
   width: 0.6rem;
   height: 0.6rem;
   transform: rotate(-90deg);
@@ -235,9 +239,8 @@ details[open] > summary::before {
   color: var(--color-text);
   --private-color-block: var(--color-danger);
 }
-.note > header, .note > summary,
-.spoiler > header,
-.spoiler > summary {
+.note > :is(header, summary),
+.spoiler > :is(header, summary) {
   font-weight: bold;
   border-bottom: var(--border);
   border-color: var(--private-color-block);
@@ -245,9 +248,8 @@ details[open] > summary::before {
   padding: 0 var(--space-s) var(--space-xs) var(--space-s);
   margin: 0 calc(var(--space-s) * -1);
 }
-.note > header + *, .note > summary + *,
-.spoiler > header + *,
-.spoiler > summary + * {
+.note > :is(header, summary) + *,
+.spoiler > :is(header, summary) + * {
   margin-top: var(--space-xs);
 }
 .note > :first-child,
@@ -259,9 +261,14 @@ details[open] > summary::before {
   margin-bottom: 0;
 }
 
+.spoiler {
+  --private-color-block: var(--color-default);
+}
 .spoiler > summary {
   cursor: pointer;
   user-select: none;
+  color: var(--color-text);
+  font-weight: normal;
 }
 .spoiler:not([open]) > summary {
   border-bottom: 0;
