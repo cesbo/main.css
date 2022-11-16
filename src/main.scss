@@ -13,7 +13,7 @@
     --line-height: 1.5rem;
 
     --border-width: 1px;
-    --border: var(--border-width) solid var(--color-default);
+    --border: var(--border-width) solid var(--color-secondary);
     --border-radius: .25rem;
 
     --grid-column-gap: var(--space);
@@ -49,25 +49,25 @@
     --color-inverse: hsl(0, 0%, 100%);
 
     /* default */
-    --color-default: hsl(var(--hue-secondary), var(--saturation-dimmed), var(--lightness-dimmed));
+    --color-secondary: hsl(var(--hue-secondary), var(--saturation-dimmed), var(--lightness-dimmed));
     --color-primary: hsl(var(--hue-primary), var(--saturation-normal), var(--lightness-normal));
     --color-danger:  hsl(var(--hue-danger), var(--saturation-normal), var(--lightness-normal));
     --color-success: hsl(var(--hue-success), var(--saturation-normal), var(--lightness-normal));
 
     /* focus, hover */
-    --color-default-focus: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step)));
+    --color-secondary-focus: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step)));
     --color-primary-focus: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
     --color-danger-focus:  hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
     --color-success-focus: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
 
     /* active */
-    --color-default-active: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step) * 2));
+    --color-secondary-active: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step) * 2));
     --color-primary-active: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
     --color-danger-active:  hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
     --color-success-active: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
 
     /* background */
-    --color-default-background: hsl(var(--hue-background), var(--saturation-background), calc(var(--lightness-background) + var(--lightness-step)));
+    --color-secondary-background: hsl(var(--hue-background), var(--saturation-background), calc(var(--lightness-background) + var(--lightness-step)));
     --color-primary-background: hsl(var(--hue-background), var(--saturation-background), var(--lightness-background));
     --color-danger-background:  hsl(var(--hue-danger), var(--saturation-background), var(--lightness-background));
     --color-success-background: hsl(var(--hue-success), var(--saturation-background), var(--lightness-background));

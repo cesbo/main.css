@@ -2,7 +2,7 @@ h1 {
     font-size: 2rem;
     line-height: 2rem;
     border-bottom: var(--border);
-    border-image: linear-gradient(to right, var(--color-default), transparent) 1;
+    border-image: linear-gradient(to right, var(--color-secondary), transparent) 1;
     padding: 1rem 0;
     margin: 1rem 0;
 }
@@ -65,7 +65,7 @@ pre,
 blockquote,
 .spoiler,
 .note {
-    --private-color-block: var(--color-default);
+    --private-color-block: var(--color-secondary);
 
     display: block;
     margin: 1rem 0;
@@ -172,7 +172,7 @@ details {
 }
 
 .spoiler {
-    --private-color-block: var(--color-default);
+    --private-color-block: var(--color-secondary);
 
     &>summary {
         cursor: pointer;

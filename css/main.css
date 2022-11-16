@@ -11,7 +11,7 @@
   --space-xl: 1.8rem;
   --line-height: 1.5rem;
   --border-width: 1px;
-  --border: var(--border-width) solid var(--color-default);
+  --border: var(--border-width) solid var(--color-secondary);
   --border-radius: .25rem;
   --grid-column-gap: var(--space);
   --grid-row-gap: var(--space);
@@ -38,22 +38,22 @@
   --color-text: hsl(0, 0%, 100%);
   --color-inverse: hsl(0, 0%, 100%);
   /* default */
-  --color-default: hsl(var(--hue-secondary), var(--saturation-dimmed), var(--lightness-dimmed));
+  --color-secondary: hsl(var(--hue-secondary), var(--saturation-dimmed), var(--lightness-dimmed));
   --color-primary: hsl(var(--hue-primary), var(--saturation-normal), var(--lightness-normal));
   --color-danger: hsl(var(--hue-danger), var(--saturation-normal), var(--lightness-normal));
   --color-success: hsl(var(--hue-success), var(--saturation-normal), var(--lightness-normal));
   /* focus, hover */
-  --color-default-focus: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step)));
+  --color-secondary-focus: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step)));
   --color-primary-focus: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
   --color-danger-focus: hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
   --color-success-focus: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step)));
   /* active */
-  --color-default-active: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step) * 2));
+  --color-secondary-active: hsl(var(--hue-secondary), var(--saturation-dimmed), calc(var(--lightness-dimmed) + var(--lightness-step) * 2));
   --color-primary-active: hsl(var(--hue-primary), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
   --color-danger-active: hsl(var(--hue-danger), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
   --color-success-active: hsl(var(--hue-success), var(--saturation-normal), calc(var(--lightness-normal) + var(--lightness-step) * 2));
   /* background */
-  --color-default-background: hsl(var(--hue-background), var(--saturation-background), calc(var(--lightness-background) + var(--lightness-step)));
+  --color-secondary-background: hsl(var(--hue-background), var(--saturation-background), calc(var(--lightness-background) + var(--lightness-step)));
   --color-primary-background: hsl(var(--hue-background), var(--saturation-background), var(--lightness-background));
   --color-danger-background: hsl(var(--hue-danger), var(--saturation-background), var(--lightness-background));
   --color-success-background: hsl(var(--hue-success), var(--saturation-background), var(--lightness-background));
@@ -118,7 +118,7 @@ h1 {
   font-size: 2rem;
   line-height: 2rem;
   border-bottom: var(--border);
-  border-image: linear-gradient(to right, var(--color-default), transparent) 1;
+  border-image: linear-gradient(to right, var(--color-secondary), transparent) 1;
   padding: 1rem 0;
   margin: 1rem 0;
 }
@@ -178,7 +178,7 @@ pre,
 blockquote,
 .spoiler,
 .note {
-  --private-color-block: var(--color-default);
+  --private-color-block: var(--color-secondary);
   display: block;
   margin: 1rem 0;
   padding: var(--space-xs) var(--space-s);
@@ -278,7 +278,7 @@ details[open] > summary::before {
 }
 
 .spoiler {
-  --private-color-block: var(--color-default);
+  --private-color-block: var(--color-secondary);
 }
 .spoiler > summary {
   cursor: pointer;
@@ -334,7 +334,7 @@ body > footer {
   padding: var(--space-xs) var(--space-s);
 }
 .table.hoverable > tbody > tr:hover {
-  background-color: var(--color-default-active);
+  background-color: var(--color-secondary-active);
 }
 
 input,
@@ -367,7 +367,7 @@ textarea:disabled {
 input:not([type=button], [type=submit], [type=reset]):focus,
 select:focus,
 textarea:focus {
-  background-color: var(--color-default-background);
+  background-color: var(--color-secondary-background);
 }
 input:not([type=button], [type=submit], [type=reset]):invalid,
 select:invalid,
@@ -381,7 +381,7 @@ button,
 input:is([type=button], [type=submit], [type=reset]) {
   width: auto;
   cursor: pointer;
-  background-color: var(--color-default);
+  background-color: var(--color-secondary);
   color: var(--color-inverse);
   text-decoration: none;
   border: 0;
@@ -395,13 +395,13 @@ input:is([type=button], [type=submit], [type=reset]):is(:disabled, .disabled) {
 button:is(:hover, :focus, .focus),
 .button:is(:hover, :focus, .focus),
 input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus, .focus) {
-  background-color: var(--color-default-focus);
+  background-color: var(--color-secondary-focus);
   color: var(--color-inverse);
 }
 button:active,
 .button:active,
 input:is([type=button], [type=submit], [type=reset]):active {
-  background-color: var(--color-default-active);
+  background-color: var(--color-secondary-active);
   color: var(--color-inverse);
 }
 
@@ -465,7 +465,7 @@ input[type=checkbox].switch::before {
   left: var(--border-width);
   right: auto;
   line-height: calc(var(--line-height) - 4 * var(--border-width));
-  background-color: var(--color-default);
+  background-color: var(--color-secondary);
   text-align: center;
   transition: 0.1s background-color ease-out, 0.1s left ease-out;
 }
@@ -656,7 +656,7 @@ div.listbox > div button:not(:hover, :focus) {
   background-color: transparent;
 }
 div.listbox > div button:is(:hover, :focus) ~ input {
-  background-color: var(--color-default-background);
+  background-color: var(--color-secondary-background);
 }
 div.listbox > div button:first-of-type {
   cursor: grab;
@@ -682,7 +682,7 @@ div.listbox > div input {
   border-radius: 0;
 }
 div.listbox > div input:hover {
-  background-color: var(--color-default-background);
+  background-color: var(--color-secondary-background);
 }
 div.listbox > div input:invalid {
   border-color: var(--color-danger);
@@ -796,7 +796,7 @@ nav {
   background-color: var(--color-primary-background);
   user-select: none;
 }
-nav > ul {
+nav ul {
   display: flex;
   list-style: none;
   padding: 0;
@@ -807,7 +807,7 @@ nav .button,
 nav input:is([type=button], [type=submit], [type=reset]) {
   border-radius: 0;
   padding: var(--space-xs) var(--space);
-  --color-default: var(--color-primary-background);
+  --color-secondary: var(--color-primary-background);
   --color-inverse: var(--color-text);
 }
 

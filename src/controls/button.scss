@@ -3,7 +3,7 @@ button,
 input:is([type="button"], [type="submit"], [type="reset"]) {
     width: auto;
     cursor: pointer;
-    background-color: var(--color-default);
+    background-color: var(--color-secondary);
     color: var(--color-inverse);
     text-decoration: none;
     border: 0;
@@ -14,12 +14,12 @@ input:is([type="button"], [type="submit"], [type="reset"]) {
     }
 
     &:is(:hover, :focus, .focus) {
-        background-color: var(--color-default-focus);
+        background-color: var(--color-secondary-focus);
         color: var(--color-inverse);
     }
 
     &:active {
-        background-color: var(--color-default-active);
+        background-color: var(--color-secondary-active);
         color: var(--color-inverse);
     }
 }
