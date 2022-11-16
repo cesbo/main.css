@@ -1,0 +1,38 @@
+@use "sass:math";
+@use "sass:list";
+
+@function spin($i) {
+    $result: ();
+    @for $n from 0 to 5 {
+        $v: math.clamp(0, $i - $n, 6);
+        $v: 0deg + math.div($v * 180, 12);
+        $v: math.round(100% * math.sin($v));
+        $result: $result, $v
+    }
+    @return $result;
+}
+
+@keyframes spin {
+    @for $i from 0 through 10 {
+        #{$i * 10%} { background-position-x: spin($i); }
+    }
+}
+
+.spinner {
+    --color: var(--color-primary);
+    --size: 1rem;
+
+    margin: 0 auto;
+    height: var(--size);
+    --private-spinner-dot: radial-gradient(farthest-side, var(--color) 70%, transparent) center no-repeat;
+    background:
+        var(--private-spinner-dot),
+        var(--private-spinner-dot),
+        var(--private-spinner-dot),
+        var(--private-spinner-dot),
+        var(--private-spinner-dot);
+    background-size: var(--size) var(--size);
+    animation: 2s linear 0s infinite spin;
+
+    mask: radial-gradient(circle at center, black 40%, transparent 80%) center no-repeat;
+}

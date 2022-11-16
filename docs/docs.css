@@ -2,6 +2,10 @@ main {
 	max-width: 1130px;
 }
 
+body[x-cloak]>main {
+	display: none !important;
+}
+
 section:not(:target) {
 	display: none;
 }

@@ -703,6 +703,53 @@ div.listbox > div:last-child button:last-of-type::before {
   padding: var(--space);
 }
 
+@keyframes spin {
+  0% {
+    background-position-x: 0%, 0%, 0%, 0%, 0%;
+  }
+  10% {
+    background-position-x: 26%, 0%, 0%, 0%, 0%;
+  }
+  20% {
+    background-position-x: 50%, 26%, 0%, 0%, 0%;
+  }
+  30% {
+    background-position-x: 71%, 50%, 26%, 0%, 0%;
+  }
+  40% {
+    background-position-x: 87%, 71%, 50%, 26%, 0%;
+  }
+  50% {
+    background-position-x: 97%, 87%, 71%, 50%, 26%;
+  }
+  60% {
+    background-position-x: 100%, 97%, 87%, 71%, 50%;
+  }
+  70% {
+    background-position-x: 100%, 100%, 97%, 87%, 71%;
+  }
+  80% {
+    background-position-x: 100%, 100%, 100%, 97%, 87%;
+  }
+  90% {
+    background-position-x: 100%, 100%, 100%, 100%, 97%;
+  }
+  100% {
+    background-position-x: 100%, 100%, 100%, 100%, 100%;
+  }
+}
+.spinner {
+  --color: var(--color-primary);
+  --size: 1rem;
+  margin: 0 auto;
+  height: var(--size);
+  --private-spinner-dot: radial-gradient(farthest-side, var(--color) 70%, transparent) center no-repeat;
+  background: var(--private-spinner-dot), var(--private-spinner-dot), var(--private-spinner-dot), var(--private-spinner-dot), var(--private-spinner-dot);
+  background-size: var(--size) var(--size);
+  animation: 2s linear 0s infinite spin;
+  mask: radial-gradient(circle at center, black 40%, transparent 80%) center no-repeat;
+}
+
 nav {
   display: block;
   width: 100%;

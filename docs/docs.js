@@ -49,15 +49,6 @@ function onHashChange() {
     window.scrollTo(0, 0)
 }
 
-window.DropdownOpen = function(event) {
-    const btn = event.target
-    const el = btn.parentNode
-
-    el.classList.toggle('open')
-
-    // TODO
-}
-
 function init() {
     if(location.hash === '') {
         location.hash = '#quick-start'

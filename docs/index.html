@@ -8,8 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="docs.css" />
 	<link rel="stylesheet" type="text/css" href="stackoverflow-dark.min.css" />
 </head>
-<body>
-
+<body x-cloak x-data>
 <header>
 	<nav class="docs-navbar" data-toggle="">
 		<ul>
@@ -268,8 +267,8 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 
 <h2>Dropdown</h2>
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
-	<div class="dropdown">
-		<button onClick="DropdownOpen(event)">bottom-left</button>
+	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open">bottom-left</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -280,8 +279,8 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		</nav>
 	</div>
 
-	<div class="dropdown bottom-right">
-		<button onClick="DropdownOpen(event)">bottom-right</button>
+	<div class="dropdown bottom-right" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open">bottom-right</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -292,8 +291,8 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		</nav>
 	</div>
 
-	<div class="dropdown top-left">
-		<button onClick="DropdownOpen(event)">top-left</button>
+	<div class="dropdown top-left" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open">top-left</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -304,8 +303,8 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		</nav>
 	</div>
 
-	<div class="dropdown top-right">
-		<button onClick="DropdownOpen(event)">top-right</button>
+	<div class="dropdown top-right" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open">top-right</button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -320,8 +319,8 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <p>Dropdown without text in the button will be with three dots:</p>
 
 <div class="docs-box">
-	<div class="dropdown">
-		<button onClick="DropdownOpen(event)"></button>
+	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open"></button>
 		<nav>
 			<ul>
 				<li><a href="#" class="button">Menu item</a></li>
@@ -402,6 +401,17 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		</div>
 	</div>
 </div><!-- Listbox -->
+
+<h2>Spinner</h2>
+<p>Animated spinner to indicates loading process. Available variables:</p>
+<ul>
+	<li><code>--color</code> - spinner color. By the default primary color used</li>
+	<li><code>--size</code> - dots radius. By the default 1rem</li>
+</ul>
+
+<div class="docs-box">
+	<div class="spinner" style="width: 300px; margin: 1rem auto;"></div>
+</div>
 
 </section><!-- Components -->
 
