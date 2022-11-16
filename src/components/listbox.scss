@@ -4,44 +4,42 @@ div.listbox {
     &>div {
         position: relative;
 
+        &::before {
+            content: "=";
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 2rem;
+            padding: .2rem 0;
+            text-align: center;
+            cursor: grab;
+        }
+
         button {
             position: absolute;
             z-index: 1;
             top: 0;
             bottom: 0;
+            right: 0;
             padding: 0;
             border: 0;
             width: 2rem;
 
-            &:not(:hover, :focus) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &::before {
+                content: "\00d7";
+            }
+
+            &:not(:hover) {
                 background-color: transparent;
             }
 
-            &:is(:hover, :focus) ~ input {
+            &:hover ~ input {
                 background-color: var(--color-secondary-background);
-            }
-
-            /* left button (move) */
-            &:first-of-type {
-                cursor: grab;
-                left: 0;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-
-                &::before {
-                    content: "=";
-                }
-            }
-
-            /* right button (remove) */
-            &:last-of-type {
-                right: 0;
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-
-                &::before {
-                    content: "\00d7";
-                }
             }
         }
 
@@ -63,7 +61,7 @@ div.listbox {
 
         /* line for new item */
         &:last-child {
-            button:last-of-type::before {
+            button::before {
                 content: "+";
             }
         }

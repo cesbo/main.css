@@ -30,7 +30,7 @@
 
 <div class="note">
 In this documentation used <a href="https://alpinejs.dev" target="_blank">Alpine.js</a> for better experience.
-But CSS framework is not dependent on it. You can use it with any other framework or with vanilla JS.
+But CSS framework is not dependent on it. You can use it with any other framework or without JS at all.
 </div>
 
 <h2>Installation</h2>
@@ -450,15 +450,20 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		}"
 	>
 		<template x-for="(item, index) in items" :key="index">
-			<div>
-				<button tabindex="-1"></button>
+			<div
+				draggable="true"
+				@dragstart.self="ListboxDragstart(event)"
+				@dragend.self="ListboxDragend(event)"
+				@dragover.self="ListboxDragover(event)"
+				@dragenter.self="ListboxDragenter(event)"
+				@dragleave.self="ListboxDragleave(event)"
+			>
 				<button tabindex="-1" @click="delItem(index)"></button>
 				<input type="text" x-model="item" required />
 			</div>
 		</template>
 
 		<div>
-			<button tabindex="-1" disabled></button>
 			<button tabindex="-1" @click="addItem()"></button>
 			<input type="text" placeholder="new item" x-ref="newItem" @keydown.enter="addItem()" />
 		</div>

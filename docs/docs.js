@@ -1,6 +1,21 @@
 (function() {
 'use strict';
 
+window.ListboxDragstart = function(ev) {
+}
+
+window.ListboxDragend = function(ev) {
+}
+
+window.ListboxDragover = function(ev) {
+}
+
+window.ListboxDragenter = function(ev) {
+}
+
+window.ListboxDragleave = function(ev) {
+}
+
 function renderSource(el) {
     const lines = el
         .innerHTML
