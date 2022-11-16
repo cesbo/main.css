@@ -90,7 +90,7 @@ html {
   font-size: var(--font-size);
   font-weight: var(--font-weight);
   line-height: var(--line-height);
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   color: var(--color-text);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
@@ -188,7 +188,7 @@ blockquote,
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   color: var(--color-text);
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
 }
 
 pre {
@@ -348,7 +348,7 @@ button,
   margin: 0;
   padding: var(--space-xs) var(--space-s);
   line-height: var(--line-height);
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   color: var(--color-text);
   border: var(--border);
   border-radius: var(--border-radius);
@@ -367,13 +367,13 @@ textarea:disabled {
 input:not([type=button], [type=submit], [type=reset]):focus,
 select:focus,
 textarea:focus {
-  background-color: var(--color-background-focus);
+  background-color: var(--color-default-background);
 }
 input:not([type=button], [type=submit], [type=reset]):invalid,
 select:invalid,
 textarea:invalid {
   border-color: var(--color-danger);
-  background-color: var(--color-background-danger);
+  background-color: var(--color-danger-background);
 }
 
 button,
@@ -424,7 +424,7 @@ input:is([type=checkbox], [type=radio]) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
 }
 input:is([type=checkbox], [type=radio])::before {
   position: absolute;
@@ -656,7 +656,7 @@ div.listbox > div button:not(:hover, :focus) {
   background-color: transparent;
 }
 div.listbox > div button:is(:hover, :focus) ~ input {
-  background-color: var(--color-background-focus);
+  background-color: var(--color-default-background);
 }
 div.listbox > div button:first-of-type {
   cursor: grab;
@@ -682,11 +682,11 @@ div.listbox > div input {
   border-radius: 0;
 }
 div.listbox > div input:hover {
-  background-color: var(--color-background-focus);
+  background-color: var(--color-default-background);
 }
 div.listbox > div input:invalid {
   border-color: var(--color-danger);
-  background-color: var(--color-background-danger);
+  background-color: var(--color-danger-background);
 }
 div.listbox > div:last-child button:last-of-type::before {
   content: "+";
@@ -711,7 +711,7 @@ div.listbox > div:last-child button:last-of-type::before {
   display: block;
   width: 100%;
   height: 100%;
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   opacity: 0.5;
   filter: grayscale(100%);
 }
@@ -722,7 +722,7 @@ div.listbox > div:last-child button:last-of-type::before {
   min-width: var(--modal-min-width);
   min-height: var(--modal-min-height);
   margin: var(--modal-margin);
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   border: var(--border);
   border-radius: var(--border-radius);
   box-shadow: var(--shadow);
@@ -793,7 +793,7 @@ div.listbox > div:last-child button:last-of-type::before {
 nav {
   display: block;
   width: 100%;
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
   user-select: none;
 }
 nav > ul {
@@ -807,7 +807,7 @@ nav .button,
 nav input:is([type=button], [type=submit], [type=reset]) {
   border-radius: 0;
   padding: var(--space-xs) var(--space);
-  --color-default: var(--color-background);
+  --color-default: var(--color-primary-background);
   --color-inverse: var(--color-text);
 }
 

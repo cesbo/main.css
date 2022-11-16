@@ -18,7 +18,7 @@ div.listbox {
             }
 
             &:is(:hover, :focus) ~ input {
-                background-color: var(--color-background-focus);
+                background-color: var(--color-default-background);
             }
 
             /* left button (move) */
@@ -52,12 +52,12 @@ div.listbox {
             border-radius: 0;
 
             &:hover {
-                background-color: var(--color-background-focus);
+                background-color: var(--color-default-background);
             }
 
             &:invalid {
                 border-color: var(--color-danger);
-                background-color: var(--color-background-danger);
+                background-color: var(--color-danger-background);
             }
         }
 
