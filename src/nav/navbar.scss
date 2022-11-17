@@ -21,7 +21,7 @@ nav {
             display: none;
             position: absolute;
             border: var(--border);
-            width: calc(100%);
+            min-width: calc(100%);
             top: calc(100%);
             animation: sweep-down .1s ease-out;
         }
