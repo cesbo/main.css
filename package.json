@@ -15,6 +15,7 @@
         "dev": "sass --watch src/main.scss css/main.css"
     },
     "devDependencies": {
+        "nord": "^0.2.1",
         "sass": "^1.55.0"
     }
 }
