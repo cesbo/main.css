@@ -81,29 +81,56 @@ hr {
 
 :root {
   /* css */
-  --color-text: white;
-  --color-inverse: white;
-  --color-background: hsl(200deg, 20%, 15%);
+  --color-text: #fcfdfd;
+  --color-inverse: #fcfdfd;
+  --color-background: #232831;
   /* primary */
-  --color-primary: hsl(200deg, 60%, 50%);
-  --color-primary-focus: #47a3d1;
-  --color-primary-active: #5cadd6;
-  --color-primary-background: #233f4e;
+  --color-primary: #5280b8;
+  --color-primary-focus: #648dc0;
+  --color-primary-active: #769ac7;
+  --color-primary-background: #2c3a4c;
   /* secondary */
-  --color-secondary: hsl(200deg, 20%, 30%);
-  --color-secondary-focus: #475f6b;
-  --color-secondary-active: #526d7a;
-  --color-secondary-background: #253137;
+  --color-secondary: #4C566A;
+  --color-secondary-focus: #576279;
+  --color-secondary-active: #616e88;
+  --color-secondary-background: #2b313c;
   /* danger */
-  --color-danger: hsl(0deg, 60%, 50%);
-  --color-danger-focus: #d14747;
-  --color-danger-active: #d65c5c;
-  --color-danger-background: #422b2f;
+  --color-danger: #ca5661;
+  --color-danger-focus: #d06973;
+  --color-danger-active: #d67d85;
+  --color-danger-background: #44313b;
   /* success */
-  --color-success: hsl(100deg, 60%, 50%);
-  --color-success-focus: #75d147;
-  --color-success-active: #85d65c;
-  --color-success-background: #2d4a2f;
+  --color-success: #86c5c4;
+  --color-success-focus: #97cdcc;
+  --color-success-active: #a9d5d4;
+  --color-success-background: #37474e;
+}
+
+.light {
+  /* css */
+  --color-text: #232831;
+  --color-inverse: #232831;
+  --color-background: #fcfdfd;
+  /* primary */
+  --color-primary: #5280b8;
+  --color-primary-focus: #4673ab;
+  --color-primary-active: #3e6799;
+  --color-primary-background: #dae4ef;
+  /* secondary */
+  --color-secondary: #D8DEE9;
+  --color-secondary-focus: #c8d0e0;
+  --color-secondary-active: #b7c2d7;
+  --color-secondary-background: #f5f7f9;
+  /* danger */
+  --color-danger: #ca5661;
+  --color-danger-focus: #c4424f;
+  --color-danger-active: #b53844;
+  --color-danger-background: #f2dcde;
+  /* success */
+  --color-success: #86c5c4;
+  --color-success-focus: #75bdbb;
+  --color-success-active: #64b4b3;
+  --color-success-background: #e4f2f2;
 }
 
 h1 {
@@ -575,17 +602,21 @@ select {
   width: 0.6rem;
   height: 0.6rem;
 }
-.dropdown.open > nav {
-  display: block;
+.dropdown.open > .items {
+  display: flex;
 }
-.dropdown > nav {
-  display: none;
+.dropdown > .items {
   position: absolute;
-  z-index: 1;
+  display: none;
+  background-color: var(--color-background);
+  flex-direction: column;
   border: var(--border);
   border-radius: var(--border-radius);
-  width: auto;
   box-shadow: var(--shadow);
+  width: auto;
+  user-select: none;
+  overflow: hidden;
+  z-index: 1;
   /* default bottom-left */
   top: calc(100% + 0.2rem);
   bottom: auto;
@@ -593,31 +624,42 @@ select {
   right: auto;
   animation: sweep-down 0.1s ease-out;
 }
-.dropdown > nav > ul {
-  flex-direction: column;
-}
-.dropdown > nav button,
-.dropdown > nav .button,
-.dropdown > nav input:is([type=button], [type=submit], [type=reset]) {
+.dropdown > .items button,
+.dropdown > .items .button,
+.dropdown > .items input:is([type=button], [type=submit], [type=reset]) {
+  border-radius: 0;
+  padding: var(--space-xs) var(--space);
+  background-color: var(--color-background);
+  color: var(--color-text);
   width: 100%;
   white-space: nowrap;
   text-align: left;
 }
-.dropdown.bottom-right > nav {
+.dropdown > .items button:is(:hover, :focus),
+.dropdown > .items .button:is(:hover, :focus),
+.dropdown > .items input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus) {
+  background-color: var(--color-secondary-focus);
+}
+.dropdown > .items button:is(:active, .active),
+.dropdown > .items .button:is(:active, .active),
+.dropdown > .items input:is([type=button], [type=submit], [type=reset]):is(:active, .active) {
+  background-color: var(--color-secondary-active);
+}
+.dropdown.bottom-right > .items {
   top: calc(100% + 0.2rem);
   bottom: auto;
   left: auto;
   right: 0;
   animation: sweep-down 0.1s ease-out;
 }
-.dropdown.top-left > nav {
+.dropdown.top-left > .items {
   top: auto;
   bottom: calc(100% + 0.2rem);
   left: 0;
   right: auto;
   animation: sweep-up 0.1s ease-out;
 }
-.dropdown.top-right > nav {
+.dropdown.top-right > .items {
   top: auto;
   bottom: calc(100% + 0.2rem);
   left: auto;
@@ -782,23 +824,24 @@ div.listbox > div:last-child button::before {
 }
 
 nav {
-  display: block;
+  display: flex;
   width: 100%;
   background-color: var(--color-background);
   user-select: none;
   border-bottom: var(--border);
 }
-nav ul {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+nav button,
+nav .button,
+nav input:is([type=button], [type=submit], [type=reset]) {
+  border-radius: 0;
+  background-color: var(--color-background);
+  white-space: nowrap;
 }
-nav ul > li {
+nav > .dropdown {
   position: relative;
   display: inline-block;
 }
-nav ul > li ul {
+nav > .dropdown > .items {
   display: none;
   position: absolute;
   border: var(--border);
@@ -806,26 +849,10 @@ nav ul > li ul {
   top: 100%;
   animation: sweep-down 0.1s ease-out;
 }
-nav ul > li:hover ul {
+nav > .dropdown:hover > .items {
   display: block;
-}
-nav button,
-nav .button,
-nav input:is([type=button], [type=submit], [type=reset]) {
-  border-radius: 0;
-  padding: var(--space-xs) var(--space);
-  background-color: var(--color-background);
-  color: var(--color-text);
-}
-nav button:is(:hover, :focus),
-nav .button:is(:hover, :focus),
-nav input:is([type=button], [type=submit], [type=reset]):is(:hover, :focus) {
-  background-color: var(--color-secondary-focus);
-}
-nav button:is(:active, .active),
-nav .button:is(:active, .active),
-nav input:is([type=button], [type=submit], [type=reset]):is(:active, .active) {
-  background-color: var(--color-secondary-active);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

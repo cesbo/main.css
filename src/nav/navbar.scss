@@ -1,53 +1,35 @@
 nav {
-    display: block;
+    display: flex;
     width: 100%;
     background-color: var(--color-background);
     user-select: none;
     border-bottom: var(--border);
 
-    & ul {
-        display: flex;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        & > li {
-            position: relative;
-            display: inline-block;
-
-            ul {
-                display: none;
-                position: absolute;
-                border: var(--border);
-                width: calc(100%);
-                top: calc(100%);
-                animation: sweep-down .1s ease-out;
-
-            }
-
-            &:hover ul {
-                display: block;
-            }
-        }
-
-
-    }
-
     button,
     .button,
     input:is([type=button], [type=submit], [type=reset]) {
         border-radius: 0;
-        padding: var(--space-xs) var(--space);
-
         background-color: var(--color-background);
-        color: var(--color-text);
+        white-space: nowrap;
+    }
 
-        &:is(:hover, :focus) {
-            background-color: var(--color-secondary-focus);
+    &>.dropdown {
+        position: relative;
+        display: inline-block;
+
+        &>.items {
+            display: none;
+            position: absolute;
+            border: var(--border);
+            width: calc(100%);
+            top: calc(100%);
+            animation: sweep-down .1s ease-out;
         }
 
-        &:is(:active, .active) {
-            background-color: var(--color-secondary-active);
+        &:hover>.items {
+            display: block;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
     }
 }

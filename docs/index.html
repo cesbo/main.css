@@ -11,13 +11,11 @@
 <body x-cloak x-data>
 <header>
 	<nav class="docs-navbar" data-toggle="">
-		<ul>
-			<li><a href="#quick-start" class="button">Quick Start</a></li>
-			<li><a href="#theme" class="button">Theme</a></li>
-			<li><a href="#typography" class="button">Typography</a></li>
-			<li><a href="#controls" class="button">Controls</a></li>
-			<li><a href="#components" class="button">Components</a></li>
-		</ul>
+		<a href="#quick-start" class="button">Quick Start</a>
+		<a href="#theme" class="button">Theme</a>
+		<a href="#typography" class="button">Typography</a>
+		<a href="#controls" class="button">Controls</a>
+		<a href="#components" class="button">Components</a>
 	</nav>
 </header>
 
@@ -331,18 +329,16 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <h2>Navbar</h2>
 <div class="docs-box">
 	<nav>
-		<ul>
-			<li><a class="button" href="#">Menu Item 1</a></li>
-			<li><a class="button" href="#">Menu Item 2</a></li>
-			<li>
-				<a class="button" href="#">Dropdown Menu Item</a>
-				<ul>
-					<a class="button" href="#">Submenu Item 1</a>
-					<a class="button" href="#">Submenu Item 2</a>
-					<a class="button" href="#">Submenu Item 3</a>
-				</ul>
-			</li>
-		</ul>
+		<a class="button" href="#">Menu Item 1</a>
+		<a class="button" href="#">Menu Item 2</a>
+		<div class="dropdown">
+			<a class="button" href="#">Dropdown Menu Item</a>
+			<div class="items">
+				<a class="button" href="#">Submenu Item 1</a>
+				<a class="button" href="#">Submenu Item 2</a>
+				<a class="button" href="#">Submenu Item 3</a>
+			</div>
+		</div>
 	</nav>
 </div>
 
@@ -350,50 +346,42 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">bottom-left</button>
-		<nav>
-			<ul>
-				<li><a href="#" class="button">Menu item</a></li>
-				<li><a href="#" class="button disabled">Disabled item</a></li>
-				<li><hr /></li>
-				<li><a href="#" class="button">Under the line</a></li>
-			</ul>
-		</nav>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
 	</div>
 
 	<div class="dropdown bottom-right" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">bottom-right</button>
-		<nav>
-			<ul>
-				<li><a href="#" class="button">Menu item</a></li>
-				<li><a href="#" class="button disabled">Disabled item</a></li>
-				<li><hr /></li>
-				<li><a href="#" class="button">Under the line</a></li>
-			</ul>
-		</nav>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
 	</div>
 
 	<div class="dropdown top-left" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">top-left</button>
-		<nav>
-			<ul>
-				<li><a href="#" class="button">Menu item</a></li>
-				<li><a href="#" class="button disabled">Disabled item</a></li>
-				<li><hr /></li>
-				<li><a href="#" class="button">Under the line</a></li>
-			</ul>
-		</nav>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
 	</div>
 
 	<div class="dropdown top-right" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">top-right</button>
-		<nav>
-			<ul>
-				<li><a href="#" class="button">Menu item</a></li>
-				<li><a href="#" class="button disabled">Disabled item</a></li>
-				<li><hr /></li>
-				<li><a href="#" class="button">Under the line</a></li>
-			</ul>
-		</nav>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
 	</div>
 </div>
 
