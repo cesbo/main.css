@@ -3,13 +3,34 @@ nav {
     width: 100%;
     background-color: var(--color-background);
     user-select: none;
-    overflow: hidden;
+    border-bottom: var(--border);
 
     & ul {
         display: flex;
         list-style: none;
         padding: 0;
         margin: 0;
+
+        & > li {
+            position: relative;
+            display: inline-block;
+
+            ul {
+                display: none;
+                position: absolute;
+                border: var(--border);
+                width: calc(100%);
+                top: calc(100%);
+                animation: sweep-down .1s ease-out;
+
+            }
+
+            &:hover ul {
+                display: block;
+            }
+        }
+
+
     }
 
     button,

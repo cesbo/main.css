@@ -786,13 +786,28 @@ nav {
   width: 100%;
   background-color: var(--color-background);
   user-select: none;
-  overflow: hidden;
+  border-bottom: var(--border);
 }
 nav ul {
   display: flex;
   list-style: none;
   padding: 0;
   margin: 0;
+}
+nav ul > li {
+  position: relative;
+  display: inline-block;
+}
+nav ul > li ul {
+  display: none;
+  position: absolute;
+  border: var(--border);
+  width: 100%;
+  top: 100%;
+  animation: sweep-down 0.1s ease-out;
+}
+nav ul > li:hover ul {
+  display: block;
 }
 nav button,
 nav .button,

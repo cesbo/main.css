@@ -328,6 +328,24 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 
 <p>Components is a complex elements</p>
 
+<h2>Navbar</h2>
+<div class="docs-box">
+	<nav>
+		<ul>
+			<li><a class="button" href="#">Menu Item 1</a></li>
+			<li><a class="button" href="#">Menu Item 2</a></li>
+			<li>
+				<a class="button" href="#">Dropdown Menu Item</a>
+				<ul>
+					<a class="button" href="#">Submenu Item 1</a>
+					<a class="button" href="#">Submenu Item 2</a>
+					<a class="button" href="#">Submenu Item 3</a>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+</div>
+
 <h2>Dropdown</h2>
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
