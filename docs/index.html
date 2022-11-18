@@ -221,6 +221,11 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 				<span>Readonly</span>
 				<input type="text" placeholder="Readonly" readonly />
 			</label>
+
+			<label>
+				<span>Textarea</span>
+				<textarea></textarea>
+			</label>
 		</fieldset>
 	</form>
 </div><!-- Input -->
@@ -396,14 +401,12 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <div class="docs-box">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open"></button>
-		<nav>
-			<ul>
-				<li><a href="#" class="button">Menu item</a></li>
-				<li><a href="#" class="button disabled">Disabled item</a></li>
-				<li><hr /></li>
-				<li><a href="#" class="button">Under the line</a></li>
-			</ul>
-		</nav>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
 	</div>
 </div><!-- Dropdown -->
 
