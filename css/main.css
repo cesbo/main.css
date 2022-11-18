@@ -1,8 +1,8 @@
 @charset "UTF-8";
 :root {
-  --font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-monospace: "Consolas", monospace;
-  --font-size: 18px;
+  --font-family: Verdana, sans-serif;
+  --font-monospace: "Courier New", monospace;
+  --font-size: 16px;
   --font-weight: 400;
   --space: 1rem;
   --space-xs: .4rem;
