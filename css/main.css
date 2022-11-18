@@ -405,7 +405,37 @@ input:is([type=button], [type=submit], [type=reset]) {
   background-color: var(--color-secondary);
   color: var(--color-inverse);
   text-decoration: none;
-  border: 0;
+  border: var(--border);
+}
+button.outline,
+.button.outline,
+input:is([type=button], [type=submit], [type=reset]).outline {
+  background-color: transparent;
+}
+button.outline:hover,
+.button.outline:hover,
+input:is([type=button], [type=submit], [type=reset]).outline:hover {
+  background-color: var(--color-secondary-background);
+}
+button.outline.danger,
+.button.outline.danger,
+input:is([type=button], [type=submit], [type=reset]).outline.danger {
+  border-color: var(--color-danger);
+}
+button.outline.danger:hover,
+.button.outline.danger:hover,
+input:is([type=button], [type=submit], [type=reset]).outline.danger:hover {
+  background-color: var(--color-danger-background);
+}
+button.outline.success,
+.button.outline.success,
+input:is([type=button], [type=submit], [type=reset]).outline.success {
+  border-color: var(--color-success);
+}
+button.outline.success:hover,
+.button.outline.success:hover,
+input:is([type=button], [type=submit], [type=reset]).outline.success:hover {
+  background-color: var(--color-success-background);
 }
 button:is(:disabled, .disabled),
 .button:is(:disabled, .disabled),

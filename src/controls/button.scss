@@ -6,7 +6,31 @@ input:is([type="button"], [type="submit"], [type="reset"]) {
     background-color: var(--color-secondary);
     color: var(--color-inverse);
     text-decoration: none;
-    border: 0;
+    border: var(--border);
+
+    &.outline {
+        background-color: transparent;
+
+        &:hover {
+            background-color: var(--color-secondary-background);
+        }
+
+        &.danger {
+            border-color: var(--color-danger);
+
+            &:hover {
+                background-color: var(--color-danger-background);
+            }
+        }
+
+        &.success {
+            border-color: var(--color-success);
+
+            &:hover {
+                background-color: var(--color-success-background);
+            }
+        }
+    }
 
     &:is(:disabled, .disabled) {
         opacity: .5;
