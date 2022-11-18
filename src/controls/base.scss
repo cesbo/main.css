@@ -37,6 +37,10 @@ textarea {
     }
 }
 
+textarea, pre {
+    font-family: var(--font-monospace);
+}
+
 @import "button";
 @import "checkbox";
 @import "form";
