@@ -10,6 +10,7 @@
 </head>
 <body x-cloak x-data>
 <header>
+	<input class="nav-switch" type="checkbox">
 	<nav class="docs-navbar" data-toggle="">
 		<a href="#quick-start" class="button">Quick Start</a>
 		<a href="#theme" class="button">Theme</a>
@@ -327,6 +328,11 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <p>Components is a complex elements</p>
 
 <h2>Navbar</h2>
+
+<p>
+	Place the <code>&lt;nav&gt;</code> in the <code>&lt;header&gt;</code> tag right after <code>&lt;input class="nav-switch" type="checkbox"&gt;</code> to enable mobile menu switch.
+</p>
+
 <div class="docs-box">
 	<nav>
 		<a class="button" href="#">Menu Item 1</a>
@@ -340,7 +346,7 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 			</div>
 		</div>
 	</nav>
-</div>
+</div><!-- Navbar -->
 
 <h2>Dropdown</h2>
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">

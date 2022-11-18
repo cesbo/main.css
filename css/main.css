@@ -854,5 +854,76 @@ nav > .dropdown:hover > .items {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+@media only screen and (max-width: 768px) {
+  nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: scroll;
+  }
+  input[type=checkbox].nav-switch:checked + nav {
+    display: block;
+  }
+  input[type=checkbox].nav-switch:checked + nav hr {
+    display: none;
+  }
+  input[type=checkbox].nav-switch:checked + nav > .dropdown {
+    display: block;
+  }
+  input[type=checkbox].nav-switch:checked + nav > .dropdown > a {
+    background-color: var(--color-secondary);
+  }
+  input[type=checkbox].nav-switch:checked + nav > .dropdown > a::after {
+    display: none;
+  }
+  input[type=checkbox].nav-switch:checked + nav > .dropdown > .items {
+    display: block;
+    border: none;
+    position: relative;
+    animation: none;
+  }
+  input[type=checkbox].nav-switch:checked + nav > .dropdown > .items .button {
+    padding: var(--space-xs) var(--space-s);
+  }
+}
+
+header > input[type=checkbox].nav-switch {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  header > input[type=checkbox].nav-switch {
+    display: inline-block;
+    border: none;
+    z-index: 1;
+    position: fixed;
+    top: auto;
+    left: auto;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  header > input[type=checkbox].nav-switch::before {
+    content: "☰";
+    opacity: 1;
+    position: inherit;
+    top: auto;
+    left: auto;
+    padding: var(--space);
+    margin: var(--space);
+    border-radius: 100%;
+    background-color: var(--color-primary);
+    height: 4rem;
+    width: 4rem;
+    font-size: 3rem;
+    text-align: center;
+    line-height: 2.5rem;
+  }
+  header > input[type=checkbox].nav-switch:checked::before {
+    content: "✕";
+    line-height: 3rem;
+    background-color: var(--color-secondary);
+  }
+}
 
 /*# sourceMappingURL=main.css.map */
