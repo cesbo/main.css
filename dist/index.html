@@ -1,29 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Minimalistic CSS</title>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/main.css" />
-	<link rel="stylesheet" type="text/css" href="docs.css" />
-	<link rel="stylesheet" type="text/css" href="stackoverflow-dark.min.css" />
+<title>main.css</title>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css" href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/stackoverflow-dark.min.css" />
+
+<style>
+main {
+	max-width: 1130px;
+}
+
+body[x-cloak]>:is(header, main, footer) {
+	display: none !important;
+}
+
+section:not(:target) {
+	display: none;
+}
+
+.docs-box {
+	border: var(--border);
+	padding: var(--space-xs) var(--space);
+}
+
+.docs-source {
+	border: var(--border);
+	border-top: 0;
+	padding: var(--space-xs) var(--space);
+	margin-bottom: var(--space);
+}
+
+.docs-source summary {
+	cursor: pointer;
+	color: var(--color-primary);
+	user-select: none;
+}
+
+.docs-source summary:hover {
+	color: var(--color-primary-focus);
+}
+
+.docs-source[open] summary {
+	margin-bottom: var(--space);
+}
+
+.docs-source pre {
+	margin-bottom: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
+.docs-color-palette {
+	display: grid;
+	grid-column-gap: .1rem;
+	grid-row-gap: .1rem;
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.docs-color-palette>* {
+	padding: 2rem 1rem;
+}
+</style>
+
+  <script type="module" crossorigin src="./docs.js"></script>
+  <link rel="stylesheet" href="./main.css">
 </head>
+
 <body x-cloak x-data>
 <header>
-	<input class="nav-switch" type="checkbox">
-	<nav class="docs-navbar" data-toggle="">
-		<a href="#quick-start" class="button">Quick Start</a>
-		<a href="#theme" class="button">Theme</a>
-		<a href="#typography" class="button">Typography</a>
-		<a href="#controls" class="button">Controls</a>
-		<a href="#components" class="button">Components</a>
-	</nav>
+    <input class="nav-switch" type="checkbox">
+    <nav class="docs-navbar" data-toggle="">
+        <a href="#quick-start" class="button">Quick Start</a>
+        <a href="#theme" class="button">Theme</a>
+        <a href="#typography" class="button">Typography</a>
+        <a href="#controls" class="button">Controls</a>
+        <a href="#components" class="button">Components</a>
+    </nav>
 </header>
 
 <main>
-
-<section id="quick-start">
-<h1>Quick Start</h1>
+	<section id="quick-start">
+		<h1>Quick Start</h1>
 
 <p>main.css is a minimalistic css framework</p>
 
@@ -37,10 +98,11 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <pre>
 &lt;link rel="stylesheet" type="text/css" href="https://cdn.cesbo.com/main.css" /&gt;
 </pre>
-</section><!-- Quick Start -->
 
-<section id="theme">
-<h1>Theme</h1>
+	</section>
+
+	<section id="theme">
+		<h1>Theme</h1>
 
 <h2>Color palette</h2>
 <div class="docs-color-palette">
@@ -69,10 +131,10 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 	<div style="background-color: var(--color-success-background);">Background</div>
 </div>
 
-</section><!-- Theme -->
+	</section>
 
-<section id="typography">
-<h1>Typography</h1>
+	<section id="typography">
+		<h1>Typography</h1>
 
 <p>Text elements</p>
 
@@ -162,10 +224,10 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 	<pre><code>Monotype blocks for code, logs, etc.</code></pre>
 </div>
 
-</section><!-- Typography -->
+	</section>
 
-<section id="controls">
-<h1>Controls</h1>
+	<section id="controls">
+		<h1>Controls</h1>
 
 <p>Basic control elements</p>
 
@@ -328,10 +390,10 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 	</form>
 </div><!-- Group -->
 
-</section><!-- Controls -->
+	</section>
 
-<section id="components">
-<h1>Components</h1>
+	<section id="components">
+		<h1>Components</h1>
 
 <p>Components is a complex elements</p>
 
@@ -492,13 +554,12 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 	<div class="spinner" style="width: 300px; margin: 1rem auto;"></div>
 </div>
 
-</section><!-- Components -->
-
+	</section>
 </main>
 
-<script src="docs.js"></script>
-<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
-<script src="https://unpkg.com/alpinejs"></script>
 
+
+<script defer src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script defer src="https://unpkg.com/alpinejs"></script>
 </body>
 </html>
