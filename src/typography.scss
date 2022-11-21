@@ -138,20 +138,22 @@ details {
 .note,
 .spoiler {
     --private-color-block: var(--color-primary);
+    background-color: var(--color-primary-background);
 
     &.success {
         color: var(--color-text);
+        background-color: var(--color-success-background);
         --private-color-block: var(--color-success);
     }
 
     &.danger {
         color: var(--color-text);
+        background-color: var(--color-danger-background);
         --private-color-block: var(--color-danger);
     }
 
     &>:is(header, summary) {
         font-weight: bold;
-        border-bottom: var(--border);
         border-color: var(--private-color-block);
         color: var(--private-color-block);
         padding: 0 var(--space-s) var(--space-xs) var(--space-s);
