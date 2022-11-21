@@ -11,23 +11,35 @@ input:is([type="button"], [type="submit"], [type="reset"]) {
     &.outline {
         background-color: transparent;
 
-        &:hover {
-            background-color: var(--color-secondary-background);
+        &:is(:hover, :focus, .focus) {
+            background-color: var(--color-secondary-focus);
+        }
+
+        &:active {
+            background-color: var(--color-secondary-active);
         }
 
         &.danger {
             border-color: var(--color-danger);
 
-            &:hover {
-                background-color: var(--color-danger-background);
+            &:is(:hover, :focus, .focus) {
+                background-color: var(--color-danger-focus);
+            }
+
+            &:active {
+                background-color: var(--color-danger-active);
             }
         }
 
         &.success {
             border-color: var(--color-success);
 
-            &:hover {
-                background-color: var(--color-success-background);
+            &:is(:hover, :focus, .focus) {
+                background-color: var(--color-success-focus);
+            }
+
+            &:active {
+                background-color: var(--color-success-active);
             }
         }
     }
