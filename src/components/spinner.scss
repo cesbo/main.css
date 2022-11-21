@@ -36,3 +36,26 @@
     mask: radial-gradient(circle, black 40%, transparent 80%) center no-repeat;
     -webkit-mask: -webkit-radial-gradient(circle, black 40%, transparent 80%) center no-repeat;
 }
+
+@keyframes circle {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+button[data-busy]::before {
+        --color: var(--color-inverse);
+        --size: 1rem;
+
+        content: "";
+        display: inline-block;
+        width: var(--size);
+        height: var(--size);
+        border: .1875rem solid var(--color);
+        border-radius: 1rem;
+        border-right-color: transparent;
+        vertical-align: -.125rem;
+        animation: circle .75s linear infinite;
+        opacity: .5;
+        margin-right: var(--space-xs);
+}
