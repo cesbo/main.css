@@ -14,7 +14,7 @@
 		<a class="button" href="#">Menu Item 2</a>
 		<div class="dropdown">
 			<a class="button" href="#">Dropdown Menu Item</a>
-			<div class="items">
+			<div class="menu">
 				<a class="button" href="#">Submenu Item 1</a>
 				<a class="button" href="#">Submenu Item 2</a>
 				<a class="button" href="#">Submenu Item 3</a>
@@ -27,7 +27,7 @@
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">bottom-left</button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -37,7 +37,7 @@
 
 	<div class="dropdown bottom-right" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">bottom-right</button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -47,7 +47,7 @@
 
 	<div class="dropdown top-left" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">top-left</button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -57,7 +57,7 @@
 
 	<div class="dropdown top-right" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">top-right</button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -71,7 +71,7 @@
 <div class="docs-box">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open"></button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />

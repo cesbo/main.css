@@ -1,33 +1,14 @@
 nav {
-    display: flex;
-    width: 100%;
-    background-color: var(--color-background);
-    user-select: none;
-    border-bottom: var(--border);
-
-    button,
-    .button,
-    input:is([type=button], [type=submit], [type=reset]) {
-        border-radius: 0;
-        background-color: var(--color-background);
-        white-space: nowrap;
-    }
-
     &>.dropdown {
         position: relative;
         display: inline-block;
 
-        &>.items {
-            display: none;
-            position: absolute;
-            border: var(--border);
-            min-width: calc(100%);
+        &>.menu {
             top: calc(100%);
-            animation: sweep-down .1s ease-out;
         }
 
-        &:hover>.items {
-            display: block;
+        &:hover>.menu {
+            display: flex;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
         }
