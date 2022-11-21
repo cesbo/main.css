@@ -1,0 +1,39 @@
+nav, .menu {
+    display: flex;
+    width: auto;
+    background-color: var(--color-background);
+    user-select: none;
+    border-bottom: var(--border);
+
+    & button,
+    & .button,
+    & input:is([type=button], [type=submit], [type=reset]) {
+        border-radius: 0;
+        background-color: var(--color-background);
+        white-space: nowrap;
+        color: var(--color-text);
+        white-space: nowrap;
+        text-align: left;
+
+        &:is(:hover, :focus) {
+            background-color: var(--color-secondary-focus);
+        }
+
+        &:is(:active, .active) {
+            background-color: var(--color-secondary-active);
+        }
+    }
+}
+
+nav>.menu, .dropdown>.menu {
+    display: none;
+    position: absolute;
+    border: var(--border);
+    animation: sweep-down .1s ease-out;
+    min-width: calc(100%);
+    z-index: 1;
+}
+
+.open>.menu {
+    display: flex;
+}
