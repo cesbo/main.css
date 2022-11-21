@@ -1,6 +1,3 @@
-(function() {
-'use strict';
-
 window.ListboxDragstart = function(ev) {
 }
 
@@ -76,5 +73,3 @@ function init() {
 }
 
 document.addEventListener('alpine:init', init)
-
-})();

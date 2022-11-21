@@ -1,8 +1,9 @@
+<style>
 main {
 	max-width: 1130px;
 }
 
-body[x-cloak]>main {
+body[x-cloak]>:is(header, main, footer) {
 	display: none !important;
 }
 
@@ -53,3 +54,4 @@ section:not(:target) {
 .docs-color-palette>* {
 	padding: 2rem 1rem;
 }
+</style>

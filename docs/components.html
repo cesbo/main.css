@@ -1,0 +1,160 @@
+<h1>Components</h1>
+
+<p>Components is a complex elements</p>
+
+<h2>Navbar</h2>
+
+<p>
+	Place the <code>&lt;nav&gt;</code> in the <code>&lt;header&gt;</code> tag right after <code>&lt;input class="nav-switch" type="checkbox"&gt;</code> to enable mobile menu switch.
+</p>
+
+<div class="docs-box">
+	<nav>
+		<a class="button" href="#">Menu Item 1</a>
+		<a class="button" href="#">Menu Item 2</a>
+		<div class="dropdown">
+			<a class="button" href="#">Dropdown Menu Item</a>
+			<div class="items">
+				<a class="button" href="#">Submenu Item 1</a>
+				<a class="button" href="#">Submenu Item 2</a>
+				<a class="button" href="#">Submenu Item 3</a>
+			</div>
+		</div>
+	</nav>
+</div><!-- Navbar -->
+
+<h2>Dropdown</h2>
+<div class="docs-box" style="display:flex; gap:var(--space-xs);">
+	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open">bottom-left</button>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
+	</div>
+
+	<div class="dropdown bottom-right" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open">bottom-right</button>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
+	</div>
+
+	<div class="dropdown top-left" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open">top-left</button>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
+	</div>
+
+	<div class="dropdown top-right" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open">top-right</button>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
+	</div>
+</div>
+
+<p>Dropdown without text in the button will be with three dots:</p>
+
+<div class="docs-box">
+	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
+		<button @click="open = !open"></button>
+		<div class="items">
+			<a href="#" class="button">Menu item</a>
+			<a href="#" class="button disabled">Disabled item</a>
+			<hr />
+			<a href="#" class="button">Under the line</a>
+		</div>
+	</div>
+</div><!-- Dropdown -->
+
+<h2>Modal</h2>
+<div class="docs-box">
+	<div x-data="{ open: false }">
+		<button @click="open = !open">Open modal</button>
+		<div class="modal" :class="open && 'open'">
+			<div class="dialog">
+				<header>
+					Form in modal
+					<button @click="open = !open">&times;</button>
+				</header>
+				<form class="container">
+					<fieldset>
+						<label>
+							<span>Login</span>
+							<input type="text" />
+						</label>
+						<label>
+							<span>Password</span>
+							<input type="password" />
+						</label>
+					</fieldset>
+				</form>
+				<footer>
+					<button @click="open = !open">Close</button>
+					<button type="submit">Submit</button>
+				</footer>
+			</div>
+		</div>
+	</div>
+</div><!-- Modal -->
+
+<h2>Listbox</h2>
+<div class="docs-box">
+	<div
+		class="listbox"
+		x-data="{
+			items: ['bread','tea','apple'],
+			addItem() {
+				this.items.push($refs.newItem.value);
+				$refs.newItem.value = '';
+				$refs.newItem.focus();
+			},
+			delItem(index) {
+				this.items.splice(index, 1);
+			},
+		}"
+	>
+		<template x-for="(item, index) in items" :key="index">
+			<div
+				draggable="true"
+				@dragstart.self="ListboxDragstart(event)"
+				@dragend.self="ListboxDragend(event)"
+				@dragover.self="ListboxDragover(event)"
+				@dragenter.self="ListboxDragenter(event)"
+				@dragleave.self="ListboxDragleave(event)"
+			>
+				<button tabindex="-1" @click="delItem(index)"></button>
+				<input type="text" x-model="item" required />
+			</div>
+		</template>
+
+		<div>
+			<button tabindex="-1" @click="addItem()"></button>
+			<input type="text" placeholder="new item" x-ref="newItem" @keydown.enter="addItem()" />
+		</div>
+	</div>
+</div><!-- Listbox -->
+
+<h2>Spinner</h2>
+<p>Animated spinner to indicates loading process. Available variables:</p>
+<ul>
+	<li><code>--color</code> - spinner color. By the default primary color used</li>
+	<li><code>--size</code> - dots radius. By the default 1rem</li>
+</ul>
+
+<div class="docs-box">
+	<div class="spinner" style="width: 300px; margin: 1rem auto;"></div>
+</div>
