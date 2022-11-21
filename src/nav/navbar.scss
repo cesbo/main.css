@@ -21,6 +21,7 @@ nav {
         left: 0;
         height: 100%;
         overflow: scroll;
+        width: 100%;
 
         input[type="checkbox"].nav-switch:checked + & {
             display: block;
@@ -40,7 +41,7 @@ nav {
                     }
                 }
 
-                &>.items {
+                &>.menu {
                     display: block;
                     border: none;
                     position: relative;
