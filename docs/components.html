@@ -128,14 +128,16 @@
 		}"
 	>
 		<template x-for="(item, index) in items" :key="index">
-			<div
-				@dragstart.self="ListboxDragstart(event)"
-				@dragend.self="ListboxDragend(event)"
-				@dragover.self="ListboxDragover(event)"
-				@dragenter.self="ListboxDragenter(event)"
-				@dragleave.self="ListboxDragleave(event)"
-			>
-				<button tabindex="-1" draggable="true"></button>
+			<div>
+				<button
+					tabindex="-1"
+					draggable="true"
+					@dragstart="ListboxDragstart(event)"
+					@dragend="ListboxDragend(event)"
+					@dragover="ListboxDragover(event)"
+					@dragenter="ListboxDragenter(event)"
+					@dragleave="ListboxDragleave(event)"
+				></button>
 				<button tabindex="-1" @click="delItem(index)"></button>
 				<input type="text" x-model="item" required />
 			</div>

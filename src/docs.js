@@ -1,7 +1,9 @@
 window.ListboxDragstart = function(ev) {
+    console.log(ev)
 }
 
 window.ListboxDragend = function(ev) {
+    console.log(ev)
 }
 
 window.ListboxDragover = function(ev) {
