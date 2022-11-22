@@ -4,34 +4,34 @@ div.listbox {
     &>div {
         position: relative;
 
-        &::before {
-            content: "=";
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            width: 2rem;
-            padding: .2rem 0;
-            text-align: center;
-            cursor: grab;
-        }
-
         button {
             position: absolute;
             z-index: 1;
             top: 0;
             bottom: 0;
-            right: 0;
             padding: 0;
             border: 0;
             width: 2rem;
 
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
+            &[draggable] {
+                cursor: grab;
+                left: 0;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
 
-            &::before {
-                content: "\00d7";
+                &::before {
+                    content: "=";
+                }
+            }
+
+            &:last-of-type {
+                right: 0;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+
+                &::before {
+                    content: "\00d7";
+                }
             }
 
             &:not(:hover) {
@@ -61,7 +61,7 @@ div.listbox {
 
         /* line for new item */
         &:last-child {
-            button::before {
+            button:last-of-type:before {
                 content: "+";
             }
         }
