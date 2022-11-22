@@ -22,13 +22,15 @@ function renderSource(el) {
         .split('\n')
         .filter(line => line.trim() !== '')
 
+    const rx = /(<(hr)|(input)[^>]*)/
+
     let indent = 0;
     for(let i = 0; i < lines.length; i++) {
         const line = lines[i]
         if(i == 0) {
             indent = line.match(/^\s*/)[0].length
         }
-        lines[i] = line.substr(indent).replaceAll('\t', '  ')
+        lines[i] = line.substr(indent).replaceAll('\t', '  ').replace(rx, "$1 /")
     }
     const html = lines.join('\n')
     return hljs.highlightAuto(html).value
