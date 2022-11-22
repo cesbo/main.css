@@ -1,0 +1,30 @@
+details {
+    &>summary {
+        cursor: pointer;
+        list-style-type: none;
+        user-select: none;
+
+        &::-webkit-details-marker  {
+            display: none;
+        }
+
+        &::before {
+            content: " ";
+            display: inline-block;
+            position: relative;
+            top: -.05rem;
+            width: .6rem;
+            height: .6rem;
+            transform: rotate(-90deg);
+            mask: var(--icon-arrow) center no-repeat;
+            -webkit-mask: var(--icon-arrow) center no-repeat;
+            background-color: currentColor;
+            transition: transform .1s ease-out;
+            margin-right: var(--space-xs);
+        }
+    }
+
+    &[open]>summary::before{
+        transform: rotate(0);
+    }
+}

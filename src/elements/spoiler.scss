@@ -1,0 +1,26 @@
+.spoiler {
+    --private-color-block: var(--color-secondary);
+
+    display: block;
+    margin: 1rem 0;
+    padding: var(--space-xs) var(--space-s);
+    border: var(--border);
+    border-color: var(--private-color-block);
+    border-left-width: calc(var(--border-width) * 4);
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+    color: var(--color-text);
+    background-color: var(--color-background);
+
+    &>summary {
+        cursor: pointer;
+        user-select: none;
+        color: var(--color-text);
+        font-weight: normal;
+    }
+
+    &:not([open])>summary {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+}

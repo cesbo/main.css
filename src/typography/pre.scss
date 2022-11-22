@@ -1,0 +1,17 @@
+pre {
+    margin: 1rem 0;
+    padding: var(--space-xs) var(--space-s);
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    overflow-x: auto;
+    overflow-y: hidden;
+    font-size: 1rem;
+    line-height: var(--line-height);
+
+    & code {
+        font-weight: inherit;
+        font-size: inherit;
+        color: inherit;
+    }
+}

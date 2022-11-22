@@ -1,0 +1,23 @@
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+
+    &:is(:hover, :focus) {
+        color: var(--color-primary-focus);
+    }
+
+    &:active {
+        color: var(--color-primary-active);
+    }
+
+    &[target="_blank"]::after {
+        content: "";
+        width: .8rem;
+        height: .8rem;
+        margin-left: .2rem;
+        mask: var(--icon-link) center no-repeat;
+        -webkit-mask: var(--icon-link) center no-repeat;
+        display: inline-block;
+        background-color: currentColor;
+    }
+}

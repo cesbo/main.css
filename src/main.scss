@@ -86,18 +86,14 @@ body {
     padding: 0;
 }
 
-hr {
-    border: 0;
-    border-top: var(--border);
-}
-
 .hide {
     display: none !important;
 }
 
 @import "theme";
-@import "typography";
+@import "typography/base";
 @import "layout/base";
+@import "elements/base";
 @import "controls/base";
 @import "components/base";
 @import "nav/base";

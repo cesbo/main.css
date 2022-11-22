@@ -1,0 +1,19 @@
+code,
+kbd,
+samp {
+    font-family: var(--font-monospace);
+    font-size: 1rem;
+    line-height: var(--line-height);
+}
+
+.danger {
+    color: var(--color-danger);
+}
+
+.success {
+    color: var(--color-success);
+}
+
+.dimmed {
+    opacity: .5;
+}
