@@ -57,6 +57,10 @@ nav {
 }
 
 header {
+    &>nav {
+        border-bottom: var(--border);
+    }
+
     &>input[type="checkbox"].nav-switch {
         display: none;
     }

@@ -28,13 +28,23 @@
         }
     }
 
+    &:not(.open)>.menu {
+        display: none;
+    }
+
     &>.menu {
+        position: absolute;
+        z-index: 1;
+
+        border: var(--border);
         flex-direction: column;
         border-radius: var(--border-radius);
         box-shadow: var(--shadow);
         overflow: hidden;
+        min-width: calc(100%);
 
         /* default bottom-left */
+        animation: sweep-down .1s ease-out;
         top: calc(100% + .2rem);
         bottom: auto;
         left: 0;
@@ -56,6 +66,7 @@
     }
 
     &.top-left>.menu {
+        animation: sweep-up .1s ease-out;
         top: auto;
         bottom: calc(100% + .2rem);
         left: 0;
@@ -63,6 +74,7 @@
     }
 
     &.top-right>.menu {
+        animation: sweep-up .1s ease-out;
         top: auto;
         bottom: calc(100% + .2rem);
         left: auto;
