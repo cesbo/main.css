@@ -5,14 +5,14 @@ nav,
     background-color: var(--color-background);
     user-select: none;
 
-    & button,
-    & .button,
-    & input:is([type=button], [type=submit], [type=reset]) {
+    button,
+    .button,
+    input:is([type=button], [type=submit], [type=reset]) {
         border: 0;
         border-radius: 0;
         white-space: nowrap;
-        white-space: nowrap;
         text-align: left;
+        font-weight: normal;
 
         color: var(--color-text);
         background-color: var(--color-background);
