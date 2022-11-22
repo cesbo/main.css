@@ -1,72 +1,72 @@
 div.listbox {
     padding: var(--space-xs) 0;
 
-    &>div {
+    & div {
         position: relative;
+    }
 
-        button {
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            bottom: 0;
-            padding: 0;
-            border: 0;
-            width: 2rem;
+    button {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        padding: 0;
+        border: 0;
+        width: 2rem;
 
-            &.handle {
-                cursor: grab;
-                left: 0;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
+        &.handle {
+            cursor: grab;
+            left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
 
-                &::before {
-                    content: "=";
-                }
-            }
-
-            &.remove {
-                right: 0;
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-
-                &::before {
-                    content: "\00d7";
-                }
-            }
-
-            &.append {
-                right: 0;
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
-
-                ::before {
-                    content: "+";
-                }
-            }
-
-            &:not(:hover) {
-                background-color: transparent;
-            }
-
-            &:hover ~ input {
-                background-color: var(--color-secondary-background);
+            &::before {
+                content: "=";
             }
         }
 
-        input {
-            padding: .2rem 2.5rem;
-            border: var(--border);
-            border-color: transparent;
-            border-radius: 0;
+        &.remove {
+            right: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
 
-            &:hover {
-                background-color: var(--color-secondary-background);
+            &::before {
+                content: "\00d7";
             }
+        }
 
-            &:invalid {
-                border-color: var(--color-danger);
-                background-color: var(--color-danger-background);
+        &.append {
+            right: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &::before {
+                content: "+";
             }
+        }
+
+        &:not(:hover) {
+            background-color: transparent;
+        }
+
+        &:hover ~ input {
+            background-color: var(--color-secondary-background);
+        }
+    }
+
+    input {
+        padding: .2rem 2.5rem;
+        border: var(--border);
+        border-color: transparent;
+        border-radius: 0;
+
+        &:hover {
+            background-color: var(--color-secondary-background);
+        }
+
+        &:invalid {
+            border-color: var(--color-danger);
+            background-color: var(--color-danger-background);
         }
     }
 }
