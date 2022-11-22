@@ -130,6 +130,7 @@
 		<template x-for="(item, index) in items" :key="index">
 			<div>
 				<button
+					class="handle"
 					tabindex="-1"
 					draggable="true"
 					@dragstart="ListboxDragstart(event)"
@@ -138,13 +139,13 @@
 					@dragenter="ListboxDragenter(event)"
 					@dragleave="ListboxDragleave(event)"
 				></button>
-				<button tabindex="-1" @click="delItem(index)"></button>
+				<button class="remove" tabindex="-1" @click="delItem(index)"></button>
 				<input type="text" x-model="item" required />
 			</div>
 		</template>
 
 		<div>
-			<button tabindex="-1" @click="addItem()"></button>
+			<button class="append" tabindex="-1" @click="addItem()"></button>
 			<input type="text" placeholder="new item" x-ref="newItem" @keydown.enter="addItem()" />
 		</div>
 	</div>
