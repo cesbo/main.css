@@ -33,7 +33,7 @@ function renderSource(el) {
         lines[i] = line.substr(indent).replaceAll('\t', '  ').replace(rx, "$1 /")
     }
     const html = lines.join('\n')
-    return hljs.highlightAuto(html).value
+    return hljs.highlight(html, {language: 'xml'}).value
 }
 
 function initSourcePreview() {
