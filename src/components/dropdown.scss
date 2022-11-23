@@ -12,6 +12,8 @@
     position: relative;
 
     &>:first-child {
+        width: 100%;
+
         &::after {
             display: block;
             content: "...";
@@ -28,11 +30,12 @@
         }
     }
 
-    &:not(.open)>.menu {
-        display: none;
+    &:is(.open, .hover:hover)>.menu {
+        display: flex;
     }
 
     &>.menu {
+        display: none;
         position: absolute;
         z-index: 1;
 
@@ -41,7 +44,7 @@
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
         overflow: hidden;
-        min-width: calc(100%);
+        min-width: 110%;
 
         /* default bottom-left */
         animation: sweep-down .1s ease-out;
@@ -50,15 +53,16 @@
         left: 0;
         right: auto;
 
+
         &>button,
         &>.button,
         &>input:is([type=button], [type=submit], [type=reset]) {
-            padding: var(--space-xs) var(--space);
             width: 100%;
         }
     }
 
     &.bottom-right>.menu {
+        animation: sweep-down .1s ease-out;
         top: calc(100% + .2rem);
         bottom: auto;
         left: auto;
