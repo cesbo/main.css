@@ -24,6 +24,8 @@ section:not(:target) {
 .docs-box {
 	border: var(--border);
 	padding: var(--space-xs) var(--space);
+	color: var(--color-text);
+	background-color: var(--color-background);
 }
 
 .docs-source {
@@ -58,11 +60,12 @@ section:not(:target) {
 	display: grid;
 	grid-column-gap: .1rem;
 	grid-row-gap: .1rem;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 }
 
 .docs-color-palette>* {
 	padding: 2rem 1rem;
+	text-shadow: var(--text-shadow);
 }
 </style>
 
@@ -77,6 +80,7 @@ section:not(:target) {
         <a href="#quick-start" class="button">Quick Start</a>
         <a href="#theme" class="button">Theme</a>
         <a href="#typography" class="button">Typography</a>
+        <a href="#elements" class="button">Elements</a>
         <a href="#controls" class="button">Controls</a>
         <a href="#components" class="button">Components</a>
     </nav>
@@ -89,8 +93,11 @@ section:not(:target) {
 <p>main.css is a minimalistic css framework</p>
 
 <div class="note">
-In this documentation used <a href="https://alpinejs.dev" target="_blank">Alpine.js</a> for better experience.
-But CSS framework is not dependent on it. You can use it with any other framework or with vanilla JS.
+	<header>JavaScript</header>
+	<p>
+		In this documentation used <a href="https://alpinejs.dev" target="_blank">Alpine.js</a> for better experience.<br/>
+		But CSS framework is not dependent on it. You can use it with any other framework or with vanilla JS.
+	</p>
 </div>
 
 <h2>Installation</h2>
@@ -106,29 +113,21 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 
 <h2>Color palette</h2>
 <div class="docs-color-palette">
-	<div>Primary</div>
-	<div style="background-color: var(--color-primary);">Base</div>
-	<div style="background-color: var(--color-primary-focus);">Focus</div>
-	<div style="background-color: var(--color-primary-active);">Active</div>
-	<div style="background-color: var(--color-primary-background);">Background</div>
+	<div style="color: var(--color-primary-inverse); background-color: var(--color-primary);">Primary Base</div>
+	<div style="color: var(--color-primary-inverse); background-color: var(--color-primary-focus);">Primary Focus</div>
+	<div style="color: var(--color-text); background-color: var(--color-primary-background);">Primary Background</div>
 
-	<div>Secondary</div>
-	<div style="background-color: var(--color-secondary);">Base</div>
-	<div style="background-color: var(--color-secondary-focus);">Focus</div>
-	<div style="background-color: var(--color-secondary-active);">Active</div>
-	<div style="background-color: var(--color-secondary-background);">Background</div>
+	<div style="color: var(--color-secondary-inverse); background-color: var(--color-secondary);">Secondary Base</div>
+	<div style="color: var(--color-secondary-inverse); background-color: var(--color-secondary-focus);">Secondary Focus</div>
+	<div style="color: var(--color-text); background-color: var(--color-secondary-background);">Secondary Background</div>
 
-	<div>Danger</div>
-	<div style="background-color: var(--color-danger);">Base</div>
-	<div style="background-color: var(--color-danger-focus);">Focus</div>
-	<div style="background-color: var(--color-danger-active);">Active</div>
-	<div style="background-color: var(--color-danger-background);">Background</div>
+	<div style="color: var(--color-danger-inverse); background-color: var(--color-danger);">Danger Base</div>
+	<div style="color: var(--color-danger-inverse); background-color: var(--color-danger-focus);">Danger Focus</div>
+	<div style="color: var(--color-text); background-color: var(--color-danger-background);">Danger Background</div>
 
-	<div>Success</div>
-	<div style="background-color: var(--color-success);">Base</div>
-	<div style="background-color: var(--color-success-focus);">Focus</div>
-	<div style="background-color: var(--color-success-active);">Active</div>
-	<div style="background-color: var(--color-success-background);">Background</div>
+	<div style="color: var(--color-success-inverse); background-color: var(--color-success);">Success Base</div>
+	<div style="color: var(--color-success-inverse); background-color: var(--color-success-focus);">Success Focus</div>
+	<div style="color: var(--color-text); background-color: var(--color-success-background);">Success Background</div>
 </div>
 
 	</section>
@@ -167,7 +166,38 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		<li class="danger">Danger</li>
 		<li class="dimmed">Dimmed</li>
 	</ul>
-</div><!-- Contextual colors -->
+</div><!-- Text elements -->
+
+<h2>Code</h2>
+<div class="docs-box">
+	<pre><code>Monotype blocks for code, logs, etc.</code></pre>
+</div>
+
+<h2>Blockquote</h2>
+<div class="docs-box">
+	<blockquote>
+		<p>Quoted text is a part from some text</p>
+		<cite>Author</cite>
+	</blockquote>
+</div>
+
+	</section>
+
+	<section id="elements">
+		<h1>Elements</h1>
+
+<h2>Deatils</h2>
+<div class="docs-box">
+	<details>
+		<summary>Read more...</summary>
+		<p>Details element is used to create an element that the user can open and close.</p>
+	</details>
+</div>
+
+<h2>HR</h2>
+<div class="docs-box">
+    <hr />
+</div>
 
 <h2>Table</h2>
 <div class="docs-box">
@@ -225,9 +255,16 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 	</details>
 </div>
 
-<h2>Code</h2>
+<h2>Spinner</h2>
+<p>Animated spinner to indicates loading process. Available variables:</p>
+<ul>
+	<li><code>--color</code> - spinner color. By the default primary color used for dots and secondary for circle</li>
+	<li><code>--size</code> - dots radius. By the default 1rem</li>
+</ul>
+
 <div class="docs-box">
-	<pre><code>Monotype blocks for code, logs, etc.</code></pre>
+	<div class="spinner" style="width: 300px; margin: 1rem auto;"></div>
+	<button type="button" data-busy>With Spinner</button>
 </div>
 
 	</section>
@@ -238,14 +275,18 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <p>Basic control elements</p>
 
 <h2>Button</h2>
-<div class="docs-box" style="display:flex; gap:var(--space-xs);">
+<div class="docs-box" style="display: grid; grid-template-columns: 140px 140px; grid-gap: var(--space-xs);">
 	<input type="button" value="Button" />
 	<input type="button" value="Disabled" disabled />
+
 	<input type="submit" value="Submit" />
 	<input type="submit" value="Disabled" disabled />
-	<input type="button" class="outline" value="Outline" />
-	<input type="button" class="outline danger" value="Outline Danger" />
-	<input type="button" class="outline success" value="Outline Success" />
+
+	<input type="button" class="danger" value="Danger">
+	<input type="button" class="danger" value="Disabled" disabled>
+
+	<input type="button" class="success" value="Success">
+	<input type="button" class="success" value="Disabled" disabled>
 </div><!-- Button -->
 
 <h2>Form</h2>
@@ -415,10 +456,9 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		<a class="button" href="#">Menu Item 2</a>
 		<div class="dropdown">
 			<a class="button" href="#">Dropdown Menu Item</a>
-			<div class="items">
+			<div class="menu">
 				<a class="button" href="#">Submenu Item 1</a>
 				<a class="button" href="#">Submenu Item 2</a>
-				<a class="button" href="#">Submenu Item 3</a>
 			</div>
 		</div>
 	</nav>
@@ -428,7 +468,7 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">bottom-left</button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -438,7 +478,7 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 
 	<div class="dropdown bottom-right" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">bottom-right</button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -448,7 +488,7 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 
 	<div class="dropdown top-left" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">top-left</button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -458,7 +498,7 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 
 	<div class="dropdown top-right" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open">top-right</button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -472,7 +512,7 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 <div class="docs-box">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open"></button>
-		<div class="items">
+		<div class="menu">
 			<a href="#" class="button">Menu item</a>
 			<a href="#" class="button disabled">Disabled item</a>
 			<hr />
@@ -529,36 +569,28 @@ But CSS framework is not dependent on it. You can use it with any other framewor
 		}"
 	>
 		<template x-for="(item, index) in items" :key="index">
-			<div
-				draggable="true"
-				@dragstart.self="ListboxDragstart(event)"
-				@dragend.self="ListboxDragend(event)"
-				@dragover.self="ListboxDragover(event)"
-				@dragenter.self="ListboxDragenter(event)"
-				@dragleave.self="ListboxDragleave(event)"
-			>
-				<button tabindex="-1" @click="delItem(index)"></button>
+			<div>
+				<button
+					class="handle"
+					tabindex="-1"
+					draggable="true"
+					@dragstart="ListboxDragstart(event)"
+					@dragend="ListboxDragend(event)"
+					@dragover="ListboxDragover(event)"
+					@dragenter="ListboxDragenter(event)"
+					@dragleave="ListboxDragleave(event)"
+				></button>
+				<button class="remove" tabindex="-1" @click="delItem(index)"></button>
 				<input type="text" x-model="item" required />
 			</div>
 		</template>
 
 		<div>
-			<button tabindex="-1" @click="addItem()"></button>
+			<button class="append" tabindex="-1" @click="addItem()"></button>
 			<input type="text" placeholder="new item" x-ref="newItem" @keydown.enter="addItem()" />
 		</div>
 	</div>
 </div><!-- Listbox -->
-
-<h2>Spinner</h2>
-<p>Animated spinner to indicates loading process. Available variables:</p>
-<ul>
-	<li><code>--color</code> - spinner color. By the default primary color used</li>
-	<li><code>--size</code> - dots radius. By the default 1rem</li>
-</ul>
-
-<div class="docs-box">
-	<div class="spinner" style="width: 300px; margin: 1rem auto;"></div>
-</div>
 
 	</section>
 </main>

@@ -44,7 +44,7 @@
 }
 
 button[data-busy]::before {
-        --color: var(--color-inverse);
+        --color: var(--color-text);
         --size: 1rem;
 
         content: "";

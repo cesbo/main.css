@@ -29,7 +29,8 @@
     --modal-min-height: auto;
     --modal-min-width: 600px;
 
-    --shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    --text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 
     /* icons */
     --icon-arrow: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M0,5 l10,10,10,-10z"/></svg>');

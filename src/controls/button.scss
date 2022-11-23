@@ -3,71 +3,60 @@ button,
 input:is([type="button"], [type="submit"], [type="reset"]) {
     width: auto;
     cursor: pointer;
-    background-color: var(--color-secondary);
-    color: var(--color-inverse);
     text-decoration: none;
     border: var(--border);
-
-    &.outline {
-        background-color: transparent;
-
-        &:is(:hover, :focus, .focus) {
-            background-color: var(--color-secondary-focus);
-        }
-
-        &:active {
-            background-color: var(--color-secondary-active);
-        }
-
-        &.danger {
-            border-color: var(--color-danger);
-
-            &:is(:hover, :focus, .focus) {
-                background-color: var(--color-danger-focus);
-            }
-
-            &:active {
-                background-color: var(--color-danger-active);
-            }
-        }
-
-        &.success {
-            border-color: var(--color-success);
-
-            &:is(:hover, :focus, .focus) {
-                background-color: var(--color-success-focus);
-            }
-
-            &:active {
-                background-color: var(--color-success-active);
-            }
-        }
-    }
+    border-width: calc(var(--border-width) * 2);
+    font-weight: 600;
+    text-shadow: var(--text-shadow);
 
     &:is(:disabled, .disabled) {
         opacity: .5;
         pointer-events: none;
     }
 
+    color: var(--color-secondary-inverse);
+    border-color: var(--color-secondary);
+    background-color: var(--color-secondary);
+
     &:is(:hover, :focus) {
+        border-color: var(--color-secondary-focus);
         background-color: var(--color-secondary-focus);
-        color: var(--color-inverse);
     }
 
     &:is(:active, .active) {
-        background-color: var(--color-secondary-active);
-        color: var(--color-inverse);
+        box-shadow: inset var(--box-shadow);
+    }
+
+    &.danger {
+        color: var(--color-danger-inverse);
+        border-color: var(--color-danger);
+        background-color: var(--color-danger);
+
+        &:is(:hover, :focus) {
+            border-color: var(--color-danger-focus);
+            background-color: var(--color-danger-focus);
+        }
+    }
+
+    &.success {
+        color: var(--color-success-inverse);
+        border-color: var(--color-success);
+        background-color: var(--color-success);
+
+        &:is(:hover, :focus) {
+            border-color: var(--color-success-focus);
+            background-color: var(--color-success-focus);
+        }
     }
 }
 
-:is(button, input, .button)[type="submit"] {
+:is(button, input)[type="submit"] {
+    color: var(--color-primary-inverse);
+    border-color: var(--color-primary);
     background-color: var(--color-primary);
 
-    &:is(:hover, :focus, .focus) {
+    &:is(:hover, :focus) {
+        border-color: var(--color-primary-focus);
         background-color: var(--color-primary-focus);
-    }
-
-    &:active {
-        background-color: var(--color-primary-active);
     }
 }

@@ -22,7 +22,7 @@ nav,
         }
 
         &:is(:active, .active) {
-            background-color: var(--color-secondary-active);
+            background-color: var(--color-secondary-focus);
         }
     }
 }

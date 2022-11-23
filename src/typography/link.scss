@@ -6,10 +6,6 @@ a {
         color: var(--color-primary-focus);
     }
 
-    &:active {
-        color: var(--color-primary-active);
-    }
-
     &[target="_blank"]::after {
         content: "";
         width: .8rem;

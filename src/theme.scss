@@ -1,65 +1,70 @@
 @use "sass:color";
 @import "../node_modules/nord/src/sass/nord.scss";
 
-@mixin theme($text, $inverse, $background, $primary, $secondary, $danger, $success) {
+@function invert-color($color) {
+    $adjust: if(
+        color.whiteness($color) > 60,
+        -100%,
+        100%,
+    );
+    @return color.adjust($color, $lightness: $adjust);
+}
+
+@mixin theme($text, $background, $primary, $secondary, $danger, $success) {
     $adjust: if(
         color.whiteness($text) > color.whiteness($background),
         1,
         -1,
     );
     $adjust-focus: $adjust * 5%;
-    $adjust-active: $adjust * 10%;
 
     /* css */
     --color-text: #{ $text };
-    --color-inverse: #{ $inverse };
     --color-background: #{ $background };
 
     /* primary */
     --color-primary: #{ $primary };
     --color-primary-focus: #{ color.adjust($primary, $lightness: $adjust-focus) };
-    --color-primary-active: #{ color.adjust($primary, $lightness: $adjust-active) };
     --color-primary-background: #{ color.mix($primary, $background, 20%) };
+    --color-primary-inverse: #{ invert-color($primary) };
 
     /* secondary */
     --color-secondary: #{ $secondary };
     --color-secondary-focus: #{ color.adjust($secondary, $lightness: $adjust-focus) };
-    --color-secondary-active: #{ color.adjust($secondary, $lightness: $adjust-active) };
     --color-secondary-background: #{ color.mix($secondary, $background, 20%) };
+    --color-secondary-inverse: #{ invert-color($secondary) };
 
     /* danger */
     --color-danger: #{ $danger };
     --color-danger-focus: #{ color.adjust($danger, $lightness: $adjust-focus) };
-    --color-danger-active: #{ color.adjust($danger, $lightness: $adjust-active) };
     --color-danger-background:  #{ color.mix($danger, $background, 20%) };
+    --color-danger-inverse: #{ invert-color($danger) };
 
     /* success */
     --color-success: #{ $success };
     --color-success-focus: #{ color.adjust($success, $lightness: $adjust-focus) };
-    --color-success-active: #{ color.adjust($success, $lightness: $adjust-active) };
     --color-success-background: #{ color.mix($success, $background, 20%) };
+    --color-success-inverse: #{ invert-color($success) };
 }
 
 :root {
     @include theme(
-        lighten($nord6, 5),
-        lighten($nord6, 5),
-        darken($nord0, 5),
-        saturate($nord10, 10),
-        $nord3,
-        saturate($nord11, 10),
-        saturate($nord7, 10),
+        /*       text */ lighten($nord6, 5),
+        /* background */ darken($nord0, 5),
+        /*    primary */ saturate($nord10, 10),
+        /*  secondary */ $nord3,
+        /*     danger */ saturate($nord11, 10),
+        /*    success */ saturate($nord7, 10),
     )
 }
 
 .light {
     @include theme(
-        darken($nord0, 5),
-        darken($nord0, 5),
-        lighten($nord6, 5),
-        saturate($nord10, 10),
-        $nord4,
-        saturate($nord11, 10),
-        saturate($nord7, 10),
+        /*       text */ darken($nord0, 5),
+        /* background */ lighten($nord6, 5),
+        /*    primary */ saturate($nord10, 10),
+        /*  secondary */ $nord4,
+        /*     danger */ saturate($nord11, 10),
+        /*    success */ saturate($nord7, 10),
     )
 }
