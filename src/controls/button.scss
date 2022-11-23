@@ -52,11 +52,10 @@ input:is([type="button"], [type="submit"], [type="reset"]) {
 
     &.icon {
         border-radius: 50%;
-        background-color: var(--color-background);
+        background-color: transparent;
 
         &::before {
             position: relative;
-            z-index: 1;
             mask-size: 1rem;
             -webkit-mask-size: 1rem;
         }
@@ -64,6 +63,7 @@ input:is([type="button"], [type="submit"], [type="reset"]) {
         &::after {
             content: "";
             position: relative;
+            z-index: -1;
             bottom: 100%;
             display: block;
             width: 100%;
