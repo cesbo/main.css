@@ -28,28 +28,41 @@ section:not(:target) {
 	background-color: var(--color-background);
 }
 
-.docs-source {
+.docs-box-toolbar {
+	position: relative;
 	border: var(--border);
 	border-top: 0;
-	padding: var(--space-xs) var(--space);
 	margin-bottom: var(--space);
 }
 
-.docs-source summary {
+.docs-box-buttons {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	right: 0;
+	top: 0;
+	padding: var(--space-xs) var(--space-s);
+}
+
+.docs-box-source {
+	padding: var(--space-xs) var(--space);
+}
+
+.docs-box-source summary {
 	cursor: pointer;
 	color: var(--color-primary);
 	user-select: none;
 }
 
-.docs-source summary:hover {
+.docs-box-source summary:hover {
 	color: var(--color-primary-focus);
 }
 
-.docs-source[open] summary {
+.docs-box-source[open] summary {
 	margin-bottom: var(--space);
 }
 
-.docs-source pre {
+.docs-box-source pre {
 	margin-bottom: 0;
 	padding: 0;
 	margin: 0;
@@ -186,13 +199,17 @@ section:not(:target) {
 	<section id="elements">
 		<h1>Elements</h1>
 
-<h2>Deatils</h2>
-<div class="docs-box">
-	<details>
-		<summary>Read more...</summary>
-		<p>Details element is used to create an element that the user can open and close.</p>
-	</details>
+<h2>Icon</h2>
+<div class="docs-box" style="display: flex; justify-content: flex-start; gap: var(--space-xs)">
+	<i class="icon close"></i>
+	<i class="icon arrow"></i>
+	<i class="icon arrow up"></i>
+	<i class="icon arrow left"></i>
+	<i class="icon arrow right"></i>
+	<i class="icon link"></i>
+	<i class="icon lightness"></i>
 </div>
+<p>Use <code>color</code> attribute to change icon color</p>
 
 <h2>HR</h2>
 <div class="docs-box">
@@ -229,6 +246,22 @@ section:not(:target) {
 	</table>
 </div>
 
+<h2>Deatils</h2>
+<div class="docs-box">
+	<details>
+		<summary>Read more...</summary>
+		<p>Details creates a disclosure element in which information is visible only when the widget is open</p>
+	</details>
+</div>
+
+<h2>Spoiler</h2>
+<div class="docs-box">
+	<details class="spoiler">
+		<summary>Click to show</summary>
+		<p>Element like Details but with additional box</p>
+	</details>
+</div>
+
 <h2>Note</h2>
 <div class="docs-box">
 	<div class="note">
@@ -245,14 +278,6 @@ section:not(:target) {
 		<header>Danger block</header>
 		<p>Caution information</p>
 	</div>
-</div>
-
-<h2>Spoiler</h2>
-<div class="docs-box">
-	<details class="spoiler">
-		<summary>Click to show</summary>
-		<p>Hidden text</p>
-	</details>
 </div>
 
 <h2>Spinner</h2>
@@ -275,19 +300,26 @@ section:not(:target) {
 <p>Basic control elements</p>
 
 <h2>Button</h2>
-<div class="docs-box" style="display: grid; grid-template-columns: 140px 140px; grid-gap: var(--space-xs);">
-	<input type="button" value="Button" />
-	<input type="button" value="Disabled" disabled />
+<div class="docs-box" style="display: grid; grid-template-columns: repeat(2, 140px); grid-gap: var(--space-xs);">
+	<button>Button</button>
+	<button disabled>Disabled</button>
 
-	<input type="submit" value="Submit" />
-	<input type="submit" value="Disabled" disabled />
+	<button type="submit">Submit</button>
+	<button type="submit" disabled />Disabled</button>
 
-	<input type="button" class="danger" value="Danger">
-	<input type="button" class="danger" value="Disabled" disabled>
+	<button class="danger">Danger</button>
+	<button class="danger" disabled>Disabled</button>
 
-	<input type="button" class="success" value="Success">
-	<input type="button" class="success" value="Disabled" disabled>
+	<button class="success">Success</button>
+	<button class="success" disabled>Disabled</button>
 </div><!-- Button -->
+
+<p>Button for icons</p>
+
+<div class="docs-box" style="display: flex; gap: var(--space-xs);">
+	<button class="icon close"></button>
+	<button class="icon close" disabled></button>
+</div>
 
 <h2>Form</h2>
 <div class="docs-box">
@@ -403,35 +435,65 @@ section:not(:target) {
 	</form>
 </div><!-- Select, Checkbox, Switch, Radio -->
 
+<h2>Fieldset</h2>
+<p>Fieldset is a group of related elements.</p>
+<div class="docs-box">
+	<form x-data="{ disabled: false }">
+		<fieldset>
+			<legend>Group Title</legend>
+
+			<label>
+				<span>Lock Group</span>
+				<input type="checkbox" x-model="disabled" />
+			</label>
+		</fieldset>
+
+		<fieldset :disabled="disabled">
+			<label>
+				<span>Group Item</span>
+				<input type="text" />
+			</label>
+
+			<footer>
+				<button type="submit">Submit</button>
+			</footer>
+		</fieldset>
+	</form>
+</div>
+
 <h2>Group</h2>
 <div class="docs-box">
 	<form>
 		<fieldset>
 			<details class="group">
-				<summary class="button">Billing Address</summary>
-				<label>
-					<span>Street</span>
-					<input type="text" />
-				</label>
-				<label>
-					<span>City</span>
-					<input type="text" />
-				</label>
+				<summary class="button">Form Group</summary>
+				<fieldset>
+					<label>
+						<span>Address</span>
+						<input type="text" />
+					</label>
+					<label>
+						<span>City</span>
+						<input type="text" />
+					</label>
+				</fieldset>
 			</details>
 
 			<details class="group">
 				<summary class="button optional">
-					<span>Delivery Address</span>
+					<span>Optional Group</span>
 					<input type="checkbox" class="switch" />
 				</summary>
-				<label>
-					<span>Street</span>
-					<input type="text" />
-				</label>
-				<label>
-					<span>City</span>
-					<input type="text" />
-				</label>
+				<fieldset>
+					<label>
+						<span>Address</span>
+						<input type="text" />
+					</label>
+					<label>
+						<span>City</span>
+						<input type="text" />
+					</label>
+				</fieldset>
 			</details>
 		</fieldset>
 	</form>
@@ -509,7 +571,7 @@ section:not(:target) {
 
 <p>Dropdown without text in the button will be with three dots:</p>
 
-<div class="docs-box">
+<div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open"></button>
 		<div class="menu">
@@ -529,7 +591,7 @@ section:not(:target) {
 			<div class="dialog">
 				<header>
 					Form in modal
-					<button @click="open = !open">&times;</button>
+					<button @click="open = !open" class="icon close"></button>
 				</header>
 				<form class="container">
 					<fieldset>

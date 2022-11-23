@@ -23,6 +23,7 @@ nav,
 
         &:is(:active, .active) {
             background-color: var(--color-secondary-focus);
+            transform: translateX(0);
         }
     }
 }

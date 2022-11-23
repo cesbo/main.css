@@ -36,10 +36,27 @@ function renderSource(el) {
     return hljs.highlight(html, {language: 'xml'}).value
 }
 
-function initSourcePreview() {
+function initDocsBox() {
     document.querySelectorAll('.docs-box').forEach(el => {
+        const toolbar = document.createElement('div')
+        toolbar.classList.add('docs-box-toolbar')
+
+        /* buttons */
+        const buttonGroup = document.createElement('div')
+        buttonGroup.classList.add('docs-box-buttons')
+        toolbar.appendChild(buttonGroup)
+
+        const themeSwitch = document.createElement('button')
+        themeSwitch.classList.add('icon', 'lightness')
+        themeSwitch.addEventListener('click', () => {
+            el.classList.toggle('light')
+        })
+        buttonGroup.appendChild(themeSwitch)
+
+        /* source preview */
         const details = document.createElement('details')
-        details.classList.add('docs-source')
+        details.classList.add('docs-box-source')
+        toolbar.appendChild(details)
 
         const summary = document.createElement('summary')
         summary.textContent = 'Source'
@@ -49,7 +66,8 @@ function initSourcePreview() {
         pre.innerHTML = renderSource(el)
         details.appendChild(pre)
 
-        el.parentNode.insertBefore(details, el.nextSibling)
+        /* */
+        el.parentNode.insertBefore(toolbar, el.nextSibling)
     })
 }
 
@@ -70,7 +88,7 @@ function init() {
         location.hash = '#quick-start'
     }
 
-    initSourcePreview()
+    initDocsBox()
 
     window.addEventListener('hashchange', onHashChange)
     onHashChange()

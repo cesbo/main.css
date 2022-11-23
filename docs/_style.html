@@ -18,28 +18,41 @@ section:not(:target) {
 	background-color: var(--color-background);
 }
 
-.docs-source {
+.docs-box-toolbar {
+	position: relative;
 	border: var(--border);
 	border-top: 0;
-	padding: var(--space-xs) var(--space);
 	margin-bottom: var(--space);
 }
 
-.docs-source summary {
+.docs-box-buttons {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	right: 0;
+	top: 0;
+	padding: var(--space-xs) var(--space-s);
+}
+
+.docs-box-source {
+	padding: var(--space-xs) var(--space);
+}
+
+.docs-box-source summary {
 	cursor: pointer;
 	color: var(--color-primary);
 	user-select: none;
 }
 
-.docs-source summary:hover {
+.docs-box-source summary:hover {
 	color: var(--color-primary-focus);
 }
 
-.docs-source[open] summary {
+.docs-box-source[open] summary {
 	margin-bottom: var(--space);
 }
 
-.docs-source pre {
+.docs-box-source pre {
 	margin-bottom: 0;
 	padding: 0;
 	margin: 0;
