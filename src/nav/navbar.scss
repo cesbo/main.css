@@ -4,54 +4,9 @@ nav {
         display: inline-block;
 
         &>.menu {
-            top: calc(100%);
-        }
-
-        &:hover>.menu {
-            display: flex;
+            top: 100%;
             border-top-left-radius: 0;
             border-top-right-radius: 0;
-        }
-    }
-
-    @media only screen and (max-width: 768px) {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
-        overflow: scroll;
-        width: 100%;
-
-        input[type="checkbox"].nav-switch:checked + & {
-            display: block;
-
-            & hr {
-                display: none;
-            }
-
-            &>.dropdown {
-                display: block;
-
-                &>a {
-                    background-color: var(--color-secondary);
-
-                    &::after{
-                        display: none
-                    }
-                }
-
-                &>.menu {
-                    display: block;
-                    border: none;
-                    position: relative;
-                    animation: none;
-
-                    & .button {
-                        padding: var(--space-xs) var(--space-s);
-                    }
-                }
-            }
         }
     }
 }
@@ -61,42 +16,74 @@ header {
         border-bottom: var(--border);
     }
 
-    &>input[type="checkbox"].nav-switch {
+    &>input[type="checkbox"] {
         display: none;
     }
+}
 
-    @media only screen and (max-width: 768px) {
-        &>input[type="checkbox"].nav-switch {
-            display: inline-block;
-            border: none;
-            z-index: 1;
+@media only screen and (max-width: 768px) {
+    header {
+        position: static;
+
+        &>input[type="checkbox"] {
+            display: block;
             position: fixed;
-            top: auto;
-            left: auto;
-            bottom: 2rem;
-            right: 2rem;
+            bottom: 0;
+            left: 0;
+            width: auto;
+            height: auto;
+            z-index: 10;
+            border: 0;
+            border-radius: 0 var(--border-radius) 0 0;
+            background-color: var(--color-primary);
+
+            &:is(:hover, :focus) {
+                background-color: var(--color-primary-focus);
+            }
+
+            &:not(:checked)+nav {
+                display: none;
+            }
 
             &::before {
-                content: "☰";
-                opacity: 1;
-                position: inherit;
-                top: auto;
-                left: auto;
-                padding: var(--space);
-                margin: var(--space);
-                border-radius: 100%;
-                background-color: var(--color-primary);
-                height: 4rem;
-                width: 4rem;
-                font-size: 3rem;
-                text-align: center;
-                line-height: 2.5rem;
+                content: "Menu";
+                position: static;
+                background-image: var(--icon-menu);
+                background-position: var(--space-s) center;
+                background-size: 1rem;
+                background-repeat: no-repeat;
+
+                padding: var(--space-xs) var(--space-s);
+                padding-left: calc(var(--space-s) + 1rem + var(--space-xs));
             }
 
             &:checked::before {
-                content: "✕";
-                line-height: 3rem;
-                background-color: var(--color-secondary);
+                content: "Close";
+                background-image: var(--icon-close);
+            }
+        }
+
+        &>nav {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 9;
+            flex-direction: column;
+
+            &>.dropdown>.menu {
+                position: static;
+                border: 0;
+                border-radius: 0;
+                background-color: var(--color-secondary-background);
+                box-shadow: none;
+
+                button,
+                .button,
+                input:is([type=button], [type=submit], [type=reset]) {
+                    padding-left: var(--space-xl);
+                }
             }
         }
     }
