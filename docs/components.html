@@ -67,7 +67,7 @@
 
 <p>Dropdown without text in the button will be with three dots:</p>
 
-<div class="docs-box">
+<div class="docs-box" style="display:flex; gap:var(--space-xs);">
 	<div class="dropdown" x-data="{ open: false }" :class="open && 'open'">
 		<button @click="open = !open"></button>
 		<div class="menu">
