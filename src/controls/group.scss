@@ -1,12 +1,8 @@
 details.group {
-    border-radius: var(--border-radius);
-    overflow: hidden;
-
     summary.button {
         display: flex;
         align-items: center;
         gap: var(--space-xs);
-        border-radius: 0;
         padding: var(--space-xs) var(--space-s);
 
         & :first-child {
@@ -14,7 +10,7 @@ details.group {
         }
     }
 
-    &>fieldset {
+    &>:is(form, fieldset) {
         margin-top: var(--space-xs);
     }
 }
