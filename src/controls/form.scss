@@ -1,11 +1,28 @@
+form,
+fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+fieldset>legend {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    text-transform: uppercase;
+    color: var(--color-secondary);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    text-shadow: var(--text-shadow);
+}
+
 form {
     overflow: hidden;
-
-    fieldset {
-        border: 0;
-        padding: 0;
-        margin: 0;
-    }
 
     details.group {
         margin-top: var(--space-xs);
@@ -19,16 +36,7 @@ form {
         display: flex;
         align-items: center;
         gap: var(--space-xs);
-        margin-top: var(--space-xs);
         color: var(--color-text);
-
-        &:first-child {
-            margin-top: 0;
-        }
-
-        &:last-child {
-            margin-bottom: var(--space-xs);
-        }
 
         /* label text */
         &>:first-child {

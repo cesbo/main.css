@@ -1,4 +1,7 @@
 details.group {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
     summary.button {
         display: flex;
         align-items: center;
@@ -11,7 +14,7 @@ details.group {
         }
     }
 
-    &[open] summary.button{
-        margin-bottom: var(--space-xs);
+    &>fieldset {
+        margin-top: var(--space-xs);
     }
 }
