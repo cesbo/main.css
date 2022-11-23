@@ -55,7 +55,10 @@
         /*  secondary */ $nord3,
         /*     danger */ saturate($nord11, 10),
         /*    success */ saturate($nord7, 10),
-    )
+    );
+
+    --box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    --text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .light {
@@ -66,5 +69,5 @@
         /*  secondary */ $nord4,
         /*     danger */ saturate($nord11, 10),
         /*    success */ saturate($nord7, 10),
-    )
+    );
 }
