@@ -48,7 +48,7 @@ body>header {
             &::before {
                 content: "Menu";
                 position: static;
-                background-image: var(--icon-menu);
+                background-image: var(--icon-hamburger);
                 background-position: var(--space-s) center;
                 background-size: 1rem;
                 background-repeat: no-repeat;

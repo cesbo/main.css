@@ -3,22 +3,18 @@
     --icon-link: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M20,0l0,8a1,1 0 0 1 -2,0l0,-6 -6,0a1,1 0 0 1 0,-2z M20,1.414l-8,8a1,1 0 0 1 -1.414,-1.414l8,-8z M0,5l0,13a2,2 0 0 0 2,2l13,0a2,2 0 0 0 2,-2l0,-6a1,1 0 0 0 -2,0l0,5a1,1 0 0 1 -1,1l-11,0a1,1 0 0 1 -1,-1l0,-11a1,1 0 0 1 1,-1l5,0a1,1 0 0 0 0,-2l-6,0a2,2 0 0 0 -2,2z"/></svg>');
     --icon-close: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M3,5a1,1 0 0 1 2,-2l12,12a1,1 0 0 1 -2,2z M15,3a1,1 0 0 1 2,2l-12,12a1,1 0 0 1 -2,-2z" /></svg>');
     --icon-lightness: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10,0a1,1 0 0 1 0,20a1,1 0 0 1 0,-20z M10,2a1,1 0 0 1 0,16z" /></svg>');
-    --icon-menu: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3.5" width="16" height="2.5" rx="1" /><rect x="2" y="8.75" width="16" height="2.5" rx="1" /><rect x="2" y="14" width="16" height="2.5" rx="1" /></svg>');
+    --icon-hamburger: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3.5" width="16" height="2.5" rx="1" /><rect x="2" y="8.75" width="16" height="2.5" rx="1" /><rect x="2" y="14" width="16" height="2.5" rx="1" /></svg>');
 }
 
 .icon {
-    display: inline-block;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    aspect-ratio: 1;
+    width: var(--line-height);
     height: var(--line-height);
 }
 
 .icon::before {
     content: "";
     display: block;
-    width: 100%;
+    aspect-ratio: 1;
     height: 100%;
     background-color: currentColor;
     mask-position: center;
@@ -61,7 +57,7 @@
     -webkit-mask-image: var(--icon-lightness);
 }
 
-.icon.menu::before {
-    mask-image: var(--icon-menu);
-    -webkit-mask-image: var(--icon-menu);
+.icon.hamburger::before {
+    mask-image: var(--icon-hamburger);
+    -webkit-mask-image: var(--icon-hamburger);
 }
