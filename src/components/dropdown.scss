@@ -48,22 +48,20 @@
 
         /* default bottom-left */
         animation: sweep-down .1s ease-out;
-        top: calc(100% + .2rem);
+        top: 100%;
         bottom: auto;
         left: 0;
         right: auto;
 
 
-        &>button,
-        &>.button,
-        &>input:is([type=button], [type=submit], [type=reset]) {
+        &>:is(button, .button, [type="button"], [type="submit"], [type="reset"]) {
             width: 100%;
         }
     }
 
     &.bottom-right>.menu {
         animation: sweep-down .1s ease-out;
-        top: calc(100% + .2rem);
+        top: 100%;
         bottom: auto;
         left: auto;
         right: 0;
@@ -72,7 +70,7 @@
     &.top-left>.menu {
         animation: sweep-up .1s ease-out;
         top: auto;
-        bottom: calc(100% + .2rem);
+        bottom: 100%;
         left: 0;
         right: auto;
     }
@@ -80,7 +78,7 @@
     &.top-right>.menu {
         animation: sweep-up .1s ease-out;
         top: auto;
-        bottom: calc(100% + .2rem);
+        bottom: 100%;
         left: auto;
         right: 0;
     }

@@ -1,14 +1,17 @@
 button,
 .button,
-input:is([type="button"], [type="submit"], [type="reset"]) {
+[type="button"],
+[type="submit"],
+[type="reset"] {
     display: inline-block;
-    width: auto;
     cursor: pointer;
     text-decoration: none;
     border: var(--border);
+    border-radius: var(--border-radius);
     border-width: calc(var(--border-width) * 2);
     font-weight: 600;
     text-shadow: var(--text-shadow);
+    padding: var(--space-xs) var(--space-s);
 
     &:is(:disabled, .disabled) {
         opacity: .5;
@@ -65,18 +68,18 @@ input:is([type="button"], [type="submit"], [type="reset"]) {
         &:not(:empty) {
             width: auto;
             height: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-xs);
 
             &::before {
-                float: left;
                 height: 1rem;
-                margin-top: calc((var(--line-height) - 1rem) / 2);
-                margin-right: var(--space-xs);
             }
         }
     }
 }
 
-:is(button, input)[type="submit"] {
+[type="submit"] {
     color: var(--color-primary-inverse);
     border-color: var(--color-primary);
     background-color: var(--color-primary);

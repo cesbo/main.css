@@ -7,7 +7,9 @@ nav,
 
     button,
     .button,
-    input:is([type=button], [type=submit], [type=reset]) {
+    [type="button"],
+    [type="submit"],
+    [type="reset"] {
         border: 0;
         border-radius: 0;
         white-space: nowrap;

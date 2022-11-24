@@ -1,4 +1,11 @@
 nav {
+    flex-direction: row;
+    align-items: center;
+
+    .expand {
+        flex-grow: 1;
+    }
+
     &>.dropdown {
         position: relative;
         display: inline-block;
@@ -78,7 +85,7 @@ body>header {
 
                 button,
                 .button,
-                input:is([type=button], [type=submit], [type=reset]) {
+                [type="button"] {
                     padding-left: var(--space-xl);
                 }
             }

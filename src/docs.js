@@ -41,18 +41,6 @@ function initDocsBox() {
         const toolbar = document.createElement('div')
         toolbar.classList.add('docs-box-toolbar')
 
-        /* buttons */
-        const buttonGroup = document.createElement('div')
-        buttonGroup.classList.add('docs-box-buttons')
-        toolbar.appendChild(buttonGroup)
-
-        const themeSwitch = document.createElement('button')
-        themeSwitch.classList.add('icon', 'lightness')
-        themeSwitch.addEventListener('click', () => {
-            el.classList.toggle('light')
-        })
-        buttonGroup.appendChild(themeSwitch)
-
         /* source preview */
         const details = document.createElement('details')
         details.classList.add('docs-box-source')
