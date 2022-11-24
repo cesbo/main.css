@@ -201,14 +201,15 @@ section:not(:target) {
 
 <h2>Icon</h2>
 <div class="docs-box" style="display: flex; justify-content: flex-start; gap: var(--space-xs)">
+	<i class="icon check"></i>
+	<i class="icon hamburger"></i>
 	<i class="icon close"></i>
+	<i class="icon link"></i>
 	<i class="icon arrow"></i>
 	<i class="icon arrow up"></i>
 	<i class="icon arrow left"></i>
 	<i class="icon arrow right"></i>
-	<i class="icon link"></i>
 	<i class="icon lightness"></i>
-	<i class="icon menu"></i>
 </div>
 <p>Use <code>color</code> attribute to change icon color</p>
 
@@ -315,11 +316,23 @@ section:not(:target) {
 	<button class="success" disabled>Disabled</button>
 </div><!-- Button -->
 
-<p>Button for icons</p>
+<p>Button with icon</p>
 
-<div class="docs-box" style="display: flex; gap: var(--space-xs);">
-	<button class="icon close"></button>
-	<button class="icon close" disabled></button>
+<div class="docs-box" style="display: flex; flex-direction: column; gap: var(--space-xs);">
+	<div>
+		<button class="icon close"></button>
+		<button class="icon close" disabled></button>
+		<button class="icon hamburger"></button>
+		<button class="icon hamburger" disabled></button>
+	</div>
+	<div>
+		<button class="icon check success">Ok</button>
+		<button class="icon check success" disabled>Disabled</button>
+	</div>
+	<div>
+		<button class="icon close danger">Remove</button>
+		<button class="icon close danger" disabled>Disabled</button>
+	</div>
 </div>
 
 <h2>Form</h2>
