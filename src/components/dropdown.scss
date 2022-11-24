@@ -22,9 +22,11 @@
 
         &:not(:empty)::after {
             display: inline-block;
-            content: " ";
+            content: "";
             margin-left: var(--space-s);
-            background: var(--icon-arrow);
+            background-color: currentColor;
+            mask-image: var(--icon-arrow);
+            -webkit-mask-image: var(--icon-arrow);
             width: .6rem;
             height: .6rem;
         }
