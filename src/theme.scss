@@ -57,8 +57,8 @@
         /*    success */ saturate($nord7, 10),
     );
 
-    --box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    --text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    --box-shadow: 0 1px 3px #{ $nord1 };
+    --text-shadow: 0 0 1px #{ $nord1 };
 }
 
 .light {
@@ -66,11 +66,11 @@
         /*       text */ darken($nord0, 5),
         /* background */ lighten($nord6, 5),
         /*    primary */ saturate($nord10, 10),
-        /*  secondary */ $nord4,
+        /*  secondary */ $nord6,
         /*     danger */ saturate($nord11, 10),
         /*    success */ saturate($nord7, 10),
     );
 
-    --box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    --text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    --box-shadow: 0 1px 3px #{ $nord4 };
+    --text-shadow: 0 0 1px #{ $nord4 };
 }

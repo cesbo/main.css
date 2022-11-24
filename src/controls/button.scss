@@ -9,8 +9,8 @@ button,
     border: var(--border);
     border-radius: var(--border-radius);
     border-width: calc(var(--border-width) * 2);
+    box-shadow: var(--box-shadow);
     font-weight: 600;
-    text-shadow: var(--text-shadow);
     padding: var(--space-xs) var(--space-s);
 
     &:is(:disabled, .disabled) {
@@ -57,7 +57,6 @@ button,
         &:empty {
             padding: 0;
             border-radius: 50%;
-            box-shadow: var(--box-shadow);
 
             &::before {
                 height: 1rem;
