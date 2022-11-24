@@ -11,7 +11,7 @@ nav {
     }
 }
 
-header {
+body>header {
     &>nav {
         border-bottom: var(--border);
     }
@@ -22,7 +22,7 @@ header {
 }
 
 @media only screen and (max-width: 768px) {
-    header {
+    body>header {
         position: static;
 
         &>input[type="checkbox"] {
