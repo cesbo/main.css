@@ -13,10 +13,7 @@ input:is([type="checkbox"], [type="radio"]) {
         position: absolute;
         content: "";
         display: block;
-        top: .2rem;
-        bottom: .2rem;
-        left: .2rem;
-        right: .2rem;
+        inset: .2rem;
         background-color: transparent;
         transition: .1s background-color ease-out;
     }
