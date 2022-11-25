@@ -149,3 +149,25 @@
 		</div>
 	</div>
 </div><!-- Listbox -->
+
+<h2>Carousel</h2>
+<div class="docs-box">
+	<div class="carousel" x-ref="carousel">
+		<div class="note">
+			<header>1/3</header>
+			<p></p>
+		</div>
+		<div class="note danger">
+			<header>2/3</header>
+			<p></p>
+		</div>
+		<div class="note success">
+			<header>3/3</header>
+			<p></p>
+		</div>
+	</div>
+	<div class="container" style="text-align: center;">
+		<button class="icon arrow left" @click="$refs.carousel.scrollLeft -= $refs.carousel.clientWidth"></button>
+		<button class="icon arrow right" @click="$refs.carousel.scrollLeft += $refs.carousel.clientWidth"></button>
+	</div>
+</div><!-- Carousel -->

@@ -55,11 +55,11 @@
     }
 
     &.left::before {
-        transform: rotateZ(90deg);
+        transform: rotateZ(90deg) translateY(6%);
     }
 
     &.right::before {
-        transform: rotateZ(-90deg);
+        transform: rotateZ(-90deg) translateY(6%);
     }
 }
 
