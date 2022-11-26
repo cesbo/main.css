@@ -17,14 +17,7 @@ window.ListboxDragleave = function(ev) {
 
 window.OpenDropdown = function(target) {
     const el = document.querySelector(target)
-    console.log(el)
-    el.classList.add('open')
-    setTimeout(() => {
-        window.addEventListener('click', function close() {
-            el.classList.remove('open')
-            window.removeEventListener('click', close)
-        })
-    }, 0)
+    el.classList.toggle('open')
 }
 
 const modalStack = []
