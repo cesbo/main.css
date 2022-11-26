@@ -15,6 +15,48 @@ window.ListboxDragenter = function(ev) {
 window.ListboxDragleave = function(ev) {
 }
 
+window.OpenDropdown = function(target) {
+    const el = document.querySelector(target)
+    console.log(el)
+    el.classList.add('open')
+    setTimeout(() => {
+        window.addEventListener('click', function close() {
+            el.classList.remove('open')
+            window.removeEventListener('click', close)
+        })
+    }, 0)
+}
+
+const modalStack = []
+
+function closeModalOnEscape(ev) {
+    if(ev.key == 'Escape') {
+        CloseModal()
+    }
+}
+
+window.OpenModal = function(target) {
+    const el = document.querySelector(target)
+    modalStack.push(el)
+    el.classList.add('open')
+    if(modalStack.length == 1) {
+        window.addEventListener('keydown', closeModalOnEscape)
+    }
+}
+
+window.CloseModal = function() {
+    const el = modalStack.pop()
+    el.classList.remove('open')
+    if(modalStack.length == 0) {
+        window.removeEventListener('keydown', closeModalOnEscape)
+    }
+}
+
+window.ToggleOpen = function(target) {
+    const el = document.querySelector(target)
+    el.classList.toggle('open')
+}
+
 window.ToggleTheme = function(ev) {
     const el = document.documentElement
     if(el.classList.contains('light')) {
@@ -25,6 +67,16 @@ window.ToggleTheme = function(ev) {
         ev.target.innerText = 'Dark'
     }
     ev.target.blur()
+}
+
+window.ToggleDisable = function(target) {
+    const el = document.querySelector(target)
+    el.disabled = !el.disabled
+}
+
+window.ScrollCarousel = function(target, direction) {
+    const el = document.querySelector(target)
+    el.scrollLeft += el.clientWidth * direction
 }
 
 function renderSource(el) {
@@ -83,7 +135,9 @@ function onHashChange() {
     window.scrollTo(0, 0)
 }
 
-function init() {
+document.addEventListener('DOMContentLoaded', function init() {
+    document.removeEventListener('DOMContentLoaded', init)
+
     if(location.hash === '') {
         location.hash = '#quick-start'
     }
@@ -92,6 +146,6 @@ function init() {
 
     window.addEventListener('hashchange', onHashChange)
     onHashChange()
-}
 
-document.addEventListener('alpine:init', init)
+    document.body.style.display = 'initial'
+})

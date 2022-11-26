@@ -153,17 +153,17 @@
 <h2>Fieldset</h2>
 <p>Fieldset is a group of related elements.</p>
 <div class="docs-box">
-	<form x-data="{ disabled: false }" @submit.prevent="">
+	<form onSubmit="return false">
 		<fieldset>
 			<legend>Group Title</legend>
 
 			<label>
 				<span>Lock Group</span>
-				<input type="checkbox" x-model="disabled" />
+				<input type="checkbox" onChange="ToggleDisable('#demo-fieldset')" />
 			</label>
 		</fieldset>
 
-		<fieldset :disabled="disabled">
+		<fieldset id="demo-fieldset">
 			<label>
 				<span>Group Item</span>
 				<input type="text" />
