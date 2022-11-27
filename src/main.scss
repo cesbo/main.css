@@ -28,20 +28,24 @@
     --modal-width: 50%;
     --modal-min-height: auto;
     --modal-min-width: 600px;
+
+    --alert-width: 400px;
 }
 
 @media only screen and (max-width: 768px) {
     :root {
         --space: .4rem;
 
+        --grid-column-gap: .4rem;
+        --grid-row-gap: .4rem;
+        --grid-template-columns: 1fr;
+
         --modal-margin: 0;
         --modal-width: 100%;
         --modal-min-height: 100%;
         --modal-min-width: auto;
 
-        --grid-column-gap: .4rem;
-        --grid-row-gap: .4rem;
-        --grid-template-columns: 1fr;
+        --alert-width: 100%;
     }
 }
 
