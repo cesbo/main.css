@@ -32,7 +32,12 @@
         }
     }
 
-    &:is(.open, .hover:hover)>.menu {
+    &>summary::before {
+        content: none;
+    }
+
+    &:is(.open, [open], .hover:hover)>.menu,
+    &>.menu.open {
         display: flex;
     }
 
@@ -46,7 +51,7 @@
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
         overflow: hidden;
-        min-width: 110%;
+        min-width: calc(100% + 1rem);
 
         /* default bottom-left */
         animation: sweep-down .1s ease-out;

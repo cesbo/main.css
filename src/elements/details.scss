@@ -1,5 +1,8 @@
 details {
+    display: block;
+
     &>summary {
+        display: list-item;
         cursor: pointer;
         list-style-type: none;
         user-select: none;
