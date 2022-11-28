@@ -1,0 +1,11 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xs);
+
+    .expand {
+        flex-grow: 1;
+    }
+}

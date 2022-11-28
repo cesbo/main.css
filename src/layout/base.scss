@@ -13,7 +13,6 @@ body {
         width: 100%;
         margin-right: auto;
         margin-left: auto;
-        padding: var(--space);
     }
 
     &>footer {
@@ -22,8 +21,17 @@ body {
 }
 
 .container {
-    margin: 0 auto;
     padding: var(--space);
+
+    &>header {
+        margin: calc(-1 * var(--space));
+        margin-bottom: 0;
+    }
+
+    &>footer {
+        margin: calc(-1 * var(--space));
+        margin-top: 0;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -33,16 +41,11 @@ body {
         }
 
         &>main{
-            padding: var(--space-xs);
-
             /* space for the hamburger button */
             padding-bottom: calc(var(--line-height) + 2 * var(--space-xs) + var(--space));
         }
     }
-
-    .container {
-        padding: var(--space-xs);
-    }
 }
 
 @import "grid";
+@import "row";
