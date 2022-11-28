@@ -9,6 +9,7 @@ nav {
     &>.dropdown {
         position: relative;
         display: inline-block;
+        vertical-align: top;
 
         &>.menu {
             top: 100%;

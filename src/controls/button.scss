@@ -3,6 +3,7 @@ button,
 [type="button"],
 [type="submit"],
 [type="reset"] {
+    display: inline-block;
     cursor: pointer;
     text-decoration: none;
     border: var(--border);
@@ -10,6 +11,7 @@ button,
     border-width: calc(var(--border-width) * 2);
     font-weight: 600;
     padding: var(--space-xs) var(--space-s);
+    vertical-align: top; /* required for inline-block */
 
     &:is(:disabled, .disabled) {
         opacity: .5;

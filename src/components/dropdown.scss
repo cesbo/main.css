@@ -12,8 +12,6 @@
     position: relative;
 
     &>:first-child {
-        width: 100%;
-
         &::after {
             display: block;
             content: "...";
@@ -34,6 +32,18 @@
 
     &>summary::before {
         content: none;
+        mask: none;
+        -webkit-mask: none;
+        background-color: transparent;
+        width: unset;
+        height: unset;
+    }
+
+    &[open]>summary::before {
+        content: "";
+        position: fixed;
+        z-index: 1;
+        inset: 0;
     }
 
     &:is(.open, [open], .hover:hover)>.menu,
