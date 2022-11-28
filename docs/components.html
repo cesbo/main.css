@@ -126,15 +126,14 @@
 			}
 		}
 	</script>
-	<!-- Modal Text -->
-	<button onClick="openModal('demo-modal-text')">Modal Text</button>
+	<button onClick="openModal('demo-modal-text')">modal text</button>
 	<div class="modal" id="demo-modal-text">
 		<div class="dialog">
 			<header class="row">
 				Modal Header
 				<button onClick="closeModal()" class="icon close"></button>
 			</header>
-			<article>
+			<article class="container">
 				Modal Content
 			</article>
 			<footer>
@@ -142,14 +141,13 @@
 			</footer>
 		</div>
 	</div>
-	<!-- Modal Form -->
-	<button onClick="openModal('demo-modal-form')">Modal Form</button>
+	<button onClick="openModal('demo-modal-form')">modal form</button>
 	<div class="modal" id="demo-modal-form">
 		<form class="dialog" onSubmit="return false">
+			<header>
+				Modal Form
+			</header>
 			<fieldset class="container">
-				<header>
-					Modal Form
-				</header>
 				<label>
 					<span>Login</span>
 					<input type="text" />
