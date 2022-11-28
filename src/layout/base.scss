@@ -34,6 +34,8 @@ body {
 
         &>main{
             padding: var(--space-xs);
+
+            /* space for the hamburger button */
             padding-bottom: calc(var(--line-height) + 2 * var(--space-xs) + var(--space));
         }
     }

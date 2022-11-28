@@ -63,7 +63,7 @@ button,
         }
 
         &:not(:empty) {
-            width: auto;
+            aspect-ratio: initial;
             height: auto;
             display: inline-flex;
             align-items: center;
