@@ -136,33 +136,36 @@
 			<article class="container">
 				Modal Content
 			</article>
-			<footer>
+			<footer class="row">
 				Modal Footer
 			</footer>
 		</div>
 	</div>
 	<button onClick="openModal('demo-modal-form')">modal form</button>
 	<div class="modal" id="demo-modal-form">
-		<form class="dialog" onSubmit="return false">
-			<header>
+		<div class="dialog">
+			<header class="row">
 				Modal Form
+				<button onClick="closeModal()" class="icon close"></button>
 			</header>
-			<fieldset class="container">
-				<label>
-					<span>Login</span>
-					<input type="text" />
-				</label>
-				<label>
-					<span>Password</span>
-					<input type="password" />
-				</label>
-				<footer class="row">
-					<div class="expand"></div>
-					<button onClick="closeModal()">Close</button>
-					<button type="submit">Submit</button>
-				</footer>
-			</fieldset>
-		</form>
+			<form onSubmit="return false">
+				<fieldset class="container">
+					<label>
+						<span>Login</span>
+						<input type="text" />
+					</label>
+					<label>
+						<span>Password</span>
+						<input type="password" />
+					</label>
+					<footer class="row">
+						<div class="expand"></div>
+						<button onClick="closeModal()">Close</button>
+						<button type="submit">Submit</button>
+					</footer>
+				</fieldset>
+			</form>
+		</div>
 	</div>
 </div><!-- Modal -->
 

@@ -30,12 +30,26 @@
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
 
-        header {
+        &>header {
             border-bottom: var(--border);
             padding: var(--space);
         }
 
-        footer {
+        &>article {
+            padding: var(--space);
+        }
+
+        &>form {
+            padding-top: var(--space);
+            padding-bottom: var(--space);
+
+            footer {
+                margin-top: calc(var(--space) - var(--space-xs)); /* exclude flex gap */
+                padding-bottom: 0;
+            }
+        }
+
+        &>footer {
             border-top: var(--border);
             padding: var(--space);
         }
