@@ -7,10 +7,10 @@
     --font-weight: 400;
 
     --space: 1rem;
-    --space-xs: .4rem;
-    --space-s: .8rem;
-    --space-l: 1.2rem;
-    --space-xl: 1.8rem;
+    --space-xs: calc(var(--space) * .4);
+    --space-s: calc(var(--space) * .8);
+    --space-l: calc(var(--space) * 1.2);
+    --space-xl: calc(var(--space) * 1.8);
 
     --line-height: 1.5rem;
 
@@ -34,7 +34,7 @@
 
 @media only screen and (max-width: 768px) {
     :root {
-        --space: .4rem;
+        --space: .8rem;
 
         --grid-column-gap: .4rem;
         --grid-row-gap: .4rem;
