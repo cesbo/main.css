@@ -30,19 +30,16 @@
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
 
-        &>header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        header {
             border-bottom: var(--border);
             padding: var(--space);
         }
 
-        &>footer {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: var(--space-xs);
+        article {
+            padding: var(--space);
+        }
+
+        footer {
             border-top: var(--border);
             padding: var(--space);
         }

@@ -15,41 +15,6 @@ window.ListboxDragenter = function(ev) {
 window.ListboxDragleave = function(ev) {
 }
 
-window.OpenDropdown = function(target) {
-    const el = document.querySelector(target)
-    el.classList.toggle('open')
-}
-
-const modalStack = []
-
-function closeModalOnEscape(ev) {
-    if(ev.key == 'Escape') {
-        CloseModal()
-    }
-}
-
-window.OpenModal = function(target) {
-    const el = document.querySelector(target)
-    modalStack.push(el)
-    el.classList.add('open')
-    if(modalStack.length == 1) {
-        window.addEventListener('keydown', closeModalOnEscape)
-    }
-}
-
-window.CloseModal = function() {
-    const el = modalStack.pop()
-    el.classList.remove('open')
-    if(modalStack.length == 0) {
-        window.removeEventListener('keydown', closeModalOnEscape)
-    }
-}
-
-window.ToggleOpen = function(target) {
-    const el = document.querySelector(target)
-    el.classList.toggle('open')
-}
-
 window.ToggleTheme = function(ev) {
     const el = document.documentElement
     if(el.classList.contains('light')) {
@@ -60,16 +25,6 @@ window.ToggleTheme = function(ev) {
         ev.target.innerText = 'Dark'
     }
     ev.target.blur()
-}
-
-window.ToggleDisable = function(target) {
-    const el = document.querySelector(target)
-    el.disabled = !el.disabled
-}
-
-window.ScrollCarousel = function(target, direction) {
-    const el = document.querySelector(target)
-    el.scrollLeft += el.clientWidth * direction
 }
 
 function renderSource(el) {
@@ -140,5 +95,5 @@ document.addEventListener('DOMContentLoaded', function init() {
     window.addEventListener('hashchange', onHashChange)
     onHashChange()
 
-    document.body.style.display = 'initial'
+    document.body.style.display = ''
 })

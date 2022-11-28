@@ -61,12 +61,6 @@ form {
     }
 
     footer {
-        display: flex;
-        gap: .5rem;
-        align-items: center;
-        flex-direction: row;
-        justify-content: flex-end;
-
         padding: var(--space) 0;
         margin-top: auto;
     }
