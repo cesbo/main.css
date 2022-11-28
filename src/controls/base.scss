@@ -13,9 +13,16 @@ button,
     font-family: inherit;
 }
 
-input:not([type="button"], [type="submit"], [type="reset"]),
-select,
-textarea {
+:is(
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="url"],
+    select,
+    textarea
+) {
     display: block;
     width: 100%;
     border: var(--border);

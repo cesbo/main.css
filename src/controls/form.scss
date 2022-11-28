@@ -10,7 +10,7 @@
     &>footer {
         border-top: var(--border);
         padding: var(--space);
-        margin-top: calc(-1 * var(--space-xs));
+        margin-top: calc(var(--space) - var(--space-xs));
     }
 }
 

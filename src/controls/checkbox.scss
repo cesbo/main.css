@@ -1,5 +1,12 @@
-input:is([type="checkbox"], [type="radio"]) {
+:is(
+    input[type="checkbox"],
+    input[type="radio"]
+) {
+    display: inline-block;
+    vertical-align: top;
     position: relative;
+    border: var(--border);
+    border-radius: var(--border-radius);
     padding: 0;
     height: 1.2rem;
     width: 1.2rem;
@@ -8,6 +15,15 @@ input:is([type="checkbox"], [type="radio"]) {
     -moz-appearance: none;
     appearance: none;
     background-color: var(--color-background);
+
+    &:disabled {
+        opacity: .5;
+        cursor: not-allowed;
+    }
+
+    &:focus {
+        background-color: var(--color-secondary-background);
+    }
 
     &::before {
         position: absolute;

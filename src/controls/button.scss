@@ -9,7 +9,6 @@ button,
     border: var(--border);
     border-radius: var(--border-radius);
     border-width: calc(var(--border-width) * 2);
-    font-weight: 600;
     padding: var(--space-xs) var(--space-s);
     vertical-align: top; /* required for inline-block */
 

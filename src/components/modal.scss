@@ -44,7 +44,6 @@
             padding-bottom: var(--space);
 
             footer {
-                margin-top: calc(var(--space) - var(--space-xs)); /* exclude flex gap */
                 padding-bottom: 0;
             }
         }
