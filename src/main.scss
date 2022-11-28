@@ -78,21 +78,8 @@ html {
     text-rendering: optimizeLegibility;
 }
 
-body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 .hide {
     display: none !important;
-}
-
-@media only screen and (max-width: 768px) {
-    body {
-        /* offset for main menu button and some status bar */
-        padding-bottom: calc(1rem + 2 * var(--space-xs));
-    }
 }
 
 @import "theme";

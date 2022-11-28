@@ -1,4 +1,8 @@
 body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
     &>header {
         position: sticky;
         top: 0;
@@ -20,6 +24,23 @@ body {
 .container {
     margin: 0 auto;
     padding: var(--space);
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        &>header {
+            position: static;
+        }
+
+        &>main{
+            padding: var(--space-xs);
+            padding-bottom: calc(var(--line-height) + 2 * var(--space-xs) + var(--space));
+        }
+    }
+
+    .container {
+        padding: var(--space-xs);
+    }
 }
 
 @import "grid";
