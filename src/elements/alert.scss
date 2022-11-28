@@ -1,3 +1,12 @@
+@keyframes new-alert {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .alert {
     position: relative;
     padding: var(--space-xs) var(--space-s);
@@ -7,18 +16,50 @@
     box-shadow: var(--box-shadow);
     width: var(--alert-width);
 
-    color: var(--color-text);
-    border-color: var(--color-primary);
+    color: var(--color-primary);
+    border-color: currentColor;
     background-color: var(--color-primary-background);
 
+    animation: new-alert .1s ease-out;
+
+    p {
+        color: var(--color-text);
+        margin: 0;
+    }
+
+    &>.close {
+        position: absolute;
+        top: var(--space-xs);
+        right: var(--space-s);
+        color: inherit;
+        background-color: transparent;
+        border: none;
+
+        &:is(:hover, :focus) {
+            color: var(--color-primary-focus);
+        }
+    }
+
     &.success {
-        border-color: var(--color-success);
+        color: var(--color-success);
         background-color: var(--color-success-background);
+
+        &>.close {
+            &:is(:hover, :focus) {
+                color: var(--color-success-focus);
+            }
+        }
     }
 
     &.danger {
-        border-color: var(--color-danger);
+        color: var(--color-danger);
         background-color: var(--color-danger-background);
+
+        &>.close {
+            &:is(:hover, :focus) {
+                color: var(--color-danger-focus);
+            }
+        }
     }
 }
 
