@@ -1,15 +1,10 @@
-nav,
-.menu {
+:is(nav, .menu) {
     display: flex;
     width: auto;
     background-color: var(--color-background);
     user-select: none;
 
-    button,
-    .button,
-    [type="button"],
-    [type="submit"],
-    [type="reset"] {
+    :is(button, .button, [type="button"], [type="submit"], [type="reset"]) {
         border: 0;
         border-radius: 0;
         white-space: nowrap;
@@ -19,8 +14,24 @@ nav,
         color: var(--color-text);
         background-color: var(--color-background);
 
+        &.danger {
+            color: var(--color-danger);
+        }
+
+        &.success {
+            color: var(--color-success);
+        }
+
         &:is(:hover, :focus) {
             background-color: var(--color-secondary-focus);
+
+            &.danger {
+                color: var(--color-danger-focus);
+            }
+
+            &.success {
+                color: var(--color-success-focus);
+            }
         }
 
         &:is(:active, .active) {
