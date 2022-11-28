@@ -1,5 +1,7 @@
 div.listbox {
-    padding: var(--space-xs) 0;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
 
     & div {
         position: relative;
@@ -10,15 +12,18 @@ div.listbox {
         z-index: 1;
         top: 0;
         bottom: 0;
-        padding: 0;
+        padding: 0 var(--space-s);
         border: 0;
-        width: 2rem;
 
         &.handle {
             cursor: grab;
             left: 0;
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
+
+            & ~ input {
+                padding-left: 2.5rem;
+            }
 
             &::before {
                 content: "=";
@@ -29,6 +34,10 @@ div.listbox {
             right: 0;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
+
+            & ~ input {
+                padding-right: 2.5rem;
+            }
 
             &::before {
                 content: "\00d7";
@@ -55,7 +64,7 @@ div.listbox {
     }
 
     input {
-        padding: .2rem 2.5rem;
+        padding: var(--space-xs) var(--space-s);
         border: var(--border);
         border-color: transparent;
         border-radius: 0;
