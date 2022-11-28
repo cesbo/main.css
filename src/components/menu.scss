@@ -4,6 +4,10 @@
     background-color: var(--color-background);
     user-select: none;
 
+    &>hr:is(:first-child, :last-child) {
+        display: none;
+    }
+
     :is(button, .button, [type="button"], [type="submit"], [type="reset"]) {
         border: 0;
         border-radius: 0;
@@ -24,14 +28,6 @@
 
         &:is(:hover, :focus) {
             background-color: var(--color-secondary-focus);
-
-            &.danger {
-                color: var(--color-danger-focus);
-            }
-
-            &.success {
-                color: var(--color-success-focus);
-            }
         }
 
         &:is(:active, .active) {
