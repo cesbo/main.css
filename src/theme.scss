@@ -65,10 +65,10 @@
     @include theme(
         /*       text */ darken($nord0, 5),
         /* background */ lighten($nord6, 5),
-        /*    primary */ saturate($nord10, 10),
+        /*    primary */ saturate($nord10, 20),
         /*  secondary */ $nord4,
-        /*     danger */ saturate($nord11, 10),
-        /*    success */ saturate($nord7, 10),
+        /*     danger */ saturate($nord11, 20),
+        /*    success */ saturate($nord7, 20),
     );
 
     --box-shadow: 0 1px 3px #{ $nord4 };
