@@ -1,21 +1,36 @@
 .note {
+    position: relative;
     margin: 1rem 0;
     padding: var(--space-xs) var(--space-s);
+    padding-left: calc(var(--line-height) + 2 * var(--space-s));
     border: var(--border);
     border-radius: var(--border-radius);
     overflow: hidden;
 
+    --icon: var(--icon-note);
+    --color: var(--color-primary);
+
     color: var(--color-text);
-    border-color: var(--color-primary);
+    border-color: var(--color);
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: var(--space-s);
+        display: block;
+        mask-image: var(--icon);
+        -webkit-mask-image: var(--icon);
+        mask-size: contain;
+        -webkit-mask-size: contain;
+        aspect-ratio: 1;
+        background-color: var(--color);
+        height: var(--line-height);
+    }
 
     &>header {
         font-weight: 600;
-        padding: var(--space-xs) var(--space-s);
-        margin: 0 calc(var(--space-s) * -1);
-        margin-top: calc(var(--space-xs) * -1);
-
-        color: var(--color-primary);
-        background-color: var(--color-primary-background);
+        padding-bottom: var(--space-xs);
+        color: var(--color);
     }
 
     &>p {
@@ -23,20 +38,11 @@
     }
 
     &.success {
-        border-color: var(--color-success);
-
-        &>header {
-            color: var(--color-success);
-            background-color: var(--color-success-background);
-        }
+        --color: var(--color-success);
     }
 
     &.danger {
-        border-color: var(--color-danger);
-
-        &>header {
-            color: var(--color-danger);
-            background-color: var(--color-danger-background);
-        }
+        --icon: var(--icon-danger);
+        --color: var(--color-danger);
     }
 }
