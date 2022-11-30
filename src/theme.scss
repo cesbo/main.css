@@ -10,7 +10,7 @@
     @return color.adjust($color, $lightness: $adjust);
 }
 
-@mixin theme($text, $background, $inverse, $primary, $secondary, $danger, $success) {
+@mixin theme($text, $background, $primary, $secondary, $danger, $success) {
     $adjust: if(
         color.whiteness($text) > color.whiteness($background),
         1,
@@ -21,7 +21,6 @@
     /* css */
     --color-text: #{ $text };
     --color-background: #{ $background };
-    --color-inverse: #{ $inverse };
 
     /* primary */
     --color-primary: #{ $primary };
@@ -44,7 +43,6 @@
     @include theme(
         /*       text */ lighten($nord6, 5),
         /* background */ darken($nord0, 5),
-        /*    inverse */ white,
         /*    primary */ saturate($nord10, 20),
         /*  secondary */ $nord3,
         /*     danger */ saturate($nord11, 20),
@@ -60,9 +58,8 @@
 
 .light {
     @include theme(
-        /*       text */ darken($nord0, 5),
-        /* background */ lighten($nord6, 5),
-        /*    inverse */ black,
+        /*       text */ black,
+        /* background */ white,
         /*    primary */ saturate($nord10, 20),
         /*  secondary */ silver,
         /*     danger */ saturate($nord11, 20),
