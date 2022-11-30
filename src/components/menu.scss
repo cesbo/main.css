@@ -8,8 +8,8 @@
         display: none;
     }
 
-    &>.dropdown:is(:hover, :focus)>:first-child {
-        filter: var(--filter-focus);
+    &>.dropdown:hover>:first-child {
+        background-color: var(--color-primary-background);
     }
 
     &>a,
@@ -22,14 +22,9 @@
         color: var(--color-text);
         background-color: var(--color-background);
 
-        &:is(:hover, :focus) {
-            background-color: var(--color-secondary);
-            filter: var(--filter-focus);
-        }
-
-        &:is(:active, .active) {
-            background-color: var(--color-secondary);
-            filter: var(--filter-active);
+        &:is(:hover, :focus, :active, .active) {
+            background-color: var(--color-primary-background);
+            filter: none;
         }
 
         &.danger {
