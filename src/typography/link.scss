@@ -2,8 +2,17 @@ a {
     color: var(--color-primary);
     text-decoration: none;
 
+    &:is(:disabled, .disabled) {
+        opacity: .5;
+        pointer-events: none;
+    }
+
     &:is(:hover, :focus) {
-        color: var(--color-primary-focus);
+        filter: var(--filter-focus);
+    }
+
+    &:is(:active, .active) {
+        filter: var(--filter-active);
     }
 
     &[target="_blank"]::after {
@@ -15,5 +24,17 @@ a {
         -webkit-mask: var(--icon-link) center no-repeat;
         display: inline-block;
         background-color: currentColor;
+    }
+
+    &.icon {
+        aspect-ratio: initial;
+        height: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-xs);
+
+        &::before {
+            height: 1rem;
+        }
     }
 }

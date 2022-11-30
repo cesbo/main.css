@@ -56,6 +56,8 @@ input[type="checkbox"] {
         width: 4rem;
         height: var(--line-height);
         overflow: initial;
+        margin-top: calc(-1 * var(--border-width));
+        margin-bottom: calc(-1 * var(--border-width));
 
         &::before {
             content: "OFF";

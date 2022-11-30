@@ -24,27 +24,22 @@
 
     /* primary */
     --color-primary: #{ $primary };
-    --color-primary-focus: #{ color.adjust($primary, $lightness: $adjust-focus) };
     --color-primary-background: #{ color.mix($primary, $background, 20%) };
-    --color-primary-inverse: #{ invert-color($primary) };
 
     /* secondary */
     --color-secondary: #{ $secondary };
-    --color-secondary-focus: #{ color.adjust($secondary, $lightness: $adjust-focus) };
     --color-secondary-background: #{ color.mix($secondary, $background, 20%) };
-    --color-secondary-inverse: #{ invert-color($secondary) };
 
     /* danger */
     --color-danger: #{ $danger };
-    --color-danger-focus: #{ color.adjust($danger, $lightness: $adjust-focus) };
     --color-danger-background:  #{ color.mix($danger, $background, 20%) };
-    --color-danger-inverse: #{ invert-color($danger) };
 
     /* success */
     --color-success: #{ $success };
-    --color-success-focus: #{ color.adjust($success, $lightness: $adjust-focus) };
     --color-success-background: #{ color.mix($success, $background, 20%) };
-    --color-success-inverse: #{ invert-color($success) };
+
+    --filter-focus: brightness(1.1);
+    --filter-active: brightness(1.3);
 }
 
 :root {

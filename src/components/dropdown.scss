@@ -12,6 +12,8 @@
     position: relative;
 
     &>:first-child {
+        cursor: pointer;
+
         &::after {
             display: block;
             content: "...";

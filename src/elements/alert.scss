@@ -33,33 +33,16 @@
         right: var(--space-s);
         color: inherit;
         background-color: transparent;
-        border: none;
-
-        &:is(:hover, :focus) {
-            color: var(--color-primary-focus);
-        }
     }
 
     &.success {
         color: var(--color-success);
         background-color: var(--color-success-background);
-
-        &>.close {
-            &:is(:hover, :focus) {
-                color: var(--color-success-focus);
-            }
-        }
     }
 
     &.danger {
         color: var(--color-danger);
         background-color: var(--color-danger-background);
-
-        &>.close {
-            &:is(:hover, :focus) {
-                color: var(--color-danger-focus);
-            }
-        }
     }
 }
 

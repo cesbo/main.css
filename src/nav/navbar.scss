@@ -5,18 +5,6 @@ nav {
     .expand {
         flex-grow: 1;
     }
-
-    &>.dropdown {
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-
-        &>.menu {
-            top: 100%;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-    }
 }
 
 body>header {
@@ -44,10 +32,14 @@ body>header {
             border: 0;
             border-radius: 0 var(--border-radius) 0 0;
             background-color: var(--color-primary);
-            color: var(--color-primary-inverse);
+            color: var(--color-inverse);
 
-            &:is(:hover, :focus) {
-                background-color: var(--color-primary-focus);
+            &:hover {
+                filter: var(--filter-focus);
+            }
+
+            &:active {
+                filter: var(--filter-active);
             }
 
             &:not(:checked)+nav {

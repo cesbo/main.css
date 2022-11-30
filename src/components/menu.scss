@@ -8,15 +8,24 @@
         display: none;
     }
 
-    :is(button, .button, [type="button"], [type="submit"], [type="reset"]) {
-        border: 0;
-        border-radius: 0;
+    &>.dropdown:is(:hover, :focus)>:first-child {
+        background-color: var(--color-primary-background);
+        filter: var(--filter-focus);
+    }
+
+    &>a,
+    &>.dropdown>:first-child {
         white-space: nowrap;
         text-align: left;
         font-weight: normal;
 
+        padding: var(--space-xs) var(--space-s);
         color: var(--color-text);
         background-color: var(--color-background);
+
+        &:is(:hover, :focus, :active, .active) {
+            background-color: var(--color-primary-background);
+        }
 
         &.danger {
             color: var(--color-danger);
@@ -24,14 +33,6 @@
 
         &.success {
             color: var(--color-success);
-        }
-
-        &:is(:hover, :focus) {
-            background-color: var(--color-secondary-focus);
-        }
-
-        &:is(:active, .active) {
-            background-color: var(--color-secondary-focus);
         }
     }
 }
