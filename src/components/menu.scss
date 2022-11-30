@@ -9,7 +9,6 @@
     }
 
     &>.dropdown:is(:hover, :focus)>:first-child {
-        background-color: var(--color-primary-background);
         filter: var(--filter-focus);
     }
 
@@ -23,8 +22,14 @@
         color: var(--color-text);
         background-color: var(--color-background);
 
-        &:is(:hover, :focus, :active, .active) {
-            background-color: var(--color-primary-background);
+        &:is(:hover, :focus) {
+            background-color: var(--color-secondary);
+            filter: var(--filter-focus);
+        }
+
+        &:is(:active, .active) {
+            background-color: var(--color-secondary);
+            filter: var(--filter-active);
         }
 
         &.danger {
