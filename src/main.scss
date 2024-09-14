@@ -15,7 +15,7 @@
     --line-height: 1.5rem;
 
     --border-width: 1px;
-    --border: var(--border-width) solid var(--color-secondary);
+    --border: var(--border-width) solid hsl(var(--color-secondary));
     --border-radius: .25rem;
 
     --grid-column-gap: var(--space);

@@ -14,7 +14,7 @@
         padding: var(--space-xs) var(--space-s);
         margin: calc(var(--space-xs) * -1) calc(var(--space-s) * -1);
 
-        background-color: var(--color-secondary-background);
+        background-color: hsla(var(--color-secondary), .2);
     }
 
     &[open]>summary {

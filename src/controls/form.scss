@@ -19,7 +19,7 @@ fieldset>legend {
     display: block;
     margin-right: auto;
     text-transform: uppercase;
-    color: var(--color-secondary);
+    color: hsl(var(--color-secondary));
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .05rem;

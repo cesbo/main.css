@@ -22,7 +22,7 @@
     }
 
     &:focus {
-        background-color: var(--color-secondary-background);
+        background-color: hsla(var(--color-secondary), .2);
     }
 
     &::before {
@@ -60,22 +60,18 @@ input[type="checkbox"] {
         margin-bottom: calc(-1 * var(--border-width));
 
         &::before {
-            content: "OFF";
-            font-size: .8rem;
             width: 2rem;
             top: var(--border-width);
             bottom: var(--border-width);
             left: var(--border-width);
             right: auto;
             line-height: calc(var(--line-height) - (4 * var(--border-width)));
-            background-color: var(--color-secondary);
-            text-align: center;
+            background-color: hsl(var(--color-secondary));
             transition: .1s background-color ease-out, .1s left ease-out;
         }
 
         &:checked::before {
             background: hsl(var(--color-success));
-            content: "ON";
             left: calc(4rem - 2rem - (3 * var(--border-width)));
         }
     }
