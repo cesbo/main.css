@@ -1,20 +1,3 @@
-window.ListboxDragstart = function(ev) {
-    console.log(ev)
-}
-
-window.ListboxDragend = function(ev) {
-    console.log(ev)
-}
-
-window.ListboxDragover = function(ev) {
-}
-
-window.ListboxDragenter = function(ev) {
-}
-
-window.ListboxDragleave = function(ev) {
-}
-
 window.ToggleTheme = function(ev) {
     const el = document.documentElement
     if(el.classList.contains('light')) {

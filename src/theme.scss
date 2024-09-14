@@ -9,9 +9,6 @@
 
     --filter-focus: brightness(1.1);
     --filter-active: brightness(1.3);
-
-    --box-shadow: 0 1px 3px hsl(221.7°, 16.3, 27.6);
-    --text-shadow: 0 0 1px hsl(221.7°, 16.3, 27.6);
 }
 
 .light {
@@ -25,7 +22,4 @@
 
     --filter-focus: brightness(0.95);
     --filter-active: brightness(0.8);
-
-    --box-shadow: 0 1px 3px hsl(218.8°, 27.9, 88);
-    --text-shadow: 0 0 1px hsl(218.8°, 27.9, 88);
 }
