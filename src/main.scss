@@ -29,7 +29,7 @@
     --modal-min-height: auto;
     --modal-min-width: 600px;
 
-    --alert-width: 400px;
+    --toast-width: 400px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -45,7 +45,7 @@
         --modal-min-height: 100%;
         --modal-min-width: auto;
 
-        --alert-width: 100%;
+        --toast-width: 100%;
     }
 }
 

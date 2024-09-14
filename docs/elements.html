@@ -83,37 +83,37 @@
 	</div>
 </div>
 
-<h2>Alert</h2>
+<h2>Toast</h2>
 <div class="docs-box" style="display: flex; flex-direction: column; gap: var(--space-xs);">
-	<div class="alert"><button class="icon close"></button><p>Info Text</p></div>
-	<div class="alert success"><button class="icon close"></button><p>Success Text</p></div>
-	<div class="alert danger"><button class="icon close"></button><p>Error Text</p></div>
+	<div class="toast"><button class="icon close"></button><p>Info Text</p></div>
+	<div class="toast success"><button class="icon close"></button><p>Success Text</p></div>
+	<div class="toast danger"><button class="icon close"></button><p>Error Text</p></div>
 </div>
 
-<p>Global alert should be placed in the <code>.alert-stack</code> element:</p>
+<p>Global toasts should be placed in the <code>.toast-stack</code> element:</p>
 <div class="docs-box">
-	<div class="alert-stack" id="docs-alert-stack"></div>
-	<button onClick="showAlert()">Show alert</button>
+	<div class="toast-stack" id="docs-toast-stack"></div>
+	<button onClick="showToast()">Show toast</button>
 	<script>
-		let alertCount = 0
-		function showAlert() {
-			const stack = document.getElementById('docs-alert-stack')
-			// create new alert
-			const alert = document.createElement('div')
-			alert.classList.add('alert')
-			alert.innerHTML = `<p>This is an alert #${++alertCount}</p>`
+		let toastCount = 0
+		function showToast() {
+			const stack = document.getElementById('docs-toast-stack')
+			// create new toast
+			const toast = document.createElement('div')
+			toast.classList.add('toast')
+			toast.innerHTML = `<p>This is an toast #${++toastCount}</p>`
 			// close by timeout
-			const timeout = setTimeout(() => stack.removeChild(alert), 5000)
+			const timeout = setTimeout(() => stack.removeChild(toast), 5000)
 			// close by button
 			const close = document.createElement('button')
 			close.classList.add('icon', 'close')
 			close.onclick = () => {
 				clearTimeout(timeout)
-				stack.removeChild(alert)
+				stack.removeChild(toast)
 			}
-			alert.appendChild(close)
-			// append alert to stack
-			stack.appendChild(alert)
+			toast.appendChild(close)
+			// append toast to stack
+			stack.appendChild(toast)
 		}
 	</script>
 </div>

@@ -1,4 +1,4 @@
-@keyframes new-alert {
+@keyframes new-toast {
     from {
         opacity: 0;
     }
@@ -7,19 +7,19 @@
     }
 }
 
-.alert {
+.toast {
     position: relative;
     padding: var(--space-xs) var(--space-s);
     border: var(--border);
     border-radius: var(--border-radius);
     overflow: hidden;
-    width: var(--alert-width);
+    width: var(--toast-width);
 
     color: hsl(var(--color-primary));
     border-color: currentColor;
     background-color: hsla(var(--color-primary), .2);
 
-    animation: new-alert .1s ease-out;
+    animation: new-toast .1s ease-out;
 
     p {
         color: hsl(var(--color-text));
@@ -45,7 +45,7 @@
     }
 }
 
-.alert-stack {
+.toast-stack {
     position: fixed;
     z-index: 10;
     display: flex;
