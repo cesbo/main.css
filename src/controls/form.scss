@@ -41,7 +41,7 @@ form {
         display: flex;
         align-items: center;
         gap: var(--space-xs);
-        color: var(--color-text);
+        color: hsl(var(--color-text));
 
         /* label text */
         &>:first-child {

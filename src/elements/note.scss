@@ -10,7 +10,7 @@
     --icon: var(--icon-note);
     --color: hsl(var(--color-primary));
 
-    color: var(--color-text);
+    color: hsl(var(--color-text));
     border-color: var(--color);
 
     &::before {

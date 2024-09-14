@@ -1,7 +1,7 @@
 :is(nav, .menu) {
     display: flex;
     width: auto;
-    background-color: var(--color-background);
+    background-color: hsl(var(--color-background));
     user-select: none;
 
     &>hr:is(:first-child, :last-child) {
@@ -19,8 +19,8 @@
         font-weight: normal;
 
         padding: var(--space-xs) var(--space-s);
-        color: var(--color-text);
-        background-color: var(--color-background);
+        color: hsl(var(--color-text));
+        background-color: hsl(var(--color-background));
 
         &:is(:hover, :focus, :active, .active) {
             background-color: hsla(var(--color-primary), .2);

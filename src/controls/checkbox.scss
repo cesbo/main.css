@@ -14,7 +14,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: var(--color-background);
+    background-color: hsl(var(--color-background));
 
     &:disabled {
         opacity: .5;

@@ -17,7 +17,7 @@ button,
         pointer-events: none;
     }
 
-    color: var(--color-text);
+    color: hsl(var(--color-text));
     border-color: hsl(var(--color-secondary));
     background-color: hsl(var(--color-secondary));
 
@@ -30,13 +30,13 @@ button,
     }
 
     &.danger {
-        color: var(--color-text);
+        color: hsl(var(--color-text));
         border-color: hsl(var(--color-danger));
         background-color: hsl(var(--color-danger));
     }
 
     &.success {
-        color: var(--color-text);
+        color: hsl(var(--color-text));
         border-color: hsl(var(--color-success));
         background-color: hsl(var(--color-success));
     }

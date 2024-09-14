@@ -23,7 +23,7 @@
     animation: new-alert .1s ease-out;
 
     p {
-        color: var(--color-text);
+        color: hsl(var(--color-text));
         margin: 0;
     }
 

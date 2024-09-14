@@ -13,7 +13,7 @@
         content: "";
         display: block;
         inset: 0;
-        background-color: var(--color-background);
+        background-color: hsl(var(--color-background));
         opacity: .5;
         filter: grayscale(100%);
     }
@@ -25,7 +25,7 @@
         min-width: var(--modal-min-width);
         min-height: var(--modal-min-height);
         margin: var(--modal-margin);
-        background-color: var(--color-background);
+        background-color: hsl(var(--color-background));
         border: var(--border);
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);

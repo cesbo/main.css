@@ -32,7 +32,7 @@ body>header {
             border: 0;
             border-radius: 0 var(--border-radius) 0 0;
             background-color: hsl(var(--color-primary));
-            color: var(--color-text);
+            color: hsl(var(--color-text));
 
             &:hover {
                 filter: var(--filter-focus);

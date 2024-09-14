@@ -68,8 +68,8 @@ html {
     font-weight: var(--font-weight);
     line-height: var(--line-height);
 
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: hsl(var(--color-background));
+    color: hsl(var(--color-text));
 
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
