@@ -1,55 +1,41 @@
-.modal {
-    position: fixed;
-    inset: 0;
-    overflow: auto;
-    z-index: 2;
-
-    &:not(.open) {
-        display: none;
+dialog {
+    &::backdrop {
+        background-color: hsla(var(--color-background), .5);
+        animation: modal-pop .2s ease-out;
     }
 
-    &::before {
-        position: fixed;
-        content: "";
-        display: block;
-        inset: 0;
-        background-color: hsl(var(--color-background));
-        opacity: .5;
-        filter: grayscale(100%);
+    width: var(--modal-width);
+    min-width: var(--modal-min-width);
+    min-height: var(--modal-min-height);
+    margin: var(--modal-margin);
+    color: hsl(var(--color-text));
+    background-color: hsl(var(--color-background));
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 0;
+
+    &>header {
+        border-bottom: var(--border);
+        padding: var(--space);
+        display: flex;
+        justify-content: space-between;
     }
 
-    &>.dialog {
-        position: relative;
-        z-index: 1;
-        width: var(--modal-width);
-        min-width: var(--modal-min-width);
-        min-height: var(--modal-min-height);
-        margin: var(--modal-margin);
-        background-color: hsl(var(--color-background));
-        border: var(--border);
-        border-radius: var(--border-radius);
+    &>article {
+        padding: var(--space);
+    }
 
-        &>header {
-            border-bottom: var(--border);
-            padding: var(--space);
+    &>form {
+        padding-top: var(--space);
+        padding-bottom: var(--space);
+
+        footer {
+            padding-bottom: 0;
         }
+    }
 
-        &>article {
-            padding: var(--space);
-        }
-
-        &>form {
-            padding-top: var(--space);
-            padding-bottom: var(--space);
-
-            footer {
-                padding-bottom: 0;
-            }
-        }
-
-        &>footer {
-            border-top: var(--border);
-            padding: var(--space);
-        }
+    &>footer {
+        border-top: var(--border);
+        padding: var(--space);
     }
 }

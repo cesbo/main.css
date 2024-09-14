@@ -114,70 +114,43 @@
 
 <h2>Modal</h2>
 <div class="docs-box">
-	<script>
-		const modalStack = []
+	<button onClick="demo_modal_text.showModal()">modal text</button>
+	<dialog id="demo_modal_text">
+		<header>
+			<div>Modal Header</div>
+			<button onClick="demo_modal_text.close()" class="icon close"></button>
+		</header>
+		<article>
+			Modal Content
+		</article>
+		<footer>
+			Modal Footer
+		</footer>
+	</dialog>
 
-		function closeModalOnEscape(ev) {
-			if(ev.key == 'Escape') closeModal()
-		}
-
-		function openModal(target) {
-			const el = document.getElementById(target)
-			modalStack.push(el)
-			el.classList.add('open')
-			if(modalStack.length == 1) {
-				window.addEventListener('keydown', closeModalOnEscape)
-			}
-		}
-
-		function closeModal() {
-			const el = modalStack.pop()
-			el.classList.remove('open')
-			if(modalStack.length == 0) {
-				window.removeEventListener('keydown', closeModalOnEscape)
-			}
-		}
-	</script>
-	<button onClick="openModal('demo-modal-text')">modal text</button>
-	<div class="modal" id="demo-modal-text">
-		<div class="dialog">
-			<header class="row">
-				Modal Header
-				<button onClick="closeModal()" class="icon close"></button>
-			</header>
-			<article class="container">
-				Modal Content
-			</article>
-			<footer class="row">
-				Modal Footer
-			</footer>
-		</div>
-	</div>
-	<button onClick="openModal('demo-modal-form')">modal form</button>
-	<div class="modal" id="demo-modal-form">
-		<div class="dialog">
-			<header class="row">
-				Modal Form
-				<button onClick="closeModal()" class="icon close"></button>
-			</header>
-			<form onSubmit="return false">
-				<fieldset class="container">
-					<label>
-						<span>Login</span>
-						<input type="text" />
-					</label>
-					<label>
-						<span>Password</span>
-						<input type="password" />
-					</label>
-					<footer class="row right">
-						<button onClick="closeModal()">Close</button>
-						<button type="submit">Submit</button>
-					</footer>
-				</fieldset>
-			</form>
-		</div>
-	</div>
+	<button onClick="demo_modal_form.showModal()">modal form</button>
+	<dialog id="demo_modal_form">
+		<header>
+			<div>Modal Form</div>
+			<button onClick="demo_modal_form.close()" class="icon close"></button>
+		</header>
+		<form onSubmit="return false">
+			<fieldset class="container">
+				<label>
+					<span>Login</span>
+					<input type="text" />
+				</label>
+				<label>
+					<span>Password</span>
+					<input type="password" />
+				</label>
+				<footer class="row right">
+					<button onClick="demo_modal_form.close()">Close</button>
+					<button type="submit">Submit</button>
+				</footer>
+			</fieldset>
+		</form>
+	</dialog>
 </div><!-- Modal -->
 
 <h2>Carousel</h2>
