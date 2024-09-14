@@ -8,7 +8,7 @@
     overflow: hidden;
 
     --icon: var(--icon-note);
-    --color: var(--color-primary);
+    --color: hsl(var(--color-primary));
 
     color: var(--color-text);
     border-color: var(--color);
@@ -38,11 +38,11 @@
     }
 
     &.success {
-        --color: var(--color-success);
+        --color: hsl(var(--color-success));
     }
 
     &.danger {
         --icon: var(--icon-danger);
-        --color: var(--color-danger);
+        --color: hsl(var(--color-danger));
     }
 }

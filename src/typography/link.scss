@@ -1,6 +1,6 @@
 a {
     cursor: pointer;
-    color: var(--color-primary);
+    color: hsl(var(--color-primary));
     text-decoration: none;
 
     &:is(:disabled, .disabled) {

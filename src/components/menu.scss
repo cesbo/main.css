@@ -9,7 +9,7 @@
     }
 
     &>.dropdown:hover>:first-child {
-        background-color: var(--color-primary-background);
+        background-color: hsla(var(--color-primary), .2);
     }
 
     &>a,
@@ -23,16 +23,16 @@
         background-color: var(--color-background);
 
         &:is(:hover, :focus, :active, .active) {
-            background-color: var(--color-primary-background);
+            background-color: hsla(var(--color-primary), .2);
             filter: none;
         }
 
         &.danger {
-            color: var(--color-danger);
+            color: hsl(var(--color-danger));
         }
 
         &.success {
-            color: var(--color-success);
+            color: hsl(var(--color-success));
         }
     }
 }

@@ -35,7 +35,7 @@
     }
 
     &:checked::before {
-        background-color: var(--color-primary);
+        background-color: hsl(var(--color-primary));
     }
 }
 
@@ -74,7 +74,7 @@ input[type="checkbox"] {
         }
 
         &:checked::before {
-            background: var(--color-success);
+            background: hsl(var(--color-success));
             content: "ON";
             left: calc(4rem - 2rem - (3 * var(--border-width)));
         }

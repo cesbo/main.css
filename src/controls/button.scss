@@ -31,14 +31,14 @@ button,
 
     &.danger {
         color: var(--color-text);
-        border-color: var(--color-danger);
-        background-color: var(--color-danger);
+        border-color: hsl(var(--color-danger));
+        background-color: hsl(var(--color-danger));
     }
 
     &.success {
         color: var(--color-text);
-        border-color: var(--color-success);
-        background-color: var(--color-success);
+        border-color: hsl(var(--color-success));
+        background-color: hsl(var(--color-success));
     }
 
     &.icon {
@@ -68,6 +68,6 @@ button,
 }
 
 [type="submit"] {
-    border-color: var(--color-primary);
-    background-color: var(--color-primary);
+    border-color: hsl(var(--color-primary));
+    background-color: hsl(var(--color-primary));
 }

@@ -39,8 +39,8 @@ button,
     }
 
     &:invalid {
-        border-color: var(--color-danger);
-        background-color: var(--color-danger-background);
+        border-color: hsl(var(--color-danger));
+        background-color: hsla(var(--color-danger), .2);
     }
 }
 

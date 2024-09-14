@@ -7,11 +7,11 @@ samp {
 }
 
 .danger {
-    color: var(--color-danger);
+    color: hsl(var(--color-danger));
 }
 
 .success {
-    color: var(--color-success);
+    color: hsl(var(--color-success));
 }
 
 .dimmed {
