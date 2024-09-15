@@ -78,6 +78,10 @@ details.dropdown {
             position: relative;
             display: flex;
             align-items: stretch;
+
+            &:empty {
+                border-bottom: var(--border);
+            }
         }
 
         &>li>* {
