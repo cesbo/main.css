@@ -1,0 +1,83 @@
+<h1>Navigation</h1>
+
+<h2>Navbar</h2>
+
+<p>
+	Place the <code>&lt;nav&gt;</code> in the <code>&lt;header&gt;</code> element
+	right after <code>&lt;input type="checkbox" /&gt;</code> for mobile menu switch.
+</p>
+
+<div class="docs-box">
+	<header>
+		<nav>
+			<a href="#">Menu Item 1</a>
+			<a href="#">Menu Item 2</a>
+			<details class="dropdown">
+				<summary>Dropdown Menu Item</summary>
+				<ul>
+					<li><a href="#">Normal</a></li>
+					<li><a class="success" href="#">Success</a></li>
+					<li><a class="danger" href="#">Danger</a></li>
+				</ul>
+			</details>
+		</nav>
+	</header>
+</div><!-- Navbar -->
+
+<h2>Dropdown</h2>
+
+<div class="docs-box" style="display:flex; gap:var(--space-xs);">
+	<details class="dropdown">
+		<summary>bottom-left</summary>
+		<ul>
+			<li><a href="#">Menu item</a></li>
+			<li><a href="#" class="disabled">Disabled item</a></li>
+			<li></li>
+			<li><a href="#" class="danger">Under the line</a></li>
+		</ul>
+	</details>
+
+	<details class="dropdown bottom-right">
+		<summary>bottom-right</summary>
+		<ul>
+			<li><a href="#">Menu item</a></li>
+			<li><a href="#" class="disabled">Disabled item</a></li>
+			<li></li>
+			<li><a href="#" class="danger">Under the line</a></li>
+		</ul>
+	</details>
+
+	<details class="dropdown top-left">
+		<summary>top-left</summary>
+		<ul>
+			<li><a href="#">Menu item</a></li>
+			<li><a href="#" class="disabled">Disabled item</a></li>
+			<li></li>
+			<li><a href="#" class="danger">Under the line</a></li>
+		</ul>
+	</details>
+
+	<details class="dropdown top-right">
+		<summary>top-right</summary>
+		<ul>
+			<li><a href="#">Menu item</a></li>
+			<li><a href="#" class="disabled">Disabled item</a></li>
+			<li></li>
+			<li><a href="#" class="danger">Under the line</a></li>
+		</ul>
+	</details>
+</div>
+
+<p>Dropdown without text in the button will be with three dots:</p>
+
+<div class="docs-box" style="display:flex; gap:var(--space-xs);">
+	<details class="dropdown">
+		<summary></summary>
+		<ul>
+			<li><a href="#">Menu item</a></li>
+			<li><a href="#" class="disabled">Disabled item</a></li>
+			<li></li>
+			<li><a href="#" class="danger">Under the line</a></li>
+		</ul>
+	</details>
+</div>

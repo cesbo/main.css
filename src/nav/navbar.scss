@@ -1,99 +1,45 @@
 nav {
+    display: flex;
     flex-direction: row;
     align-items: center;
+
+    width: auto;
+    background-color: hsl(var(--color-background));
+    user-select: none;
 
     .expand {
         flex-grow: 1;
     }
-}
 
-body>header {
-    &>nav {
-        border-bottom: var(--border);
-    }
-
-    &>input[type="checkbox"] {
+    &>hr:is(:first-child, :last-child) {
         display: none;
     }
-}
 
-@media only screen and (max-width: 768px) {
-    body>header {
-        position: static;
+    &>a,
+    &>button,
+    &>details>summary {
+        white-space: nowrap;
+        text-align: left;
+        font-weight: normal;
 
-        &>input[type="checkbox"] {
-            display: block;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: auto;
-            height: auto;
-            z-index: 10;
-            border: 0;
-            border-radius: 0 var(--border-radius) 0 0;
-            background-color: hsl(var(--color-primary));
-            color: hsl(var(--color-text));
+        padding: var(--space-xs) var(--space-s);
 
-            &:hover {
-                filter: var(--filter-focus);
-            }
+        border-radius: var(--border-radius);
 
-            &:active {
-                filter: var(--filter-active);
-            }
+        color: hsl(var(--color-primary));
+        background-color: hsl(var(--color-background));
 
-            &:not(:checked)+nav {
-                display: none;
-            }
-
-            &::before {
-                content: "Menu";
-                position: static;
-                background-image: var(--icon-hamburger);
-                background-position: var(--space-s) center;
-                background-size: 1rem;
-                background-repeat: no-repeat;
-
-                padding: var(--space-xs) var(--space-s);
-                padding-left: calc(var(--space-s) + 1rem + var(--space-xs));
-            }
-
-            &:checked::before {
-                content: "Close";
-                background-image: var(--icon-close);
-            }
+        &:is(:hover) {
+            background-color: hsla(var(--color-primary), .2);
+            filter: none;
         }
 
-        &>nav {
-            position: fixed;
-            inset: 0;
-            z-index: 9;
-            flex-direction: column;
+        &.danger {
+            color: hsl(var(--color-danger));
+        }
 
-            /* space for the hamburger button */
-            padding-bottom: calc(var(--line-height) + 2 * var(--space-xs) + var(--space));
-
-            button,
-            .button,
-            [type="button"],
-            .dropdown {
-                width: 100%;
-                text-align: left;
-            }
-
-            &>.dropdown>.menu {
-                position: static;
-                border: 0;
-                border-radius: 0;
-                background-color: hsla(var(--color-secondary), .2);
-                box-shadow: none;
-
-                button,
-                .button,
-                [type="button"] {
-                    padding-left: var(--space-xl);
-                }
-            }
+        &.success {
+            color: hsl(var(--color-success));
         }
     }
 }

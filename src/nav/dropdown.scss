@@ -1,0 +1,131 @@
+details.dropdown {
+    position: relative;
+
+    &>summary {
+        cursor: pointer;
+        user-select: none;
+
+        &::after {
+            display: block;
+            content: "...";
+            text-align: center;
+        }
+
+        &:not(:empty)::after {
+            display: inline-block;
+            content: "";
+            margin-left: var(--space-s);
+            background-color: currentColor;
+            mask-image: var(--icon-arrow);
+            -webkit-mask-image: var(--icon-arrow);
+            width: .6rem;
+            height: .6rem;
+        }
+
+        &::before {
+            content: none;
+            mask: none;
+            -webkit-mask: none;
+            background-color: transparent;
+            width: unset;
+            height: unset;
+        }
+    }
+
+    &[open]>summary {
+        background-color: hsla(var(--color-primary), .2);
+
+        &:not(:empty)::after {
+            mask-image: var(--icon-close);
+            -webkit-mask-image: var(--icon-close);
+        }
+
+        &::before {
+            content: "";
+            position: fixed;
+            z-index: 1;
+            inset: 0;
+        }
+    }
+
+    &>summary+ul {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        position: absolute;
+        z-index: 1;
+
+        border: var(--border);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+
+        /* default bottom-left */
+        top: 100%;
+        bottom: auto;
+        left: 0;
+        right: auto;
+
+        background-color: hsl(var(--color-background));
+        width: var(--dropdown-width);
+        min-width: 0;
+
+        &>li {
+            position: relative;
+            display: flex;
+            align-items: stretch;
+        }
+
+        &>li>* {
+            display: block;
+            width: 100%;
+
+            white-space: nowrap;
+            text-align: left;
+            font-weight: normal;
+
+            padding: var(--space-xs) var(--space-s);
+
+            color: hsl(var(--color-primary));
+            background-color: hsl(var(--color-background));
+
+            &:is(:hover) {
+                background-color: hsla(var(--color-primary), .2);
+                filter: none;
+            }
+
+            &.danger {
+                color: hsl(var(--color-danger));
+            }
+
+            &.success {
+                color: hsl(var(--color-success));
+            }
+        }
+    }
+
+    &.bottom-right>ul {
+        top: 100%;
+        bottom: auto;
+        left: auto;
+        right: 0;
+    }
+
+    &.top-left>ul {
+        top: auto;
+        bottom: 100%;
+        left: 0;
+        right: auto;
+    }
+
+    &.top-right>ul {
+        top: auto;
+        bottom: 100%;
+        left: auto;
+        right: 0;
+    }
+}
