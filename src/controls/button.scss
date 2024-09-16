@@ -15,35 +15,42 @@ button,
     padding: var(--space-xs) var(--space-s);
 
     &:is(:disabled, .disabled) {
-        opacity: .5;
+        opacity: .4;
         pointer-events: none;
     }
 
+    --button-bg-opacity: 1;
+    --button-bg-color: var(--color-secondary) / var(--button-bg-opacity);
+
     color: hsl(var(--color-text));
-    background-color: hsl(var(--color-secondary));
+    background-color: hsl(var(--button-bg-color));
 
     &:is(:hover, :focus) {
-        filter: var(--filter-focus);
+        --button-bg-opacity: .6;
     }
 
     &:is(:active, .active) {
-        filter: var(--filter-active);
+        --button-bg-opacity: 1;
     }
 
     &.danger {
         color: hsl(var(--color-text));
-        background-color: hsl(var(--color-danger));
+        --button-bg-color: var(--color-danger) / var(--button-bg-opacity);
     }
 
     &.success {
         color: hsl(var(--color-text));
-        background-color: hsl(var(--color-success));
+        --button-bg-color: var(--color-success) / var(--button-bg-opacity);
     }
 
     &.close {
         padding: var(--space-xs);
         border-radius: 1000px;
         background-color: transparent;
+
+        &:is(:hover, :focus) {
+            color: hsl(var(--color-text) / .6);
+        }
 
         &::before {
             display: block;
@@ -64,5 +71,5 @@ button,
 }
 
 [type="submit"] {
-    background-color: hsl(var(--color-primary));
+    --button-bg-color: var(--color-primary) / var(--button-bg-opacity);
 }

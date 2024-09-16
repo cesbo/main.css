@@ -2,7 +2,6 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    column-gap: var(--space-xs);
 
     width: auto;
     background-color: hsl(var(--color-background));
@@ -25,14 +24,12 @@ nav {
 
         padding: var(--space-xs) var(--space-s);
 
-        border-radius: var(--radius);
-
         color: hsl(var(--color-primary));
         background-color: hsl(var(--color-background));
 
         &:is(:hover) {
+            color: hsl(var(--color-primary));
             background-color: hsl(var(--color-primary) / .2);
-            filter: none;
         }
 
         &.danger {
@@ -42,5 +39,15 @@ nav {
         &.success {
             color: hsl(var(--color-success));
         }
+    }
+
+    &>a.active,
+    &>button.active {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 2px solid hsl(var(--color-primary));
+        margin-top: -2px;
+        padding-top: calc(var(--space-xs) + 2px);
+        padding-bottom: calc(var(--space-xs) - 2px);
     }
 }

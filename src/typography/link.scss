@@ -9,11 +9,11 @@ a {
     }
 
     &:is(:hover, :focus) {
-        filter: var(--filter-focus);
+        color: hsl(var(--color-primary) / .6);
     }
 
     &:is(:active, .active) {
-        filter: var(--filter-active);
+        color: hsl(var(--color-primary) / 1);
     }
 
     &[target="_blank"]::after {

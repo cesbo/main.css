@@ -1,16 +1,15 @@
 :root {
     --font-family: "Helvetica Neue", sans-serif;
     --font-monospace: "Courier New", monospace;
-    --font-size: 14px;
+    --font-size: 16px;
+
+    --screen-width: 85rem;
 
     --color-text: 0 0% 99%;
-    --color-background: 220 16% 16%;
+    --color-background: 213.3 16.4% 10.8%;
 
-    --color-primary: 213 62% 56%;
-    --color-secondary: 220 16% 32%;
-    --color-danger: 350 62% 56%;
-    --color-success: 160 62% 56%;
-
-    --filter-focus: opacity(.6);
-    --filter-active: brightness(1.1);
+    --color-primary: 204.7 60.4% 57.5%;
+    --color-secondary: 0 0% 47.8%;
+    --color-danger: 354.5 60.4% 57.5%;
+    --color-success: 144.7 60.4% 57.5%;
 }
