@@ -49,7 +49,10 @@ details.dropdown {
         position: absolute;
         z-index: 1;
 
-        box-shadow: var(--shadow-border) hsl(var(--color-secondary));
+        box-shadow:
+            var(--shadow-border) hsl(var(--color-secondary)),
+            0 1px 3px 0 hsl(var(--color-secondary)),
+            0 1px 2px -1px hsl(var(--color-secondary));
         border-radius: var(--radius);
         overflow: hidden;
 

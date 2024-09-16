@@ -1,19 +1,5 @@
 <h1>Elements</h1>
 
-<h2>Icon</h2>
-<div class="docs-box" style="display: flex; justify-content: flex-start; gap: var(--space-xs)">
-	<i class="icon check"></i>
-	<i class="icon hamburger"></i>
-	<i class="icon close"></i>
-	<i class="icon link"></i>
-	<i class="icon arrow-down"></i>
-	<i class="icon arrow-up"></i>
-	<i class="icon arrow-left"></i>
-	<i class="icon arrow-right"></i>
-	<i class="icon lightness"></i>
-</div>
-<p>Use <code>color</code> attribute to change icon color</p>
-
 <h2>HR</h2>
 <div class="docs-box">
     <hr />
@@ -47,7 +33,7 @@
 			</tr>
 		</tbody>
 	</table>
-</div>
+</div><!-- Table -->
 
 <h2>Deatils</h2>
 <div class="docs-box">
@@ -55,7 +41,7 @@
 		<summary>Read more...</summary>
 		<p>Details creates a disclosure element in which information is visible only when the widget is open</p>
 	</details>
-</div>
+</div><!-- Details -->
 
 <h2>Spoiler</h2>
 <div class="docs-box">
@@ -63,7 +49,51 @@
 		<summary>Click to show</summary>
 		<p>Element like Details but with additional box</p>
 	</details>
-</div>
+</div><!-- Spoiler -->
+
+<h2>Modal</h2>
+<div class="docs-box">
+	<div class="row left">
+		<button onClick="demo_modal_text.showModal()">modal text</button>
+		<button onClick="demo_modal_form.showModal()">modal form</button>
+	</div>
+
+	<dialog id="demo_modal_text">
+		<header>
+			<div>Modal Header</div>
+			<button onClick="demo_modal_text.close()" class="close"></button>
+		</header>
+		<article>
+			Modal Content
+		</article>
+		<footer>
+			Modal Footer
+		</footer>
+	</dialog>
+
+	<dialog id="demo_modal_form">
+		<header>
+			<div>Modal Form</div>
+			<button onClick="demo_modal_form.close()" class="close"></button>
+		</header>
+		<form onSubmit="return false">
+			<fieldset>
+				<label>
+					<span>Login</span>
+					<input type="text" />
+				</label>
+				<label>
+					<span>Password</span>
+					<input type="password" />
+				</label>
+				<footer class="row right">
+					<button onClick="demo_modal_form.close()">Close</button>
+					<button type="submit">Submit</button>
+				</footer>
+			</fieldset>
+		</form>
+	</dialog>
+</div><!-- Modal -->
 
 <h2>Note</h2>
 <div class="docs-box">
@@ -81,13 +111,13 @@
 		<header>Danger block</header>
 		<p>Caution information</p>
 	</div>
-</div>
+</div><!-- Note -->
 
 <h2>Toast</h2>
 <div class="docs-box" style="display: flex; flex-direction: column; gap: var(--space-xs);">
-	<div class="toast"><button class="icon close"></button><p>Info Text</p></div>
-	<div class="toast success"><button class="icon close"></button><p>Success Text</p></div>
-	<div class="toast danger"><button class="icon close"></button><p>Error Text</p></div>
+	<div class="toast"><button class="close"></button><p>Info Text</p></div>
+	<div class="toast success"><button class="close"></button><p>Success Text</p></div>
+	<div class="toast danger"><button class="close"></button><p>Error Text</p></div>
 </div>
 
 <p>Global toasts should be placed in the <code>.toast-stack</code> element:</p>
@@ -106,7 +136,7 @@
 			const timeout = setTimeout(() => stack.removeChild(toast), 5000)
 			// close by button
 			const close = document.createElement('button')
-			close.classList.add('icon', 'close')
+			close.classList.add('close')
 			close.onclick = () => {
 				clearTimeout(timeout)
 				stack.removeChild(toast)
@@ -116,7 +146,7 @@
 			stack.appendChild(toast)
 		}
 	</script>
-</div>
+</div><!-- Toast -->
 
 <h2>Spinner</h2>
 <p>Animated spinner to indicates loading process. Available variables:</p>
@@ -128,4 +158,4 @@
 <div class="docs-box">
 	<div class="spinner" style="width: 300px; margin: 1rem auto;"></div>
 	<button type="button" data-busy>With Spinner</button>
-</div>
+</div><!-- Spinner -->

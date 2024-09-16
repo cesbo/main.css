@@ -10,7 +10,10 @@ dialog {
     margin: var(--modal-margin);
     color: hsl(var(--color-text));
     background-color: hsl(var(--color-background));
-    box-shadow: var(--shadow-border) hsl(var(--color-secondary));
+    box-shadow:
+        var(--shadow-border) hsl(var(--color-secondary)),
+        0 1px 3px 0 hsl(var(--color-secondary)),
+        0 1px 2px -1px hsl(var(--color-secondary));
     border: 0;
     border-radius: var(--radius);
     padding: 0;
@@ -35,10 +38,13 @@ dialog {
     }
 
     &>form {
-        padding-top: var(--space);
-        padding-bottom: var(--space);
+        padding: var(--space);
 
         footer {
+            margin-left: calc(-1 * var(--space));
+            margin-right: calc(-1 * var(--space));
+            padding-left: var(--space);
+            padding-right: var(--space);
             padding-bottom: 0;
         }
     }

@@ -7,6 +7,6 @@ html {
     --color-danger: 350, 62%, 56%;
     --color-success: 160, 62%, 56%;
 
-    --filter-focus: brightness(1.1);
-    --filter-active: brightness(1.3);
+    --filter-focus: opacity(.6);
+    --filter-active: brightness(1.1);
 }

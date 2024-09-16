@@ -1,9 +1,0 @@
-.container {
-    padding-left: var(--space);
-    padding-right: var(--space);
-
-    &>:is(header, .row, footer) {
-        margin-left: calc(-1 * var(--space));
-        margin-right: calc(-1 * var(--space));
-    }
-}

@@ -42,6 +42,7 @@
     }
 
     &.success {
+        --icon: var(--icon-check);
         --note-color: hsl(var(--color-success));
     }
 

@@ -18,7 +18,8 @@
         gap: var(--space-xs);
 
         border-top: var(--border-width) solid hsl(var(--color-secondary));
-        padding-top: var(--space-xs);
+        padding-top: var(--space);
+        margin-top: var(--space-xs);
     }
 }
 

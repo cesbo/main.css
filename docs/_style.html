@@ -83,4 +83,11 @@ section:not(:target) {
 .docs-color-palette>* {
 	padding: 2rem 1rem;
 }
+
+.icon.lightness::before {
+	--icon-lightness: url('data:image/svg+xml;utf8,<svg viewBox="0 0 20 20" fill="white" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10,0a1,1 0 0 1 0,20a1,1 0 0 1 0,-20z M10,2a1,1 0 0 1 0,16z" /></svg>');
+
+    mask-image: var(--icon-lightness);
+    -webkit-mask-image: var(--icon-lightness);
+}
 </style>

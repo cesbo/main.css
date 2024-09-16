@@ -6,6 +6,7 @@ button,
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--space-xs);
 
     cursor: pointer;
     text-decoration: none;
@@ -39,29 +40,25 @@ button,
         background-color: hsl(var(--color-success));
     }
 
-    &.icon {
-        height: unset;
+    &.close {
+        padding: var(--space-xs);
+        border-radius: 1000px;
+        background-color: transparent;
 
-        &:empty {
-            padding: var(--space-xs);
-            border-radius: 50%;
+        &::before {
+            display: block;
+            aspect-ratio: 1;
+            height: var(--line-height);
 
-            &::before {
-                height: var(--line-height);
-                margin: auto;
-            }
-        }
+            content: "";
 
-        &:not(:empty) {
-            aspect-ratio: initial;
-            height: auto;
-            display: inline-flex;
-            align-items: center;
-            gap: var(--space-xs);
-
-            &::before {
-                height: var(--line-height);
-            }
+            background-color: currentColor;
+            mask-position: center;
+            -webkit-mask-position: center;
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: no-repeat;
+            mask-image: var(--icon-close);
+            -webkit-mask-image: var(--icon-close);
         }
     }
 }
