@@ -1,5 +1,5 @@
 <style>
-.light {
+html.light {
     --color-text: 0, 0%, 0%;
     --color-background: 0, 0%, 100%;
 
@@ -73,15 +73,23 @@ section:not(:target) {
 	border: 0;
 }
 
-.docs-color-palette {
-	display: grid;
-	grid-column-gap: .1rem;
-	grid-row-gap: .1rem;
-	grid-template-columns: repeat(2, 1fr);
+.docs-color-palette>* {
+	padding: var(--space);
+	border-radius: var(--radius);
 }
 
-.docs-color-palette>* {
-	padding: 2rem 1rem;
+.icon::before {
+	display: block;
+	aspect-ratio: 1;
+	height: var(--line-height);
+
+	content: "";
+
+	background-color: currentColor;
+	mask-position: center;
+	-webkit-mask-position: center;
+	mask-repeat: no-repeat;
+	-webkit-mask-repeat: no-repeat;
 }
 
 .icon.lightness::before {

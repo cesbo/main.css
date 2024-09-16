@@ -1,17 +1,21 @@
 h1 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 3rem;
+    line-height: 3rem;
     border-bottom: var(--border-width) solid hsl(var(--color-secondary));
     border-image: linear-gradient(to right, hsl(var(--color-secondary)), transparent) 1;
-    padding: 1rem 0;
-    margin: 1rem 0;
+    padding: var(--space-xl) 0;
+    margin: var(--space-xl) 0;
+    letter-spacing: -0.025em;
+    font-weight: 500;
 }
 
 h2 {
-    font-size: 1.6rem;
-    line-height: 1.6rem;
+    font-size: 2rem;
+    line-height: 2rem;
     padding: 0;
-    margin: 0 0 1rem 0;
+    margin: var(--space) 0;
+    letter-spacing: -0.025em;
+    font-weight: 500;
 }
 
 h3 {
@@ -19,6 +23,7 @@ h3 {
     line-height: 1rem;
     padding: 0;
     margin: 0 0 1rem 0;
+    font-weight: 600;
 }
 
 h4, h5, h6 {

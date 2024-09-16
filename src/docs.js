@@ -2,10 +2,8 @@ window.ToggleTheme = function(ev) {
     const el = document.documentElement
     if(el.classList.contains('light')) {
         el.classList.remove('light')
-        ev.target.innerText = 'Light'
     } else {
         el.classList.add('light')
-        ev.target.innerText = 'Dark'
     }
     ev.target.blur()
 }
