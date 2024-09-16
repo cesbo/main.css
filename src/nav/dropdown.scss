@@ -15,7 +15,7 @@ details.dropdown {
     }
 
     &[open]>summary {
-        background-color: hsla(var(--color-primary), .2);
+        background-color: hsl(var(--color-primary) / .2);
         overflow: unset;
 
         &::after {
@@ -84,7 +84,7 @@ details.dropdown {
             background-color: hsl(var(--color-background));
 
             &:is(:hover) {
-                background-color: hsla(var(--color-primary), .2);
+                background-color: hsl(var(--color-primary) / .2);
                 filter: none;
             }
 

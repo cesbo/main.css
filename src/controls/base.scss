@@ -38,12 +38,12 @@ button,
     }
 
     &:focus {
-        background-color: hsla(var(--color-secondary), .2);
+        background-color: hsl(var(--color-secondary) / .2);
     }
 
     &:invalid {
         --shadow-color: hsl(var(--color-danger));
-        background-color: hsla(var(--color-danger), .2);
+        background-color: hsl(var(--color-danger) / .2);
     }
 }
 

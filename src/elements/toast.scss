@@ -16,7 +16,7 @@
     overflow: hidden;
     width: var(--toast-width);
 
-    background-color: hsla(var(--toast-color), .2);
+    background-color: hsl(var(--toast-color) / .2);
     box-shadow: var(--shadow-border) hsl(var(--toast-color));
 
     animation: new-toast .1s ease-out;

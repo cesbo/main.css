@@ -26,7 +26,7 @@
     }
 
     &:focus {
-        background-color: hsla(var(--color-secondary), .2);
+        background-color: hsl(var(--color-secondary) / .2);
     }
 
     &::before {
@@ -40,7 +40,7 @@
 
     &:checked {
         --border-color: hsl(var(--color-primary));
-        background-color: hsla(var(--color-primary), .2);
+        background-color: hsl(var(--color-primary) / .2);
     }
 
     &:checked::before {
@@ -79,7 +79,7 @@ input[type="checkbox"] {
 
         &:checked {
             --border-color: hsl(var(--color-success));
-            background-color: hsla(var(--color-success), .2);
+            background-color: hsl(var(--color-success) / .2);
         }
 
         &:checked::before {

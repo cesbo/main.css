@@ -14,7 +14,7 @@ details.spoiler {
         padding: var(--space-xs) var(--space-s);
         margin: calc(var(--space-xs) * -1) calc(var(--space-s) * -1);
 
-        background-color: hsla(var(--color-secondary), .2);
+        background-color: hsl(var(--color-secondary) / .2);
     }
 
     &[open]>summary {

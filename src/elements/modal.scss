@@ -1,6 +1,6 @@
 dialog {
     &::backdrop {
-        background-color: hsla(var(--color-background), .5);
+        background-color: hsl(var(--color-background) / .5);
         animation: modal-pop .2s ease-out;
     }
 
