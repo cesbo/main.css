@@ -2,6 +2,7 @@ nav {
     display: flex;
     flex-direction: row;
     align-items: center;
+    column-gap: var(--space-xs);
 
     width: auto;
     background-color: hsl(var(--color-background));

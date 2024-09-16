@@ -2,8 +2,7 @@ details.dropdown {
     position: relative;
 
     &>summary {
-        cursor: pointer;
-        user-select: none;
+        display: block;
 
         &::after {
             display: block;
@@ -34,6 +33,11 @@ details.dropdown {
 
     &[open]>summary {
         background-color: hsla(var(--color-primary), .2);
+        overflow: unset;
+
+        &:focus {
+            filter: none;
+        }
 
         &:not(:empty)::after {
             mask-image: var(--icon-close);
@@ -41,14 +45,18 @@ details.dropdown {
         }
 
         &::before {
-            content: "";
+            display: block;
+            content: " ";
             position: fixed;
             z-index: 1;
             inset: 0;
+            margin: 0;
+            cursor: default;
+            background: transparent;
         }
     }
 
-    &>summary+ul {
+    &>ul {
         display: flex;
         flex-direction: column;
         align-items: stretch;
@@ -63,12 +71,6 @@ details.dropdown {
         border: var(--border);
         border-radius: var(--border-radius);
         overflow: hidden;
-
-        /* default bottom-left */
-        top: 100%;
-        bottom: auto;
-        left: 0;
-        right: auto;
 
         background-color: hsl(var(--color-background));
         width: var(--dropdown-width);
@@ -112,8 +114,16 @@ details.dropdown {
         }
     }
 
+    /* default bottom-left */
+    &>ul {
+        top: calc(100% + 3px);
+        bottom: auto;
+        left: 0;
+        right: auto;
+    }
+
     &.bottom-right>ul {
-        top: 100%;
+        top: calc(100% + 3px);
         bottom: auto;
         left: auto;
         right: 0;
@@ -121,14 +131,14 @@ details.dropdown {
 
     &.top-left>ul {
         top: auto;
-        bottom: 100%;
+        bottom: calc(100% + 3px);
         left: 0;
         right: auto;
     }
 
     &.top-right>ul {
         top: auto;
-        bottom: 100%;
+        bottom: calc(100% + 3px);
         left: auto;
         right: 0;
     }
