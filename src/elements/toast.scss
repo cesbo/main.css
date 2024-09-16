@@ -8,16 +8,16 @@
 }
 
 .toast {
+    --toast-color: var(--color-primary);
+
     position: relative;
     padding: var(--space-xs) var(--space-s);
-    border: var(--border);
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     overflow: hidden;
     width: var(--toast-width);
 
-    color: hsl(var(--color-primary));
-    border-color: currentColor;
-    background-color: hsla(var(--color-primary), .2);
+    background-color: hsla(var(--toast-color), .2);
+    box-shadow: var(--shadow-border) hsl(var(--toast-color));
 
     animation: new-toast .1s ease-out;
 
@@ -28,20 +28,18 @@
 
     &>.close {
         position: absolute;
-        top: var(--space-xs);
-        right: var(--space-s);
+        top: 0;
+        right: 0;
         color: inherit;
         background-color: transparent;
     }
 
     &.success {
-        color: hsl(var(--color-success));
-        background-color: hsla(var(--color-success), .2);
+        --toast-color: var(--color-success);
     }
 
     &.danger {
-        color: hsl(var(--color-danger));
-        background-color: hsla(var(--color-danger), .2);
+        --toast-color: var(--color-danger);
     }
 }
 

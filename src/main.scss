@@ -3,7 +3,7 @@
 :root {
     --font-family: Verdana, sans-serif;
     --font-monospace: "Courier New", monospace;
-    --font-size: 16px;
+    --font-size: 14px;
     --font-weight: 400;
 
     --space: 1rem;
@@ -12,11 +12,13 @@
     --space-l: calc(var(--space) * 1.2);
     --space-xl: calc(var(--space) * 1.8);
 
-    --line-height: 1.5rem;
+    --line-height: 1.2rem;
 
     --border-width: 1px;
-    --border: var(--border-width) solid hsl(var(--color-secondary));
-    --border-radius: .25rem;
+    --radius: .25rem;
+
+    // for border implemented as a box-shadow
+    --shadow-border: 0 0 0 var(--border-width);
 
     --grid-column-gap: var(--space);
     --grid-row-gap: var(--space);

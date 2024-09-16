@@ -4,7 +4,11 @@
 
 <h2>Modal</h2>
 <div class="docs-box">
-	<button onClick="demo_modal_text.showModal()">modal text</button>
+	<div class="row left">
+		<button onClick="demo_modal_text.showModal()">modal text</button>
+		<button onClick="demo_modal_form.showModal()">modal form</button>
+	</div>
+
 	<dialog id="demo_modal_text">
 		<header>
 			<div>Modal Header</div>
@@ -18,7 +22,6 @@
 		</footer>
 	</dialog>
 
-	<button onClick="demo_modal_form.showModal()">modal form</button>
 	<dialog id="demo_modal_form">
 		<header>
 			<div>Modal Form</div>
@@ -59,7 +62,7 @@
 			<p>Third page</p>
 		</div>
 	</div>
-	<div class="container" style="text-align: center;">
+	<div class="row center">
 		<button onClick="window['carousel'].scrollLeft -= window['carousel'].clientWidth">&lt;</button>
 		<button onClick="window['carousel'].children[0].scrollIntoView()">1</button>
 		<button onClick="window['carousel'].children[1].scrollIntoView()">2</button>

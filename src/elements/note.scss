@@ -1,17 +1,21 @@
 .note {
+    --icon: var(--icon-note);
+    --note-color: hsl(var(--color-primary));
+
     position: relative;
     margin: 1rem 0;
-    padding: var(--space-xs) var(--space-s);
+    padding: var(--space-s);
     padding-left: calc(var(--line-height) + 2 * var(--space-s));
-    border: var(--border);
-    border-radius: var(--border-radius);
+    border-radius: var(--radius);
     overflow: hidden;
 
-    --icon: var(--icon-note);
-    --color: hsl(var(--color-primary));
-
     color: hsl(var(--color-text));
-    border-color: var(--color);
+    box-shadow: var(--shadow-border) var(--note-color);
+
+    &>:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
 
     &::before {
         content: "";
@@ -23,14 +27,14 @@
         mask-size: contain;
         -webkit-mask-size: contain;
         aspect-ratio: 1;
-        background-color: var(--color);
+        background-color: var(--note-color);
         height: var(--line-height);
     }
 
     &>header {
         font-weight: 600;
         padding-bottom: var(--space-xs);
-        color: var(--color);
+        color: var(--note-color);
     }
 
     &>p {
@@ -38,11 +42,11 @@
     }
 
     &.success {
-        --color: hsl(var(--color-success));
+        --note-color: hsl(var(--color-success));
     }
 
     &.danger {
         --icon: var(--icon-danger);
-        --color: hsl(var(--color-danger));
+        --note-color: hsl(var(--color-danger));
     }
 }

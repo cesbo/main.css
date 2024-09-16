@@ -23,10 +23,13 @@ button,
     select,
     textarea
 ) {
+    --shadow-border-color: hsl(var(--color-secondary));
+
     display: block;
     width: 100%;
-    border: var(--border);
-    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-border) var(--shadow-border-color);
+    border: 0;
+    border-radius: var(--radius);
     padding: var(--space-xs) var(--space-s);
 
     &:disabled {
@@ -39,7 +42,7 @@ button,
     }
 
     &:invalid {
-        border-color: hsl(var(--color-danger));
+        --shadow-border-color: hsl(var(--color-danger));
         background-color: hsla(var(--color-danger), .2);
     }
 }
@@ -51,5 +54,4 @@ textarea, pre {
 @import "button";
 @import "checkbox";
 @import "form";
-@import "group";
 @import "select";

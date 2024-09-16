@@ -1,8 +1,7 @@
 blockquote {
     margin: 1rem 0;
     padding: var(--space-xs) var(--space-s);
-    border-left: var(--border);
-    border-width: calc(var(--border-width) * 4);
+    border-left: calc(var(--border-width) * 4) solid hsl(var(--color-secondary));
 
     p {
         margin-top: 0;

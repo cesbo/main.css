@@ -10,15 +10,24 @@ dialog {
     margin: var(--modal-margin);
     color: hsl(var(--color-text));
     background-color: hsl(var(--color-background));
-    border: var(--border);
-    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-border) hsl(var(--color-secondary));
+    border: 0;
+    border-radius: var(--radius);
     padding: 0;
 
     &>header {
-        border-bottom: var(--border);
-        padding: var(--space);
         display: flex;
-        justify-content: space-between;
+        align-items: center;
+        padding: var(--space);
+        border-bottom: var(--border-width) solid hsl(var(--color-secondary));
+
+        &>.close {
+            position: absolute;
+            color: inherit;
+            background-color: transparent;
+            right: calc(var(--space) - var(--space-xs));
+            top: calc(var(--space) - var(--space-xs));
+        }
     }
 
     &>article {
@@ -35,7 +44,7 @@ dialog {
     }
 
     &>footer {
-        border-top: var(--border);
+        border-top: var(--border-width) solid hsl(var(--color-secondary));
         padding: var(--space);
     }
 }

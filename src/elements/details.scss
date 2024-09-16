@@ -2,9 +2,12 @@ details {
     display: block;
 
     &>summary {
-        display: list-item;
+        display: flex;
+        align-items: center;
+        gap: var(--space-xs);
+
         cursor: pointer;
-        list-style-type: none;
+        list-style: none;
         user-select: none;
 
         &::-webkit-details-marker  {
@@ -15,19 +18,14 @@ details {
             content: "";
             display: inline-block;
             position: relative;
-            top: -.05rem;
-            width: .6rem;
-            height: .6rem;
-            transform: rotate(-90deg);
-            mask: var(--icon-arrow) center no-repeat;
-            -webkit-mask: var(--icon-arrow) center no-repeat;
-            background-color: currentColor;
+            border-top: .3rem solid transparent;
+            border-bottom: .3rem solid transparent;
+            border-left: .3rem solid currentColor;
             transition: transform .1s ease-out;
-            margin-right: var(--space-xs);
         }
     }
 
     &[open]>summary::before{
-        transform: rotate(0);
+        transform: rotate(90deg);
     }
 }

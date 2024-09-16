@@ -5,8 +5,9 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
-    border: var(--border);
-    border-radius: var(--border-radius);
+    border: 0;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-border) hsl(var(--color-secondary));
     padding: 0;
     height: 1.2rem;
     width: 1.2rem;
@@ -29,9 +30,9 @@
         position: absolute;
         content: "";
         display: block;
-        inset: .2rem;
+        inset: 2px;
         background-color: transparent;
-        transition: .1s background-color ease-out;
+        transition: .05s background-color ease-out;
     }
 
     &:checked::before {
@@ -49,30 +50,29 @@ input[type="radio"] {
 
 input[type="checkbox"] {
     &::before {
-        border-radius: calc(var(--border-radius) - .1rem);
+        border-radius: calc(var(--radius) - .1rem);
     }
 
     &.switch {
-        width: 4rem;
-        height: var(--line-height);
+        width: 2.5rem;
+        height: 1.2rem;
         overflow: initial;
-        margin-top: calc(-1 * var(--border-width));
-        margin-bottom: calc(-1 * var(--border-width));
+        margin-top: calc(-1 * 2px);
+        margin-bottom: calc(-1 * 2px);
 
         &::before {
-            width: 2rem;
-            top: var(--border-width);
-            bottom: var(--border-width);
-            left: var(--border-width);
+            width: calc(1.2rem - (2 * 2px));
+            top: 2px;
+            bottom: 2px;
+            left: 2px;
             right: auto;
-            line-height: calc(var(--line-height) - (4 * var(--border-width)));
             background-color: hsl(var(--color-secondary));
-            transition: .1s background-color ease-out, .1s left ease-out;
+            transition: .05s background-color ease-out, .05s left ease-out;
         }
 
         &:checked::before {
             background: hsl(var(--color-success));
-            left: calc(4rem - 2rem - (3 * var(--border-width)));
+            left: calc(2.5rem - .8rem - (2 * 2px));
         }
     }
 }

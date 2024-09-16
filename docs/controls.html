@@ -20,7 +20,7 @@
 <p>Button with icon</p>
 
 <div class="docs-box" style="display: flex; flex-direction: column; gap: var(--space-xs);">
-	<div>
+	<div class="row left">
 		<button class="icon close"></button>
 		<button class="icon close" disabled></button>
 		<button class="icon hamburger"></button>
@@ -55,7 +55,7 @@
 				<input type="checkbox" />
 			</label>
 
-			<footer class="row right">
+			<footer>
 				<input type="submit" value="Submit" />
 			</footer>
 		</fieldset>
@@ -83,7 +83,7 @@
 
 			<label>
 				<span>Textarea</span>
-				<textarea></textarea>
+				<textarea rows="10"></textarea>
 			</label>
 		</fieldset>
 	</form>
@@ -175,7 +175,7 @@
 				<input type="text" />
 			</label>
 
-			<footer class="row right">
+			<footer>
 				<button type="submit">Submit</button>
 			</footer>
 		</fieldset>
@@ -185,37 +185,18 @@
 <h2>Group</h2>
 <div class="docs-box">
 	<form>
-		<fieldset>
-			<details class="group">
-				<summary class="button">Form Group</summary>
-				<fieldset>
-					<label>
-						<span>Address</span>
-						<input type="text" />
-					</label>
-					<label>
-						<span>City</span>
-						<input type="text" />
-					</label>
-				</fieldset>
-			</details>
-
-			<details class="group">
-				<summary class="button optional">
-					<span>Optional Group</span>
-					<input type="checkbox" class="switch" />
-				</summary>
-				<fieldset>
-					<label>
-						<span>Address</span>
-						<input type="text" />
-					</label>
-					<label>
-						<span>City</span>
-						<input type="text" />
-					</label>
-				</fieldset>
-			</details>
-		</fieldset>
+		<details>
+			<summary class="button">Form Group</summary>
+			<fieldset>
+				<label>
+					<span>Address</span>
+					<input type="text" />
+				</label>
+				<label>
+					<span>City</span>
+					<input type="text" />
+				</label>
+			</fieldset>
+		</details>
 	</form>
 </div><!-- Group -->

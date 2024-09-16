@@ -1,8 +1,8 @@
 pre {
     margin: 1rem 0;
     padding: var(--space-xs) var(--space-s);
-    border: var(--border);
-    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-border) hsl(var(--color-secondary));
+    border-radius: var(--radius);
 
     overflow-x: auto;
     overflow-y: hidden;

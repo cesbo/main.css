@@ -3,14 +3,15 @@ button,
 [type="button"],
 [type="submit"],
 [type="reset"] {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     cursor: pointer;
     text-decoration: none;
-    border: var(--border);
-    border-radius: var(--border-radius);
-    border-width: var(--border-width);
+    border: 0;
+    border-radius: var(--radius);
     padding: var(--space-xs) var(--space-s);
-    vertical-align: top; /* required for inline-block */
 
     &:is(:disabled, .disabled) {
         opacity: .5;
@@ -18,7 +19,6 @@ button,
     }
 
     color: hsl(var(--color-text));
-    border-color: hsl(var(--color-secondary));
     background-color: hsl(var(--color-secondary));
 
     &:is(:hover, :focus) {
@@ -31,24 +31,23 @@ button,
 
     &.danger {
         color: hsl(var(--color-text));
-        border-color: hsl(var(--color-danger));
         background-color: hsl(var(--color-danger));
     }
 
     &.success {
         color: hsl(var(--color-text));
-        border-color: hsl(var(--color-success));
         background-color: hsl(var(--color-success));
     }
 
     &.icon {
+        height: unset;
+
         &:empty {
-            padding: 0;
-            border: 0;
+            padding: var(--space-xs);
             border-radius: 50%;
 
             &::before {
-                height: 1rem;
+                height: var(--line-height);
                 margin: auto;
             }
         }
@@ -61,13 +60,12 @@ button,
             gap: var(--space-xs);
 
             &::before {
-                height: 1rem;
+                height: var(--line-height);
             }
         }
     }
 }
 
 [type="submit"] {
-    border-color: hsl(var(--color-primary));
     background-color: hsl(var(--color-primary));
 }

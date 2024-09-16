@@ -2,36 +2,15 @@ details.dropdown {
     position: relative;
 
     &>summary {
-        display: block;
+        flex-direction: row-reverse;
 
-        &::after {
-            display: block;
+        &:not(:empty)::before {
+            transform: rotate(90deg);
+        }
+
+        &:empty::before {
+            border: none;
             content: "...";
-            text-align: center;
-        }
-
-        &:not(:empty)::after {
-            display: inline-block;
-            content: "";
-            margin-left: var(--space-s);
-            background-color: currentColor;
-            mask-image: var(--icon-arrow);
-            -webkit-mask-image: var(--icon-arrow);
-            width: .6rem;
-            height: .6rem;
-        }
-
-        &::before {
-            // unset details properties
-            content: none;
-            width: unset;
-            height: unset;
-            transform: none;
-            mask: none;
-            -webkit-mask: none;
-            background-color: transparent;
-            transition: none;
-            margin: 0;
         }
     }
 
@@ -39,16 +18,7 @@ details.dropdown {
         background-color: hsla(var(--color-primary), .2);
         overflow: unset;
 
-        &:focus {
-            filter: none;
-        }
-
-        &:not(:empty)::after {
-            mask-image: var(--icon-close);
-            -webkit-mask-image: var(--icon-close);
-        }
-
-        &::before {
+        &::after {
             display: block;
             content: " ";
             position: fixed;
@@ -56,6 +26,14 @@ details.dropdown {
             inset: 0;
             cursor: default;
             background: transparent;
+        }
+
+        &:focus {
+            filter: none;
+        }
+
+        &:empty::before {
+            transform: none;
         }
     }
 
@@ -71,8 +49,8 @@ details.dropdown {
         position: absolute;
         z-index: 1;
 
-        border: var(--border);
-        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-border) hsl(var(--color-secondary));
+        border-radius: var(--radius);
         overflow: hidden;
 
         background-color: hsl(var(--color-background));
@@ -85,7 +63,7 @@ details.dropdown {
             align-items: stretch;
 
             &:empty {
-                border-bottom: var(--border);
+                border-bottom: var(--border-width) solid hsl(var(--color-secondary));
             }
         }
 
