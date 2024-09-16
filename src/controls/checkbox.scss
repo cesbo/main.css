@@ -2,12 +2,14 @@
     input[type="checkbox"],
     input[type="radio"]
 ) {
+    --border-color: hsl(var(--color-secondary));
+
     display: inline-block;
     vertical-align: top;
     position: relative;
     border: 0;
     border-radius: var(--radius);
-    box-shadow: var(--shadow-border) hsl(var(--color-secondary));
+    box-shadow: var(--shadow-border) var(--border-color);
     padding: 0;
     height: 1.2rem;
     width: 1.2rem;
@@ -16,6 +18,7 @@
     -moz-appearance: none;
     appearance: none;
     background-color: hsl(var(--color-background));
+    transition: .05s all ease-out;
 
     &:disabled {
         opacity: .5;
@@ -30,9 +33,14 @@
         position: absolute;
         content: "";
         display: block;
-        inset: 2px;
+        inset: 3px;
         background-color: transparent;
-        transition: .05s background-color ease-out;
+        transition: .05s all ease-out;
+    }
+
+    &:checked {
+        --border-color: hsl(var(--color-primary));
+        background-color: hsla(var(--color-primary), .2);
     }
 
     &:checked::before {
@@ -54,25 +62,29 @@ input[type="checkbox"] {
     }
 
     &.switch {
-        width: 2.5rem;
-        height: 1.2rem;
+        width: calc(var(--line-height) * 2);
+        height: var(--line-height);
         overflow: initial;
-        margin-top: calc(-1 * 2px);
-        margin-bottom: calc(-1 * 2px);
+        margin-top: calc(-1 * 3px);
+        margin-bottom: calc(-1 * 3px);
 
         &::before {
-            width: calc(1.2rem - (2 * 2px));
-            top: 2px;
-            bottom: 2px;
-            left: 2px;
-            right: auto;
+            width: calc(var(--line-height) - (2 * 3px));
+            top: 3px;
+            bottom: 3px;
+            left: 3px;
+            right: unset;
             background-color: hsl(var(--color-secondary));
-            transition: .05s background-color ease-out, .05s left ease-out;
+        }
+
+        &:checked {
+            --border-color: hsl(var(--color-success));
+            background-color: hsla(var(--color-success), .2);
         }
 
         &:checked::before {
             background: hsl(var(--color-success));
-            left: calc(2.5rem - .8rem - (2 * 2px));
+            left: calc(var(--line-height) + (2 * 3px) - 3px);
         }
     }
 }

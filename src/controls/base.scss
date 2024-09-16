@@ -23,11 +23,11 @@ button,
     select,
     textarea
 ) {
-    --shadow-border-color: hsl(var(--color-secondary));
+    --shadow-color: hsl(var(--color-secondary));
 
     display: block;
     width: 100%;
-    box-shadow: var(--shadow-border) var(--shadow-border-color);
+    box-shadow: var(--shadow-border) var(--shadow-color);
     border: 0;
     border-radius: var(--radius);
     padding: var(--space-xs) var(--space-s);
@@ -42,7 +42,7 @@ button,
     }
 
     &:invalid {
-        --shadow-border-color: hsl(var(--color-danger));
+        --shadow-color: hsl(var(--color-danger));
         background-color: hsla(var(--color-danger), .2);
     }
 }
