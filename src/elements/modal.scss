@@ -1,9 +1,4 @@
 dialog {
-    &::backdrop {
-        background-color: hsl(var(--color-background) / .5);
-        animation: modal-pop .2s ease-out;
-    }
-
     width: var(--modal-width);
     min-width: var(--modal-min-width);
     min-height: var(--modal-min-height);
@@ -17,6 +12,11 @@ dialog {
     border: 0;
     border-radius: var(--radius);
     padding: 0;
+
+    &::backdrop {
+        background-color: hsl(var(--color-background) / .5);
+        animation: modal-pop .2s ease-out;
+    }
 
     &>header {
         display: flex;

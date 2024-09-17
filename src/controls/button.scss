@@ -20,13 +20,13 @@ button,
     border-radius: var(--radius);
     padding: var(--space-xs) var(--space-s);
 
-    &:is(:disabled, .disabled) {
-        opacity: .4;
-        pointer-events: none;
-    }
-
     color: hsl(var(--button-text-color));
     background-color: hsl(var(--button-bg-color) / var(--button-bg-opacity));
+
+    &:is(:disabled, .disabled) {
+        opacity: var(--button-active-opacity);
+        pointer-events: none;
+    }
 
     &:is(:hover, :focus) {
         background-color: hsl(var(--button-bg-color) / var(--button-hover-opacity));
