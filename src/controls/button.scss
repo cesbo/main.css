@@ -3,6 +3,12 @@ button,
 [type="button"],
 [type="submit"],
 [type="reset"] {
+    --button-bg-opacity: 1;
+    --button-hover-opacity: .6;
+    --button-active-opacity: .4;
+    --button-text-color: var(--color-text) / .9;
+    --button-bg-color: var(--color-secondary);
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,18 +25,15 @@ button,
         pointer-events: none;
     }
 
-    --button-text-color: var(--color-text) / .9;
-    --button-bg-color: var(--color-secondary);
-
     color: hsl(var(--button-text-color));
-    background-color: hsl(var(--button-bg-color));
+    background-color: hsl(var(--button-bg-color) / var(--button-bg-opacity));
 
     &:is(:hover, :focus) {
-        background-color: hsl(var(--button-bg-color) / .6);
+        background-color: hsl(var(--button-bg-color) / var(--button-hover-opacity));
     }
 
     &:is(:active, .active) {
-        background-color: hsl(var(--button-bg-color) / .4);
+        background-color: hsl(var(--button-bg-color) / var(--button-active-opacity));
     }
 
     &.danger {
@@ -44,16 +47,8 @@ button,
     }
 
     &.outline {
-        background-color: transparent;
+        --button-bg-opacity: 0;
         box-shadow: inset var(--shadow-border) hsl(var(--button-bg-color));
-
-        &:is(:hover, :focus) {
-            background-color: hsl(var(--button-bg-color) / .2);
-        }
-
-        &:is(:active, .active) {
-            background-color: hsl(var(--button-bg-color) / .4);
-        }
     }
 
     &.close {
@@ -62,11 +57,11 @@ button,
         background-color: transparent;
 
         &:is(:hover, :focus) {
-            opacity: .6;
+            opacity: var(--button-hover-opacity);
         }
 
         &:is(:active, .active) {
-            opacity: .4;
+            opacity: var(--button-active-opacity);
         }
 
         &::before {
