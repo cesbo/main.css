@@ -15,7 +15,9 @@ section:not(:target) {
 
 .docs-box {
 	border: 1px solid hsl(var(--color-secondary));
-	padding: var(--space-xs) var(--space);
+	border-top-left-radius: var(--radius);
+	border-top-right-radius: var(--radius);
+	padding: var(--space);
 	color: hsl(var(--color-text));
 	background-color: hsl(var(--color-background));
 }
@@ -24,6 +26,8 @@ section:not(:target) {
 	position: relative;
 	border: 1px solid hsl(var(--color-secondary));
 	border-top: 0;
+	border-bottom-left-radius: var(--radius);
+	border-bottom-right-radius: var(--radius);
 	margin-bottom: var(--space);
 }
 

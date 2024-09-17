@@ -73,6 +73,10 @@ document.addEventListener('DOMContentLoaded', function init() {
 
     initDocsBox()
 
+    document.querySelectorAll('pre[data-highlight]').forEach(el => {
+        el.innerHTML = hljs.highlight(el.textContent, {language: el.dataset.highlight}).value
+    })
+
     window.addEventListener('hashchange', onHashChange)
     onHashChange()
 
