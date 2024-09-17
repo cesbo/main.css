@@ -3,7 +3,7 @@
 <p>Basic control elements</p>
 
 <h2>Button</h2>
-<div class="docs-box" style="display: grid; grid-template-columns: repeat(2, 140px); grid-gap: var(--space-xs);">
+<div class="docs-box grid" style="grid-template-columns: repeat(2, 140px); gap: var(--space-xs);">
 	<button>Button</button>
 	<button disabled>Disabled</button>
 
@@ -15,7 +15,23 @@
 
 	<button class="success">Success</button>
 	<button class="success" disabled>Disabled</button>
-</div><!-- Button -->
+</div>
+
+<p>Outline buttons</p>
+
+<div class="docs-box grid" style="grid-template-columns: repeat(2, 140px); gap: var(--space-xs);">
+	<button class="outline">Button</button>
+	<button class="outline" disabled>Disabled</button>
+
+	<button class="outline" type="submit">Submit</button>
+	<button class="outline" type="submit" disabled />Disabled</button>
+
+	<button class="outline danger">Danger</button>
+	<button class="outline danger" disabled>Disabled</button>
+
+	<button class="outline success">Success</button>
+	<button class="outline success" disabled>Disabled</button>
+</div>
 
 <p>Button with icon</p>
 
@@ -24,7 +40,7 @@
 		<button class="close"></button>
 		<button class="close" disabled></button>
 	</div>
-</div>
+</div><!-- Button -->
 
 <h2>Form</h2>
 <div class="docs-box">
