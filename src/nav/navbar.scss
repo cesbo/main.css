@@ -50,4 +50,14 @@ nav {
         padding-top: calc(var(--space-xs) + 2px);
         padding-bottom: calc(var(--space-xs) - 2px);
     }
+
+    &>a[target="_blank"]::after {
+        content: none;
+        width: unset;
+        height: unset;
+        margin-left: unset;
+        mask: none;
+        -webkit-mask: none;
+        display: none;
+    }
 }
