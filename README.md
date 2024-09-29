@@ -1,20 +1,32 @@
 # main.css
 
+## About
+
+Almost classless CSS.
+
 ## Quick Start
 
-## Prepare
+Just append into your html file
+
+```html
+<link rel="stylesheet" type="text/css" href="https://cdn.cesbo.com/main.css" />
+```
+
+## Development
+
+Install dependencies
 
 ```
 npm i
 ```
 
-## Build
+Build
 
 ```
 npm run build
 ```
 
-## Development
+Run for development
 
 ```
 npm run dev
