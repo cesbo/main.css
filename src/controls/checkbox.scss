@@ -1,7 +1,5 @@
-:is(
-    input[type="checkbox"],
-    input[type="radio"]
-) {
+input[type="checkbox"],
+input[type="radio"] {
     --border-color: hsl(var(--color-secondary));
 
     display: inline-block;
@@ -9,15 +7,21 @@
     position: relative;
     border: 0;
     border-radius: var(--radius);
-    box-shadow: var(--shadow-border) var(--border-color);
     padding: 0;
-    height: 1.2rem;
-    width: 1.2rem;
+    width: calc(var(--line-height) * 2);
+    height: var(--line-height);
+    overflow: initial;
+    margin-top: calc(-1 * 3px);
+    margin-bottom: calc(-1 * 3px);
+    margin-left: auto;
+    margin-right: var(--space-s);
+
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: hsl(var(--color-background));
+
+    background-color: hsl(var(--color-secondary) / .2);
     transition: .05s all ease-out;
 
     &:disabled {
@@ -25,66 +29,28 @@
         cursor: not-allowed;
     }
 
-    &:focus {
-        background-color: hsl(var(--color-secondary) / .2);
-    }
-
     &::before {
         position: absolute;
         content: "";
         display: block;
-        inset: 3px;
-        background-color: transparent;
         transition: .05s all ease-out;
-    }
 
-    &:checked {
-        --border-color: hsl(var(--color-primary));
-        background-color: hsl(var(--color-primary) / .2);
-    }
-
-    &:checked::before {
-        background-color: hsl(var(--color-primary));
-    }
-}
-
-input[type="radio"] {
-    border-radius: 50%;
-
-    &::before {
-        border-radius: 50%;
-    }
-}
-
-input[type="checkbox"] {
-    &::before {
+        width: calc(var(--line-height) - (2 * 3px));
+        top: 3px;
+        bottom: 3px;
+        left: 3px;
+        right: unset;
+        background-color: hsl(var(--color-secondary));
         border-radius: calc(var(--radius) - .1rem);
     }
 
-    &.switch {
-        width: calc(var(--line-height) * 2);
-        height: var(--line-height);
-        overflow: initial;
-        margin-top: calc(-1 * 3px);
-        margin-bottom: calc(-1 * 3px);
+    &:checked {
+        --border-color: hsl(var(--color-success));
+        background-color: hsl(var(--color-success) / .2);
+    }
 
-        &::before {
-            width: calc(var(--line-height) - (2 * 3px));
-            top: 3px;
-            bottom: 3px;
-            left: 3px;
-            right: unset;
-            background-color: hsl(var(--color-secondary));
-        }
-
-        &:checked {
-            --border-color: hsl(var(--color-success));
-            background-color: hsl(var(--color-success) / .2);
-        }
-
-        &:checked::before {
-            background: hsl(var(--color-success));
-            left: calc(var(--line-height) + (2 * 3px) - 3px);
-        }
+    &:checked::before {
+        background: hsl(var(--color-success));
+        left: calc(var(--line-height) + (2 * 3px) - 3px);
     }
 }

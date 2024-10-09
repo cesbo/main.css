@@ -42,10 +42,24 @@
 	</div>
 </div><!-- Button -->
 
-<h2>Form</h2>
+<h2>Fieldset</h2>
+<p>Fieldset is a group of related elements.</p>
 <div class="docs-box">
-	<form @submit.prevent="">
+	<script>
+		function toggleFieldset(target) {
+			const fieldset = document.getElementById(target)
+			fieldset.disabled = !fieldset.disabled
+		}
+	</script>
+	<form onSubmit="return false">
 		<fieldset>
+			<label>
+				<span>Lock Group</span>
+				<input type="checkbox" onChange="toggleFieldset('demo-fieldset')" />
+			</label>
+		</fieldset>
+
+		<fieldset id="demo-fieldset">
 			<label>
 				<span>Email</span>
 				<input type="text" />
@@ -62,11 +76,11 @@
 			</label>
 
 			<footer>
-				<input type="submit" value="Submit" />
+				<button type="submit">Submit</button>
 			</footer>
 		</fieldset>
 	</form>
-</div><!-- Form -->
+</div>
 
 <h2>Input</h2>
 <div class="docs-box">
@@ -95,7 +109,7 @@
 	</form>
 </div><!-- Input -->
 
-<h2>Select, Checkbox, Switch, Radio</h2>
+<h2>Select, Checkbox, Radio</h2>
 <div class="docs-box">
 	<form>
 		<fieldset>
@@ -113,9 +127,9 @@
 					</optgroup>
 				</select>
 			</label>
+		</fieldset>
 
-			<hr />
-
+		<fieldset>
 			<label>
 				<span>Checkbox</span>
 				<input type="checkbox" />
@@ -130,14 +144,9 @@
 				<span>Disabled</span>
 				<input type="checkbox" disabled />
 			</label>
+		</fieldset>
 
-			<label>
-				<span>Switch</span>
-				<input type="checkbox" class="switch" />
-			</label>
-
-			<hr />
-
+		<fieldset>
 			<label>
 				<span>JavaScript</span>
 				<input type="radio" name="language" value="JavaScript" />
@@ -155,38 +164,6 @@
 		</fieldset>
 	</form>
 </div><!-- Select, Checkbox, Switch, Radio -->
-
-<h2>Fieldset</h2>
-<p>Fieldset is a group of related elements.</p>
-<div class="docs-box">
-	<script>
-		function toggleFieldset(target) {
-			const fieldset = document.getElementById(target)
-			fieldset.disabled = !fieldset.disabled
-		}
-	</script>
-	<form onSubmit="return false">
-		<fieldset>
-			<legend>Group Title</legend>
-
-			<label>
-				<span>Lock Group</span>
-				<input type="checkbox" onChange="toggleFieldset('demo-fieldset')" />
-			</label>
-		</fieldset>
-
-		<fieldset id="demo-fieldset">
-			<label>
-				<span>Group Item</span>
-				<input type="text" />
-			</label>
-
-			<footer>
-				<button type="submit">Submit</button>
-			</footer>
-		</fieldset>
-	</form>
-</div>
 
 <h2>Group</h2>
 <div class="docs-box">

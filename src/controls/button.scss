@@ -23,6 +23,8 @@ button,
     color: hsl(var(--button-text-color));
     background-color: hsl(var(--button-bg-color) / var(--button-bg-opacity));
 
+    box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-bg-opacity));
+
     &:is(:disabled, .disabled) {
         opacity: var(--button-active-opacity);
         pointer-events: none;
@@ -30,10 +32,12 @@ button,
 
     &:is(:hover, :focus) {
         background-color: hsl(var(--button-bg-color) / var(--button-hover-opacity));
+        box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-hover-opacity));
     }
 
     &:is(:active, .active) {
         background-color: hsl(var(--button-bg-color) / var(--button-active-opacity));
+        box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-hover-opacity));
     }
 
     &.danger {
@@ -55,6 +59,8 @@ button,
         padding: var(--space-xs);
         border-radius: 1000px;
         background-color: transparent;
+
+        box-shadow: none;
 
         &:is(:hover, :focus) {
             opacity: var(--button-hover-opacity);

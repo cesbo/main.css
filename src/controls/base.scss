@@ -23,28 +23,11 @@ button,
     select,
     textarea
 ) {
-    --shadow-color: hsl(var(--color-secondary));
-
     display: block;
     width: 100%;
-    box-shadow: var(--shadow-border) var(--shadow-color);
     border: 0;
-    border-radius: var(--radius);
     padding: var(--space-xs) var(--space-s);
-
-    &:disabled {
-        opacity: .5;
-        cursor: not-allowed;
-    }
-
-    &:focus {
-        background-color: hsl(var(--color-secondary) / .2);
-    }
-
-    &:invalid {
-        --shadow-color: hsl(var(--color-danger));
-        background-color: hsl(var(--color-danger) / .2);
-    }
+    background-color: transparent;
 }
 
 textarea, pre {
