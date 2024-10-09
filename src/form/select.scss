@@ -1,0 +1,20 @@
+select {
+    display: block;
+    border: 0;
+    padding: var(--space-xs) var(--space-xl) var(--space-xs) var(--space-s);
+    background-color: transparent;
+    outline: none;
+
+    overflow: hidden;
+    font-size: .9rem;
+    font-family: inherit;
+    color: hsl(var(--button-text-color));
+
+    -webkit-appearance: none;
+    -moz-appearance : none;
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position: center right var(--space-s);
+    background-image: var(--icon-arrow);
+    background-size: .6rem;
+}

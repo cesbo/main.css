@@ -20,10 +20,14 @@ button,
     border-radius: var(--radius);
     padding: var(--space-xs) var(--space-s);
 
+    overflow: hidden;
+    font-size: inherit;
+    font-family: inherit;
     color: hsl(var(--button-text-color));
-    background-color: hsl(var(--button-bg-color) / var(--button-bg-opacity));
 
+    background-color: hsl(var(--button-bg-color) / var(--button-bg-opacity));
     box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-bg-opacity));
+    outline: none;
 
     &:is(:disabled, .disabled) {
         opacity: var(--button-active-opacity);

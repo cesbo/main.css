@@ -1,0 +1,20 @@
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+textarea {
+    display: block;
+    width: 100%;
+    padding: var(--space-xs) var(--space-s);
+    background-color: transparent;
+
+    border: 0;
+    outline: none;
+
+    overflow: hidden;
+    font-size: inherit;
+    font-family: inherit;
+    color: hsl(var(--color-text));
+}

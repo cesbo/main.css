@@ -4,6 +4,8 @@ pre {
     box-shadow: var(--shadow-border) hsl(var(--color-secondary));
     border-radius: var(--radius);
 
+    font-family: var(--font-monospace);
+
     overflow-x: auto;
     overflow-y: hidden;
     font-size: 1rem;
