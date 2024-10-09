@@ -115,15 +115,19 @@
 
 <h2>Toast</h2>
 <div class="docs-box" style="display: flex; flex-direction: column; gap: var(--space-xs);">
-	<div class="toast"><button class="close"></button><p>Info Text</p></div>
-	<div class="toast success"><button class="close"></button><p>Success Text</p></div>
-	<div class="toast danger"><button class="close"></button><p>Error Text</p></div>
+	<div class="toast"><button>&times;</button><p>Info Text</p></div>
+	<div class="toast success"><button>&times;</button><p>Success Text</p></div>
+	<div class="toast danger"><button>&times;</button><p>Error Text</p></div>
 </div>
 
 <p>Global toasts should be placed in the <code>.toast-stack</code> element:</p>
 <div class="docs-box">
 	<div class="toast-stack" id="docs-toast-stack"></div>
-	<button onClick="showToast()">Show toast</button>
+	<form>
+		<div>
+			<button onClick="showToast(); return false">Show toast</button>
+		</div>
+	</form>
 	<script>
 		let toastCount = 0
 		function showToast() {
@@ -136,7 +140,7 @@
 			const timeout = setTimeout(() => stack.removeChild(toast), 5000)
 			// close by button
 			const close = document.createElement('button')
-			close.classList.add('close')
+			close.innerHTML = '&times;'
 			close.onclick = () => {
 				clearTimeout(timeout)
 				stack.removeChild(toast)
