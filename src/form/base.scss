@@ -39,6 +39,7 @@ form {
             font-size: .8rem;
             font-weight: 600;
             letter-spacing: .05rem;
+            margin-bottom: var(--space);
         }
 
         &>label {
@@ -67,6 +68,7 @@ form {
         display: flex;
         align-items: center;
         color: var(--shadow-color);
+        white-space: nowrap;
 
         box-shadow: var(--shadow-border) var(--shadow-color);
         border-radius: var(--radius);
@@ -78,7 +80,7 @@ form {
         &>* {
             font-size: inherit;
             font-family: inherit;
-            color: hsl(var(--button-text-color));
+            color: hsl(var(--color-text));
 
             border: 0;
             border-radius: var(--radius);
@@ -129,6 +131,7 @@ form {
 
     @import "button";
     @import "checkbox";
+    @import "group";
     @import "input";
     @import "select";
     @import "textarea";

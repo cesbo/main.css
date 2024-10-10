@@ -2,7 +2,8 @@ button,
 .button,
 [type="button"],
 [type="submit"],
-[type="reset"] {
+[type="reset"],
+details>summary {
     --button-bg-opacity: 1;
     --button-hover-opacity: .6;
     --button-active-opacity: .4;
@@ -24,6 +25,7 @@ button,
     font-size: inherit;
     font-family: inherit;
     color: hsl(var(--button-text-color));
+    line-height: 1rem;
 
     background-color: hsl(var(--button-bg-color) / var(--button-bg-opacity));
     box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-bg-opacity));

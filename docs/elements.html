@@ -35,28 +35,12 @@
 	</table>
 </div><!-- Table -->
 
-<h2>Deatils</h2>
-<div class="docs-box">
-	<details>
-		<summary>Read more...</summary>
-		<p>Details creates a disclosure element in which information is visible only when the widget is open</p>
-	</details>
-</div><!-- Details -->
-
-<h2>Spoiler</h2>
-<div class="docs-box">
-	<details class="spoiler">
-		<summary>Click to show</summary>
-		<p>Element like Details but with additional box</p>
-	</details>
-</div><!-- Spoiler -->
-
 <h2>Modal</h2>
 <div class="docs-box">
-	<div class="row left">
+	<form onsubmit="return false" class="row left">
 		<button onClick="demo_modal_text.showModal()">modal text</button>
 		<button onClick="demo_modal_form.showModal()">modal form</button>
-	</div>
+	</form>
 
 	<dialog id="demo_modal_text">
 		<header>
@@ -123,10 +107,8 @@
 <p>Global toasts should be placed in the <code>.toast-stack</code> element:</p>
 <div class="docs-box">
 	<div class="toast-stack" id="docs-toast-stack"></div>
-	<form>
-		<div>
-			<button onClick="showToast(); return false">Show toast</button>
-		</div>
+	<form onsubmit="return false" class="row left">
+		<button onClick="showToast()">Show toast</button>
 	</form>
 	<script>
 		let toastCount = 0

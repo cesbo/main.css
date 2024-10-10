@@ -1,0 +1,31 @@
+details {
+    &>summary {
+        justify-content: start;
+        gap: var(--space-xs);
+
+        cursor: pointer;
+        list-style: none;
+        user-select: none;
+
+        &::-webkit-details-marker  {
+            display: none;
+        }
+
+        &::before {
+            content: " ";
+            display: block;
+            mask-image: var(--icon-arrow);
+            -webkit-mask-image: var(--icon-arrow);
+            mask-size: contain;
+            -webkit-mask-size: contain;
+            background-color: currentColor;
+            aspect-ratio: 1;
+            height: 1rem;
+            margin-left: -.25rem;
+        }
+    }
+
+    &[open]>summary {
+        margin-bottom: var(--space);
+    }
+}
