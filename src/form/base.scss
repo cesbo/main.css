@@ -66,12 +66,26 @@ form {
 
         display: flex;
         align-items: center;
-        gap: var(--space-xs);
-        color: hsl(var(--color-text));
+        color: var(--shadow-color);
 
         box-shadow: var(--shadow-border) var(--shadow-color);
         border-radius: var(--radius);
+        min-height: calc(1rem + var(--space-xs) * 2);
+
         padding-left: var(--space-s);
+        padding-right: var(--space-s);
+
+        &>* {
+            font-size: inherit;
+            font-family: inherit;
+            color: hsl(var(--button-text-color));
+
+            border: 0;
+            border-radius: var(--radius);
+            outline: none;
+
+            background-color: transparent;
+        }
 
         &:has(input:focus) {
             background-color: hsl(var(--color-secondary) / .2);
@@ -90,28 +104,26 @@ form {
             }
         }
 
-        /* label text */
-        &>:first-child {
-            align-self: flex-start;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-align: left;
-            text-transform: capitalize;
-            width: var(--form-label-width);
-            min-width: var(--form-label-width);
+        &:has(textarea) {
+            flex-direction: column;
+            align-items: flex-start;
             padding-top: var(--space-xs);
-            padding-bottom: var(--space-xs);
-            color: var(--shadow-color);
+            cursor: text;
         }
 
-        &>:last-child {
-            flex-grow: 1;
-            text-align: right;
+        &:has(input[type="checkbox"]) {
+            cursor: pointer;
         }
 
-        &>:last-child:is(input[type="checkbox"], input[type="radio"]) {
-            flex-grow: 0;
+        &:has(
+            input[type="text"],
+            input[type="number"],
+            input[type="email"],
+            input[type="password"],
+            input[type="search"],
+            input[type="url"]
+        ) {
+            cursor: text;
         }
     }
 
@@ -119,4 +131,5 @@ form {
     @import "checkbox";
     @import "input";
     @import "select";
+    @import "textarea";
 }

@@ -49,33 +49,27 @@
 <h2>Fieldset</h2>
 <p>Fieldset is a group of related elements.</p>
 <div class="docs-box">
-	<script>
-		function toggleFieldset(target) {
-			const fieldset = document.getElementById(target)
-			fieldset.disabled = !fieldset.disabled
-		}
-	</script>
 	<form onSubmit="return false">
 		<fieldset>
 			<label>
-				<span>Lock Group</span>
-				<input type="checkbox" onChange="toggleFieldset('demo-fieldset')" />
+				Lock Group
+				<input type="checkbox" onChange="window.fieldset_demo.disabled = this.checked" />
 			</label>
 		</fieldset>
 
-		<fieldset id="demo-fieldset">
+		<fieldset id="fieldset_demo">
 			<label>
-				<span>Email</span>
+				Email
 				<input type="text" />
 			</label>
 
 			<label>
-				<span>Password</span>
+				Password
 				<input type="password" />
 			</label>
 
 			<label>
-				<span>Remember</span>
+				Remember
 				<input type="checkbox" />
 			</label>
 
@@ -91,22 +85,22 @@
 	<form>
 		<fieldset>
 			<label>
-				<span>Required</span>
+				Required
 				<input type="text" placeholder="Invalid field" required pattern=".{5,}" />
 			</label>
 
 			<label>
-				<span>Disabled</span>
+				Disabled
 				<input type="text" placeholder="Disabled" disabled />
 			</label>
 
 			<label>
-				<span>Readonly</span>
+				Readonly
 				<input type="text" placeholder="Readonly" readonly />
 			</label>
 
 			<label>
-				<span>Textarea</span>
+				Textarea
 				<textarea rows="10"></textarea>
 			</label>
 		</fieldset>
@@ -118,7 +112,7 @@
 	<form>
 		<fieldset>
 			<label>
-				<span>Select</span>
+				Select
 				<select>
 					<option>Water</option>
 					<optgroup label="Tea">
@@ -135,17 +129,17 @@
 
 		<fieldset>
 			<label>
-				<span>Checkbox</span>
+				Checkbox
 				<input type="checkbox" />
 			</label>
 
 			<label>
-				<span>Checked</span>
+				Checked
 				<input type="checkbox" checked />
 			</label>
 
 			<label>
-				<span>Disabled</span>
+				Disabled
 				<input type="checkbox" disabled />
 			</label>
 		</fieldset>
