@@ -85,7 +85,7 @@ form {
         }
 
         &:has(input:focus) {
-            background-color: hsl(var(--color-surface) / .5);
+            background-color: hsl(var(--color-secondary) / .5);
             z-index: 1;
         }
 
@@ -94,7 +94,7 @@ form {
         }
 
         &:has(input:disabled) {
-            background-color: hsl(var(--color-surface) / .5);
+            background-color: hsl(var(--color-secondary) / .5);
 
             * {
                 cursor: not-allowed !important;

@@ -4,11 +4,8 @@ button,
 [type="submit"],
 [type="reset"],
 details>summary {
-    --button-bg-opacity: 1;
-    --button-hover-opacity: .6;
-    --button-active-opacity: .4;
-    --button-text-color: var(--color-text) / .9;
-    --button-bg-color: var(--color-surface);
+    --button-text-color: var(--color-secondary-content);
+    --button-bg-color: var(--color-secondary);
 
     display: flex;
     align-items: center;
@@ -24,41 +21,44 @@ details>summary {
     overflow: hidden;
     font-size: inherit;
     font-family: inherit;
-    color: hsl(var(--button-text-color));
     line-height: 1rem;
 
-    background-color: hsl(var(--button-bg-color) / var(--button-bg-opacity));
-    box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-bg-opacity));
+    background-color: hsl(var(--button-bg-color));
+    color: hsl(var(--button-text-color));
+
+    box-shadow: var(--shadow-border) hsl(var(--button-bg-color));
     outline: none;
 
     &:is(:disabled, .disabled) {
         opacity: var(--button-active-opacity);
         pointer-events: none;
+        cursor: not-allowed;
     }
 
-    &:is(:hover, :focus) {
-        background-color: hsl(var(--button-bg-color) / var(--button-hover-opacity));
-        box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-hover-opacity));
-    }
+    // &:is(:hover, :focus) {
+        // background-color: hsl(var(--button-bg-color) / var(--button-hover-opacity));
+        // box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-hover-opacity));
+    // }
 
-    &:is(:active, .active) {
-        background-color: hsl(var(--button-bg-color) / var(--button-active-opacity));
-        box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-hover-opacity));
-    }
+    // &:is(:active, .active) {
+        // background-color: hsl(var(--button-bg-color) / var(--button-active-opacity));
+        // box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-hover-opacity));
+    // }
 
     &.danger {
-        color: hsl(var(--button-text-color));
         --button-bg-color: var(--color-danger);
+        --button-text-color: var(--color-danger-content);
     }
 
     &.success {
-        color: hsl(var(--button-text-color));
         --button-bg-color: var(--color-success);
+        --button-text-color: var(--color-success-content);
     }
 
     &.outline {
-        --button-bg-opacity: 0;
+        background-color: transparent;
         box-shadow: inset var(--shadow-border) hsl(var(--button-bg-color));
+        color: hsl(var(--button-bg-color))
     }
 }
 
