@@ -12,7 +12,7 @@ details {
         }
 
         &::before {
-            content: " ";
+            content: '';
             display: block;
             mask-image: var(--icon-arrow);
             -webkit-mask-image: var(--icon-arrow);

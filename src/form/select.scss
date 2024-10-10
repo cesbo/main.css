@@ -1,5 +1,5 @@
 select {
-    padding: var(--space-xs) var(--space-xl) var(--space-xs) var(--space-s);
+    padding: var(--space-xs) var(--space-l) var(--space-xs) var(--space-s);
 
     text-align: right;
     margin-left: auto;
@@ -10,8 +10,23 @@ select {
     -webkit-appearance: none;
     -moz-appearance : none;
     appearance: none;
-    background-repeat: no-repeat;
-    background-position: center right;
-    background-image: var(--icon-arrow);
-    background-size: 1rem;
+}
+
+label:has(select) {
+    &::after {
+        content: '';
+        position: absolute;
+        right: calc(var(--space-s) - 2px);
+        top: var(--space-xs);
+        display: block;
+        mask-image: var(--icon-arrow);
+        -webkit-mask-image: var(--icon-arrow);
+        mask-size: contain;
+        -webkit-mask-size: contain;
+        background-color: currentColor;
+        aspect-ratio: 1;
+        height: 1rem;
+        margin-left: -.25rem;
+        pointer-events: none;
+    }
 }

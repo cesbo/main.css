@@ -60,6 +60,8 @@ form {
     label {
         --shadow-color: hsl(var(--color-secondary));
 
+        position: relative;
+
         display: flex;
         align-items: center;
         color: var(--shadow-color);
