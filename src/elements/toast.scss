@@ -29,14 +29,6 @@
         margin: 0;
     }
 
-    &>.close {
-        position: absolute;
-        top: 0;
-        right: 0;
-        color: inherit;
-        background-color: transparent;
-    }
-
     &.success {
         --toast-color: var(--color-success);
     }

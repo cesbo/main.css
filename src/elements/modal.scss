@@ -23,14 +23,6 @@ dialog {
         align-items: center;
         padding: var(--space);
         border-bottom: var(--border-width) solid hsl(var(--color-secondary));
-
-        &>.close {
-            position: absolute;
-            color: inherit;
-            background-color: transparent;
-            right: calc(var(--space) - var(--space-xs));
-            top: calc(var(--space) - var(--space-xs));
-        }
     }
 
     &>article {
