@@ -48,13 +48,13 @@ details.dropdown {
         z-index: 1;
 
         box-shadow:
-            var(--shadow-border) hsl(var(--color-secondary)),
-            0 1px 3px 0 hsl(var(--color-secondary)),
-            0 1px 2px -1px hsl(var(--color-secondary));
+            var(--shadow-border) hsl(var(--color-border)),
+            0 1px 3px 0 hsl(var(--color-border)),
+            0 1px 2px -1px hsl(var(--color-border));
         border-radius: var(--radius);
         overflow: hidden;
 
-        background-color: hsl(var(--color-background));
+        background-color: hsl(var(--color-surface));
         width: var(--dropdown-width);
         min-width: 0;
 
@@ -64,7 +64,7 @@ details.dropdown {
             align-items: stretch;
 
             &:empty {
-                border-bottom: var(--border-width) solid hsl(var(--color-secondary));
+                border-bottom: var(--border-width) solid hsl(var(--color-border));
             }
         }
 

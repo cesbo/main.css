@@ -2,11 +2,12 @@
 html.light {
     --color-text: 0  0%  0%;
     --color-background: 0  0%  100%;
+    --color-surface: 220deg 14.29% 95.88%;
+    --color-border: 0 0% 75%;
 
-    --color-primary: 213  62%  56%;
-    --color-secondary: 0  0%  75%;
-    --color-danger: 350  62%  56%;
-    --color-success: 160  62%  56%;
+    --color-primary: 204.7 60.4% 57.5%;
+    --color-danger: 354.5 60.4% 57.5%;
+    --color-success: 144.7 60.4% 57.5%;
 }
 
 section:not(:target) {
@@ -14,7 +15,7 @@ section:not(:target) {
 }
 
 .docs-box {
-	border: 1px solid hsl(var(--color-secondary));
+	border: 1px solid hsl(var(--color-border));
 	border-top-left-radius: var(--radius);
 	border-top-right-radius: var(--radius);
 	padding: var(--space);
@@ -24,7 +25,7 @@ section:not(:target) {
 
 .docs-box-toolbar {
 	position: relative;
-	border: 1px solid hsl(var(--color-secondary));
+	border: 1px solid hsl(var(--color-border));
 	border-top: 0;
 	border-bottom-left-radius: var(--radius);
 	border-bottom-right-radius: var(--radius);

@@ -3,17 +3,13 @@ table {
     text-align: left;
     border-collapse: collapse;
 
-    & > thead > tr > th, .cell.header {
+    thead th {
         font-weight: 600;
-        border-bottom: var(--border-width) solid hsl(var(--color-secondary));
+        border-bottom: var(--border-width) solid hsl(var(--color-border));
         text-transform: capitalize;
     }
 
-    & td, & th, & .cell {
+    td, th {
         padding: var(--space-xs) var(--space-s);
-    }
-
-    &.hoverable > tbody > tr:hover {
-        background-color: hsl(var(--color-secondary) / .1);
     }
 }
