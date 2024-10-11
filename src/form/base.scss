@@ -124,10 +124,11 @@ form {
         }
     }
 
-    @import "button";
     @import "checkbox";
     @import "group";
     @import "input";
     @import "select";
     @import "textarea";
 }
+
+@import "button";

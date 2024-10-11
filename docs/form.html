@@ -4,36 +4,36 @@
 
 <h2>Button</h2>
 <div class="docs-box">
-	<form class="grid" style="grid-template-columns: repeat(2, 140px); gap: var(--space-xs);">
-		<button>Button</button>
-		<button disabled>Disabled</button>
+	<form onsubmit="return false" class="grid" style="grid-template-columns: repeat(2, 140px); gap: var(--space-xs);">
+		<button class="btn">Button</button>
+		<button class="btn" disabled>Disabled</button>
 
-		<button type="submit">Submit</button>
-		<button type="submit" disabled />Disabled</button>
+		<button class="btn primary" type="submit">Submit</button>
+		<button class="btn primary" type="submit" disabled />Disabled</button>
 
-		<button class="danger">Danger</button>
-		<button class="danger" disabled>Disabled</button>
+		<button class="btn danger">Danger</button>
+		<button class="btn danger" disabled>Disabled</button>
 
-		<button class="success">Success</button>
-		<button class="success" disabled>Disabled</button>
+		<button class="btn success">Success</button>
+		<button class="btn success" disabled>Disabled</button>
 	</form>
 </div>
 
 <p>Outline buttons</p>
 
 <div class="docs-box">
-	<form class="grid" style="grid-template-columns: repeat(2, 140px); gap: var(--space-xs);">
-		<button class="outline">Button</button>
-		<button class="outline" disabled>Disabled</button>
+	<form onsubmit="return false" class="grid" style="grid-template-columns: repeat(2, 140px); gap: var(--space-xs);">
+		<button class="btn outline">Button</button>
+		<button class="btn outline" disabled>Disabled</button>
 
-		<button class="outline" type="submit">Submit</button>
-		<button class="outline" type="submit" disabled />Disabled</button>
+		<button class="btn outline primary" type="submit">Submit</button>
+		<button class="btn outline primary" type="submit" disabled />Disabled</button>
 
-		<button class="outline danger">Danger</button>
-		<button class="outline danger" disabled>Disabled</button>
+		<button class="btn outline danger">Danger</button>
+		<button class="btn outline danger" disabled>Disabled</button>
 
-		<button class="outline success">Success</button>
-		<button class="outline success" disabled>Disabled</button>
+		<button class="btn outline success">Success</button>
+		<button class="btn outline success" disabled>Disabled</button>
 </form>
 </div>
 
@@ -74,7 +74,7 @@
 			</label>
 
 			<footer>
-				<button type="submit">Submit</button>
+				<button class="btn primary" type="submit">Submit</button>
 			</footer>
 		</fieldset>
 	</form>
@@ -156,8 +156,8 @@
 <h2>Group</h2>
 <div class="docs-box">
 	<form>
-		<details>
-			<summary>Hidden Elements</summary>
+		<details class="group">
+			<summary class="btn">Hidden Elements</summary>
 			<fieldset>
 				<label>
 					First Name

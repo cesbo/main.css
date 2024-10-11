@@ -1,13 +1,12 @@
-details {
-    &>summary {
+details.group {
+    & > summary {
         justify-content: start;
         gap: var(--space-xs);
 
-        cursor: pointer;
         list-style: none;
         user-select: none;
 
-        &::-webkit-details-marker  {
+        &::-webkit-details-marker {
             display: none;
         }
 
@@ -21,11 +20,11 @@ details {
             background-color: currentColor;
             aspect-ratio: 1;
             height: 1rem;
-            margin-left: -.25rem;
+            margin-left: -0.25rem;
         }
     }
 
-    &[open]>summary {
+    &[open] > summary {
         margin-bottom: var(--space);
     }
 }

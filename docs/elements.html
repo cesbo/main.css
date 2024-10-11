@@ -38,8 +38,8 @@
 <h2>Modal</h2>
 <div class="docs-box">
 	<form onsubmit="return false" class="row left">
-		<button onClick="demo_modal_text.showModal()">modal text</button>
-		<button onClick="demo_modal_form.showModal()">modal form</button>
+		<button class="btn" onClick="demo_modal_text.showModal()">modal text</button>
+		<button class="btn" onClick="demo_modal_form.showModal()">modal form</button>
 	</form>
 
 	<dialog id="demo_modal_text">
@@ -108,7 +108,7 @@
 <div class="docs-box">
 	<div class="toast-stack" id="docs-toast-stack"></div>
 	<form onsubmit="return false" class="row left">
-		<button onClick="showToast()">Show toast</button>
+		<button class="btn" onClick="showToast()">Show toast</button>
 	</form>
 	<script>
 		let toastCount = 0

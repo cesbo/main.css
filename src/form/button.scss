@@ -1,12 +1,4 @@
-button,
-.button,
-[type="button"],
-[type="submit"],
-[type="reset"],
-details>summary {
-    --button-text-color: var(--color-secondary-content);
-    --button-bg-color: var(--color-secondary);
-
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,6 +8,7 @@ details>summary {
     text-decoration: none;
     border: 0;
     border-radius: var(--radius);
+    outline: none;
     padding: var(--space-xs) var(--space-s);
 
     overflow: hidden;
@@ -23,45 +16,71 @@ details>summary {
     font-family: inherit;
     line-height: 1rem;
 
-    background-color: hsl(var(--button-bg-color));
-    color: hsl(var(--button-text-color));
-
-    box-shadow: var(--shadow-border) hsl(var(--button-bg-color));
-    outline: none;
-
     &:is(:disabled, .disabled) {
-        opacity: var(--button-active-opacity);
+        opacity: 0.5;
         pointer-events: none;
         cursor: not-allowed;
     }
 
-    // &:is(:hover, :focus) {
-        // background-color: hsl(var(--button-bg-color) / var(--button-hover-opacity));
-        // box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-hover-opacity));
-    // }
+    &:not(.outline) {
+        --button-text-color: var(--color-secondary-content);
+        --button-color: var(--color-secondary);
 
-    // &:is(:active, .active) {
-        // background-color: hsl(var(--button-bg-color) / var(--button-active-opacity));
-        // box-shadow: var(--shadow-border) hsl(var(--button-bg-color) / var(--button-hover-opacity));
-    // }
+        background-color: hsl(var(--button-color));
+        color: hsl(var(--button-text-color));
+        box-shadow: var(--shadow-border) hsl(var(--button-color));
 
-    &.danger {
-        --button-bg-color: var(--color-danger);
-        --button-text-color: var(--color-danger-content);
-    }
+        &:is(:hover, :focus) {
+            filter: brightness(1.1);
+        }
 
-    &.success {
-        --button-bg-color: var(--color-success);
-        --button-text-color: var(--color-success-content);
+        &:is(:active, .active) {
+            filter: brightness(0.9);
+        }
+
+        &.primary {
+            --button-color: var(--color-primary);
+            --button-text-color: var(--color-primary-content);
+        }
+
+        &.danger {
+            --button-color: var(--color-danger);
+            --button-text-color: var(--color-danger-content);
+        }
+
+        &.success {
+            --button-color: var(--color-success);
+            --button-text-color: var(--color-success-content);
+        }
     }
 
     &.outline {
-        background-color: transparent;
-        box-shadow: inset var(--shadow-border) hsl(var(--button-bg-color));
-        color: hsl(var(--button-bg-color))
-    }
-}
+        --button-color: var(--color-border);
 
-[type="submit"] {
-    --button-bg-color: var(--color-primary);
+        background-color: transparent;
+        color: hsl(var(--button-color));
+        box-shadow: inset var(--shadow-border) hsl(var(--button-color));
+
+        &:is(:hover, :focus) {
+            background-color: hsl(var(--button-color) / 0.4);
+            filter: brightness(1.1);
+        }
+
+        &:is(:active, .active) {
+            background-color: hsl(var(--button-color) / 0.2);
+            filter: brightness(0.9);
+        }
+
+        &.primary {
+            --button-color: var(--color-primary);
+        }
+
+        &.danger {
+            --button-color: var(--color-danger);
+        }
+
+        &.success {
+            --button-color: var(--color-success);
+        }
+    }
 }
